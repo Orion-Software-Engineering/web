@@ -36,7 +36,4 @@ const Find = () => {
 
 export default Find
 
-/*
-color: #000000;
-background: #D8DB43;
-  */
+
