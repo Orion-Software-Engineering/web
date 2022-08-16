@@ -13,6 +13,7 @@ const About = () => {
             </div>
             <div className='w-[690px] h-[550px] mt-[40px] ml-[60px] border border-red-600'>
                 <Image src="/../public/Mountainguys.png" width='690px' height='550px' />
+
             </div>
         </div>
     )
