@@ -7,7 +7,11 @@ module.exports = {
     extend: {
       backgroundImage: {
         'headerbackground': "url('/public/TopBackground.png')"
-    }
-  },
-  plugins: [],
-}}
+      },
+      fontFamily: {
+        'nunito': ['Nunito'],
+      },
+    },
+    plugins: [],
+  }
+}

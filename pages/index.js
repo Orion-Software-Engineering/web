@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import About from '../components/About'
 import Chat from '../components/Chat'
-import Download from '../components/Download'
+import Download from '../components/Landing Page/Download'
 import Find from '../components/Find'
 import Getapp from '../components/Getapp'
 import Header from '../components/Header'
@@ -20,13 +20,13 @@ export default function Home() {
       </Head>
 
       <main>
-        <Header/>
-        <Chat/>
-        <Question/>
-        <Find/>
-        <About/>
-        <Profiles/>
-        <Getapp/>
+        <Header />
+        <Chat />
+        <Question />
+        <Find />
+        <About />
+        <Profiles />
+        <Getapp />
       </main>
 
       <footer>
