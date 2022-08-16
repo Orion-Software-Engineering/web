@@ -6,7 +6,7 @@ const Chat = () => {
     <div className='bg-gradient-to-l from-blue-200 to-emerald-400 h-[650px] 
     p-8 font-nunito flex items-center justify-around gap-8'>
       <div className=' flex justify-center items-center pl-16'>
-        <Image src="/../public/Womanchatbox.png" width={500} height={500} />
+        <Image src="/../public/Womanchatbox.png" alt="Womanchatbox" width={500} height={500} />
       </div>
 
       <div className='flex flex-col gap-8 justify-center items-center '>
