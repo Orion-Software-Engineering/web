@@ -4,7 +4,14 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
-  },
-  plugins: [],
+    extend: {
+      backgroundImage: {
+        'headerbackground': "url('/public/TopBackground.png')"
+      },
+      fontFamily: {
+        'nunito': ['Nunito'],
+      },
+    },
+    plugins: [],
+  }
 }
