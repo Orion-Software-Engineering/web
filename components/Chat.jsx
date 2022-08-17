@@ -15,8 +15,8 @@ const Chat = () => {
         </span>
 
         <p className='text-2xl text-white w-[480px] pr-16'>
-          Socializing isn't always easy
-          especially when there's no common interest to talk about.
+          Socializing isn&apos;t always easy
+          especially when there&apos;s no common interest to talk about.
           Orion Meet helps you to find and chat with people of similar interests so
           you already have a basis for discussion.
         </p>

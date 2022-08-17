@@ -11,7 +11,7 @@ const Header = () => {
         <div className="flex justify-between items-center w-full mx-24">
           <div className=" w-48 h-12 flex justify-center items-center">
             <div className="flex justify-center items-center">
-              <Image src="/../public/logo.png" width="50" height="50" />
+              <Image src="/../public/logo.png" alt='logo' width="50" height="50" />
             </div>
             <div className="pl-1 text-2xl">Meet</div>
           </div>
