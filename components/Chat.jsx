@@ -21,10 +21,14 @@ const Chat = () => {
           you already have a basis for discussion.
         </p>
       </div>
+    </div>
 
+  )
+}
 
+export default Chat
 
-      {/* <div className='w-[600px] h-[475px] flex'>
+{/* <div className='w-[600px] h-[475px] flex'>
         <div>
           <Image src="/../public/Womanchatbox.png" width='500px' height='450px' />
         </div>
@@ -44,9 +48,3 @@ const Chat = () => {
           </p>
         </div>
       </div> */}
-    </div>
-
-  )
-}
-
-export default Chat
