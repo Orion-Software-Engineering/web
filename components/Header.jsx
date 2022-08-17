@@ -17,7 +17,7 @@ const Header = () => {
           </div>
           <div className=" w-[500px] h-12 flex justify-center items-center">
             {navItems.map((item) => (
-              <Link href={`/${item.toLowerCase()}`}>
+              <Link key={item} href={`/${item.toLowerCase()}`}>
                 <div className="mx-8 cursor-pointer hover:text-green-400 hover:animate-pulse hover:translate-x-1 duration-500 ease-in-out">
                   {item}
                 </div>
