@@ -24,4 +24,8 @@ const Download = () => {
     )
 }
 
+<<<<<<< HEAD
 export default Download
+=======
+export default Download
+>>>>>>> main
