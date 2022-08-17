@@ -34,12 +34,5 @@ const Header = () => {
     </div>
   );
 };
-<<<<<<< HEAD
 
 export default Header;
-
-
-=======
->>>>>>> main
-
-export default Header
