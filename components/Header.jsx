@@ -38,21 +38,4 @@ const Header = () => {
 export default Header;
 
 
-/* 
 
-position: absolute;
-width: 861px;
-height: 155px;
-left: 289px;
-top: 350px;
-
-font-family: 'Nunito';
-font-style: normal;
-font-weight: 800;
-font-size: 49.9726px;
-line-height: 68px;
-text-align: center;
-
-color: #FFFFFF;
-
-*/
