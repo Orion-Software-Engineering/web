@@ -1,9 +1,15 @@
 import React from 'react'
+import TopEvents from '../components/TopEvents'
+import EventHeader from '../components/EventHeader'
 
-const Events = () => {
+export default function Event() {
     return (
-        <div>Events</div>
+        <div className="bg-[url('../public/Background.png')] h-screen ">
+            <div className="h-full bg-opacity-80 bg-[#F3F1F1]">
+                <EventHeader />
+                <TopEvents />
+            </div>
+
+        </div>
     )
 }
-
-export default Events
