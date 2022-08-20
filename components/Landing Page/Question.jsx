@@ -10,8 +10,8 @@ const Question = () => {
           YOU'RE YET TO MEET.
         </p>
       </div>
-      <div className='w-[600px] h-[550px] mt-[50px] ml-[100px] border border-red-600'>
-      <Image src="/../public/selfiesquad.png" alt='' width='690px' height='630px' />
+      <div className='w-[600px] h-[550px] mt-[50px] ml-[100px] border-red-600'>
+      <Image src="/../public/selfiesquad.png" alt='selfie' width='690px' height='630px' />
       </div>
 
     </div>
