@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const EventHeader = () => {
-    const navItems = ["Events", "About", "Support", "Contact"];
+    const navItems = ["Home", "About", "Support", "Contact"];
     return (
         <div className=" text-black h-[55px] flex justify-center items-center w-full border-blue-600">
             <div className="flex justify-between items-center w-full mx-24">
