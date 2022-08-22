@@ -4,8 +4,8 @@ import EventHeader from '../components/EventHeader'
 
 export default function Event() {
     return (
-        <div className="bg-[url('../public/Background.png')] h-full ">
-            <div className="h-full bg-opacity-80 bg-[#F3F1F1]">
+        <div className=" h-full ">
+            <div className="h-full bg-opacity-90 bg-[#F6F6F6]">
                 <EventHeader />
                 <TopEvents />
             </div>
