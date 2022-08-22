@@ -1,21 +1,22 @@
-import React from 'react'
-import Image from 'next/image'
+import React from "react";
+import groupSelfie from "../public/selfiesquad.png";
+import Image from "next/dist/client/image";
 
 const Question = () => {
   return (
-    <div className='h-[650px] flex border-red-600'>
-      <div className='w-[600px] h-[375px] mt-[150px] ml-[100px] border-red-600'>
-        <p className='text-6xl text-[#1C5677] text-center font-semibold font-nunito'>
+    <div className="flex bg-white mx-auto px-3 py-16 text-center items-center justify-center h-full w-full ">
+      <div className="md:w-[600px] sm:4xl md:text-5xl text-1xl p-1 ">
+        <p className=" text-[#1C5677] text-center font-semibold font-Nunito ">
           SO WHAT ARE YOU WAITING FOR? COME ON BOARD AND SEE THE BEST FRIENDS
           YOU&apos;RE YET TO MEET.
         </p>
       </div>
-      <div className='w-[600px] h-[550px] mt-[50px] ml-[100px] border-red-600'>
-      <Image src="/../public/selfiesquad.png" alt='selfie' width='690px' height='630px' />
+
+      <div className="">
+        <Image src={groupSelfie} alt="group_picture" />
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default Question
+export default Question;

@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 const About = () => {
     return (
@@ -13,7 +13,7 @@ const About = () => {
                     <p>Orion Meet is an app based platform for matching people based on their common likes and interests. Unlike most other match making apps, we don’t only focus on pairing people up , we allow the option to join groups full of like minded people for good networking.</p></div>
             </div>
             <div className='w-[690px] h-[550px] mt-[40px] ml-[60px] border border-red-600'>
-                <Image src="/../public/Mountainguys.png" alt="Mountain" width='690px' height='550px'  />
+                {/* <Image src="/../public/Mountainguys.png" alt="Mountain" width='690px' height='550px'  /> */}
             </div>
         </div>
     )
