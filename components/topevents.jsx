@@ -12,7 +12,7 @@ const TopEvents = () => {
   }
 
   return (
-    <div className="text-black  h-[700px] justify-between border-gray-700 flex font-nunito ">
+    <div className="text-black  h-[640px] justify-between border-gray-700 flex font-nunito ">
 
       <div className='flex justify-self-start  self-start  border-gray-600 '>
       <Image src="/../public/Ldesign.png" alt='design1' width='300px' height='500px' />
@@ -24,9 +24,14 @@ const TopEvents = () => {
             <label for="first">Events Name:</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
             <label for="second" className="mt-[20px]">Event Category:</label>
-            <input type="text" id="second" name="last" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
+              <select id="categories" name="last" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg">
+                <option value="Art">Art</option>
+                <option value="Business">Business</option>
+                <option value="Comedy">Comedy</option>
+              </select>              
             <label for="third" className="mt-[20px]">Event Description:</label>
-            <input type="text" id="third" name="last" className="bg-black h-[80px] w-[300px] text-white pl-[10px] pb-[50px] rounded-lg" />
+            <textarea type="text" id="third" name="last" className="bg-black h-[80px] w-[300px] text-white pl-[10px] pb-[50px] rounded-lg" />
+            <button>Next{'>'}</button>
           </form>
           <p className="self-end pr-9">Next{'>'}</p>
           <p>1/4</p>
