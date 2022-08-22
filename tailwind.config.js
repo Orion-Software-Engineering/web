@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -5,13 +6,12 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'headerbackground': "url('/public/TopBackground.png')"
-      },
       fontFamily: {
-        'nunito': ['Nunito'],
+        Nunito: ["Nunito"],
+        Merriweather: ["Merriweather"],
+        Montserrat: ["Montserrat"],
       },
     },
     plugins: [],
-  }
-}
+  },
+};
