@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Logo from "../public/orionLogo.svg";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
