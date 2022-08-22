@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "../components/Hero";
-import Navbar from "../components/Navbar";
+import Header from "../components/Header";
 import About from "../components/About";
 import Chat from "../components/Chat";
 import Download from "../components/Landing Page/Download";
@@ -23,7 +23,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <Navbar />
+        <Header />
         <Hero />
         <Chat />
         <Question />
