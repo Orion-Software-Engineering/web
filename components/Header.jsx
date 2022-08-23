@@ -19,7 +19,6 @@ const Navbar = () => {
       </div>
 
       <ul className="hidden md:flex font-Merriweather">
-        <Link href={"/events"}> Home </Link>
         <li className="p-4">Home</li>
         <li className="p-4">About</li>
         <li className="p-4">Support</li>
