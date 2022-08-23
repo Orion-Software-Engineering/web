@@ -1,30 +1,87 @@
-import React from 'react'
-import Image from 'next/image';
-import Link from 'next/link';
+import React, { useState } from "react";
+import Logo from "../public/orionLogo.svg";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import Image from "next/image";
+import Link from "next/link";
 
-const EventHeader = () => {
-    const navItems = ["Home", "About", "Support", "Contact"];
-    return (
-        <div className=" text-black h-[55px] flex justify-center items-center w-full border-blue-600">
-            <div className="flex justify-between items-center w-full mx-24">
-                <div className=" w-48 h-12 flex justify-center items-center">
-                    <div className="flex justify-center items-center">
-                        <Image src="/../public/logo.png" alt='logo' width="50" height="50" />
-                    </div>
-                    <div className="pl-1 text-2xl">Meet</div>
-                </div>
-                <div className=" w-[500px] h-12 flex justify-center items-center">
-                    {navItems.map((item) => (
-                        <Link href={`/${item.toLowerCase()}`}>
-                            <div className="mx-8 cursor-pointer hover:text-lime-600 hover:animate-pulse hover:translate-x-1 duration-500 ease-in-out">
-                                {item}
-                            </div>
-                        </Link>
-                    ))}
-                </div>
-            </div>
+const Navbar = () => {
+  const [nav, setNav] = useState(false);
+
+  const handleNav = () => {
+    setNav(!nav);
+  };
+
+  return (
+    <div className="flex justify-between items-center h-24  max-2-[1024] mx-auto px-4 text-white bg-[#F6F6F650] ">
+      <div className="flex">
+        <Image src={Logo} alt="Logo_Image" width={"70px"} height={"70px"} />
+        <h1 className="pt-1 pl-1 w-full text-4xl font-bold text-black font-Nunito">
+          Meet
+        </h1>
+      </div>
+
+      <ul className="hidden md:flex font-Nunito font-bold pt-4 text-black">
+        <li className="pt-3">
+          <a className="p-4" href={"/events"}>
+            Home
+          </a>
+        </li>
+        <li className="pt-3">
+          <a className="p-4" href={"/events"}>
+            About
+          </a>
+        </li>
+        <li className="pt-3">
+          <a className="p-4" href={"/events"}>
+            Support
+          </a>
+        </li>
+        <li className="pt-3">
+          <a className="p-4" href={"/events"}>
+            Events
+          </a>
+        </li>
+        <li className="">
+          <button className=" absolte uppercase bg-transparent border-[1px] border- rounded px-10 border-black mx-auto py-3 mb-4 hover:scale-110 hover:bg-black hover:text-white duration-300 ">
+            Log in
+          </button>
+        </li>
+      </ul>
+
+      <div onClick={handleNav} className="block md:hidden">
+        {!nav ? <AiOutlineClose seize={20} /> : <AiOutlineMenu size={20} />}
+      </div>
+
+      <div
+        className={
+          !nav
+            ? "md:hidden fixed left-0 top-0 h-full w-[60%] border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500"
+            : "fixed left-[-100%] top-0 h-full w-[60%] border-r border-r-gray-900 bg-[#00030075] ease-in-out duration-500 "
+        }
+      >
+        <div className="flex  m-4 ">
+          <Image src={Logo} alt="Logo_Image" width={"70px"} height={"70px"} />
+
+          <h1 className="pl-1 w-full text-4xl font-bold text-white">MEET</h1>
         </div>
-    )
-}
+        <ul className="uppercase p-4 font-Merriweather">
+          <a href={"/events"}>Home</a>
+          <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
+          <a href={"/events"}>About</a>
+          <li className=" mt-4 mb-4 border-b border-b-gray-600"></li>
+          <a href={"/events"}>Support</a>
+          <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
+          <a href={"/events"}>Events</a>
+          <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
+          <div className=" my-6 ">
+            <button className="absolte uppercase bg-transparent border-[1px] border- rounded  px-10 mx-auto py-3 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 ">
+              Log in
+            </button>
+          </div>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
-export default EventHeader
+export default Navbar;

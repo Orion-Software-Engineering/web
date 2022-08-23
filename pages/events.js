@@ -2,6 +2,7 @@ import React from 'react'
 import TopEvents from '../components/TopEvents'
 import EventHeader from '../components/EventHeader'
 import EventFooter from '../components/EventFooter'
+import Header from "../components/Landing Page/Header"
 
 export default function Event() {
     return (

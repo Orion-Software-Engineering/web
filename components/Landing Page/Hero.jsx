@@ -5,7 +5,7 @@ import Image from "next/dist/client/image";
 const Hero = () => {
   return (
     <div>
-      <div className="top-[90px] bg-[url('../public/TopBackground.png')] ">
+      <div className="top-[90px] bg-[url('../public/TopBackground.png')] bg-cover w-full bg-no-repeat ">
         <div className="max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center">
           <div className="  text-center flex  justify-center ">
             <Typed
