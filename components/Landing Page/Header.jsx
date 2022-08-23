@@ -27,7 +27,8 @@ const Header = () => {
         </div>
       </div>
       <div className="bg h-[550px] flex mt-[55px] ml-[-1470px]  border-blue-600 w-full">
-        <div className="text-white w-[770px] h-[100px] text-5xl mt-[200px] ml-[330px] pl-[2px] border-blue-600 font-bold font-nunito">
+        <div className="text-white w-[770px] h-[100px] text-5xl mt-[200px] ml-[330px] 
+        pl-[2px] border-blue-600 font-bold font-nunito">
           Same Interests, More Interesting!!
         </div>
       </div>
@@ -35,4 +36,4 @@ const Header = () => {
   );
 };
 
-export default Header
+export default Header;
