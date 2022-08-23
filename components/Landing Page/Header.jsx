@@ -19,10 +19,10 @@ const Navbar = () => {
       </div>
 
       <ul className="hidden md:flex font-Merriweather">
-        <li className="p-4">Home</li>
-        <li className="p-4">About</li>
-        <li className="p-4">Support</li>
-        <li className="p-4">Events</li>
+        <Link className="p-4" href={"/events"}> Home </ Link> 
+        <Link className="p-4" href={"/events"}> About </ Link> 
+        <Link className="p-4" href={"/events"}> Support </ Link> 
+        <Link className="p-4" href={"/events"}> Events </ Link> 
         <button className="absolte uppercase bg-transparent border-[1px] border- rounded px-10 mx-auto py-3 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 ">
           Log in
         </button>
