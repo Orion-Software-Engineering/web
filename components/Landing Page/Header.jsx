@@ -19,10 +19,11 @@ const Navbar = () => {
       </div>
 
       <ul className="hidden md:flex font-Merriweather">
-        <Link className="p-4" href={"/events"}> Home </ Link> 
-        <Link className="p-4" href={"/events"}> About </ Link> 
-        <Link className="p-4" href={"/events"}> Support </ Link> 
-        <Link className="p-4" href={"/events"}> Events </ Link> 
+        <a className="p-4" href={"/events"}>Home</a>
+        <a className="p-4" href={"/events"}>About</a>
+        <a className="p-4" href={"/events"}>Support</a>
+        <a className="p-4" href={"/events"}>Events</a>
+
         <button className="absolte uppercase bg-transparent border-[1px] border- rounded px-10 mx-auto py-3 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 ">
           Log in
         </button>
@@ -44,10 +45,13 @@ const Navbar = () => {
           <h1 className="pl-1 w-full text-4xl font-bold text-white">MEET</h1>
         </div>
         <ul className="uppercase p-4 font-Merriweather object-cover h-full w-full absolute ">
-          <li className="p-4 border-b border-b-gray-600">Home</li>
-          <li className="p-4 border-b border-b-gray-600">About</li>
-          <li className="p-4 border-b border-b-gray-600">Support</li>
-          <li className="p-4 border-b border-b-gray-600">Events</li>
+        <a className="p-4 boreder border-gray-600" href={"/events"}>Home</a>
+        <li className="p-4 boreder border-gray-600"></li>
+        <a className="p-4 boreder border-gray-600" href={"/events"}>About</a>
+        <li className="p-4 boreder border-gray-600"></li>
+        <a className="p-4 boreder border-gray-600" href={"/events"}>Support</a>
+        <li className="p-4 boreder border-gray-600"></li>
+        <a className="p-4 boreder border-gray-600" href={"/events"}>Events</a>
           <div className=" my-6">
             <button className="absolte uppercase bg-transparent border-[1px] border- rounded px-10 mx-auto py-3 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 ">
               Log in
