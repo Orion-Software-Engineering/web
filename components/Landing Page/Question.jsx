@@ -1,5 +1,5 @@
 import React from "react";
-import groupSelfie from "../public/selfiesquad.png";
+import groupSelfie from "../../public/selfiesquad.png";
 import Image from "next/dist/client/image";
 
 const Question = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import womanChat from "../public/Womanchatbox.png";
+import womanChat from "../../public/Womanchatbox.png";
 import Image from "next/dist/client/image";
 
 const Chat = () => {
