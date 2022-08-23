@@ -25,7 +25,7 @@ const TopEvents = () => {
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
             <label for="second" className="mt-[20px]">Event Category:</label>
               <select id="categories" name="last" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg">
-                <option value="Art" className='w-[300px]'>Art</option>
+                <option type="checkbox" value="Art">Art</option>
                 <option value="Business">Business</option>
                 <option value="Comedy">Comedy</option>
               </select>              
