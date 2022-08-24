@@ -7,7 +7,6 @@ import Getapp from '../components/Landing Page/Getapp'
 import Header from '../components/Landing Page/Header'
 import Profiles from '../components/Landing Page/Profiles'
 import Question from '../components/Landing Page/Question'
-import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
