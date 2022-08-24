@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between items-center h-24  max-2-[1024] mx-auto px-4 text-white bg-[#F6F6F650] ">
+    <div className="flex justify-between items-center h-24  max-2-[1024] mx-auto px-4 text-white bg-[#000000] w-screen ">
       <div className="flex">
         <Image src={Logo} alt="Logo_Image" width={"70px"} height={"70px"} />
         <h1 className="pt-1 pl-1 w-full text-4xl font-bold text-white font-Nunito">

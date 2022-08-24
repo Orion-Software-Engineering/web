@@ -1,29 +1,46 @@
 import React from "react";
-import Hero from "../components/Landing Page/Hero";
-import Header from "../components/Landing Page/Header";
-import About from "../components/Landing Page/About";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Navigation, EffectFade, Autoplay } from "swiper";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 import Chat from "../components/Landing Page/Chat";
-import Find from "../components/Landing Page/Find";
-import Getapp from "../components/Landing Page/Getapp";
-import Profiles from "../components/Landing Page/Profiles";
 import Question from "../components/Landing Page/Question";
-import Head from "next/head";
+import Hero from "../components/Landing Page/Hero";
+import Headerswipe from "../components/Landing Page/Header";
+import "swiper/css/autoplay";
+import Find from "../components/Landing Page/Find";
 
-export default function Home() {
+export default function Swipe() {
   return (
-    <div>
-      <main>
-        <Header />
-        <Hero />
-        {/* <Chat />
-        <Question /> */}
-        {/* <Find />
-        <About />
-        <Profiles />
-        <Getapp /> */}
-      </main>
-
-      <footer></footer>
+    <div className="styles.container">
+      <div className="">
+        <Headerswipe />
+      </div>
+      <div>
+        <Swiper
+          modules={[Navigation, EffectFade, Autoplay]}
+          navigation
+          autoplay={{ delay: 6000 }}
+          effect={"fade"}
+          speed={1000}
+          slidesPerView={1}
+          loop
+        >
+          <SwiperSlide>
+            <Hero />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Chat />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Question />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Find />
+          </SwiperSlide>
+        </Swiper>
+      </div>
     </div>
   );
 }
