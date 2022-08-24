@@ -1,13 +1,12 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import About from '../components/Landing Page/About'
-import Chat from '../components/Landing Page/Chat'
-import Find from '../components/Landing Page/Find'
-import Getapp from '../components/Landing Page/Getapp'
-import Header from '../components/Landing Page/Header'
-import Profiles from '../components/Landing Page/Profiles'
-import Question from '../components/Landing Page/Question'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import About from "../components/Landing Page/About";
+import Chat from "../components/Landing Page/Chat";
+import Find from "../components/Landing Page/Find";
+import Getapp from "../components/Landing Page/Getapp";
+import Header from "../components/Landing Page/Header";
+import Profiles from "../components/Landing Page/Profiles";
+import Question from "../components/Landing Page/Question";
 
 export default function Home() {
   return (
@@ -28,9 +27,7 @@ export default function Home() {
         <Getapp />
       </main>
 
-      <footer>
-
-      </footer>
+      <footer></footer>
     </div>
-  )
+  );
 }
