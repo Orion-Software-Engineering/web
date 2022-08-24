@@ -14,8 +14,8 @@ const TopEvents = () => {
   return (
     <div className="text-black  h-[640px] justify-between border-gray-700 flex font-nunito ">
 
-      <div className='flex justify-self-start  self-start  border-gray-600 '>
-      <Image src="/../public/Ldesign.png" alt='design1' width='300px' height='500px' />
+      <div className='flex justify-self-start  self-start border border-gray-600 '>
+      left image div
       </div>
 
       <div className="justify-self-center self-center flex  border-gray-600 h-[400px] ">
@@ -49,8 +49,8 @@ const TopEvents = () => {
         </div>
       </div>
 
-      <div className='flex justify-self-end self-end  border-gray-600 '>
-      <Image src="/../public/Rdesign.png" alt='design1' width='350px' height='360px' />
+      <div className='flex justify-self-end self-end border border-gray-600 '>
+      right image div
       </div>
 
 
