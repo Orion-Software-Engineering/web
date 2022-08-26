@@ -25,7 +25,7 @@ export default function Swipe() {
           slidesPerView={1}
           loop
         >
-          {/* <SwiperSlide>
+          <SwiperSlide>
             <Header />
             <Hero />
           </SwiperSlide>
@@ -36,7 +36,7 @@ export default function Swipe() {
           <SwiperSlide>
             <Header />
             <Question />
-          </SwiperSlide> */}
+          </SwiperSlide>
           <SwiperSlide>
             <Header />
             <Find />
