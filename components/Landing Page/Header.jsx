@@ -48,7 +48,11 @@ const Navbar = () => {
       </ul>
 
       <div onClick={handleNav} className="block md:hidden">
-        {!nav ? <AiOutlineClose seize={20} /> : <AiOutlineMenu size={20} />}
+        {!nav ? (
+          <AiOutlineClose seize={20} className="bg-black" />
+        ) : (
+          <AiOutlineMenu size={20} className="bg-black" />
+        )}
       </div>
 
       <div
