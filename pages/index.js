@@ -19,7 +19,7 @@ export default function Swipe() {
         <Swiper
           modules={[Navigation, EffectFade, Autoplay]}
           navigation
-          // autoplay={{ delay: 6000 }}
+          autoplay={{ delay: 6000 }}
           effect={"fade"}
           speed={1000}
           slidesPerView={1}
