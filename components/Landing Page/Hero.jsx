@@ -10,7 +10,7 @@ const Hero = () => {
           <div className="  text-center flex  justify-center ">
             <Typed
               className="uppercase md:text-4xl sm:text-3xl text-white text-xl font-bold font-Montserrat"
-              strings={["Same Interests, More Interesting"]}
+              strings={["Same Interests, More Interesting!"]}
               typeSpeed={50}
               backSpeed={50}
               loop
