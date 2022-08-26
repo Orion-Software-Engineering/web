@@ -4,12 +4,12 @@ import "swiper/css";
 import { Navigation, EffectFade, Autoplay } from "swiper";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import Chat from "../components/Landing Page/Chat";
-import Question from "../components/Landing Page/Question";
-import Hero from "../components/Landing Page/Hero";
-import Header from "../components/Landing Page/Header";
+import Chat from "../components/home/Chat";
+import Question from "../components/home/Question";
+import Hero from "../components/home/Hero";
+import Header from "../components/home/Header";
 import "swiper/css/autoplay";
-import Find from "../components/Landing Page/Find";
+import Find from "../components/home/Find";
 
 export default function Swipe() {
   return (
