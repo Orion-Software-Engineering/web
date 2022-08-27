@@ -65,5 +65,6 @@ export default function Swipe() {
         </Swiper>
       </div>
     </div>
+  </div>  
   );
 }

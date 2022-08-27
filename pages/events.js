@@ -14,7 +14,7 @@ export default function Event() {
         <EventHeader />
         {/* <Events1 /> */}
         {/* <EventFooter /> */}
-        {/* <Events2 /> */}
+        <Events2 />
         {/* <Events3 /> */}
         {/* <Completion /> */}
         {/* <ImageUpload /> */}
