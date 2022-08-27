@@ -20,13 +20,14 @@ const Events1 = () => {
   return (
     <div>
       <div className="text-black h-screen justify-between border-gray-700 flex font-nunito ">
-        <div className="flex justify-self-start  self-start border border-gray-600 gap-4 rotate-[-54.25deg] ">
-          <div className="h-[440px] w-[76px] rounded-[36px]  bg-yellow-300"></div>
-          <div className="h-[440px] w-[76px] rounded-[36px] bg-red-700"></div>
-          <div className="h-[440px] w-[76px] rounded-[36px] bg-green-600"></div>
-
-          <div className="h-[510px] w-[76px] rounded-[36px] bg-blue-900"></div>
-          <div className="h-[640px] w-[78px] rounded-[36px] bg-orange-400  "></div>
+        <div className="flex justify-self-start  self-start border border-gray-600 rotate-[-54.25deg] ml-[-300px] mt-[-50px]">
+          <div className="h-[640px] w-[76px] rounded-[36px]  bg-[#FFE600]"></div>
+          <div className="h-[640px] w-[76px] rounded-[36px] bg-[#FF0000]"></div>
+          <div className="h-[640px] w-[76px] rounded-[36px] bg-[#1EA313]"></div>
+          <div className="h-[640px] w-[76px] rounded-[36px] bg-[#1950DE]"></div>
+          <div className="h-[640px] w-[76px] rounded-[36px] bg-[#FF7A00] bg-[url('../public/Orange.png')]  ">
+            
+          </div>
         </div>
 
         <div className="justify-self-center self-center flex  border-gray-600 h-[400px] bg-[url('../public/WhatsappB.png')]">
