@@ -12,7 +12,7 @@ export default function Event() {
     <div className=" h-screen ">
       <div className="h-screen bg-opacity-90 bg-[#F6F6F6]">
         <EventHeader />
-        {/* <Events1 /> */}
+        <Events1 />
         {/* <EventFooter /> */}
         {/* <Events2 /> */}
         {/* <Events3 /> */}

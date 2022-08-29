@@ -71,10 +71,7 @@ const events2 = () => {
             </div>
 
             {Date ? (
-                <div className='flex justify-center items-center absolute bg-black h-[50px] 
-                
-                
-                inset-1/4'>
+                <div className='flex justify-center items-center absolute bg-black mz'>
                     <DatePicker />
                 </div>
             ) : (
