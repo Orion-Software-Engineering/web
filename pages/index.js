@@ -1,7 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Navigation, EffectFade, Autoplay } from "swiper";
+import { EffectFade, Autoplay } from "swiper";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import Chat from "../components/home/Chat";
@@ -10,6 +10,7 @@ import Hero from "../components/home/Hero";
 import Header from "../components/home/Header";
 import "swiper/css/autoplay";
 import Find from "../components/home/Find";
+import Getapp from "../components/home/Getapp";
 
 export default function Swipe() {
   return (
@@ -17,7 +18,7 @@ export default function Swipe() {
       <div className=""></div>
       <div>
         <Swiper
-          modules={[Navigation, EffectFade, Autoplay]}
+          modules={[EffectFade, Autoplay]}
           navigation
           autoplay={{ delay: 6000 }}
           effect={"fade"}

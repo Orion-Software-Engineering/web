@@ -21,17 +21,17 @@ const Navbar = () => {
 
       <ul className="hidden md:flex font-Nunito font-bold pt-4 text-white">
         <li className="pt-3">
-          <a className="p-4" href={"/events"}>
+          <a className="p-4" href={"/"}>
             Home
           </a>
         </li>
         <li className="pt-3">
-          <a className="p-4" href={"/events"}>
+          <a className="p-4" href={"/about"}>
             About
           </a>
         </li>
         <li className="pt-3">
-          <a className="p-4" href={"/events"}>
+          <a className="p-4" href={"/support"}>
             Support
           </a>
         </li>
@@ -40,10 +40,12 @@ const Navbar = () => {
             Events
           </a>
         </li>
-        <li className="">
-          <button className=" absolte uppercase bg-transparent border-[1px] border- rounded px-10 mx-auto py-3 mb-4 hover:scale-110 hover:bg-black hover:text-white duration-300 ">
-            Log in
-          </button>
+        <li>
+          <a href="/login">
+            <button className=" absolte uppercase bg-transparent border-[1px] border- rounded px-10 mx-auto py-3 mb-4 hover:scale-110 hover:bg-black hover:text-white duration-300 ">
+              Log in
+            </button>
+          </a>
         </li>
       </ul>
 
@@ -68,18 +70,20 @@ const Navbar = () => {
         </div>
 
         <ul className="uppercase p-4 font-Merriweather">
-          <a href={"/events"}>Home</a>
+          <a href={"/"}>Home</a>
           <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
-          <a href={"/events"}>About</a>
+          <a href={"/about"}>About</a>
           <li className=" mt-4 mb-4 border-b border-b-gray-600"></li>
-          <a href={"/events"}>Support</a>
+          <a href={"/support"}>Support</a>
           <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
           <a href={"/events"}>Events</a>
           <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
           <div className=" my-6 ">
-            <button className="absolte uppercase bg-transparent border-[1px] border- rounded px-10 mx-auto py-3 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 ">
-              Log in
-            </button>
+            <a href="/login">
+              <button className="absolte uppercase bg-transparent border-[1px] border- rounded px-10 mx-auto py-3 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 ">
+                Log in
+              </button>
+            </a>
           </div>
         </ul>
       </div>
