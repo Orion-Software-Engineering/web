@@ -19,15 +19,13 @@ const Events1 = () => {
 
   return (
     <div>
-      <div className="text-black h-screen justify-between border-gray-700 flex font-nunito ">
-        <div className="flex justify-self-start  self-start border border-gray-600 rotate-[-54.25deg] ml-[-300px] mt-[-50px]">
-          <div className="h-[640px] w-[76px] rounded-[36px]  bg-[#FFE600]"></div>
-          <div className="h-[640px] w-[76px] rounded-[36px] bg-[#FF0000]"></div>
-          <div className="h-[640px] w-[76px] rounded-[36px] bg-[#1EA313]"></div>
-          <div className="h-[640px] w-[76px] rounded-[36px] bg-[#1950DE]"></div>
-          <div className="h-[640px] w-[76px] rounded-[36px] bg-[#FF7A00] bg-[url('../public/Orange.png')]  ">
-            
-          </div>
+      <div className="text-black h-screen w-full justify-between border-gray-700 flex font-nunito ">
+        <div className="flex justify-self-start  self-start border-gray-600 rotate-[-54.25deg] ml-[-250px] mt-[-50px]">
+          <div className="h-[600px] w-[76px] rounded-[36px] bg-[#FFE600] bg-[url('../public/Orange.png')]"></div>
+          <div className="h-[610px] w-[76px] rounded-[36px] bg-[#FF0000] bg-[url('../public/Orange.png')]"></div>
+          <div className="h-[620px] w-[76px] rounded-[36px] bg-[#1EA313] bg-[url('../public/Orange.png')]"></div>
+          <div className="h-[630px] w-[76px] rounded-[36px] bg-[#1950DE] bg-[url('../public/Orange.png')]"></div>
+          <div className="h-[640px] w-[76px] rounded-[36px] bg-[#FF7A00] bg-[url('../public/Orange.png')] "></div>
         </div>
 
         <div className="justify-self-center self-center flex  border-gray-600 h-[400px] bg-[url('../public/WhatsappB.png')]">
@@ -92,8 +90,12 @@ const Events1 = () => {
           </div>
         </div>
 
-        <div className="flex justify-self-end self-end border border-gray-600 ">
-          right image div
+        <div className="flex justify-self-end self-end border border-gray-600 rotate-[-54.25deg] mr-[-200px]">
+        <div className="h-[640px] w-[76px] rounded-[36px]  bg-[#FFE600] bg-[url('../public/Orange.png')]"></div>
+          <div className="h-[640px] w-[76px] rounded-[36px] bg-[#FF0000] bg-[url('../public/Orange.png')]"></div>
+          <div className="h-[640px] w-[76px] rounded-[36px] bg-[#1EA313] bg-[url('../public/Orange.png')]"></div>
+          <div className="h-[640px] w-[76px] rounded-[36px] bg-[#1950DE] bg-[url('../public/Orange.png')]"></div>
+          <div className="h-[640px] w-[76px] rounded-[36px] bg-[#FF7A00] bg-[url('../public/Orange.png')] "></div>
         </div>
       </div>
 

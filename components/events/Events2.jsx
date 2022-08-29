@@ -35,7 +35,8 @@ const events2 = () => {
                         <div className='w-[300px] bg-black h-[30px] rounded-lg text-gray-300 flex flex-row-reverse items-center'>
                             <div className='p-2'
                                 onClick={() => setDate(!date)}>
-                                <BiCalendar size={22} />
+                                    
+                                <div className='flex'><DatePicker/><BiCalendar size={22} /></div>
                             </div>
                         </div>
                         <label for="third" className="mt-[20px]">Time</label>
@@ -59,7 +60,7 @@ const events2 = () => {
                         <p className=" border-blue-600 text-center text-xl ">Upload Event Flyer</p>
                     </div>
                     <div className='bg-[#CDC5C5] border-blue-700 w-[250px]  h-[300px] flex justify-center items-center'>
-                        <div className='w-[75px]'>
+                        <div className='w-[75px] '>
                             <Image src="/../public/camera.png" alt="camera" width='75px' height='75px' />
                         </div>
                     </div>
