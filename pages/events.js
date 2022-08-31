@@ -7,6 +7,10 @@ import Events3 from "../components/events/Events3";
 import Completion from "../components/events/Completion";
 import ImageUpload from "../components/events/ImageUpload";
 import TimePicker from 'react-time-picker/dist/entry.nostyle';
+import ToggleSwitch from '../components/events/ToggleSwitch'
+
+
+
 
 export default function Event() {
   return (
@@ -15,11 +19,12 @@ export default function Event() {
         <EventHeader />
         {/* <Events1 /> */}
         {/* <EventFooter /> */}
-        <Events2/>
+        {/* <Events2/> */}
         <Events3 />
         {/* <Completion /> */}
         {/* <ImageUpload /> */}
-        <TimePicker/>
+        {/* <TimePicker/> */}
+        <ToggleSwitch />
     
 
       </div>

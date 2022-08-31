@@ -5,9 +5,11 @@ import { BiCalendar, BiTime } from 'react-icons/bi'
 
 
 
+
 const events3 = () => {
 
   const formRef = useRef()
+  const [checked, setChecked] = useState(true);
   const handleSubmit = (event) => {
     event.preventDefault()
     // TODO: perform the push to backend here
@@ -26,12 +28,7 @@ const events3 = () => {
         <div className="flex flex-col h-[400px] justify-center items-center  border-blue-600 w-[400px] rounded-l-3xl ">
           <form ref={formRef} handleSubmit={handleSubmit} className="flex flex-col mb-[30px]" >
             <label for="first">Age Restrictions</label>
-            <div className="flex justify-start ml-10">
-              <div className="form-check form-switch">
-                <input className="form-check-input appearance-none w-9 -ml-10 rounded-full float-left h-5 align-top bg-black  bg-no-repeat bg-contain focus:outline-none cursor-pointer shadow-sm" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-                  <label className="form-check-label inline-block  text-gray-800" for="flexSwitchCheckDefault"/>
-              </div>
-            </div>
+            <div>18 plus ?</div>
             <label for="second" className="mt-[20px]">MCs</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
             <label for="third" className="mt-[20px]">Guests</label>

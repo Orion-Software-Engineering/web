@@ -36,8 +36,7 @@ const events2 = () => {
                         <label for="second" className="mt-[20px]">Date</label>
                         <div className='w-[300px] bg-black h-[30px] rounded-lg text-gray-300 flex flex-row-reverse items-center'>
                             <div className='p-2'
-                                onClick={() => setDate(!date)}>
-                                    
+                                onClick={() => setDate(!date)}>   
                                 <div className='flex'><DatePicker/><BiCalendar size={22} /></div>
                             </div>
                         </div>
