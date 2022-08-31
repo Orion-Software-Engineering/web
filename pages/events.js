@@ -6,7 +6,7 @@ import Events2 from "../components/events/Events2";
 import Events3 from "../components/events/Events3";
 import Completion from "../components/events/Completion";
 import ImageUpload from "../components/events/ImageUpload";
-
+import TimePicker from 'react-time-picker/dist/entry.nostyle';
 
 export default function Event() {
   return (
@@ -15,10 +15,11 @@ export default function Event() {
         <EventHeader />
         {/* <Events1 /> */}
         {/* <EventFooter /> */}
-        <Events2 />
-        {/* <Events3 /> */}
+        <Events2/>
+        <Events3 />
         {/* <Completion /> */}
         {/* <ImageUpload /> */}
+        <TimePicker/>
     
 
       </div>

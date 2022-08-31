@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import { BiCalendar, BiTime } from 'react-icons/bi'
 import DatePicker from "./DatePicker";
+import TimePicker from 'react-time-picker/dist/entry.nostyle';
 
 
 
@@ -10,6 +11,7 @@ const events2 = () => {
 
     const formRef = useRef()
     const [date, setDate] = useState(new Date())
+    const [value, onChange] = useState('10:00');
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -42,8 +44,8 @@ const events2 = () => {
                         <label for="third" className="mt-[20px]">Time</label>
                         <div className='w-[100px] bg-black h-[30px] rounded-lg text-gray-300 flex flex-row-reverse items-center'>
                             <div className='p-2'
-                                onClick={() => setCategorySelectOpen(!categorySelectOpen)}>
-                                <BiTime size={22} />
+                                onClick={() => onChange(!value)}>
+                                <div className=""><BiTime size={22} /></div>             
                             </div>
                         </div>
                     </form>

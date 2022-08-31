@@ -15,7 +15,6 @@ const events3 = () => {
   }
 
 
-
   return (
     <div className="text-black h-screen justify-between border-gray-700 flex font-nunito ">
 
