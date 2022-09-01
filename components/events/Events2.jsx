@@ -24,8 +24,12 @@ const events2 = () => {
     return (
         <div className="text-black h-screen justify-between border-gray-700 flex font-nunito ">
 
-            <div className='flex justify-self-start  self-start border border-gray-600 '>
-                left image div
+            <div className="flex justify-self-start  self-start border-gray-600 rotate-[-54.25deg] ml-[-250px] mt-[-50px] gap-x-5">
+                <div className="h-[550px] w-[76px] rounded-[36px] bg-[#FFE600] bg-[url('../public/Orange.png')]"></div>
+                <div className="h-[575px] w-[76px] rounded-[36px] bg-[#FF0000] bg-[url('../public/Orange.png')]"></div>
+                <div className="h-[600px] w-[76px] rounded-[36px] bg-[#1EA313] bg-[url('../public/Orange.png')]"></div>
+                <div className="h-[625px] w-[76px] rounded-[36px] bg-[#1950DE] bg-[url('../public/Orange.png')]"></div>
+                <div className="h-[640px] w-[76px] rounded-[36px] bg-[#FF7A00] bg-[url('../public/Orange.png')] "></div>
             </div>
 
             <div className="justify-self-center self-center flex  border-gray-600 h-[400px] bg-[url('../public/WhatsappB.png')]">
@@ -36,15 +40,15 @@ const events2 = () => {
                         <label for="second" className="mt-[20px]">Date</label>
                         <div className='w-[300px] bg-black h-[30px] rounded-lg text-gray-300 flex flex-row-reverse items-center'>
                             <div className='p-2'
-                                onClick={() => setDate(!date)}>   
-                                <div className='flex'><DatePicker/><BiCalendar size={22} /></div>
+                                onClick={() => setDate(!date)}>
+                                <div className='flex'><DatePicker /><BiCalendar size={22} /></div>
                             </div>
                         </div>
                         <label for="third" className="mt-[20px]">Time</label>
                         <div className='w-[100px] bg-black h-[30px] rounded-lg text-gray-300 flex flex-row-reverse items-center'>
                             <div className='p-2'
                                 onClick={() => onChange(!value)}>
-                                <div className=""><BiTime size={22} /></div>             
+                                <div className=""><BiTime size={22} /></div>
                             </div>
                         </div>
                     </form>
@@ -68,17 +72,13 @@ const events2 = () => {
                 </div>
             </div>
 
-            <div className='flex justify-self-end self-end border border-gray-600 '>
-                right image div
+            <div className="flex justify-self-end self-end border-gray-600 rotate-[-54.25deg] mr-[-100px] gap-x-5">
+                <div className="h-[540px] w-[76px] rounded-[36px]  bg-[#FFE600] bg-[url('../public/Orange.png')]  "></div>
+                <div className="h-[540px] w-[76px] rounded-[36px] bg-[#FF0000] bg-[url('../public/Orange.png')]"></div>
+                <div className="h-[540px] w-[76px] rounded-[36px] bg-[#1EA313] bg-[url('../public/Orange.png')]"></div>
+                <div className="h-[540px] w-[76px] rounded-[36px] bg-[#1950DE] bg-[url('../public/Orange.png')]"></div>
+                <div className="h-[540px] w-[76px] rounded-[36px] bg-[#FF7A00] bg-[url('../public/Orange.png')] "></div>
             </div>
-
-            {Date ? (
-                <div className='flex justify-center items-center absolute bg-black mz'>
-                    <DatePicker />
-                </div>
-            ) : (
-                <div></div>
-            )}
 
 
         </div >

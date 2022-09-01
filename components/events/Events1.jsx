@@ -78,7 +78,7 @@ const Events1 = () => {
             <div className="bg-[#CDC5C5] border-blue-700 w-[250px]  h-[300px] flex justify-center items-center">
               <div className="p-2 " onClick={() => setFile(!File)}>
                 <div className="w-[75px]">
-                  <Image src="/../public/camera.png" alt="camera" width="75px" height="75px"/>
+                  <Image src="/../public/camera.png" alt="camera" width="75px" height="75px" />
                 </div>
               </div>
             </div>
@@ -87,7 +87,7 @@ const Events1 = () => {
         </div>
 
         <div className="flex justify-self-end self-end border border-gray-600 rotate-[-54.25deg] mr-[-200px]">
-        <div className="h-[640px] w-[76px] rounded-[36px]  bg-[#FFE600] bg-[url('../public/Orange.png')]  "></div>
+          <div className="h-[640px] w-[76px] rounded-[36px]  bg-[#FFE600] bg-[url('../public/Orange.png')]"></div>
           <div className="h-[640px] w-[76px] rounded-[36px] bg-[#FF0000] bg-[url('../public/Orange.png')]"></div>
           <div className="h-[640px] w-[76px] rounded-[36px] bg-[#1EA313] bg-[url('../public/Orange.png')]"></div>
           <div className="h-[640px] w-[76px] rounded-[36px] bg-[#1950DE] bg-[url('../public/Orange.png')]"></div>
