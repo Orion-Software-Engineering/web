@@ -17,7 +17,11 @@ export default function Event() {
         <div className=" h-screen ">
             <div className="h-screen bg-opacity-90 bg-[#F6F6F6]">
                 <EventHeader />
-                <Welcome />
+
+                <div className="flex justify-center items-center">
+                    <Welcome />
+                </div>
+
                 {/* <Events1 /> */}
                 {/* <EventFooter /> */}
                 {/* <Events2/> */}
