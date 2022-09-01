@@ -3,8 +3,10 @@
 @tailwind utilities;
 @import "../fonts/fonts.css";
 @import "/styles/external.scss";
+
 body {
   background-color: #ffffff;
+  overflow: hidden;
 }
 
 .swiper-button-next,
