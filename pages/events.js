@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import Events1 from "../components/events/Events1";
 import EventHeader from "../components/events/HeaderEvents";
-import EventFooter from "../components/events/EventFooter";
-import Events2 from "../components/events/Events2";
-import Events3 from "../components/events/Events3";
-import Completion from "../components/events/Completion";
-import ImageUpload from "../components/events/ImageUpload";
-import TimePicker from 'react-time-picker/dist/entry.nostyle';
-import ToggleSwitch from '../components/events/ToggleSwitch'
+import EventForm1 from "../components/events/form/EventForm1";
+import EventForm2 from "../components/events/form/EventForm2";
+import EventForm3 from "../components/events/form/EventForm3";
+import EventForm4 from "../components/events/form/EventForm4";
+import Completion from "../components/events/form/Completion";
 import Welcome from "../components/events/Welcome";
 import Doodle from "../components/events/Doodle";
 
@@ -15,6 +12,31 @@ import Doodle from "../components/events/Doodle";
 
 export default function Event() {
     const [expand, setExpand] = useState(false)
+    const [step, setStep] = useState(6)
+
+    const stepSwitch = (st) => {
+        switch (st) {
+            case 0:
+                return <Welcome setStep={setStep} />
+
+            case 1:
+                return <EventForm1 />
+
+            case 2:
+                return <EventForm2 />
+
+            case 3:
+                return <EventForm3 />
+
+            case 4:
+                return <EventForm4 />
+
+            case 5:
+                return <Completion />
+
+            default: return "Go to Homepage"
+        }
+    }
 
     return (
         <div className=" h-screen">
@@ -27,9 +49,9 @@ export default function Event() {
                     <Doodle expanded={expand} />
                 </div>
 
+                {/* This is where we check the steps */}
                 <div className="flex justify-center items-center mt-8">
-                    <Welcome />
-                    <button onClick={() => setExpand(!expand)}>Do me</button>
+                    {stepSwitch(step)}
                 </div>
 
                 {/* <Events1 /> */}
