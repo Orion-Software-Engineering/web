@@ -3,7 +3,7 @@ import React from 'react'
 const Doodle = ({ expanded }) => {
 
     return (
-        <div className={`flex z-0 transition-{gap,margin} duration-700 rotate-[-54.25deg] ` + (expanded ? " gap-4" : " gap-0 ")}>
+        <div className={`flex absolute z-50 transition-{gap,margin} duration-700 rotate-[-54.25deg] ` + (expanded ? " gap-4" : " gap-0 ")}>
             <div className={"h-[500px] w-16 bg-[#FFE600] rounded-[36px] bg-[url('/doodle.png')] overflow-hidden transition-{margin} duration-700 " + (expanded ? "mt-0 " : "")}>
                 <div className=" rounded-[36px] bg-[url('/doodle.png')] bg-cover bg-center w-full h-full opacity-40 scale-150" />
             </div>

@@ -12,7 +12,7 @@ import Doodle from "../components/events/Doodle";
 
 export default function Event() {
     const [expand, setExpand] = useState(false)
-    const [step, setStep] = useState(6)
+    const [step, setStep] = useState(1)
 
     const stepSwitch = (st) => {
         switch (st) {
@@ -20,16 +20,16 @@ export default function Event() {
                 return <Welcome setStep={setStep} />
 
             case 1:
-                return <EventForm1 />
+                return <EventForm1 setExpand={setExpand} />
 
             case 2:
-                return <EventForm2 />
+                return <EventForm2 setExpand={setExpand} />
 
             case 3:
-                return <EventForm3 />
+                return <EventForm3 setExpand={setExpand} />
 
             case 4:
-                return <EventForm4 />
+                return <EventForm4 setExpand={setExpand} />
 
             case 5:
                 return <Completion />
@@ -45,7 +45,7 @@ export default function Event() {
                 <div className="absolute -left-48 top-20">
                     <Doodle expanded={expand} />
                 </div>
-                <div className="absolute -right-48 -bottom-16">
+                <div className="absolute right-48 top-64">
                     <Doodle expanded={expand} />
                 </div>
 

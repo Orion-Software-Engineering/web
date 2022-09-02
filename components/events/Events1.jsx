@@ -53,14 +53,14 @@ const Events1 = () => {
                   <FiChevronDown size={22} />
                 </div>
               </div>
-              <label for="third" className="mt-[20px]">
+              <label for="third" className="mt-[20px] ">
                 Event Description:
               </label>
               <textarea
                 type="text"
                 id="third"
                 name="last"
-                className="bg-black h-[80px] w-[300px] text-white pl-[10px] pb-[50px] rounded-lg"
+                className="bg-black h-[80px] w-[300px] text-white pl-[10px] pt-[50px] rounded-lg"
               />
             </form>
             <p className="self-end pr-9">Next{">"}</p>
@@ -96,7 +96,7 @@ const Events1 = () => {
       </div>
 
       {categorySelectOpen ? (
-        <div className="flex justify-center items-center absolute inset-1/4">
+        <div className="">
           <CategorySelect />
         </div>
       ) : (
