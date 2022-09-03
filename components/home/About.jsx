@@ -1,5 +1,5 @@
 import React from "react";
-// import Image from 'next/image'
+import Image from 'next/image'
 
 const About = () => {
   return (
@@ -21,7 +21,7 @@ const About = () => {
         </div>
       </div>
       <div className="w-[690px] h-[550px] mt-[40px] ml-[60px] border border-red-600">
-        {/* <Image src="/../public/Mountainguys.png" alt="Mountain" width='690px' height='550px'  /> */}
+        <Image src="/../public/Mountainguys.png" alt="Mountain" width='690px' height='550px'  />
       </div>
     </div>
   );
