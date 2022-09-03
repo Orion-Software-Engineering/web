@@ -82,11 +82,11 @@ const Navbar = () => {
           <a href={"/events"}>Events</a>
           <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
           <div className=" my-6 ">
-            <a href="/login">
+            <Link href="/login">
               <button className="absolte uppercase bg-transparent border-[1px] border- rounded px-10 mx-auto py-3 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 ">
                 Log in
               </button>
-            </a>
+            </Link>
           </div>
         </ul>
       </div>
