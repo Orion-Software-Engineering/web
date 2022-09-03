@@ -1,7 +1,6 @@
-
 import React from "react";
 import Image from "next/image";
-import phone from "../../public/Phone.png";
+
 
 const Find = () => {
   return (
@@ -11,7 +10,7 @@ const Find = () => {
         <div className="w-[325px] h-[275px] m-4">
           <div>
             <Image
-              src={phone}
+              src="/../public/phone.png"
               alt="phone"
               width="350px"
               height="350px"
