@@ -13,7 +13,6 @@ const Navbar = () => {
   };
 
   return (
-
     <div className="flex justify-between items-center h-24  max-2-[1024] mx-auto px-4 text-white bg-[#000000] w-screen ">
       <div className="flex">
         <Image src={Logo} alt="Logo_Image" width={"70px"} height={"70px"} />
