@@ -42,10 +42,10 @@ export default function Event() {
         <div className=" h-screen">
             <div className="h-screen bg-opacity-90 bg-[#F6F6F6]">
                 <EventHeader />
-                <div className="absolute -left-48 top-20">
+                <div className="absolute -left-[11%] top-[11%]">
                     <Doodle expanded={expand} />
                 </div>
-                <div className="absolute right-48 top-64">
+                <div className="absolute right-[11%] top-[38%]">
                     <Doodle expanded={expand} />
                 </div>
 
