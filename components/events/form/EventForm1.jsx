@@ -70,7 +70,7 @@ const EventForm1 = ({ setExpand }) => {
                     <div className="bg-[#CDC5C5] border-blue-700 w-[250px]  h-[300px] flex justify-center items-center">
                         <div className="p-2 " onClick={() => setFile(!File)}>
                             <div className="w-[75px]">
-                                <Image src="/../public/camera.png" alt="camera" width="75px" height="75px" />
+                                <Image src="/camera.png" alt="camera" width="75px" height="75px" />
                             </div>
                         </div>
                     </div>
