@@ -52,7 +52,7 @@ const EventForm1 = ({ setExpand }) => {
                             type="text"
                             id="third"
                             name="last"
-                            className="bg-black h-[80px] w-[300px] text-white pl-[10px] pb-[50px] rounded-lg"
+                            className="bg-black h-[80px] w-[300px] text-white pl-[10px] pt-[6px] rounded-lg"
                         />
                     </form>
                     <p className="self-end pr-9">Next{">"}</p>
