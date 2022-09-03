@@ -6,7 +6,7 @@ import { BiCalendar, BiTime } from 'react-icons/bi'
 
 
 
-const events3 = () => {
+const Events3 = () => {
 
   const formRef = useRef()
   const [checked, setChecked] = useState(true);

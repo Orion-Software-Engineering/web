@@ -7,7 +7,7 @@ import TimePicker from 'react-time-picker/dist/entry.nostyle';
 
 
 
-const events2 = () => {
+const Events2 = () => {
 
     const formRef = useRef()
     const [date, setDate] = useState(new Date())
