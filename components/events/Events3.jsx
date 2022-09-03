@@ -29,11 +29,11 @@ const events3 = () => {
           <form ref={formRef} handleSubmit={handleSubmit} className="flex flex-col mb-[30px]" >
             <label for="first">Age Restrictions</label>
             <div>18 plus ?</div>
-            <label for="second" className="mt-[20px]">MCs</label>
+            <label htmlFor="second" className="mt-[20px]">MCs</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
-            <label for="third" className="mt-[20px]">Guests</label>
+            <label htmlFor="third" className="mt-[20px]">Guests</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
-            <label for="third" className="mt-[0px] text-xs text-[#575757]">Add another guest</label>
+            <label htmlFor="third" className="mt-[0px] text-xs text-[#575757]">Add another guest</label>
           </form>
           <p className=" border border-blue-500  "></p>
           <div className="flex flex-row w-[300px] justify-between ">

@@ -24,14 +24,14 @@ const EventForm1 = ({ setExpand }) => {
                         ref={formRef}
                         handleSubmit={handleSubmit}
                         className="flex flex-col mb-[30px]">
-                        <label for="first">Events Name:</label>
+                        <label htmlFor="first">Events Name:</label>
                         <input
                             type="text"
                             id="first"
                             name="first"
                             className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg"
                         />
-                        <label for="second" className="mt-[20px]">
+                        <label htmlFor="second" className="mt-[20px]">
                             Event Category:
                         </label>
                         <div className="w-[300px] bg-black h-[30px] rounded-lg text-gray-300 flex flex-row-reverse items-center">
@@ -45,7 +45,7 @@ const EventForm1 = ({ setExpand }) => {
                                 <FiChevronDown size={22} />
                             </div>
                         </div>
-                        <label for="third" className="mt-[20px]">
+                        <label htmlFor="third" className="mt-[20px]">
                             Event Description:
                         </label>
                         <textarea

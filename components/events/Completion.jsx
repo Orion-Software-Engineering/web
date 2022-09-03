@@ -39,7 +39,7 @@ const Completion = () => {
             <div className="flex justify-start ml-10">
               <div className="form-check form-switch">
                 <input className="form-check-input appearance-none w-9 -ml-10 rounded-full float-left h-5 align-top bg-black  bg-no-repeat bg-contain focus:outline-none cursor-pointer shadow-sm" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-                <label className="form-check-label inline-block  text-gray-800" for="flexSwitchCheckDefault" />
+                <label className="form-check-label inline-block  text-gray-800" htmlFor="flexSwitchCheckDefault" />
               </div>
             </div>
             <label htmlFor="second" className="mt-[20px]">MCs</label>
