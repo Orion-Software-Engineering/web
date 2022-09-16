@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import phone from "../../public/Phone.png";
+import people2 from "../../public/people2.png";
+import people1 from "../../public/people1.png";
 
 const Find = () => {
   return (
@@ -26,7 +28,7 @@ const Find = () => {
           <div className="w-[325px] h-[275px] m-4">
             <div>
               <Image
-                src="/../public/people2.png"
+                src={people2}
                 alt="people2"
                 width="350px"
                 height="350pxx"
@@ -40,7 +42,7 @@ const Find = () => {
           <div className="w-[325px] h-[275px] m-4">
             <div>
               <Image
-                src="/../public/people1.png"
+                src={people1}
                 alt="people1"
                 width="350px"
                 height="350px"

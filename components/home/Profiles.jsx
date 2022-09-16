@@ -1,13 +1,15 @@
 import React from "react";
 // import Image from 'next/image'
-
+import profile3 from "../../public/profile3.png";
+import profile1 from "../../public/profile1.png";
+import profile2 from "../../public/profile2.png";
 const Profiles = () => {
   return (
     <div className="h-[500px] flex  border-gray-600 font-nunito">
       <div className="w-[325px] h-[400px] mt-[50px] ml-[125px]  border-gray-600">
         <div className=" border-gray-600 mr-[80px] ml-[80px] h-[200px]">
           {/* <Image
-            src="/../public/profile1.png"
+            src={profile1}
             alt="profile1"
             width="200px"
             height="250px"
@@ -27,7 +29,7 @@ const Profiles = () => {
       <div className="w-[325px] h-[400px] mt-[50px] ml-[150px] border-gray-600">
         <div className=" border-gray-600 mr-[80px] ml-[80px] h-[200px]">
           {/* <Image
-            src="/../public/profile2.png"
+            src={profile2}
             alt="profile2"
             width="200px"
             height="250px"
@@ -47,7 +49,7 @@ const Profiles = () => {
       <div className="w-[325px] h-[400px] mt-[50px] ml-[150px] border-gray-600">
         <div className=" border-gray-600 mr-[80px] ml-[80px] h-[200px]">
           {/* <Image
-            src="/../public/profile3.png"
+            src={profile3}
             alt="profile3"
             width="200px"
             height="250px"
