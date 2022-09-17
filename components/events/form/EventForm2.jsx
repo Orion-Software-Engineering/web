@@ -54,18 +54,18 @@ const EventForm2 = ({ step, updateStep }) => {
   
       </div>
 
-      {/* <div className=" border-blue-600 w-[400px] bg-[#1950DE] flex flex-col gap-y-2 justify-center items-center rounded-r-3xl">
-        <div>
-          <p className=" border-blue-600 text-center text-xl ">Upload Event Flyer</p>
-        </div>
-        <div className='bg-[#CDC5C5] border-blue-700 w-[250px]  h-[300px] flex justify-center items-center'>
-          <div className='w-[75px] '>
-            <Image src="/../public/camera.png" alt="camera" width='75px' height='75px' />
-          </div>
-        </div>
-      </div> */}
     </div>
   )
 }
 
 export default EventForm2
+{/* <div className=" border-blue-600 w-[400px] bg-[#1950DE] flex flex-col gap-y-2 justify-center items-center rounded-r-3xl">
+  <div>
+    <p className=" border-blue-600 text-center text-xl ">Upload Event Flyer</p>
+  </div>
+  <div className='bg-[#CDC5C5] border-blue-700 w-[250px]  h-[300px] flex justify-center items-center'>
+    <div className='w-[75px] '>
+      <Image src="/../public/camera.png" alt="camera" width='75px' height='75px' />
+    </div>
+  </div>
+</div> */}

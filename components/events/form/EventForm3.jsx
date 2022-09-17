@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import { BiCalendar, BiTime } from 'react-icons/bi'
+import ReactSwitch from 'react-switch'
+import ToggleSWitch from '../ToggleSwitch'
 
 
 
@@ -18,14 +20,14 @@ const EventForm3 = ({ step, updateStep }) => {
 
 
   return (
-    <div className="text-black justify-between border border-gray-700 flex font-nunito ">
+    <div className="text-black justify-between  border-gray-700 flex font-nunito ">
 
       <div className="justify-self-center self-center flex  border-gray-600 h-[400px] ]">
         <div className="flex flex-col h-[400px] justify-center items-center  border-blue-600 w-[400px] rounded-l-3xl ">
           <form ref={formRef} handleSubmit={handleSubmit} className="flex flex-col mb-[30px]" >
-            <label for="first">Age Restrictions</label>
-            <div>18 plus ?</div>
-            <label for="second" className="mt-[20px]">MCs</label>
+            <label for="first">Age Restrictions(18+)</label>
+            <ToggleSWitch/>
+            <label for="second" className="mt-[10px]">MCs</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
             <label for="third" className="mt-[20px]">Guests</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />

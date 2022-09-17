@@ -8,11 +8,13 @@ import Completion from "../components/events/form/Completion";
 import Welcome from "../components/events/Welcome";
 import Doodle from "../components/events/Doodle";
 import Image from "next/image";
-import TimePicker from "react-time-picker";
+// import TimePicker from "react-time-picker";
+import 'react-datepicker/dist/react-datepicker.css'
 
 
 
-export default function Event() {
+
+export default function Event(uploadlength) {
     const [expand, setExpand] = useState(false)
     const [step, setStep] = useState(0)
 
@@ -41,7 +43,7 @@ export default function Event() {
     }
 
     const imgColors = [
-        'bg-[#FF7A00]', 'bg-[#1950DE]', 'bg-[#1EA313]', 'bg-[#FF0000}', 'bg-[#FFE600]'
+        'bg-[#FF7A00]', 'bg-[#1950DE]', 'bg-[#1EA313]', 'bg-[#FF0000]', 'bg-[#FFE600]'
     ]
 
     return (
@@ -65,7 +67,7 @@ export default function Event() {
                     </div>
 
                     {step ? (<div className={"w-[400px] h-[400px] flex flex-col gap-y-2 justify-center items-center rounded-3xl "
-                        + imgColors[step - 1]}>
+                        + imgColors[step - 1] + (uploadlength ? "" :"")}>
                         <div>
                             <p className=" text-center text-xl ">Upload Event Flyer</p>
                         </div>
@@ -75,10 +77,11 @@ export default function Event() {
                             </div>
                         </div>
                     </div>) : (<div />)}
-
                 </div>
 
-            <TimePicker/>
+            {/* <TimePicker/> */}
+            
+
             </div>
         </div>
     );

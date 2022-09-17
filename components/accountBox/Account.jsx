@@ -1,5 +1,5 @@
 import { cleanTrailingZeroInNumericSectionValue } from "@mui/x-date-pickers/internals/hooks/useField/useField.utils";
-import react from "react ";
+
 import styled from "styled-components";
 
 const BoxContainer = styled.div`
