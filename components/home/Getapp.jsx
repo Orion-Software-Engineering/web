@@ -1,6 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { imageConfigDefault } from "next/dist/shared/lib/image-config";
+import imagePlaystore from "../../public/playstore.png";
+import imageAppstore from "../../public/applestore2.png";
 
 const Getapp = () => {
   return (
@@ -15,7 +18,7 @@ const Getapp = () => {
         <div className="mt-[10px] ml-[80px] cursor-pointer w-[102px] h-[52px]">
           <Link href="https://play.google.com/store/games">
             <Image
-              src="/../public/playstore.png"
+              src={imagePlaystore}
               alt="playstore"
               width="100px"
               height="50px"
@@ -25,7 +28,7 @@ const Getapp = () => {
         <div className="ml-[220px] mt-[-52px] cursor-pointer w-[101px] h-[51px] ">
           <Link href="https://www.apple.com/app-store/">
             <Image
-              src="/../public/applestore2.png"
+              src={imageAppstore}
               alt="appstore"
               width="100px"
               height="50px"
