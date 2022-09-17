@@ -1,6 +1,6 @@
 import React from "react";
 import Image from 'next/image'
-import mountainGuys from "/../public/Mountainguys.png";
+import MountainGuys from "/../public/Mountainguys.png";
 
 const About = () => {
   return (
