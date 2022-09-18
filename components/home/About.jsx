@@ -1,6 +1,6 @@
 import React from "react";
 import Image from 'next/image'
-import MountainGuys from "/../public/Mountainguys.png";
+import MountainGuys from "../../public/Mountainguys.png";
 
 const About = () => {
   return (
@@ -22,7 +22,7 @@ const About = () => {
         </div>
       </div>
       <div className="w-[690px] h-[550px] mt-[40px] ml-[60px] border border-red-600">
-        <Image src={mountainGuys} alt="Mountain" width='690px' height='550px'  />
+        <Image src={MountainGuys} alt="Mountain" width='690px' height='550px'  />
       </div>
     </div>
   );
