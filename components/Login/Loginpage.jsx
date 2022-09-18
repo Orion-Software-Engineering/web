@@ -1,5 +1,6 @@
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
+import {AiFillFacebook} from "react-icons/ai"
 
 export default function Loginpage() {
   return (
@@ -10,9 +11,12 @@ export default function Loginpage() {
             <form className="max-w-[400px] w-full mx-auto bg-white p-8">
               <h2 className="text-4xl font-bold text-center py-4"> ORION </h2>
               <div className="flex justify-between">
-                <p className="border shadow-lg hover:shadow-xl px-6 py-2 relative flex items-center">
+                <button><p className="border shadow-lg hover:shadow-xl px-6 py-2 relative flex items-center">
                   <FcGoogle /> Google
-                </p>
+                </p></button>
+                <button><p className="border shadow-lg hover:shadow-xl px-6 py-2 relative flex items-center">
+                  <AiFillFacebook /> Facebook
+                </p></button>
               </div>
               <div className="flex flex-col mb-4">
                 <label>Email</label>
@@ -37,7 +41,7 @@ export default function Loginpage() {
               </p>
               <p className="text-center mt-8">
                 {" "}
-                Don't have an account? Sign up
+                Don't have an account? <button className=" text-yellow "><p>Sign up</p></button>
               </p>
             </form>
           </div>
