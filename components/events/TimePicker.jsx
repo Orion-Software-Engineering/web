@@ -5,7 +5,7 @@ function MyApp() {
   const [value, onChange] = useState('10:00');
 
   return (
-    <div className=''>
+    <div className='w-['>
       <TimePicker onChange={onChange} value={value} />
     </div>
   );

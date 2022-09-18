@@ -15,7 +15,7 @@ function App() {
         checked={checked}
         onChange={handleChange}
       />
-      <div style={{ marginTop: 10 }}>Value: {checked ? 'True' : 'False'}</div>
+      {/* <div style={{ marginTop: 10 }}>Value: {checked ? 'True' : 'False'}</div> */}
     </div>
   );
 }

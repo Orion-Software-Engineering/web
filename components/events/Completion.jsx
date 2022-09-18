@@ -18,10 +18,6 @@ const Completion = () => {
   return (
     <div className="text-black h-screen justify-between border-gray-700 flex font-nunito ">
 
-      <div className='flex justify-self-start  self-start border border-gray-600 '>
-        left image div
-      </div>
-
       <div className="justify-self-center self-center flex  border-gray-600 mt-[100px] h-screen bg-[url('../public/WhatsappB.png')]">
         <div className="flex flex-col h justify-center items-center  border-blue-600 w-[400px] rounded-l-3xl ">
           <form ref={formRef} handleSubmit={handleSubmit} className="flex flex-col mb-[30px]" >
@@ -46,8 +42,8 @@ const Completion = () => {
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
             <label for="third" className="mt-[20px]">Guests</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
-
           </form>
+          
           <div className="flex flex-row w-[300px] justify-between ">
             <p className="self-start">{'<'}Back</p>
             <p className="self-end ">Next{'>'}</p>
@@ -68,9 +64,6 @@ const Completion = () => {
         </div>
       </div>
 
-      <div className='flex justify-self-end self-end border border-gray-600 '>
-        right image div
-      </div>
     </div >
   )
 }
