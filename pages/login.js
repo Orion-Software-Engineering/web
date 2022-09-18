@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Index from "../components/accountBox/Index"
+import Index from "../components/accountBox/Index";
 
 export default function Login() {
   return (
@@ -9,11 +9,7 @@ export default function Login() {
         <title>Orion Login</title>
         <link rel="" href="" />
       </Head>
-      <Index/>
-          
-            
-        
-      
+      <Index />
     </div>
   );
 }

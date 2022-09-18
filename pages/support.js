@@ -1,10 +1,12 @@
 import React from "react";
-import Header from "../components/home/Header"
-import Faqs from "../components/support/Faqs"
+import Header from "../components/home/Header";
+import Form from "../components/support/Form"
 
 export default function Support() {
-  return <div>
-<Header/>
-<Faqs/>
-  </div>;
+  return (
+    <div>
+      {/* <Header /> */}
+      <Form />
+    </div>
+  );
 }
