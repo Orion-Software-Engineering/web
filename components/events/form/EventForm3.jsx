@@ -33,8 +33,8 @@ const EventForm3 = ({ step, updateStep }) => {
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
             <label for="third" className="mt-[0px] text-xs text-[#575757]">Add another guest</label>
           </form>
-          <p className=" border border-blue-500  "></p>
-          <div className="flex flex-row w-[300px] justify-between ">
+          
+          <div className="flex flex-row w-[300px] justify-between mt-[40px]">
             <p className="self-start cursor-pointer"
               onClick={() => updateStep(step - 1)}>
               {'<'}Back
