@@ -1,6 +1,8 @@
 import React from "react";
 import Image from 'next/image'
+
 import Party from "../../public/party.jpg";
+
 
 
 
@@ -13,8 +15,7 @@ const About = () => {
         </div>
         <div
           className="h-[200px] ml-[90px] w-[400px] font-semibold text-xl mt-[40px] 
-                text-[#0C7354] font-nunito text-center border-gray-600"
-        >
+                text-[#0C7354] font-nunito text-center border-gray-600">
           <p>
             Orion Meet is an app based platform for matching people based on
             their common likes and interests.
