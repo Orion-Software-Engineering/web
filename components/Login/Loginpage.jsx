@@ -11,7 +11,7 @@ export default function Loginpage() {
 
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
-      history.push("/")
+      history.push("/");
     }
   }, []);
 
