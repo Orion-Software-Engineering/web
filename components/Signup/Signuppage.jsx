@@ -20,20 +20,13 @@ export default function Signuppage() {
           </div>
           <div className="w-1/2 py-16 px-12">
             <h2 className="font-Nunito text-3xl mb-4 ">SignUp </h2>
-            <p className="mb-4 ">
-              Create your account. It's free and only takes a minute
-            </p>
+            <p className="mb-4 ">Create your account to start sharing events</p>
             <form action="#">
-              <div className="grid grid-cols-2 gap-5">
+              <div className="mt-5">
                 <input
                   type="text"
-                  placeholder="Firstname"
-                  className=" rounded-xl border border-gray-400 py-1 px-2"
-                />
-                <input
-                  type="text"
-                  placeholder="Lastname"
-                  className=" rounded-xl border border-gray-400 py-1 px-2"
+                  placeholder="Username"
+                  className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
                 />
               </div>
               <div className="mt-5">
@@ -59,6 +52,25 @@ export default function Signuppage() {
                   className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
                 />
               </div>
+
+              <div className="mt-5">
+                <input
+                  name="DOB"
+                  type="date"
+                  placeholder="DOB"
+                  className=" form-control rounded-xl border border-gray-400 py-1 px-2 w-full"
+                />
+              </div>
+              <div className="mg-5 flex ">
+                <input type="checkbox" className="border border-gray-400" />
+                <span className="font-Nunito p-1">Male</span>
+                <input
+                  type="checkbox"
+                  className="border border-gray-400 ml-3"
+                />
+                <span className="font-Nunito p-1 ">Female</span>
+              </div>
+
               <div className="mg-5">
                 <input type="checkbox" className="border border-gray-400" />
                 <span className="font-Nunito p-1">
