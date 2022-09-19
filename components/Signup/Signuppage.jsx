@@ -10,7 +10,7 @@ export default function Signuppage() {
   const [password, setPassword] = useState("");
   const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
-  const role = "organizer";
+  const role = organizer;
 
   const history = useHistory();
 
