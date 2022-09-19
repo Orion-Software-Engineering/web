@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Logo from "../../public/orionlogo.svg";
+import Logo from "../../public/orionlogo1.svg";
 import Link from "next/link";
 
 export default function Signuppage() {
@@ -9,7 +9,7 @@ export default function Signuppage() {
       <div className="container mx-auto  ">
         <div className=" flex w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden ">
           <div className="w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center">
-            <Image src={Logo} alt="" />
+            <Image src={Logo} alt="logo" />
 
             <h1 className="font-Nunito text-3xl mb-5 pt-10">Welcome</h1>
             <div>

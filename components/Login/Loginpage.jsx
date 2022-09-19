@@ -11,7 +11,7 @@ export default function Loginpage() {
 
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
-      history.push("/");
+      history.push("/organiserprofile");
     }
   }, []);
 
@@ -36,7 +36,7 @@ export default function Loginpage() {
     );
     result = await result.json();
     localStorage.setItem("user-info", JSON.stringify(result));
-    history.push("/");
+    history.push("/organiserprofile");
   }
 
   return (
@@ -81,7 +81,7 @@ export default function Loginpage() {
                 />
               </div>
               <button
-                type="button"
+                type="submit"
                 onClick={login}
                 className=" rounded-xl w-full py-3 mt-8 bg-red-600 hover:bg-red-400 relative text-white"
               >
