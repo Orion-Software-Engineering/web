@@ -17,7 +17,7 @@ const Getapp = () => {
         </div>
         <div className="  mt-[10px] ml-[80px] cursor-pointer w-[102px] h-[52px]">
           <Link href="https://play.google.com/store/">
-            <Image
+            <Image className="rounded-xl"
               src={imagePlaystore}
               alt="playstore"
               width="100px"
@@ -27,7 +27,7 @@ const Getapp = () => {
         </div>
         <div className=" ml-[220px] mt-[-52px] cursor-pointer w-[101px] h-[51px]  ">
           <Link href="https://www.apple.com/app-store/">
-            <Image
+            <Image className="rounded-xl"
               src={imageAppstore}
               alt="appstore"
               width="100px"
