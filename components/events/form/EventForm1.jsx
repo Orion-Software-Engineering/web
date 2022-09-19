@@ -24,14 +24,14 @@ const EventForm1 = ({ setExpand, step, updateStep }) => {
                         ref={formRef}
                         handleSubmit={handleSubmit}
                         className="flex flex-col mb-[30px]">
-                        <label for="first">Events Name:</label>
+                        <label htmlFor="first">Events Name:</label>
                         <input
                             type="text"
                             id="first"
                             name="first"
                             className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg"
                         />
-                        <label for="second" className="mt-[20px]">
+                        <label htmlFor="second" className="mt-[20px]">
                             Event Category:
                         </label>
                         <div className="w-[300px] bg-black h-[30px] rounded-lg text-gray-300 flex flex-row-reverse items-center">
@@ -45,7 +45,7 @@ const EventForm1 = ({ setExpand, step, updateStep }) => {
                                 <FiChevronDown size={22} />
                             </div>
                         </div>
-                        <label for="third" className="mt-[20px]">
+                        <label htmlFor="third" className="mt-[20px]">
                             Event Description:
                         </label>
                         <textarea
@@ -79,7 +79,7 @@ const EventForm1 = ({ setExpand, step, updateStep }) => {
                     <div className="bg-[#CDC5C5] border-blue-700 w-[250px]  h-[300px] flex justify-center items-center">
                         <div className="p-2 " onClick={() => setFile(!File)}>
                             <div className="w-[75px]">
-                                <Image src="/../public/camera.png" alt="camera" width="75px" height="75px" />
+                                <Image src="/camera.png" alt="camera" width="75px" height="75px" />
                             </div>
                         </div>
                     </div> */}

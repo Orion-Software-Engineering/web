@@ -7,7 +7,7 @@ import TimePicker from 'react-time-picker/dist/entry.nostyle';
 
 
 
-const events2 = () => {
+const Events2 = () => {
 
     const formRef = useRef()
     const [date, setDate] = useState(new Date())
@@ -35,16 +35,16 @@ const events2 = () => {
             <div className="justify-self-center self-center flex  border-gray-600 h-[400px] bg-[url('../public/WhatsappB.png')]">
                 <div className="flex flex-col h-[400px] justify-center items-center  border-blue-600 w-[400px] rounded-l-3xl ">
                     <form ref={formRef} handleSubmit={handleSubmit} className="flex flex-col mb-[30px]" >
-                        <label for="first">Organizers</label>
+                        <label htmlFor="first">Organizers</label>
                         <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
-                        <label for="second" className="mt-[20px]">Date</label>
+                        <label htmlFor="second" className="mt-[20px]">Date</label>
                         <div className='w-[300px] bg-black h-[30px] rounded-lg text-gray-300 flex flex-row-reverse items-center'>
                             <div className='p-2'
                                 onClick={() => setDate(!date)}>
                                 <div className='flex'><DatePicker /><BiCalendar size={22} /></div>
                             </div>
                         </div>
-                        <label for="third" className="mt-[20px]">Time</label>
+                        <label htmlFor="third" className="mt-[20px]">Time</label>
                         <div className='w-[100px] bg-black h-[30px] rounded-lg text-gray-300 flex flex-row-reverse items-center'>
                             <div className='p-2'
                                 onClick={() => onChange(!value)}>

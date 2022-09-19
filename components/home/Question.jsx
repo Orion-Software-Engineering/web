@@ -4,6 +4,7 @@ import Image from "next/dist/client/image";
 
 const Question = () => {
   return (
+
     <div>
       <div className="top-[96px] bg-cover w-screen h-screen bg-no-repeat  mx-auto text-center justify-center ">
         <div className=" mt-[-96px] w-full h-screen mx-auto text-center flex justify-center bg-[#727272]  px-3 py-16  items-center">
