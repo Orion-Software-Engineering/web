@@ -2,36 +2,41 @@ import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
 import { useState, useEffect } from "react";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function Loginpage() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  // let history = useHistory();
+  const history = useHistory();
 
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
-      history.push("add");
+      history.push("/");
     }
   }, []);
 
   async function login() {
-    console.warn(email, password);
-    let item = { email, password };
+    console.warn(username, password);
+    let item = { username, password };
     let result = await fetch(
       "https://orion-meet-testing.herokuapp.com/api/auth/signin",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Content-Length": "<calculated when request is sent>",
+          Host: "<calculated when request is sent>",
+          "User-Agent": "PostmanRuntime/7.29.2",
           Accept: "*/*",
+          "Accept-Encoding": "gzip, deflate, br",
+          Connection: "keep-alive",
         },
         body: JSON.stringify(item),
       }
     );
-    result = await result.JSON();
-    localStorage.setItemn("user-info", JSON.stringify(result));
-    history.push("/add");
+    result = await result.json();
+    localStorage.setItem("user-info", JSON.stringify(result));
+    history.push("/");
   }
 
   return (
@@ -39,10 +44,7 @@ export default function Loginpage() {
       <div className="relative w-full h-screen">
         <div className="relative w-full h-screen">
           <div className="flex justify-center items-center h-full">
-            <form
-              onSubmit={login}
-              className=" rounded-xl max-w-[400px] w-full mx-auto bg-white p-8"
-            >
+            <form className=" rounded-xl max-w-[400px] w-full mx-auto bg-white p-8">
               <h2 className="text-4xl font-bold text-center py-4 font-Nunito">
                 ORION
               </h2>
@@ -59,12 +61,12 @@ export default function Loginpage() {
                 </button>
               </div>
               <div className="flex flex-col mb-4  ">
-                <label>Email</label>
+                <label>Username</label>
                 <input
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="email"
+                  onChange={(e) => setUsername(e.target.value)}
+                  placeholder="username"
                   className=" rounded-xl border relative bg-grey-100 p-2"
-                  type="email"
+                  type="text"
                 />
               </div>
               <div className="flex flex-col ">
@@ -74,10 +76,13 @@ export default function Loginpage() {
                   placeholder="password"
                   className=" rounded-xl border relative bg-grey-100 p-2"
                   type="password"
+                  name="password"
+                  autoComplete="on"
                 />
               </div>
               <button
-                type="submit"
+                type="button"
+                onClick={login}
                 className=" rounded-xl w-full py-3 mt-8 bg-red-600 hover:bg-red-400 relative text-white"
               >
                 LOGIN

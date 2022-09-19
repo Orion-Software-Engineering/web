@@ -18,7 +18,7 @@ export default function Signuppage() {
               </p>
             </div>
           </div>
-          <div class="w-1/2 py-16 px-12">
+          <div className="w-1/2 py-16 px-12">
             <h2 className="font-Nunito text-3xl mb-4 ">SignUp </h2>
             <p className="mb-4 ">Create your account to start sharing events</p>
             <form action="#">
