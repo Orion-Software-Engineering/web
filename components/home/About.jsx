@@ -1,6 +1,8 @@
 import React from "react";
 import Image from 'next/image'
-import MountainGuys from "../../public/Mountainguys.png";
+import Party from "../../public/Party.jpg";
+
+
 
 const About = () => {
   return (
@@ -15,14 +17,17 @@ const About = () => {
         >
           <p>
             Orion Meet is an app based platform for matching people based on
-            their common likes and interests. Unlike most other match making
+            their common likes and interests.
+            On the other hand it gives organizers a space to create & share events.
+             Unlike most other match making
             apps, we don’t only focus on pairing people up , we allow the option
             to join groups full of like minded people for good networking.
           </p>
         </div>
       </div>
-      <div className="w-[690px] h-[550px] mt-[40px] ml-[60px] border border-red-600">
-        <Image src={MountainGuys} alt="Mountain" width='690px' height='550px'  />
+      <div className="w-[690px] h-[550px] mt-[40px] ml-[60px]  ">
+        <Image src={Party} alt="Party" width='690px' height='550px'  className="rounded-xl" />
+        
       </div>
     </div>
   );
