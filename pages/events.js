@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import EventHeader from "../components/events/HeaderEvents";
 import EventForm1 from "../components/events/form/EventForm1";
 import EventForm2 from "../components/events/form/EventForm2";
@@ -8,8 +8,7 @@ import Completion from "../components/events/form/Completion";
 import Welcome from "../components/events/Welcome";
 import Doodle from "../components/events/Doodle";
 import Image from "next/image";
-// import TimePicker from "react-time-picker";
-import 'react-datepicker/dist/react-datepicker.css'
+// import TimePicker from 'react-time-picker';
 
 
 
@@ -17,6 +16,12 @@ import 'react-datepicker/dist/react-datepicker.css'
 export default function Event(uploadlength) {
     const [expand, setExpand] = useState(false)
     const [step, setStep] = useState(0)
+
+    useEffect(() => {
+        if (step % 2) setExpand(false)
+        else setExpand(true)
+    }, [step])
+
 
     const stepSwitch = (st) => {
         switch (st) {
@@ -67,20 +72,20 @@ export default function Event(uploadlength) {
                     </div>
 
                     {step ? (<div className={"w-[400px] h-[400px] flex flex-col gap-y-2 justify-center items-center rounded-3xl "
-                        + imgColors[step - 1] + (uploadlength ? "" :"")}>
+                        + imgColors[step - 1] + (uploadlength ? "" : "")}>
                         <div>
                             <p className=" text-center text-xl ">Upload Event Flyer</p>
                         </div>
                         <div className='bg-[#CDC5C5] border-blue-700 w-[250px]  h-[300px] flex justify-center items-center'>
-                            <div className='w-[75px] '>
+                            <div className='w-[75px]'>
                                 <Image src="/../public/camera.png" alt="camera" width='75px' height='75px' />
                             </div>
                         </div>
                     </div>) : (<div />)}
                 </div>
 
-            {/* <TimePicker/> */}
-            
+                {/* <TimePicker/> */}
+
 
             </div>
         </div>

@@ -37,11 +37,11 @@ const Welcome = ({ step, updateStep }) => {
 
             <div className='flex justify-around items-center  border-gray-600 mt-[20px]'>
                 <div>
-                    <Image src='/Vector.svg' width='250px' height='200px' />
+                    <Image src='/Vector.svg' alt="1st vector" width='250px' height='200px' />
                     <p className='font-Nunito text-xl text-center'>Fill out the necessary details</p>
                 </div>
                 <div>
-                    <Image src='/Vector(1).svg' width='250px' height='200px' />
+                    <Image src='/Vector(1).svg' alt="2nd vector" width='250px' height='200px' />
                     <p className='font-Nunito text-xl ml-[50px]'>Preview your form</p>
                 </div>
                 <div>

@@ -17,7 +17,6 @@ const Chat = () => {
               </span>
             </div>
           </div>
-          {/* bg-gradient-to-l from-indigo-200 via-red-200 to-yellow-100 */}
           <div className="flex flex-col gap-8 ">
             <p className="md:text-4xl sm:text-3xl text-xl text-white max-w-[800px] mt-3 w-full h-auto mx-auto text-center flex flex-col justify-centerr">
               Socializing isn&apos;t always easy especially when there&apos;s no
