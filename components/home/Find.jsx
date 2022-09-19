@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import phone from "../../public/Phone.png";
+import phone from "../../public/phone.png";
 import people2 from "../../public/people2.png";
 import people1 from "../../public/people1.png";
 

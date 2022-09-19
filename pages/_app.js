@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
         <Route exact path="/signup" component={signup} />
         <Route exact path="/support" component={support} />
       </Switch>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </Router>);
 }
 
