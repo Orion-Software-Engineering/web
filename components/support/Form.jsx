@@ -1,10 +1,50 @@
 import React from "react";
 import Link from "next/link";
+import emailjs from "@emailjs/browser";
 
 const Form = () => {
+  function message(e) {
+    e.preventDefault();
+
+    var name = document.getElementById("name");
+    var mail = document.getElementById("mail");
+    var msg = document.getElementById("msg");
+    const success = document.getElementById("formsuccess");
+    const danger = document.getElementById("formdanger");
+
+    if (name.value === "" || mail.value === "" || msg.value === "") {
+      danger.style.display = "block";
+    } else {
+      setTimeout(() => {
+        name.value = "";
+        mail.value = "";
+        msg.value = "";
+      }, 5000);
+
+      success.style.display = "block";
+
+      emailjs
+        .sendForm(
+          "service_qsso57f",
+          "template_filnfbb",
+          e.target,
+          "hwB3DdoLGae-jeXv6"
+        )
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => console.log(err));
+    }
+
+    setTimeout(() => {
+      danger.style.display = "none";
+      success.style.display = "none";
+    }, 4000);
+  }
+
   return (
-    <div className="antialiased bg-gray-100">
-      <div className="flex w-full min-h-screen justify-center items-center">
+    <div className="antialiased bg-gray-100 mt-10">
+      <div className="flex w-full min-h-screen justify-center">
         <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 sm:p-12 bg-black w-full max-w-4xl p-8 rounded-xl shadow-lg overflow-hidden text-white">
           <div className="flex flex-col justify-between space-y-8 ">
             <div>
@@ -23,13 +63,13 @@ const Form = () => {
               <div>
                 <div className="inline-flex space-x-2 items-center">
                   <ion-icon name="mail" className="text-xl"></ion-icon>
-                  <span>orionmeet@gmail.com</span>
+                  <span>teamorion30@yahoo.com</span>
                 </div>
               </div>
               <div>
                 <div className="inline-flex space-x-2 items-center">
                   <ion-icon name="location" className="text-xl"></ion-icon>
-                  <span>Kumasi, Ghana</span>
+                  <span>KNUST, Kumasi</span>
                 </div>
               </div>
             </div>
@@ -54,16 +94,24 @@ const Form = () => {
             <div className="w-40 h-40 absolute z-0 bg-red-300 rounded-full -left-28 -bottom-16"></div>
 
             <div className="bg-white relative z-10 rounded-xl shadow-lg p-8 text-gray-600">
-              <form action="" className="flex flex-col md:w-80 space-y-4">
+              <form
+                id="form"
+                onSubmit={message}
+                className="flex flex-col md:w-80 space-y-4"
+              >
                 <div>
                   <input
                     type="text"
+                    name="name"
+                    id="name"
                     placeholder="Your name"
                     className="ring-1 ring-gray-300 w-full rounded-md mt-2 px-4 py-2 outline-none focus:ring-2 focus:ring-black-300 "
                   />
                 </div>
                 <div>
                   <input
+                    id="mail"
+                    name="user_email"
                     type="email"
                     placeholder="Email Address"
                     className="ring-1 ring-gray-300 w-full rounded-md mt-2 px-4 py-2 outline-none focus:ring-2 focus:ring-black-300 "
@@ -72,32 +120,49 @@ const Form = () => {
                 <div>
                   <textarea
                     type="text"
+                    name="message"
+                    id="msg"
                     rows="4"
                     placeholder="Message"
                     className="ring-1 ring-gray-300 w-full rounded-md px-4 mt-2 py-2 outline-none focus:ring-2 focus:ring-black-300 "
                   />
                 </div>
-                <button className="inline-block self-end bg-black text-white font-bold rounded lg px-6 py-2 uppercase text-sm ">
+                <button
+                  type="submit"
+                  className="inline-block self-end bg-black text-white font-bold rounded lg px-6 py-2 uppercase text-sm "
+                >
                   Send Message
                 </button>
+                <div className="formmessage pb-3">
+                  <div
+                    className="formsuccess font-Nunito text-l"
+                    id="formsuccess"
+                  >
+                    Message successfully sent
+                  </div>
+                  <div
+                    className="formdanger font-Nunito text-l"
+                    id="formdanger"
+                  >
+                    Fill empty field(s)!
+                  </div>
+                </div>
               </form>
             </div>
           </div>
         </div>
       </div>
-
       <script
         type="module"
         src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
         async
       />
       <script
-        nomodule
+        noModule
         src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
         async
       />
     </div>
   );
 };
-
 export default Form;

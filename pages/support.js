@@ -7,7 +7,7 @@ export default function Support() {
   return (
     <div>
       <Header />
-      {/* <Accordion /> */}
+      <Accordion />
       <Form />
     </div>
   );
