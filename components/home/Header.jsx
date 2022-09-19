@@ -20,29 +20,29 @@ const Navbar = () => {
         </h1>
       </div>
 
-      <ul className="hidden md:flex font-Nunito font-bold pt-4 text-white">
+      <ul className="hidden md:flex font-Nunito font-bold pt-4  text-white">
         <li className="pt-3">
-          <Link className="p-4" href={"/"}>
+          <Link className=" p-4 " href={"/"}>
             Home
           </Link>
         </li>
-        <li className="pt-3">
-          <Link className="p-4" href={"/about"}>
+        <li className="pt-3 px-6 ">
+          <Link className="p-4 " href={"/about"}>
             About
           </Link>
         </li>
-        <li className="pt-3">
-          <Link className="p-4" href={"/support"}>
+        <li className="pt-3 ">
+          <Link className="p-4 " href={"/support"}>
             Support
           </Link>
         </li>
-        <li className="pt-3">
+        <li className="pt-3 px-6">
           <Link className="p-4" href={"/events"}>
             Events
           </Link>
         </li>
         <li>
-          <Link href={"/"}>
+          <Link href={"/login"}>
             <button className=" absolte uppercase bg-transparent border-[1px] border- rounded px-10 mx-auto py-3 mb-4 hover:scale-110 hover:bg-black hover:text-white duration-300 ">
               Log in
             </button>
