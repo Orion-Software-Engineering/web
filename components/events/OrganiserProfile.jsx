@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Profile1 from "../../public/Profile1.png";
+import Profile1 from "../../public/profile1.png";
 import Eventflyer from "../../public/Eventflyer.jpg";
 
 export default function OrganiserProfile() {
