@@ -9,15 +9,16 @@ export default function Signuppage() {
       <div className="container mx-auto  ">
         <div className=" flex w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden ">
           <div className="w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center">
-         
-              <Image src={Logo} alt="" />
-              
+            <Image src={Logo} alt="" />
+
             <h1 className="font-Nunito text-3xl mb-5 pt-10">Welcome</h1>
             <div>
-              <p className="font-Nunito mb-5 pb-10">Register now and meet new people! </p>
+              <p className="font-Nunito mb-5 pb-10">
+                Register now and meet new people!{" "}
+              </p>
             </div>
           </div>
-          <div class="w-1/2 py-16 px-12">
+          <div className="w-1/2 py-16 px-12">
             <h2 className="font-Nunito text-3xl mb-4 ">SignUp </h2>
             <p className="mb-4 ">
               Create your account. It's free and only takes a minute
@@ -61,7 +62,7 @@ export default function Signuppage() {
               <div className="mg-5">
                 <input type="checkbox" className="border border-gray-400" />
                 <span className="font-Nunito p-1">
-                   I accept the
+                  I accept the
                   <a
                     href={""}
                     className="text-red-500 font-semibold font-Nunito p-1"

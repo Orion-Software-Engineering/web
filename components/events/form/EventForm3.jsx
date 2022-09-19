@@ -25,13 +25,13 @@ const EventForm3 = ({ step, updateStep }) => {
       <div className="justify-self-center self-center flex  border-gray-600 h-[400px] ]">
         <div className="flex flex-col h-[400px] justify-center items-center  border-blue-600 w-[400px] rounded-l-3xl ">
           <form ref={formRef} handleSubmit={handleSubmit} className="flex flex-col mb-[30px]" >
-            <label for="first">Age Restrictions(18+)</label>
+            <label htmlFor="first">Age Restrictions(18+)</label>
             <ToggleSWitch/>
-            <label for="second" className="mt-[10px]">MCs</label>
+            <label htmlFor="second" className="mt-[10px]">MCs</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
-            <label for="third" className="mt-[20px]">Guests</label>
+            <label htmlFor="third" className="mt-[20px]">Guests</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
-            <label for="third" className="mt-[0px] text-xs text-[#575757]">Add another guest</label>
+            <label htmlFor="third" className="mt-[0px] text-xs text-[#575757]">Add another guest</label>
           </form>
           
           <div className="flex flex-row w-[300px] justify-between mt-[40px]">

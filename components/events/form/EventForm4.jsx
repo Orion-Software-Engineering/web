@@ -18,23 +18,23 @@ const EventForm4 = ({ step, updateStep }) => {
       <div className="justify-self-center self-center flex border-gray-600  h-screen bg-[url('../public/WhatsappB.png')]">
         <div className="flex flex-col h justify-center items-center  border-blue-600 w-[400px] rounded-l-3xl ">
           <form ref={formRef} handleSubmit={handleSubmit} className="flex flex-col mb-[150px]" >
-            <label for="first">Event Name</label>
+            <label htmlFor="first">Event Name</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
-            <label for="first">Event category</label>
+            <label htmlFor="first">Event category</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
-            <label for="third" className="mt-[20px]">Event Description:</label>
+            <label htmlFor="third" className="mt-[20px]">Event Description:</label>
             <textarea type="text" id="third" name="last" className="bg-black h-[80px] w-[300px] text-white pl-[10px] pb-[50px] rounded-lg" />
-            <label for="first">Organizers</label>
+            <label htmlFor="first">Organizers</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
-            <label for="first">Date and Time</label>
+            <label htmlFor="first">Date and Time</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
-            <label for="first">Age Restrictions(18+)</label>
+            <label htmlFor="first">Age Restrictions(18+)</label>
             <ToggleSWitch />
-            <label for="second" className="mt-[0px]">MCs</label>
+            <label htmlFor="second" className="mt-[0px]">MCs</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
-            <label for="third" className="mt-[20px]">Guests</label>
+            <label htmlFor="third" className="mt-[20px]">Guests</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
-            <label for="third" className="mt-[0px] text-xs text-[#575757]">Add another guest</label>
+            <label htmlFor="third" className="mt-[0px] text-xs text-[#575757]">Add another guest</label>
           </form>
 
           <div className="flex flex-row w-[300px] justify-between ">
