@@ -1,17 +1,15 @@
 import React from "react";
 import Header from "../components/home/Header";
+import OrganiserProfile from "../components/events/OrganiserProfile";
 
 
 
 
-export  default function OrganiserProfile() {
+export default function organiserprofile() {
     return (
- <div>
-    <organiserProfile />
-    <Header />
-
- </div>
-
-
+        <div>
+            <Header />
+            <OrganiserProfile />
+        </div>
     );
 }
