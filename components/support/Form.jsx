@@ -19,7 +19,7 @@ const Form = () => {
         name.value = "";
         mail.value = "";
         msg.value = "";
-      }, 2000);
+      }, 5000);
 
       success.style.display = "block";
 
@@ -134,10 +134,16 @@ const Form = () => {
                   Send Message
                 </button>
                 <div className="formmessage pb-3">
-                  <div className="formsuccess" id="formsuccess">
+                  <div
+                    className="formsuccess font-Nunito text-l"
+                    id="formsuccess"
+                  >
                     Message successfully sent
                   </div>
-                  <div className="formdanger" id="formdanger">
+                  <div
+                    className="formdanger font-Nunito text-l"
+                    id="formdanger"
+                  >
                     Fill empty field(s)!
                   </div>
                 </div>

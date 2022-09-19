@@ -63,7 +63,6 @@
 }
 
 .formmessage .formsuccess {
-  font-size: 20px;
   color: green;
   position: absolute;
   animation: button 0.3 linear;
@@ -71,7 +70,6 @@
 }
 
 .formmessage .formdanger {
-  font-size: 20px;
   color: red;
   position: absolute;
   animation: button 0.3 linear;
