@@ -1,13 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import "../fonts/fonts.css";
 @import "/styles/external.scss";
-
-body {
-  background-color: #ffffff;
-  overflow: hidden;
-}
 
 .swiper-button-next,
 .swiper-button-prev {
@@ -18,5 +14,64 @@ body {
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
+  display: none;
+}
+
+.accwrapper {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+}
+
+.accordion {
+  width: 500px;
+}
+
+.accitem {
+  background-color: #f0ebe1;
+  margin-bottom: 5px;
+  padding: 10px 20px;
+}
+
+.acctitle {
+  color: #85662b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.acccontent {
+  color: #8b7f75;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.acccontentshow {
+  height: auto;
+  max-height: 9999;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.formmessage {
+  width: 100%;
+  position: relative;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.formmessage .formsuccess {
+  color: green;
+  position: absolute;
+  animation: button 0.3 linear;
+  display: none;
+}
+
+.formmessage .formdanger {
+  color: red;
+  position: absolute;
+  animation: button 0.3 linear;
   display: none;
 }
