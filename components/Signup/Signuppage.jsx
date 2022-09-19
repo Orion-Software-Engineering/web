@@ -9,11 +9,12 @@ export default function Signuppage() {
       <div className="container mx-auto  ">
         <div className=" flex w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden ">
           <div className="w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center">
+         
               <Image src={Logo} alt="" />
-              <span className=" font-semibold font-Nunito">Orion Meet</span>
-            <h1 className="font-Nunito text-3xl mb-3 pt-10">Welcome</h1>
+              
+            <h1 className="font-Nunito text-3xl mb-5 pt-10">Welcome</h1>
             <div>
-              <p className="font-Nunito pb-10">Register now and meet new people! </p>
+              <p className="font-Nunito mb-5 pb-10">Register now and meet new people! </p>
             </div>
           </div>
           <div class="w-1/2 py-16 px-12">
@@ -26,19 +27,19 @@ export default function Signuppage() {
                 <input
                   type="text"
                   placeholder="Firstname"
-                  class="border border-gray-400 py-1 px-2"
+                  className=" rounded-xl border border-gray-400 py-1 px-2"
                 />
                 <input
                   type="text"
                   placeholder="Lastname"
-                  class="border border-gray-400 py-1 px-2"
+                  className=" rounded-xl border border-gray-400 py-1 px-2"
                 />
               </div>
               <div className="mt-5">
                 <input
                   type="text"
                   placeholder="Email"
-                  class="border border-gray-400 py-1 px-2 w-full"
+                  className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
                 />
               </div>
 
@@ -46,7 +47,7 @@ export default function Signuppage() {
                 <input
                   type="password"
                   placeholder=" Password"
-                  class="border border-gray-400 py-1 px-2 w-full"
+                  className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
                 />
               </div>
 
@@ -54,13 +55,13 @@ export default function Signuppage() {
                 <input
                   type="password"
                   placeholder="Confirm Password"
-                  class="border border-gray-400 py-1 px-2 w-full"
+                  className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
                 />
               </div>
               <div className="mg-5">
                 <input type="checkbox" className="border border-gray-400" />
-                <span className="font-Nunito">
-                  I accept the
+                <span className="font-Nunito p-1">
+                   I accept the
                   <a
                     href={""}
                     className="text-red-500 font-semibold font-Nunito p-1"
@@ -77,7 +78,7 @@ export default function Signuppage() {
                 </span>
               </div>
               <div className="mt-5">
-                <button className="w-full font-Nunito bg-red-500 py-3 text-center">
+                <button className=" rounded-xl w-full font-Nunito bg-red-500 py-3 text-center">
                   <a className="text-white"> SignUp Now</a>
                 </button>
                 <p className="text-center mt-2 flex justify-center ">
