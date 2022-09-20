@@ -53,7 +53,7 @@ const EventForm2 = ({ step, updateStep }) => {
               </select>
             </div>
             <div className="flex flex-col gap-y-1 ">Year
-              <select id="year" name="hourtime" form="Dateform" className='h-auto w-15 bg-black border border-blue-300' >
+              <select id="year" name="hourtime" form="Dateform" className='h-auto w-15 bg-black' >
                 <option>2022</option>
                 <option>2023</option>
                 <option>2024</option>
@@ -89,7 +89,7 @@ const EventForm2 = ({ step, updateStep }) => {
                 </select>
               </div>
               <div className="flex flex-col gap-y-1  ">AM
-                <select id="hour" name="hourtime" form="timeform" className='h-auto w-12 bg-black border border-blue-300' >
+                <select id="hour" name="hourtime" form="timeform" className='h-auto w-12 bg-black ' >
                   <option>AM</option>
                   <option>PM</option>
                 </select></div>
