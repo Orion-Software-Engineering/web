@@ -1,6 +1,5 @@
 import React from "react";
 import Typed from "react-typed";
-import Image from "next/dist/client/image";
 
 const Hero = () => {
   return (

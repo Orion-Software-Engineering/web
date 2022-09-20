@@ -2,7 +2,7 @@ import React from 'react'
 import Image from "next/image";
 
 
-const Welcome = () => {
+const Welcome = ({ step, updateStep }) => {
     return (
         <div className=' w-[700px]'>
 
@@ -50,7 +50,8 @@ const Welcome = () => {
                 </div>
             </div>
             <div className='float-right mt-16 cursor-pointer bg-gray-800 text-gray-200 text-xs w-36
-             rounded-md h-8 flex justify-center items-center shadow-xl hover:bg-orange-300 transition duration-300 hover:text-gray-800 select-none'>
+             rounded-md h-8 flex justify-center items-center shadow-xl hover:bg-orange-300 transition duration-300 hover:text-gray-800 select-none'
+                onClick={() => updateStep(step + 1)}>
                 <p className='px-2'>
                     {` Go to forms >>>`}
                 </p>

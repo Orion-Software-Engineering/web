@@ -4,7 +4,7 @@ import Image from "next/image";
 import ImageUpload from "../ImageUpload";
 import CategorySelect from "../CategorySelect";
 
-const EventForm1 = ({ setExpand }) => {
+const EventForm1 = ({ setExpand, step, updateStep }) => {
     const [categorySelectOpen, setCategorySelectOpen] = useState(false);
 
     const [File, setFile] = useState();
@@ -18,7 +18,7 @@ const EventForm1 = ({ setExpand }) => {
     };
     return (
         <div>
-            <div className="justify-self-center self-center flex  border-gray-600 h-[400px] bg-[url('../public/WhatsappB.png')]">
+            <div className="justify-self-center self-center flex  border-gray-600  ">
                 <div className="flex flex-col h-[400px] justify-center items-center  border-blue-600 w-[400px] rounded-l-3xl ">
                     <form
                         ref={formRef}
@@ -52,14 +52,23 @@ const EventForm1 = ({ setExpand }) => {
                             type="text"
                             id="third"
                             name="last"
-                            className="bg-black h-[80px] w-[300px] text-white pl-[10px] pb-[50px] rounded-lg"
-                        />
+                            className="bg-black h-[80px] w-[300px] text-white pl-[10px] pt-[6px] rounded-lg" />
                     </form>
-                    <p className="self-end pr-9">Next{">"}</p>
-                    <p>1/4</p>
+
+                    <div className='flex flex-row w-[300px] border-green-700 justify-between mt-[0px]'>
+                        <p className="self-start cursor-pointer"
+                            onClick={() => updateStep(step - 1)}>
+                            {'<'}Back
+                        </p>
+                        <p className="self-end cursor-pointer"
+                            onClick={() => { updateStep(step + 1) }}>
+                            Next{'>'}
+                        </p>
+                    </div>
+                    <p className='mt-[0px] text-center'>{step}/4</p>
                 </div>
 
-                <div className=" border-blue-600 w-[400px] bg-[#FF7A00] flex flex-col gap-y-2 justify-center items-center rounded-r-3xl">
+                {/* <div className=" border-blue-600 w-[400px] bg-[#FF7A00] flex flex-col gap-y-2 justify-center items-center rounded-r-3xl">
                     <div className="p-2 " onClick={() => setFile(!File)}>
                         <div>
                             <p className=" border-blue-600 text-center text-xl ">
@@ -73,9 +82,9 @@ const EventForm1 = ({ setExpand }) => {
                                 <Image src="/../public/camera.png" alt="camera" width="75px" height="75px" />
                             </div>
                         </div>
-                    </div>
-                    {/* <div className='h-[200px] w-[200px] rounded-[100%] bg-slate-500'></div> */}
-                </div>
+                    </div> */}
+                {/* <div className='h-[200px] w-[200px] rounded-[100%] bg-slate-500'></div> */}
+                {/* </div> */}
             </div>
 
             <div className={"flex justify-center items-center backdrop-blur-sm absolute top-0 left-0  h-screen w-screen inset-1/4 transition-all duration-500 ease-in-out " +

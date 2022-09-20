@@ -1,17 +1,19 @@
 import React from "react";
-// import Image from 'next/image'
-
+import Image from 'next/image'
+import profile3 from "../../public/profile3.png";
+import profile1 from "../../public/profile1.png";
+import profile2 from "../../public/profile2.png";
 const Profiles = () => {
   return (
-    <div className="h-[500px] flex  border-gray-600 font-nunito">
+    <div className="h-[500px] flex  border-gray-600 font-nunito justify-center">
       <div className="w-[325px] h-[400px] mt-[50px] ml-[125px]  border-gray-600">
         <div className=" border-gray-600 mr-[80px] ml-[80px] h-[200px]">
-          {/* <Image
-            src="/../public/profile1.png"
+          <Image
+            src={profile1}
             alt="profile1"
             width="200px"
             height="250px"
-          /> */}
+          />
         </div>
         <div className=" border-gray-600 mt-[15px] text-center">
           <p>Dixie Normus</p>
@@ -26,12 +28,12 @@ const Profiles = () => {
       </div>
       <div className="w-[325px] h-[400px] mt-[50px] ml-[150px] border-gray-600">
         <div className=" border-gray-600 mr-[80px] ml-[80px] h-[200px]">
-          {/* <Image
-            src="/../public/profile2.png"
+          <Image
+            src={profile2}
             alt="profile2"
             width="200px"
             height="250px"
-          /> */}
+          />
         </div>
         <div className=" border-gray-600 mt-[15px] text-center">
           <p>P.Dough</p>
@@ -46,12 +48,12 @@ const Profiles = () => {
       </div>
       <div className="w-[325px] h-[400px] mt-[50px] ml-[150px] border-gray-600">
         <div className=" border-gray-600 mr-[80px] ml-[80px] h-[200px]">
-          {/* <Image
-            src="/../public/profile3.png"
+          <Image
+            src={profile3}
             alt="profile3"
             width="200px"
             height="250px"
-          /> */}
+          />
         </div>
         <div className=" border-gray-600 mt-[15px] text-center">
           <p>Ben Dover</p>

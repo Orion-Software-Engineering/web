@@ -1,17 +1,20 @@
 import React from "react";
 import Head from "next/head";
-import Loginpage from "../components/Login/Loginpage";
+import Signuppage from "../components/Signup/Signuppage";
 import Header from "../components/home/Header";
 
-export default function Login() {
-  return (
-    <div>
+
+export default function Signup() {
+    return(
+        <div>
       <Head>
         <title>Orion Login</title>
         <link rel="" href="" />
       </Head>
-      <Header />
-      <Loginpage />
-    </div>
-  );
+      <Header/>
+      <Signuppage />
+      </div>
+
+    );
+
 }
