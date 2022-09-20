@@ -1,9 +1,50 @@
 import React from "react";
 import Image from "next/image";
 import Logo from "../../public/orionlogo1.svg";
-import Link from "next/link";
+import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 export default function Signuppage() {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [dob, setDob] = useState("");
+  const [gender, setGender] = useState("");
+  const role = "organizer";
+
+  const history = useHistory();
+
+  useEffect(() => {
+    if (localStorage.getItem("user-info")) {
+      history.push("/organiserprofile");
+    }
+  }, []);
+
+  async function signup() {
+    console.warn(username, email, password, dob, gender, role);
+    let item = { username, email, password, dob, gender, role };
+    let result = await fetch(
+      "https://orion-meet-testing.herokuapp.com/api/auth/signup",
+      {
+        method: "POST",
+        headers: {
+          "Postman-Token": "<calculated when request is sent>",
+          "Content-Type": "application/json",
+          "Content-Length": "<calculated when request is sent>",
+          Host: "<calculated when request is sent>",
+          "User-Agent": "PostmanRuntime/7.29.2",
+          Accept: "*/*",
+          "Accept-Encoding": "gzip, deflate, br",
+          Connection: "keep-alive",
+        },
+        body: JSON.stringify(item),
+      }
+    );
+    result = await result.json();
+    localStorage.setItem("user-info", JSON.stringify(result));
+    history.push("/organiserprofile");
+  }
+
   return (
     <div className="bg-[url('../public/TopBackground.png')] p-40 min-h-screen bg-no-repeat bg-cover">
       <div className="container mx-auto  ">
@@ -24,6 +65,7 @@ export default function Signuppage() {
             <form action="#">
               <div className="mt-5">
                 <input
+                  onChange={(e) => setUsername(e.target.value)}
                   type="text"
                   placeholder="Username"
                   className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
@@ -31,6 +73,7 @@ export default function Signuppage() {
               </div>
               <div className="mt-5">
                 <input
+                  onChange={(e) => setEmail(e.target.value)}
                   type="text"
                   placeholder="Email"
                   className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
@@ -39,6 +82,7 @@ export default function Signuppage() {
 
               <div className="mt-5">
                 <input
+                  onChange={(e) => setPassword(e.target.value)}
                   type="password"
                   placeholder=" Password"
                   className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
@@ -55,16 +99,22 @@ export default function Signuppage() {
 
               <div className="mt-5">
                 <input
+                  onChange={(e) => setDob(e.target.value)}
                   name="DOB"
                   type="date"
                   placeholder="DOB"
-                  className=" form-control rounded-xl border border-gray-400 py-1 px-2 w-full"
+                  className="rounded-xl border border-gray-400 py-1 px-2 w-full"
                 />
               </div>
               <div className="mg-5 flex ">
-                <input type="checkbox" className="border border-gray-400" />
+                <input
+                  onChange={(e) => setGender(false)}
+                  type="checkbox"
+                  className="border border-gray-400"
+                />
                 <span className="font-Nunito p-1">Male</span>
                 <input
+                  onChange={(e) => setGender(true)}
                   type="checkbox"
                   className="border border-gray-400 ml-3"
                 />
@@ -91,8 +141,12 @@ export default function Signuppage() {
                 </span>
               </div>
               <div className="mt-5">
-                <button className=" rounded-xl w-full font-Nunito bg-red-500 py-3 text-center">
-                  <a className="text-white"> Sign Up Now</a>
+                <button
+                  type="button"
+                  onClick={signup}
+                  className=" rounded-xl w-full font-Nunito bg-red-500 py-3 text-center"
+                >
+                  <a className="text-white"> SignUp Now</a>
                 </button>
                 <p className="text-center mt-2 flex justify-center ">
                   Already have an account?
