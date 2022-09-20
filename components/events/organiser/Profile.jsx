@@ -1,16 +1,15 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Rectangle14 from "../../public/rectangle14.png";
-import Rectangle15 from "../../public/rectangle15.png";
-import Rectangle17 from "../../public/rectangle17.png";
-
+import Rectangle14 from "../../../public/rectangle14.png";
+import Rectangle15 from "../../../public/rectangle15.png";
+import Rectangle17 from "../../../public/rectangle17.png";
 
 export default function OrganiserProfile() {
   return (
-    <div className="grid grid-cols-2 divide-x mt-10 h-screen mb-10">
-      <div>
-        <div className="flex flex-col mt-[80px] items-center justify-center ">
+    <div className="flex flex-row justify-center mt-10">
+      <div className="items-center justify-center">
+        <div className="flex flex-col items-center justify-center">
           <div className="bg-blue-600 h-80 w-80 rounded-t-[30px]">
             <div className="text-center mt-10">
               <div className="items-center justify-center flex flex-col">
@@ -29,7 +28,7 @@ export default function OrganiserProfile() {
               <p className="text-white font-Nunito font-semibold">Organizer</p>
             </div>
             <div className="bg-blue-100 h-80 w-80 rounded-b-[30px] mt-[80px] text-center font-Nunito">
-              <div className="flex-col space-y-">
+              <div className="flex-col">
                 <ul>
                   <li className="border-b"></li>
                   <div className="mt-6 mb-6 text-[20px] flex justify-between px-10">
@@ -77,31 +76,48 @@ export default function OrganiserProfile() {
           </div>
         </div>
       </div>
-
-      <div>
-        <div className="w-full h-full bg-slate-100 mx-10 rounded-3xl">
-        <div className="flex flex-row"> 
-          <div >
-          <Image src={Rectangle14} alt="Rectangle14" className=""/></div>
+      <div className="relative w-0.5 m-20 bg-gray-200"></div>
+      <div className="bg-gray-100 rounded-lg">
+        <div className="p-10">
+          <div className="flex flex-row justify-between">
+            <div className="font-Nunito font-bold">My Events</div>
             <div>
-            <Image src={Rectangle15} alt="Rectangle15" className=""/></div>
-              <div>
-              <Image src={Rectangle17} alt="Rectangle17" className=""/></div>
-                <div className="flex flex-row">
-                  <div>
-                  
-                    <div>
-
-                    </div>
-                  </div>
-                </div>
-              
-          <div>
-
+              <div className="inline-flex flex-row space-x-2 text-lg">
+                <h1 className="font-Nunito text-sm">Create new event</h1>
+                <ion-icon className="" name="add-circle"></ion-icon>
+              </div>
+            </div>
           </div>
-        </div>
-        
-      
+          <div className="space-y-10">
+            <div className="flex flex-row space-x-10 ">
+              <div>
+                <Image src={Rectangle14} alt="Rectangle14" className="" />
+              </div>
+              <div>
+                <Image src={Rectangle14} alt="Rectangle14" className="" />
+              </div>
+              <div>
+                <Image src={Rectangle14} alt="Rectangle14" className="" />
+              </div>
+              <div>
+                <Image src={Rectangle14} alt="Rectangle14" className="" />
+              </div>
+            </div>
+            <div className="flex flex-row space-x-10">
+              <div>
+                <Image src={Rectangle14} alt="Rectangle14" className="" />
+              </div>
+              <div>
+                <Image src={Rectangle14} alt="Rectangle14" className="" />
+              </div>
+              <div>
+                <Image src={Rectangle14} alt="Rectangle14" className="" />
+              </div>
+              <div>
+                <Image src={Rectangle14} alt="Rectangle14" className="" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
