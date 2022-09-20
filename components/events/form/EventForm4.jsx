@@ -18,10 +18,7 @@ const EventForm4 = ({ step, updateStep }) => {
       <div className="justify-self-center self-center flex border-gray-600  h-screen bg-[url('../public/WhatsappB.png')]">
         <div className="flex flex-col h justify-center items-center  border-blue-600 w-[400px] rounded-l-3xl ">
           <form ref={formRef} handleSubmit={handleSubmit} className="flex flex-col mb-[150px]" >
-
-
             <label htmlFor="first" className='mt-[-20px]'>Event Name</label>
-
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
             <label htmlFor="first">Event category</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
