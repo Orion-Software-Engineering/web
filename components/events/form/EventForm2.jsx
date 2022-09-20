@@ -30,44 +30,44 @@ const EventForm2 = ({ step, updateStep }) => {
           <label htmlFor="second" className="mt-[20px]">
             Date
           </label>
-          <input type="date" id="datep" name="datep" 
-          className="bg-black text-white rounded-lg pl-3 w-[140px] justify-center items-center h-[25px]">  
+          <input type="date" id="datep" name="datep"
+            className="bg-black text-white rounded-lg pl-3 w-[140px] justify-center items-center h-[25px]">
           </input>
           <div className="">
-          <label htmlFor="second" className="mt-[20px] flex">
-            Time
-          </label>
-          <input type="time" id="datep" name="datep" 
-          className="bg-black text-white rounded-lg pl-3 w-[100px] justify-center items-center h-[25px]">  
-          </input>
-          <label htmlFor="second" className="mt-[20px]  flex">
-            Price<p className="text-xs flex justify-center items-center text-[#565252] pt-1">(If free leave blank)</p>
-          </label>
-          <input type="text" id="datep" name="datep" 
-          className="flex bg-black text-white rounded-lg pl-3 w-[100px] justify-center items-center h-[25px]">  
-          </input>
+            <label htmlFor="second" className="mt-[20px] flex">
+              Time
+            </label>
+            <input type="time" id="datep" name="datep"
+              className="bg-black text-white rounded-lg pl-3 w-[100px] justify-center items-center h-[25px]">
+            </input>
+            <label htmlFor="second" className="mt-[20px]  flex">
+              Price<p className="text-xs flex justify-center items-center text-[#565252] pt-1">(If free leave blank)</p>
+            </label>
+            <input type="number" id="datep" name="datep"
+              className="flex bg-black text-white rounded-lg pl-3 w-[100px] justify-center items-center h-[25px]">
+            </input>
 
           </div>
-          
+
         </form>
 
 
         <div className='flex flex-row w-[300px] mt-[0px] border-green-700 justify-between '>
-        <p className="self-start cursor-pointer"
-          onClick={() => updateStep(step - 1)}>
-          {'<'}Back
-        </p>
-        <p
-          className="self-end cursor-pointer"
-          onClick={() => {
-            updateStep(step + 1);
-          }}
-        >
-          Next{">"}
-        </p>
+          <p className="self-start cursor-pointer"
+            onClick={() => updateStep(step - 1)}>
+            {'<'}Back
+          </p>
+          <p
+            className="self-end cursor-pointer"
+            onClick={() => {
+              updateStep(step + 1);
+            }}
+          >
+            Next{">"}
+          </p>
+        </div>
+        <p className="mt-[0px] text-center">{step}/4</p>
       </div>
-      <p className="mt-[0px] text-center">{step}/4</p>
-  </div>
     </div >
   );
 };
