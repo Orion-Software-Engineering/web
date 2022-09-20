@@ -5,10 +5,14 @@ import Accordion from "../components/support/Accordion";
 
 export default function Support() {
   return (
-    <div>
+
+    <div className="bg-gray-100 h-screen">
       <Header />
-      <Accordion />
-      <Form />
+      <div className="bg-gray-100 space-y-5 pt-10">
+        <Accordion />
+        <Form />
+      </div>
     </div>
+
   );
 }
