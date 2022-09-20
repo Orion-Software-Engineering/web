@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 
 const Completion = ({ step, updateStep }) => {
+
   return (
     <div className='flex flex-col justify-center items-center h-[400px] w-[400px]'>
 
@@ -9,8 +10,8 @@ const Completion = ({ step, updateStep }) => {
       </div>
 
       <div className='mt-16 cursor-pointer bg-black text-gray-200 text-xs w-36
-      rounded-md h-8 flex justify-center items-center shadow-xl hover:bg-orange-300 transition duration-300 hover:text-gray-800 select-none'>
-        <p className='px-2'>
+      rounded-md h-8 flex justify-center items-center shadow-xl hover:bg-red-400 transition duration-300 hover:text-gray-800 select-none'>
+        <p className='px-2 font font-Nunito'>
           {`View Events`}
         </p>
       </div>

@@ -52,8 +52,8 @@ const EventForm2 = ({ step, updateStep }) => {
                 }
               </select>
             </div>
-            <div className="flex flex-col gap-y-1 text-center"> Year
-              <select id="year" name="hourtime" form="Dateform" className='h-auto w-14 bg-black' >
+            <div className="flex flex-col gap-y-1 ">Year
+              <select id="year" name="hourtime" form="Dateform" className='h-auto w-15 bg-black border border-blue-300' >
                 <option>2022</option>
                 <option>2023</option>
                 <option>2024</option>
@@ -88,8 +88,8 @@ const EventForm2 = ({ step, updateStep }) => {
                   }
                 </select>
               </div>
-              <div className="flex flex-col gap-y-1 pr-1 text-left">AM
-                <select id="hour" name="hourtime" form="timeform" className='h-auto w-12 bg-black' >
+              <div className="flex flex-col gap-y-1  ">AM
+                <select id="hour" name="hourtime" form="timeform" className='h-auto w-12 bg-black border border-blue-300' >
                   <option>AM</option>
                   <option>PM</option>
                 </select></div>
@@ -102,7 +102,7 @@ const EventForm2 = ({ step, updateStep }) => {
           </div>
         </form>
 
-        <div className='flex flex-row w-[300px] mt-[50px] border-green-700 justify-between '>
+        <div className='flex flex-row w-[300px] mt-[0px] border-green-700 justify-between '>
           <p className="self-start cursor-pointer"
             onClick={() => updateStep(step - 1)}>
             {'<'}Back

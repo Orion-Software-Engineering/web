@@ -30,8 +30,8 @@ const EventForm3 = ({ step, updateStep }) => {
             <label for="second" className="mt-[10px]">MCs</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
             <label for="third" className="mt-[20px]">Guests</label>
-            <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
-            <label for="third" className="mt-[0px] text-xs text-[#575757]">Add another guest</label>
+            <textarea type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
+            {/* <label for="third" className="mt-[0px] text-xs text-[#575757] cursor-pointer">Add another guest</label> */}
           </form>
           
           <div className="flex flex-row w-[300px] justify-between mt-[40px]">

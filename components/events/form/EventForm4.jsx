@@ -13,12 +13,12 @@ const EventForm4 = ({ step, updateStep }) => {
   }
 
   return (
-    <div className="text-black h-screen justify-between  border-gray-700 flex font-nunito ">
+    <div className="text-black h-screen  border-gray-700 flex font-nunito ">
 
       <div className="justify-self-center self-center flex border-gray-600  h-screen bg-[url('../public/WhatsappB.png')]">
         <div className="flex flex-col h justify-center items-center  border-blue-600 w-[400px] rounded-l-3xl ">
           <form ref={formRef} handleSubmit={handleSubmit} className="flex flex-col mb-[150px]" >
-            <label for="first">Event Name</label>
+            <label for="first" className='mt-[-20px]'>Event Name</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
             <label for="first">Event category</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
@@ -33,18 +33,23 @@ const EventForm4 = ({ step, updateStep }) => {
             <label for="second" className="mt-[0px]">MCs</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
             <label for="third" className="mt-[20px]">Guests</label>
-            <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
-            <label for="third" className="mt-[0px] text-xs text-[#575757]">Add another guest</label>
+            <textarea type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
+            {/* <label for="third" className="mt-[0px] text-xs text-[#575757] cursor-pointer">Add another guest</label> */}
           </form>
 
-          <div className="flex flex-row w-[300px] justify-between ">
+          <div className="flex flex-row w-[300px] mt-[-80px] justify-between ">
             <p className="self-start cursor-pointer"
               onClick={() => updateStep(step - 1)}>
               {'<'}Back
             </p>
           </div>
-
-
+          <div className='float-right mt-16 cursor-pointer bg-black text-gray-200 text-xs w-36
+             rounded-md h-8 flex justify-center items-center shadow-xl hover transition duration-300 hover:text-white select-none'
+                onClick={() => updateStep(step + 1)}>
+                <p className='px-2 font-Nunito'>
+                    { 'SUBMIT'}
+                </p>
+          </div> 
         </div>
       </div>
     </div>

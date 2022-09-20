@@ -41,7 +41,7 @@ export default function Event(uploadlength) {
                 return <EventForm4 setExpand={setExpand} step={step} updateStep={setStep} />
 
             case 5:
-                return <Completion />
+                return <Completion step={step} updateStep={setStep} />
 
             default: return "Go to Homepage"
         }
@@ -72,7 +72,7 @@ export default function Event(uploadlength) {
                     </div>
 
                     {step ? (<div className={"w-[400px] h-[400px] flex flex-col gap-y-2 justify-center items-center rounded-3xl "
-                        + imgColors[step - 1] + (uploadlength ? "" : "")}>
+                        + imgColors[step - 1]}>
                         <div>
                             <p className=" text-center text-xl ">Upload Event Flyer</p>
                         </div>
