@@ -1,6 +1,8 @@
 import React from "react";
 import Image from 'next/image'
-import Party from "../public/Party.jpg";
+
+import Party from "../../public/party.jpg";
+
 
 
 
