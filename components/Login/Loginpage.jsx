@@ -81,7 +81,7 @@ export default function Loginpage() {
                 />
               </div>
               <button
-                type="submit"
+                type="button"
                 onClick={login}
                 className=" rounded-xl w-full py-3 mt-8 bg-red-600 hover:bg-red-400 relative text-white"
               >

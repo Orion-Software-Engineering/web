@@ -11,7 +11,7 @@ const Accordion = () => {
     setSelected(i);
   };
   return (
-    <div className="accwrapper bg-gray-100 mt-10">
+    <div className="accwrapper bg-gray-100 h-full pt-[40px] ">
       <div className="accordion">
         {data.map((items, i) => (
           <div key={i} className="accitem font-bold">
