@@ -29,7 +29,7 @@ const EventForm3 = ({ step, updateStep }) => {
             <ToggleSWitch/>
             <label htmlFor="second" className="mt-[10px]">MCs</label>
             <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
-            <label htmlfor="third" className="mt-[20px]">Guests</label>
+            <label htmlFor="third" className="mt-[20px]">Guests</label>
             <textarea type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
             {/* <label for="third" className="mt-[0px] text-xs text-[#575757] cursor-pointer">Add another guest</label> */}
           </form>
