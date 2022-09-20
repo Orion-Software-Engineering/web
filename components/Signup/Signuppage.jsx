@@ -14,7 +14,7 @@ export default function Signuppage() {
             <h1 className="font-Nunito text-3xl mb-5 pt-10">Welcome</h1>
             <div>
               <p className="font-Nunito mb-5 pb-10">
-                Register now and meet new people!{" "}
+                Register now to create events{" "}
               </p>
             </div>
           </div>
