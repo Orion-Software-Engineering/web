@@ -92,7 +92,7 @@ export default function Signuppage() {
               </div>
               <div className="mt-5">
                 <button className=" rounded-xl w-full font-Nunito bg-red-500 py-3 text-center">
-                  <a className="text-white"> SignUp Now</a>
+                  <a className="text-white"> Sign Up Now</a>
                 </button>
                 <p className="text-center mt-2 flex justify-center ">
                   Already have an account?
