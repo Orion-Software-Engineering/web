@@ -46,20 +46,11 @@ export default function Signuppage() {
   }
 
   return (
-    <div className="bg-[url('../public/TopBackground.png')] p-40 min-h-screen bg-no-repeat bg-cover">
-      <div className="container mx-auto  ">
-        <div className=" flex w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden ">
-          <div className="w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center">
-            <Image src={Logo} alt="logo" />
-
-            <h1 className="font-Nunito text-3xl mb-5 pt-10">Welcome</h1>
-            <div>
-              <p className="font-Nunito mb-5 pb-10">
-                Register now and meet new people!{" "}
-              </p>
-            </div>
-          </div>
-          <div className="w-1/2 py-16 px-12">
+    <div className="bg-[url('../public/TopBackground.png')] min-h-screen bg-no-repeat bg-cover">
+      <div className=" container mx-auto mt-[-96px] w-full h-screen text-center flex flex-col justify-center ">
+        <div className=" flex bg-white rounded-xl mt-10  mx-auto shadow-lg overflow-hidden ">
+   */}
+          <div className="w-full py-16 px-12">
             <h2 className="font-Nunito text-3xl mb-4 ">SignUp </h2>
             <p className="mb-4 ">Create your account to start sharing events</p>
             <form action="#">
