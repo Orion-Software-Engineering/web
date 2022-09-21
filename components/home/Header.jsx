@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between items-center h-24 relative z-0 max-2-[1024] mx-auto px-4 text-white bg-[#000000] w-screen ">
+    <div className="flex relative justify-between items-center h-24 max-2-[1024] mx-auto px-4 text-white bg-[#000000] w-screen z-10">
       <div className="flex">
         <Image src={Logo} alt="Logo_Image" width={"70px"} height={"70px"} />
         <h1 className="pt-1 pl-1 w-full text-4xl font-bold text-white font-Nunito">
@@ -50,7 +50,7 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <div onClick={handleNav} className="block md:hidden">
+      <div onClick={handleNav} className="block md:hidden ">
         {!nav ? (
           <AiOutlineClose seize={20} className="bg-black" />
         ) : (
@@ -61,8 +61,8 @@ const Navbar = () => {
       <div
         className={
           !nav
-            ? "md:hidden fixed left-0 top-0 h-full w-[60%] border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500 "
-            : "fixed left-[-100%] top-0 h-full w-[60%] border-r border-r-gray-900 bg-[#00030075] ease-in-out duration-500 "
+            ? "md:hidden fixed left-0 top-0 h-full w-[60%] border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500 z-10"
+            : "fixed left-[-100%] top-0 h-full w-[60%] border-r border-r-gray-900 bg-[#00030075] ease-in-out duration-500 z-10"
         }
       >
         <div className="flex m-4 ">

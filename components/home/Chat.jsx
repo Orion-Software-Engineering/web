@@ -9,7 +9,7 @@ const Chat = () => {
         <div className="max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center">
           <div className="flex max-w-[800px] w-full mx-auto">
             <div>
-              <Image src={womanChat} alt="womanChatting" />
+              <Image  src={womanChat} alt="womanChatting" />
             </div>
             <div className="flex gap-8 ">
               <span className="md:text-6xl sm:text-5xl text-3xl text-white font-bold md:py-6  ">

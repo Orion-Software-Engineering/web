@@ -10,9 +10,9 @@ export default function Signuppage() {
   const [password, setPassword] = useState("");
   const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
-  const role = organizer;
+  const role = "organizer";
 
-  const history = useHistory();
+  let history = useHistory();
 
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
@@ -108,13 +108,13 @@ export default function Signuppage() {
               </div>
               <div className="mg-5 flex ">
                 <input
-                  onChange={(e) => setGender(false)}
+                  onChange={(e) => setGender(true)}
                   type="checkbox"
                   className="border border-gray-400"
                 />
                 <span className="font-Nunito p-1">Male</span>
                 <input
-                  onChange={(e) => setGender(true)}
+                  onChange={(e) => setGender(false)}
                   type="checkbox"
                   className="border border-gray-400 ml-3"
                 />

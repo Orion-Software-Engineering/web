@@ -5,7 +5,7 @@ import profile1 from "../../public/profile1.png";
 import profile2 from "../../public/profile2.png";
 const Profiles = () => {
   return (
-    <div className="h-[500px] flex  border-gray-600 font-nunito justify-center">
+    <div className="  text-black  h-[500px] flex  border-gray-600 font-nunito justify-center">
       <div className="w-[325px] h-[400px] mt-[50px] ml-[125px]  border-gray-600">
         <div className=" border-gray-600 mr-[80px] ml-[80px] h-[200px]">
           <Image
@@ -15,12 +15,12 @@ const Profiles = () => {
             height="250px"
           />
         </div>
-        <div className=" border-gray-600 mt-[15px] text-center">
+        <div className="  border-gray-600 mt-[15px] text-center">
           <p>Dixie Normus</p>
         </div>
         <div className=" border-gray-600 mt-[30px]">
           <p>
-            This app is great. I helped me to find some friends interested in
+            This app is great. It helped me to find some friends interested in
             the same music as me and once we met in person, we found out that we
             had more in common than we thought.
           </p>

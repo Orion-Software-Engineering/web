@@ -1,7 +1,5 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { EffectFade, Autoplay } from "swiper";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "swiper/css/autoplay";
@@ -9,8 +7,8 @@ import Chat from "../components/home/Chat";
 import Question from "../components/home/Question";
 import Hero from "../components/home/Hero";
 import Header from "../components/home/Header";
-import Find from "../components/home/Find";
-import Getapp from "../components/home/Getapp";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectFade, Autoplay } from "swiper";
 
 
 export default function Swipe() {
@@ -38,10 +36,6 @@ export default function Swipe() {
           <SwiperSlide>
             <Header />
             <Question />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Header />
-            <Find />
           </SwiperSlide>
         </Swiper>
       </div>
