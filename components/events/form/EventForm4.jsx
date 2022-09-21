@@ -1,11 +1,12 @@
 import React, { useRef, useState } from 'react'
 import Image from 'next/image'
-import ToggleSWitch from '../ToggleSwitch'
+import ToggleSwitch from '../ToggleSwitch'
 
 
-const EventForm4 = ({ step, updateStep }) => {
+const EventForm4 = ({ step, updateStep, formRef, submitForm, name, categories, description,
+  organizers, date, time, price, ageRestrictions, mcs, guests }) => {
 
-  const formRef = useRef()
+  // const formRef = useRef()
   const handleSubmit = (event) => {
     event.preventDefault()
     // TODO: perform the push to backend here
@@ -19,21 +20,22 @@ const EventForm4 = ({ step, updateStep }) => {
         <div className="flex flex-col h justify-center items-center  border-blue-600 w-[400px] rounded-l-3xl ">
           <form ref={formRef} handleSubmit={handleSubmit} className="flex flex-col mb-[150px]" >
             <label htmlFor="first" className='mt-[-20px]'>Event Name</label>
-            <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
+            <input type="text" id="first" name="event_name" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg"
+              value={name} disabled />
             <label htmlFor="first">Event category</label>
-            <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
+            <input type="text" id="first" name="event_category" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg " value={categories} disabled />
             <label htmlFor="third" className="mt-[20px]">Event Description:</label>
-            <textarea type="text" id="third" name="last" className="bg-black h-[80px] w-[300px] text-white pl-[10px] pb-[50px] rounded-lg" />
+            <textarea type="text" id="third" name="event_description" className="bg-black h-[80px] w-[300px] text-white pl-[10px] pb-[50px] rounded-lg" value={description} disabled />
             <label htmlFor="first">Organizers</label>
-            <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
+            <input type="text" id="first" name="organizers" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" value={organizers} disabled />
             <label htmlFor="first">Date and Time</label>
-            <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
+            <input type="text" id="first" name="date_time" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" value={`${date} at ${time}`} disabled />
             <label htmlFor="first">Age Restrictions(18+)</label>
-            <ToggleSWitch />
+            <ToggleSwitch ageRestrictions={ageRestrictions} disabled={true} />
             <label htmlFor="second" className="mt-[0px]">MCs</label>
-            <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
+            <input type="text" id="first" name="mcs" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" value={mcs} disabled />
             <label htmlFor="third" className="mt-[20px]">Guests</label>
-            <textarea type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
+            <textarea type="text" id="first" name="guests" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" value={guests} disabled />
             {/* <label for="third" className="mt-[0px] text-xs text-[#575757] cursor-pointer">Add another guest</label> */}
 
           </form>
@@ -46,11 +48,14 @@ const EventForm4 = ({ step, updateStep }) => {
           </div>
           <div className='float-right mt-16 cursor-pointer bg-black text-gray-200 text-xs w-36
              rounded-md h-8 flex justify-center items-center shadow-xl hover transition duration-300 hover:text-white select-none'
-                onClick={() => updateStep(step + 1)}>
-                <p className='px-2 font-Nunito'>
-                    { 'SUBMIT'}
-                </p>
-          </div> 
+            onClick={async () => {
+              // post form data 
+              await submitForm()
+            }}>
+            <p className='px-2 font-Nunito'>
+              {'SUBMIT'}
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -2,13 +2,13 @@ import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import { BiCalendar, BiTime } from 'react-icons/bi'
 import ReactSwitch from 'react-switch'
-import ToggleSWitch from '../ToggleSwitch'
+import ToggleSwitch from '../ToggleSwitch'
 
 
 
 
 
-const EventForm3 = ({ step, updateStep }) => {
+const EventForm3 = ({ step, updateStep, ageRestrictions, setAgeRestrictions, mcs, setMcs, guests, setGuests }) => {
 
   const formRef = useRef()
   const [checked, setChecked] = useState(true);
@@ -26,14 +26,20 @@ const EventForm3 = ({ step, updateStep }) => {
         <div className="flex flex-col h-[400px] justify-center items-center  border-blue-600 w-[400px] rounded-l-3xl ">
           <form ref={formRef} handleSubmit={handleSubmit} className="flex flex-col mb-[30px]" >
             <label htmlFor="first">Age Restrictions(18+)</label>
-            <ToggleSWitch/>
+            <ToggleSwitch ageRestrictions={ageRestrictions} setAgeRestrictions={setAgeRestrictions} readOnly={false}/>
+
             <label htmlFor="second" className="mt-[10px]">MCs</label>
-            <input type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
+            <input type="text" id="first" name="mcs" value={mcs}
+              className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg"
+              onChange={(e) => setMcs(e.target.value)} />
+
             <label htmlFor="third" className="mt-[20px]">Guests</label>
-            <textarea type="text" id="first" name="first" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
+            <textarea type="text" id="first" name="guests" value={guests}
+              className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg"
+              onChange={(e) => setGuests(e.target.value)} />
             {/* <label for="third" className="mt-[0px] text-xs text-[#575757] cursor-pointer">Add another guest</label> */}
           </form>
-          
+
           <div className="flex flex-row w-[300px] justify-between mt-[40px]">
             <p className="self-start cursor-pointer"
               onClick={() => updateStep(step - 1)}>

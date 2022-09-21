@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import Link from "next/link";
-import Events1 from "/components/events/Events1"
+import React, { useState, useEffect } from "react";
 
-const CategorySelect = ({ handleSelect, setExpand }) => {
+const CategorySelect = ({ handleSelect, setExpand, updateCategories }) => {
   const options = [
     { name: "Art", isChecked: false },
     { name: "Entertainment", isChecked: false },
@@ -20,15 +18,18 @@ const CategorySelect = ({ handleSelect, setExpand }) => {
     { name: "Health & Fitness", isChecked: false },
     { name: "Sports", isChecked: false },
   ]
-
-  const [categories, setCategories] = useState(options);
+  const [categories, setCategories] = useState(options)
 
   const updateCategory = (index) => {
     const current = categories
     current[index].isChecked = !categories[index].isChecked
-    console.log(current);
     setCategories([...current])
   }
+
+  useEffect(() => {
+    updateCategories(categories)
+  }, [categories])
+
 
   return (
     <div className="absolute bg-black w-[700px] rounded-lg h-[300px] text-gray-300 grid grid-cols-3 gap-y-4">
@@ -36,9 +37,10 @@ const CategorySelect = ({ handleSelect, setExpand }) => {
         <p>You may select more than one category</p>
       </div>
       {categories.map((category, i) => (
-        <div key={i} className="pl-4 flex gap-x-4">
+        <div key={i} className="pl-4 flex gap-x-4"
+          onClick={() => updateCategory(i)}>
           <input type="checkbox" checked={category.isChecked} name="category"
-            onClick={() => updateCategory(i)} />
+          />
           <label>{category.name}</label>
         </div>
       ))}
