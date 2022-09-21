@@ -46,23 +46,23 @@ export default function Event(uploadlength) {
             case 1:
                 return <EventForm1 setExpand={setExpand} step={step} updateStep={setStep}
                     setName={setName} setCategories={setCategories} setDescription={setDescription}
-                    name={name} description={description} categories={categories} />
+                    name={name} description={description}   categories={categories} />
 
             case 2:
                 return <EventForm2 setExpand={setExpand} step={step} updateStep={setStep}
                     setOrganizers={setOrganizers} setDate={setDate} setTime={setTime} setPrice={setPrice}
-                    organizers={organizers} date={date} time={time} price={price} />
+                    organizers={organizers} date={date}   time={time} price={price} />
 
             case 3:
                 return <EventForm3 setExpand={setExpand} step={step} updateStep={setStep}
                     setAgeRestrictions={setAgeRestrictions} setMcs={setMcs} setGuests={setGuests}
-                    ageRestrictions={ageRestrictions} mcs={mcs} guests={guests} />
+                    ageRestrictions={ageRestrictions}   mcs={mcs} guests={guests} />
 
             case 4:
                 return <EventForm4 setExpand={setExpand} step={step} updateStep={setStep}
                     name={name} categories={categories} description={description}
                     organizers={organizers} date={date} time={time} price={price}
-                    ageRestrictions={ageRestrictions} mcs={mcs} guests={guests} />
+                    ageRestrictions={ageRestrictions}   mcs={mcs} guests={guests} />
 
             case 5:
                 return <Completion step={step} updateStep={setStep} />
