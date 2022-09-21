@@ -46,107 +46,119 @@ export default function Signuppage() {
   }
 
   return (
-    <div className="bg-[url('../public/TopBackground.png')] min-h-screen bg-no-repeat bg-cover">
-      <div className=" container mx-auto mt-[-96px] w-full h-screen text-center flex flex-col justify-center ">
-        <div className=" flex bg-white rounded-xl mt-10  mx-auto shadow-lg overflow-hidden ">
-   */}
-          <div className="w-full py-16 px-12">
-            <h2 className="font-Nunito text-3xl mb-4 ">SignUp </h2>
-            <p className="mb-4 ">Create your account to start sharing events</p>
-            <form action="#">
-              <div className="mt-5">
-                <input
-                  onChange={(e) => setUsername(e.target.value)}
-                  type="text"
-                  placeholder="Username"
-                  className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
-                />
-              </div>
-              <div className="mt-5">
-                <input
-                  onChange={(e) => setEmail(e.target.value)}
-                  type="text"
-                  placeholder="Email"
-                  className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
-                />
-              </div>
-
-              <div className="mt-5">
-                <input
-                  onChange={(e) => setPassword(e.target.value)}
-                  type="password"
-                  placeholder=" Password"
-                  className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
-                />
-              </div>
-
-              <div className="mt-5">
-                <input
-                  type="password"
-                  placeholder="Confirm Password"
-                  className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
-                />
-              </div>
-
-              <div className="mt-5">
-                <input
-                  onChange={(e) => setDob(e.target.value)}
-                  name="DOB"
-                  type="date"
-                  placeholder="DOB"
-                  className="rounded-xl border border-gray-400 py-1 px-2 w-full"
-                />
-              </div>
-              <div className="mg-5 flex ">
-                <input
-                  onChange={(e) => setGender(true)}
-                  type="checkbox"
-                  className="border border-gray-400"
-                />
-                <span className="font-Nunito p-1">Male</span>
-                <input
-                  onChange={(e) => setGender(false)}
-                  type="checkbox"
-                  className="border border-gray-400 ml-3"
-                />
-                <span className="font-Nunito p-1 ">Female</span>
-              </div>
-
-              <div className="mg-5">
-                <input type="checkbox" className="border border-gray-400" />
-                <span className="font-Nunito p-1">
-                  I accept the
-                  <a
-                    href={""}
-                    className="text-red-500 font-semibold font-Nunito p-1"
-                  >
-                    Terms of Use
-                  </a>
-                  &
-                  <a
-                    href={""}
-                    className="text-red-500 font-semibold font-Nunito p-1"
-                  >
-                    Privacy Policy
-                  </a>
-                </span>
-              </div>
-              <div className="mt-5">
-                <button
-                  type="button"
-                  onClick={signup}
-                  className=" rounded-xl w-full font-Nunito bg-red-500 py-3 text-center"
-                >
-                  <a className="text-white"> SignUp Now</a>
-                </button>
-                <p className="text-center mt-2 flex justify-center ">
-                  Already have an account?
-                  <a href={"/login"} className="px-2 underline text-red-500">
-                    Login
-                  </a>
+    <div className="bg-[url('../public/TopBackground.png')] h-screen w-screen bg-no-repeat bg-cover ">
+      <div className=" w-full  max-w-[800px] mx-auto mt-[-96px]">
+        <div className="container h-screen pt-20 mx-auto text-center relative max-w-[800px] flex flex-col items-center justify-center  ">
+          <div className=" mx-3 md:flex bg-white relative rounded-xl shadow-lg overflow-hidden">
+            <div className=" hidden sm:flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center ">
+              <Image src={Logo} alt="logo" />
+              <h1 className="font-Nunito text-3xl mb-5 pt-10">Welcome</h1>
+              <div>
+                <p className="font-Nunito mb-5 pb-10">
+                  Register now and meet new people!{" "}
                 </p>
               </div>
-            </form>
+            </div>
+            <div className="w-full py-16 px-10">
+              <h2 className="font-Nunito text-3xl mb-4 ">SignUp </h2>
+              <p className="mb-4 ">
+                Create your account to start sharing events
+              </p>
+              <form action="#">
+                <div className="mt-5">
+                  <input
+                    onChange={(e) => setUsername(e.target.value)}
+                    type="text"
+                    placeholder="Username"
+                    className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
+                  />
+                </div>
+                <div className="mt-5">
+                  <input
+                    onChange={(e) => setEmail(e.target.value)}
+                    type="text"
+                    placeholder="Email"
+                    className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
+                  />
+                </div>
+
+                <div className="mt-5">
+                  <input
+                    onChange={(e) => setPassword(e.target.value)}
+                    type="password"
+                    placeholder=" Password"
+                    className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
+                  />
+                </div>
+
+                <div className="mt-5">
+                  <input
+                    type="password"
+                    placeholder="Confirm Password"
+                    className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
+                  />
+                </div>
+
+                <div className="mt-5">
+                  <input
+                    onChange={(e) => setDob(e.target.value)}
+                    name="DOB"
+                    type="date"
+                    placeholder="DOB"
+                    className="rounded-xl border border-gray-400 py-1 px-2 w-full"
+                  />
+                </div>
+                <div className="mg-5 flex ">
+                  <input
+                    onChange={(e) => setGender(true)}
+                    type="checkbox"
+                    className="border border-gray-400"
+                  />
+                  <span className="font-Nunito p-1">Male</span>
+                  <input
+                    onChange={(e) => setGender(false)}
+                    type="checkbox"
+                    className="border border-gray-400 ml-3"
+                  />
+                  <span className="font-Nunito p-1 ">Female</span>
+                </div>
+
+                <div className="mg-5">
+                  <input type="checkbox" className="border border-gray-400" />
+                  <span className="font-Nunito p-1">
+                    I accept the
+                    <a
+                      href={""}
+                      className="text-red-500 font-semibold font-Nunito p-1"
+                    >
+                      Terms of Use
+                    </a>
+                    &
+                    <a
+                      href={""}
+                      className="text-red-500 font-semibold font-Nunito p-1"
+                    >
+                      Privacy Policy
+                    </a>
+                  </span>
+                </div>
+                <div className="mt-5">
+                  <button
+                    type="button"
+                    onClick={signup}
+                    className=" rounded-xl w-full font-Nunito bg-red-500 py-3 text-center"
+                  >
+                    <a className="text-white"> SignUp Now</a>
+                  </button>
+                  <p className="text-center mt-2 flex justify-center ">
+                    Already have an account?
+                    <a href={"/login"} className="px-2 underline text-red-500">
+                      Login
+                    </a>
+                  </p>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
