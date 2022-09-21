@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import EventHeader from "../components/events/HeaderEvents";
 import EventForm1 from "../components/events/form/EventForm1";
 import EventForm2 from "../components/events/form/EventForm2";
@@ -17,10 +17,25 @@ export default function Event(uploadlength) {
     const [expand, setExpand] = useState(false)
     const [step, setStep] = useState(0)
 
+    const [name, setName] = useState('')
+    const [categories, setCategories] = useState([])
+    const [description, setDescription] = useState('')
+    const [organizers, setOrganizers] = useState('')
+    const [date, setDate] = useState('')
+    const [time, setTime] = useState('')
+    const [price, setPrice] = useState(0)
+    const [ageRestrictions, setAgeRestrictions] = useState(false)
+    const [mcs, setMcs] = useState('')
+    const [guests, setGuests] = useState('')
+
     useEffect(() => {
         if (step % 2) setExpand(false)
         else setExpand(true)
     }, [step])
+
+    const submitEventForm = (event) => {
+        event.preventDefault();
+    }
 
 
     const stepSwitch = (st) => {
@@ -29,16 +44,25 @@ export default function Event(uploadlength) {
                 return <Welcome setStep={setStep} step={step} updateStep={setStep} />
 
             case 1:
-                return <EventForm1 setExpand={setExpand} step={step} updateStep={setStep} />
+                return <EventForm1 setExpand={setExpand} step={step} updateStep={setStep}
+                    setName={setName} setCategories={setCategories} setDescription={setDescription}
+                    name={name} description={description}   categories={categories} />
 
             case 2:
-                return <EventForm2 setExpand={setExpand} step={step} updateStep={setStep} />
+                return <EventForm2 setExpand={setExpand} step={step} updateStep={setStep}
+                    setOrganizers={setOrganizers} setDate={setDate} setTime={setTime} setPrice={setPrice}
+                    organizers={organizers} date={date}   time={time} price={price} />
 
             case 3:
-                return <EventForm3 setExpand={setExpand} step={step} updateStep={setStep} />
+                return <EventForm3 setExpand={setExpand} step={step} updateStep={setStep}
+                    setAgeRestrictions={setAgeRestrictions} setMcs={setMcs} setGuests={setGuests}
+                    ageRestrictions={ageRestrictions}   mcs={mcs} guests={guests} />
 
             case 4:
-                return <EventForm4 setExpand={setExpand} step={step} updateStep={setStep} />
+                return <EventForm4 setExpand={setExpand} step={step} updateStep={setStep}
+                    name={name} categories={categories} description={description}
+                    organizers={organizers} date={date} time={time} price={price}
+                    ageRestrictions={ageRestrictions}   mcs={mcs} guests={guests} />
 
             case 5:
                 return <Completion step={step} updateStep={setStep} />
@@ -50,6 +74,8 @@ export default function Event(uploadlength) {
     const imgColors = [
         'bg-[#FF7A00]', 'bg-[#1950DE]', 'bg-[#1EA313]', 'bg-[#FF0000]', 'bg-[#FFE600]'
     ]
+
+
 
     return (
         <div className=" h-screen">

@@ -7,10 +7,10 @@ import imageAppstore from "../../public/applestore2.png";
 
 const Getapp = () => {
   return (
-    <div className="h-[250px] flex justify-center">
+    <div className="h-[250px] flex justify-center ">
       <div className="border-gray-600  h-[350px] w-[400px] ml-[130px] mt-[20px]">
         <div
-          className="text-black w-[400px] h-[80px] text-5xl text-center   mt-[50px] ml-[px] pl-[2px] 
+          className="text-black  w-[400px] h-[80px] text-5xl text-center   mt-[74px] ml-[px] pl-[2px] 
                 font-bold border-gray-600 font-nunito"
         >
           Get the app!

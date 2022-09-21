@@ -4,21 +4,28 @@ import Image from "next/image";
 import ImageUpload from "../ImageUpload";
 import CategorySelect from "../CategorySelect";
 
-const EventForm1 = ({ setExpand, step, updateStep }) => {
+const EventForm1 = ({ setExpand, step, updateStep, name, categories, setCategories, setName, description, setDescription }) => {
     const [categorySelectOpen, setCategorySelectOpen] = useState(false);
-
-    const [File, setFile] = useState();
 
     const formRef = useRef();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // TODO: perform the push to backend here
+        // store data in state
+
         console.log("submitted", formRef.current);
     };
+
+    const categoryColors = [
+        'bg-orange-500', 'bg-green-500', 'bg-blue-500', 'bg-red-500',
+        'bg-yellow-500', 'bg-orange-500', 'bg-green-500', 'bg-blue-500',
+        'bg-red-500', 'bg-yellow-500', 'bg-orange-500', 'bg-green-500',
+        'bg-blue-500', 'bg-red-500', 'bg-yellow-500'
+    ]
+
     return (
         <div>
-            <div className="justify-self-center self-center flex  border-gray-600  ">
+            <div className=" justify-self-center self-center flex border-gray-600 ">
                 <div className="flex flex-col h-[400px] justify-center items-center  border-blue-600 w-[400px] rounded-l-3xl ">
                     <form
                         ref={formRef}
@@ -28,13 +35,19 @@ const EventForm1 = ({ setExpand, step, updateStep }) => {
                         <input
                             type="text"
                             id="first"
-                            name="first"
+                            name="event_name"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
                             className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg"
                         />
                         <label htmlFor="second" className="mt-[20px]">
                             Event Category:
                         </label>
-                        <div className="w-[300px] bg-black h-[30px] rounded-lg text-gray-300 flex flex-row-reverse items-center">
+                        <div className="w-[300px] bg-black min-h-[30px] rounded-lg text-gray-300 flex flex-row-reverse items-center"
+                            onClick={() => {
+                                setCategorySelectOpen(!categorySelectOpen)
+                                setExpand(true)
+                            }}>
                             <div
                                 className="p-2 cursor-pointer hover:text-orange-300"
                                 onClick={() => {
@@ -44,6 +57,16 @@ const EventForm1 = ({ setExpand, step, updateStep }) => {
                             >
                                 <FiChevronDown size={22} />
                             </div>
+                            <div className='text-white flex flex-wrap gap-2 p-2'>
+                                {categories.map((category, i) => {
+                                    if (category.isChecked)
+                                        return <div
+                                            className={'rounded-full h-[30px] px-2 text-xs flex justify-center items-center pb-[2px] font-medium '
+                                                + categoryColors[i]}>
+                                            {category.name}
+                                        </div>
+                                })}
+                            </div>
                         </div>
                         <label htmlFor="third" className="mt-[20px]">
                             Event Description:
@@ -51,7 +74,9 @@ const EventForm1 = ({ setExpand, step, updateStep }) => {
                         <textarea
                             type="text"
                             id="third"
-                            name="last"
+                            name="event_description"
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
                             className="bg-black h-[80px] w-[300px] text-white pl-[10px] pt-[6px] rounded-lg" />
                     </form>
 
@@ -61,7 +86,10 @@ const EventForm1 = ({ setExpand, step, updateStep }) => {
                             {'<'}Back
                         </p>
                         <p className="self-end cursor-pointer"
-                            onClick={() => { updateStep(step + 1) }}>
+                            onClick={() => {
+                                updateStep(step + 1)
+                                console.log(formRef.current.event_name.value);
+                            }}>
                             Next{'>'}
                         </p>
                     </div>
@@ -91,7 +119,7 @@ const EventForm1 = ({ setExpand, step, updateStep }) => {
                 (categorySelectOpen ?
                     " opacity-100 visible "
                     : " opacity-0 invisible ")}>
-                <CategorySelect handleSelect={setCategorySelectOpen} setExpand={setExpand} />
+                <CategorySelect handleSelect={setCategorySelectOpen} setExpand={setExpand} updateCategories={setCategories} />
             </div>
         </div>
     )
