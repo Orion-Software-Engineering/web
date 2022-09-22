@@ -17,10 +17,10 @@ const EventForm1 = ({ setExpand, step, updateStep, name, categories, setCategori
     };
 
     const categoryColors = [
-        'bg-orange-500', 'bg-green-500', 'bg-blue-500', 'bg-red-500',
-        'bg-yellow-500', 'bg-orange-500', 'bg-green-500', 'bg-blue-500',
-        'bg-red-500', 'bg-yellow-500', 'bg-orange-500', 'bg-green-500',
-        'bg-blue-500', 'bg-red-500', 'bg-yellow-500'
+        'bg-blue-900', 'bg-red-600', 'bg-purple-900', 'bg-gray-800',
+        'bg-pink-500', 'bg-green-800', 'bg-gray-500', 'bg-orange-500',
+        'bg-green-800', 'bg-yellow-500', 'bg-blue-800', 'bg-orange-400',
+        'bg-yellow-200', 'bg-blue-300', 'bg-yellow-500'
     ]
 
     return (
@@ -31,7 +31,7 @@ const EventForm1 = ({ setExpand, step, updateStep, name, categories, setCategori
                         ref={formRef}
                         handleSubmit={handleSubmit}
                         className="flex flex-col mb-[30px]">
-                        <label htmlFor="first">Events Name:</label>
+                        <label htmlFor="first">Event Name:</label>
                         <input
                             type="text"
                             id="first"
@@ -43,13 +43,13 @@ const EventForm1 = ({ setExpand, step, updateStep, name, categories, setCategori
                         <label htmlFor="second" className="mt-[20px]">
                             Event Category:
                         </label>
-                        <div className="w-[300px] bg-black min-h-[30px] rounded-lg text-gray-300 flex flex-row-reverse items-center"
+                        <div className="w-[300px] bg-black min-h-[30px] rounded-lg text-gray-300 flex flex-row-reverse items-center font-Nunito"
                             onClick={() => {
                                 setCategorySelectOpen(!categorySelectOpen)
                                 setExpand(true)
                             }}>
                             <div
-                                className="p-2 cursor-pointer hover:text-orange-300"
+                                className="p-2 cursor-pointer hover:text-orange-300 font-Nunito"
                                 onClick={() => {
                                     setCategorySelectOpen(!categorySelectOpen)
                                     setExpand(true)
@@ -57,9 +57,10 @@ const EventForm1 = ({ setExpand, step, updateStep, name, categories, setCategori
                             >
                                 <FiChevronDown size={22} />
                             </div>
-                            <div className='text-white flex flex-wrap gap-2 p-2'>
+                            <div className='text-white flex flex-wrap gap-2 p-2 font-Nunito'>
                                 {categories.map((category, i) => {
-                                    if (category.isChecked)
+                                    
+                                    if (category.isChecked )
                                         return <div
                                             className={'rounded-full h-[30px] px-2 text-xs flex justify-center items-center pb-[2px] font-medium '
                                                 + categoryColors[i]}>

@@ -40,27 +40,26 @@ const EventForm2 = ({ step, updateStep, organizers, setOrganizers, date, setDate
 
           <div className="">
             <label htmlFor="second" className="mt-[20px] flex">
-              Time
+              Time <p className="text-xs flex justify-center items-center text-[#565252] pt-1">(hour-minute-am/pm)</p>
             </label>
             <input type="time" id="datep" name="time_select" value={time}
-              className="bg-black text-white rounded-lg pl-3 w-[100px] justify-center items-center h-[25px]"
+              className="bg-black text-white rounded-lg pl-3 w-[120px] justify-center items-center h-[25px]"
               onChange={(e) => {
                 setTime(e.target.value)
               }}>
             </input>
 
             <label htmlFor="second" className="mt-[20px]  flex">
-              Price<p className="text-xs flex justify-center items-center text-[#565252] pt-1">(If free leave blank)</p>
+              Price
+              <p className="text-xs flex justify-center items-center text-[#565252] pt-1">(If free leave blank)</p>
             </label>
-            <input type="number" id="datep" name="price" value={price}
-              className="flex bg-black text-white rounded-lg pl-3 w-[100px] justify-center items-center h-[25px]"
+            <input type="number" id="datep" name="price" pattern="[0-9]" step="10.00" min="0"
+              className="flex bg-black text-white rounded-lg pl-3 w-[80px] pr-1 justify-center items-center h-[25px]"
               onChange={(e) => setPrice(e.target.value)}>
             </input>
-
+            
           </div>
-
         </form>
-
 
         <div className='flex flex-row w-[300px] mt-[0px] border-green-700 justify-between '>
           <p className="self-start cursor-pointer"

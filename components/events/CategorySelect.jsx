@@ -22,8 +22,10 @@ const CategorySelect = ({ handleSelect, setExpand, updateCategories }) => {
 
   const updateCategory = (index) => {
     const current = categories
-    current[index].isChecked = !categories[index].isChecked
-    setCategories([...current])
+    if (current.filter(cat => cat.isChecked).length <= 2 || current[index].isChecked) {
+      current[index].isChecked = !categories[index].isChecked
+      setCategories([...current])
+    }
   }
 
   useEffect(() => {
@@ -32,7 +34,7 @@ const CategorySelect = ({ handleSelect, setExpand, updateCategories }) => {
 
 
   return (
-    <div className="absolute bg-black w-[700px] rounded-lg h-[300px] text-gray-300 grid grid-cols-3 gap-y-4">
+    <div className="absolute bg-black w-[700px] rounded-lg h-[300px] text-gray-300 grid grid-cols-3 gap-y-4 font-Nunito ">
       <div className="w-full grid col-start-1 col-end-4 pl-4 pt-2">
         <p>You may select more than one category</p>
       </div>
