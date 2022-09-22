@@ -9,8 +9,8 @@ export default function Support() {
     <div className="bg-gray-100 h-screen">
       <Header />
       <div className="bg-gray-100 space-y-5 pt-10">
-        <Accordion />
         <Form />
+        <Accordion />
       </div>
     </div>
 
