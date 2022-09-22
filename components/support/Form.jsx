@@ -90,8 +90,8 @@ const Form = () => {
           </div>
 
           <div className="relative">
-            <div className="w-40 h-40 absolute bg-[#372642] rounded-full -right-28 -top-28"></div>
-            <div className="w-40 h-40 absolute bg-[#372642] rounded-full -left-28 -bottom-16"></div>
+            <div className="w-40 h-40 absolute bg-red-400 rounded-full -right-28 -top-28"></div>
+            <div className="w-40 h-40 absolute bg-red-400  rounded-full -left-28 -bottom-16"></div>
 
             <div className="bg-white rounded-xl z-2 shadow-lg p-8 text-gray-600 ">
               <form
