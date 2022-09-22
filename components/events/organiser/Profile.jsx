@@ -12,8 +12,8 @@ import Rectangle19 from "../../../public/rectangle19.png";
 
 export default function OrganiserProfile() {
   return (
-    <div className="flex flex-row justify-center mt-10">
-      <div className="items-center justify-center">
+    <div className="flex flex-row justify-center">
+      <div className="items-center justify-center px-20">
         <div className="flex flex-col items-center justify-center">
           <div className="bg-blue-600 h-80 w-80 rounded-t-[30px]">
             <div className="text-center mt-10 space-y-5">
@@ -85,8 +85,8 @@ export default function OrganiserProfile() {
           </div>
         </div>
       </div>
-      <div className="relative w-0.5 m-20 bg-gray-200"></div>
-      <div>
+      <div className="relative w-0.5 m-2 bg-gray-200"></div>
+      <div className="px-20">
         <div className="flex flex-row justify-between">
           <div className="font-Nunito font-bold">My Events</div>
           <div>
@@ -97,8 +97,8 @@ export default function OrganiserProfile() {
           </div>
         </div>
         <div className="bg-gray-100 rounded-lg p-10">
-          <div className="space-y-10">
-            <div className="flex flex-row space-x-10 ">
+          <div className="space-y-20">
+            <div className="flex flex-row space-x-20 ">
               <div>
                 <Image src={Rectangle14} alt="Rectangle14" className="" />
               </div>
@@ -112,7 +112,7 @@ export default function OrganiserProfile() {
                 <Image src={Rectangle45} alt="Rectangle14" className="" />
               </div>
             </div>
-            <div className="flex flex-row space-x-10">
+            <div className="flex flex-row space-x-20">
               <div>
                 <Image src={Rectangle44} alt="Rectangle14" className="" />
               </div>
