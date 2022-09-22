@@ -47,7 +47,7 @@ export default function Signuppage() {
 
   return (
     <div className="bg-[url('../public/TopBackground.png')] h-screen w-screen bg-no-repeat bg-cover ">
-      <div className=" w-full  max-w-[800px] mx-auto mt-[-96px]">
+      <div className=" w-full  max-w-[800px] mx-auto mt-[-80px]">
         <div className="">
           <div className=" h-screen mx-auto text-center relative max-w-[800px] flex flex-col items-center justify-center  ">
             <div className=" md:mt-0 mt-[30%] md:mb-0 mb-[10%] mx-3 md:flex bg-white relative rounded-xl shadow-lg overflow-hidden">

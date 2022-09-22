@@ -8,7 +8,7 @@ import {
 
 const About = () => {
   return (
-    <div className="bg-[url('../public/Party.jpg')] w-full h-screen bg-no-repeat bg-cover font-Nunito mt-[-96px]">
+    <div className="bg-[url('../public/Party.jpg')] w-full h-screen bg-no-repeat bg-cover font-Nunito mt-[-80px]">
       <div className="">
         <div className="w-full h-[700px] bg-gray-900/90 absolute"></div>
         <div className="max-w-[1240px] mx-auto text-white relative">
@@ -16,7 +16,9 @@ const About = () => {
             <h2 className=" text-3xl pt-8 text-slate-300 uppercase text-center">
               About
             </h2>
-            <h3 className="text-4xl font-medium  py-6 text-center">Orion Meet</h3>
+            <h3 className="text-4xl font-medium  py-6 text-center">
+              Orion Meet
+            </h3>
             <p className="py-4 text-3xl text-slate-300">
               Orion meet is an app based platform for match making and event
               organizing. Unlike other match making apps, it matches people

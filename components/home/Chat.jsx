@@ -6,10 +6,10 @@ const Chat = () => {
   return (
     <div>
       <div className="top-[90px] bg-gradient-to-l from-indigo-200 via-red-200 to-yellow-100 bg-cover w-full h-full bg-no-repeat ">
-        <div className="max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center">
+        <div className="max-w-[800px] mt-[-80px] w-full h-screen mx-auto text-center flex flex-col justify-center">
           <div className="flex max-w-[800px] w-full mx-auto">
             <div>
-              <Image  src={womanChat} alt="womanChatting" />
+              <Image src={womanChat} alt="womanChatting" />
             </div>
             <div className="flex gap-8 ">
               <span className="md:text-6xl sm:text-5xl text-3xl text-white font-bold md:py-6  ">
