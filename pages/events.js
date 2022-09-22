@@ -78,8 +78,8 @@ export default function Event(uploadlength) {
 
 
     return (
-        <div className=" h-screen">
-            <div className="h-screen bg-opacity-90 bg-[#F6F6F6]">
+        <div className=" h-screen overflow-y -none overscroll-none">
+            <div className="h-screen bg-opacity-90 bg-[#F6F6F6] overflow-none overscroll-none">
                 <EventHeader />
                 <div className="absolute -left-[11%] top-[11%]">
                     <Doodle expanded={expand} />
@@ -90,22 +90,28 @@ export default function Event(uploadlength) {
 
                 {/* This is where we check the steps */}
                 <div className="flex justify-center items-center mt-8     ">
-                    <div className={step ? "bg-[url('../public/WhatsappB.png')] h-[400px] rounded-3xl  border-red-600 flex flex-col"
+                    <div className={step ? "bg-[url('../public/WhatsappB.png')] h-[400px] rounded-l-3xl  border-red-600 flex flex-col"
                         : "flex justify-center items-center w-[700px]"}>
                         <div>
                             {stepSwitch(step)}
                         </div>
                     </div>
 
-                    {step ? (<div className={"w-[400px] h-[400px] flex flex-col gap-y-2 justify-center items-center rounded-3xl "
+                    {step ? (<div className={"w-[400px] h-[400px] flex flex-col gap-y-2 justify-center items-center rounded-r-3xl "
                         + imgColors[step - 1]}>
                         <div>
                             <p className=" text-center text-xl ">Upload Event Flyer</p>
                         </div>
                         <div className='bg-[#CDC5C5] border-blue-700 w-[250px]  h-[300px] flex justify-center items-center'>
+                            {/* <form> */}
+                                {/* <input type="file"> */}
                             <div className='w-[75px]'>
-                                <Image src="/../public/camera.png" alt="camera" width='75px' height='75px' />
+                                <Image src="/../public/camera.png" alt="camera" width='75px' height='75px' className="cursor-pointer">
+                                </Image>
                             </div>
+                            {/* </input> */}
+                            {/* </form> */}
+
                         </div>
                     </div>) : (<div />)}
                 </div>
