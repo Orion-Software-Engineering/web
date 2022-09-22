@@ -16,7 +16,7 @@ export default function OrganiserProfile() {
       <div className="items-center justify-center">
         <div className="flex flex-col items-center justify-center">
           <div className="bg-blue-600 h-80 w-80 rounded-t-[30px]">
-            <div className="text-center mt-10">
+            <div className="text-center mt-10 space-y-5">
               <div className="items-center justify-center flex flex-col">
                 <div className="w-40 h-40 bg-white rounded-full">
                   <div>
@@ -27,10 +27,14 @@ export default function OrganiserProfile() {
                   </div>
                 </div>
               </div>
-              <h1 className="font-Nunito text-3xl text-white">
-                [Organizer's Name]
-              </h1>
-              <p className="text-white font-Nunito font-semibold">Organizer</p>
+              <div className="">
+                <h1 className="font-Nunito text-3xl text-white">
+                  [Organizer's Name]
+                </h1>
+                <p className="text-white font-Nunito font-semibold">
+                  Organizer
+                </p>
+              </div>
             </div>
             <div className="bg-blue-100 h-80 w-80 rounded-b-[30px] mt-[80px] text-center font-Nunito">
               <div className="flex-col">
