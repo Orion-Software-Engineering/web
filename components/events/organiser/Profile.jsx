@@ -4,6 +4,11 @@ import Link from "next/link";
 import Rectangle14 from "../../../public/rectangle14.png";
 import Rectangle15 from "../../../public/rectangle15.png";
 import Rectangle17 from "../../../public/rectangle17.png";
+import Rectangle45 from "../../../public/rectangle45.png";
+import Rectangle44 from "../../../public/rectangle44.png";
+import Rectangle18 from "../../../public/rectangle18.png";
+import Rectangle20 from "../../../public/rectangle20.png";
+import Rectangle19 from "../../../public/rectangle19.png";
 
 export default function OrganiserProfile() {
   return (
@@ -94,27 +99,27 @@ export default function OrganiserProfile() {
                 <Image src={Rectangle14} alt="Rectangle14" className="" />
               </div>
               <div>
-                <Image src={Rectangle14} alt="Rectangle14" className="" />
+                <Image src={Rectangle15} alt="Rectangle14" className="" />
               </div>
               <div>
-                <Image src={Rectangle14} alt="Rectangle14" className="" />
+                <Image src={Rectangle17} alt="Rectangle14" className="" />
               </div>
               <div>
-                <Image src={Rectangle14} alt="Rectangle14" className="" />
+                <Image src={Rectangle45} alt="Rectangle14" className="" />
               </div>
             </div>
             <div className="flex flex-row space-x-10">
               <div>
-                <Image src={Rectangle14} alt="Rectangle14" className="" />
+                <Image src={Rectangle44} alt="Rectangle14" className="" />
               </div>
               <div>
-                <Image src={Rectangle14} alt="Rectangle14" className="" />
+                <Image src={Rectangle18} alt="Rectangle14" className="" />
               </div>
               <div>
-                <Image src={Rectangle14} alt="Rectangle14" className="" />
+                <Image src={Rectangle20} alt="Rectangle14" className="" />
               </div>
               <div>
-                <Image src={Rectangle14} alt="Rectangle14" className="" />
+                <Image src={Rectangle19} alt="Rectangle14" className="" />
               </div>
             </div>
           </div>
