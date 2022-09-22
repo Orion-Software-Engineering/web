@@ -12,12 +12,11 @@ const Navbar = () => {
   };
 
   return (
-<<<<<<< HEAD
-    <div className="flex justify-between items-center h-16   max-2-[1024] mx-auto px-4 text-white bg-[#f6f6f6ef] fixed top-0 z-50  w-full">
-      <div className="flex z-50">
-        <Image src={Logo} alt="Logo_Image" width={"50px"} height={"50px"} />
-        <h1 className="pt-1 pl-1 w-full text-3xl font-bold text-black font-Nunito">
-          Meet
+    <div className="flex relative justify-between items-center h-24 max-2-[1024] mx-auto px-4 text-white bg-[#F6F6F650] w-screen z-10">
+      <div className="flex">
+        <Image src={Logo} alt="Logo_Image" width={"70px"} height={"70px"} />
+        <h1 className="pt-1 pl-1 w-full text-4xl font-bold text-black font-Nunito">
+          <Link href={"/"}>Meet</Link>
         </h1>
       </div>
 
