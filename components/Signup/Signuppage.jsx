@@ -124,7 +124,7 @@ export default function Signuppage() {
                     <span className="font-Nunito p-1 ">Female</span>
                   </div>
 
-                  <div className="mg-5">
+                  <div className="mg-5 text-left">
                     <input type="checkbox" className="border border-gray-400" />
                     <span className="font-Nunito p-1">
                       I accept the
