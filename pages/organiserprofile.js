@@ -6,7 +6,7 @@ import Profile from "../components/events/organiser/Profile";
 
 export default function organiserprofile() {
    return (
-      <div>
+      <div >
          <Header />
          <Profile />
       </div>

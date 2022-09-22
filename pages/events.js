@@ -29,8 +29,8 @@ export default function Event(uploadlength) {
     const [guests, setGuests] = useState('')
 
     useEffect(() => {
-        if (step % 2) setExpand(false)
-        else setExpand(true)
+        if (step % 2) setExpand(true)
+        else setExpand(false)
     }, [step])
 
     const submitEventForm = (event) => {
@@ -78,18 +78,18 @@ export default function Event(uploadlength) {
 
 
     return (
-        <div className=" h-screen overflow-y -none overscroll-none">
-            <div className="h-screen bg-opacity-90 bg-[#F6F6F6] overflow-none overscroll-none">
+        <div className=" h-screen ">
+            <div className="h-screen bg-opacity-90  ">
                 <EventHeader />
-                <div className="absolute -left-[11%] top-[11%]">
+                <div className="fixed -left-[11%] top-[11%]">
                     <Doodle expanded={expand} />
                 </div>
-                <div className="absolute right-[11%] top-[38%]">
+                <div className="fixed right-[11%] top-[38%]">
                     <Doodle expanded={expand} />
                 </div>
 
                 {/* This is where we check the steps */}
-                <div className="flex justify-center items-center mt-8     ">
+                <div className="flex justify-center items-center  border-blue-700 mt-[150px]    ">
                     <div className={step ? "bg-[url('../public/WhatsappB.png')] h-[400px] rounded-l-3xl  border-red-600 flex flex-col"
                         : "flex justify-center items-center w-[700px]"}>
                         <div>
@@ -100,17 +100,18 @@ export default function Event(uploadlength) {
                     {step ? (<div className={"w-[400px] h-[400px] flex flex-col gap-y-2 justify-center items-center rounded-r-3xl "
                         + imgColors[step - 1]}>
                         <div>
-                            <p className=" text-center text-xl ">Upload Event Flyer</p>
+                            <p className=" text-center text-xl mt-[-20px]">Upload Event Flyer</p>
                         </div>
-                        <div className='bg-[#CDC5C5] border-blue-700 w-[250px]  h-[300px] flex justify-center items-center'>
-                            {/* <form> */}
+                        <div className='bg-[#CDC5C5] border-blue-700 w-[230px]  h-[300px] flex justify-center items-center'>
+                            
                                 {/* <input type="file"> */}
-                            <div className='w-[75px]'>
-                                <Image src="/../public/camera.png" alt="camera" width='75px' height='75px' className="cursor-pointer">
+                            <div className='w-[70px] cursor-pointer '>
+                                <Image src="/../public/camera.png" alt="camera" width='70px' height='55px' className="overflow-none">
+                                    
                                 </Image>
                             </div>
                             {/* </input> */}
-                            {/* </form> */}
+                            
 
                         </div>
                     </div>) : (<div />)}

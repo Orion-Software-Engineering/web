@@ -4,7 +4,7 @@ import ToggleSwitch from '../ToggleSwitch'
 
 
 const EventForm4 = ({ step, updateStep, formRef, submitForm, name, categories, description,
-  organizers, date, time, price, ageRestrictions, mcs, guests }) => {
+  organizers, date, time, price, ageRestrictions, mcs, guests,  }) => {
 
   // const formRef = useRef()
   const handleSubmit = (event) => {
@@ -23,7 +23,7 @@ const EventForm4 = ({ step, updateStep, formRef, submitForm, name, categories, d
             <input type="text" id="first" name="event_name" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg"
               value={name} disabled />
             <label htmlFor="first">Event category</label>
-            <input type="text" id="first" name="event_category" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg " value={categories} disabled />
+            <input type="text" id="first" name="event_category" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg " value={categories.isChecked} disabled />
             <label htmlFor="third" className="mt-[20px]">Event Description:</label>
             <textarea type="text" id="third" name="event_description" className="bg-black h-[80px] w-[300px] text-white pl-[10px] pb-[50px] rounded-lg" value={description} disabled />
             <label htmlFor="first">Organizers</label>

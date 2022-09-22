@@ -5,6 +5,14 @@
 @import "../fonts/fonts.css";
 @import "/styles/external.scss";
 
+html,
+body {
+  padding: 0;
+  margin: 0;
+  
+  overflow-x: hidden;
+}
+
 .swiper-button-next,
 .swiper-button-prev {
   background-repeat: no-repeat;
