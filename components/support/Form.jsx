@@ -45,14 +45,14 @@ const Form = () => {
   return (
     <div className="antialiased bg-gray-100">
       <div className="flex w-full  justify-center items-center">
-        <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 sm:p-12 bg-black w-full max-w-4xl p-8 rounded-xl shadow-lg overflow-hidden text-white">
+        <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 sm:p-12 bg-gray-900  w-full max-w-4xl p-8 rounded-xl shadow-lg overflow-hidden text-white">
           <div className="flex flex-col justify-between space-y-8 ">
             <div>
               <h1 className="font-bold text-4xl tracking-wide">Contact Us</h1>
-              <p className="pt-2 text-sm">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s.
+              <p className="pt-2 text-md">
+                Hi, how can we help you? Need help logging in? Get Help. Account
+                Settings. Login and Password. Privacy and Security. Marketplace.
+                Groups. Pages ...
               </p>
             </div>
             <div className="flex flex-col space-y-6 ">
@@ -90,8 +90,8 @@ const Form = () => {
           </div>
 
           <div className="relative">
-            <div className="w-40 h-40 absolute bg-red-300 rounded-full -right-28 -top-28"></div>
-            <div className="w-40 h-40 absolute bg-red-300 rounded-full -left-28 -bottom-16"></div>
+            <div className="w-40 h-40 absolute bg-[#372642] rounded-full -right-28 -top-28"></div>
+            <div className="w-40 h-40 absolute bg-[#372642] rounded-full -left-28 -bottom-16"></div>
 
             <div className="bg-white rounded-xl z-2 shadow-lg p-8 text-gray-600 ">
               <form
