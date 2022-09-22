@@ -8,10 +8,6 @@ export default function AboutPage() {
     <div>
       <Header />
       <About />
-      
-      
-      
-      
     </div>
   );
 }
