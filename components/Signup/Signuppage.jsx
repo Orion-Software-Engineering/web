@@ -50,7 +50,7 @@ export default function Signuppage() {
       <div className=" w-full  max-w-[800px] mx-auto mt-[-96px]">
         <div className="">
           <div className=" h-screen mx-auto text-center relative max-w-[800px] flex flex-col items-center justify-center  ">
-            <div className="md:mt-0 mt-[30%] md:mb-0 mb-[10%] mx-3 md:flex bg-white relative rounded-xl shadow-lg overflow-hidden">
+            <div className=" md:mt-0 mt-[30%] md:mb-0 mb-[10%] mx-3 md:flex bg-white relative rounded-xl shadow-lg overflow-hidden">
               <div className=" hidden sm:flex flex-col items-center justify-center p-12">
                 <Image src={Logo} alt="logo" />
                 <h1 className="font-Nunito text-3xl mb-5 pt-10">Welcome</h1>
