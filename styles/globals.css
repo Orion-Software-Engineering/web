@@ -24,7 +24,7 @@
 }
 
 .accordion {
-  width: 500px;
+  width: 600px;
 }
 
 .accitem {
@@ -76,9 +76,3 @@
   display: none;
 }
 
-
-ion-icon {
-  
-  color: rgb(0, 94, 255);
-  
-}
