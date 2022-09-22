@@ -89,7 +89,7 @@ export default function OrganiserProfile() {
             <div>
               <div className="inline-flex flex-row space-x-2 text-lg">
                 <h1 className="font-Nunito text-sm">Create new event</h1>
-                <ion-icon className="" name="add-circle"></ion-icon>
+                <ion-icon className="fill-blue-600" name="add-circle"></ion-icon>
               </div>
             </div>
           </div>

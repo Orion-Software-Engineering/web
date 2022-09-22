@@ -75,3 +75,10 @@
   animation: button 0.3 linear;
   display: none;
 }
+
+
+ion-icon {
+  
+  color: rgb(0, 94, 255);
+  
+}
