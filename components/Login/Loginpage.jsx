@@ -15,6 +15,7 @@ export default function Loginpage() {
     }
   }, []);
 
+  //function to validate login and pass data to organiser profile page
   async function login() {
     console.warn(username, password);
     let item = { username, password };

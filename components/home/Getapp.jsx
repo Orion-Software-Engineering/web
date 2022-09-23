@@ -5,6 +5,8 @@ import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 import imagePlaystore from "../../public/playstore.png";
 import imageAppstore from "../../public/applestore2.png";
 
+//links to download app from stores
+
 const Getapp = () => {
   return (
     <div className="h-[250px] flex justify-center ">

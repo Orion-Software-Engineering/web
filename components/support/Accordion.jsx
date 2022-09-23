@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
+//accordion for FAQ's
 const Accordion = () => {
   const [selected, setSelected] = useState(null);
 

@@ -1,6 +1,7 @@
 import React from "react";
 import Typed from "react-typed";
 
+//Screen with typograph effect
 const Hero = () => {
   return (
     <div>

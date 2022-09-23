@@ -12,6 +12,7 @@ const Form = () => {
     const success = document.getElementById("formsuccess");
     const danger = document.getElementById("formdanger");
 
+    //process input data from contact form and pass it to email js to team orion mail "teamorion030@gmail.com"
     if (name.value === "" || mail.value === "" || msg.value === "") {
       danger.style.display = "block";
     } else {

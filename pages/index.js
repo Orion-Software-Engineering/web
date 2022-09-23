@@ -15,7 +15,7 @@ export default function Swipe() {
     <div className="styles.container">
       <div className=""></div>
       <div>
-        <Swiper
+        <Swiper                                 //implement home screen slider
           modules={[EffectFade, Autoplay]}
           navigation
           autoplay={{ delay: 6000 }}
@@ -28,7 +28,6 @@ export default function Swipe() {
             <Header />
             <Hero />
           </SwiperSlide>
-          
         </Swiper>
         <Chat />
       </div>

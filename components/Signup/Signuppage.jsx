@@ -20,6 +20,8 @@ export default function Signuppage() {
     }
   }, []);
 
+  //function to validate signup and pass data to organiser profile page
+
   async function signup() {
     console.warn(username, email, password, dob, gender, role);
     let item = { username, email, password, dob, gender, role };

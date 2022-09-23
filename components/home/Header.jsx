@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = () => {
+  //Nav bar function to implement slider on smaller displays
   const [nav, setNav] = useState(true);
 
   const handleNav = () => {
