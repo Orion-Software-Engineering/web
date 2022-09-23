@@ -9,6 +9,7 @@ import Rectangle44 from "../../../public/rectangle44.png";
 import Rectangle18 from "../../../public/rectangle18.png";
 import Rectangle20 from "../../../public/rectangle20.png";
 import Rectangle19 from "../../../public/rectangle19.png";
+import Fileupload from "../../events/organiser/Fileupload";
 
 export default function OrganiserProfile() {
   return (
@@ -22,7 +23,8 @@ export default function OrganiserProfile() {
                   <div className="items-center justify-center flex flex-col">
                     <div className="w-40 h-40 bg-white rounded-full">
                       <div>
-                        <div className="text-[60px] pt-10">
+                        <div className="items-center justify-center pt-20 ml-7">
+                          <Fileupload className="" />
                           <ion-icon name="camera"></ion-icon>
                         </div>
                         <h1 className="text-[10px]">[Organizer's Logo]</h1>
@@ -43,43 +45,45 @@ export default function OrganiserProfile() {
                     <ul>
                       <li className="border-b"></li>
                       <div className="mt-6 mb-6 text-[20px] flex justify-between px-10">
-                        <Link href="">
+                        <Link href="/organiserprofile">
                           <ion-icon name="person-circle-outline"></ion-icon>
                         </Link>
                         <h1 className="text-[15px] font-bold pr-20">Profile</h1>
-                        <Link href="">
+                        <Link href="/organiserprofile">
                           <ion-icon name="chevron-forward-outline"></ion-icon>
                         </Link>
                       </div>
                       <li className="border-b border-b-gray-400"></li>
                       <div className="mt-6 mb-6 text-[20px] flex justify-between px-10">
-                        <Link href="">
+                        <Link href="/organiserprofile">
                           <ion-icon name="settings"></ion-icon>
                         </Link>
                         <h1 className="text-[15px] font-bold pr-20">
                           Settings
                         </h1>
-                        <Link href="">
+                        <Link href="/organiserprofile">
                           <ion-icon name="chevron-forward-outline"></ion-icon>
                         </Link>
                       </div>
                       <li className="border-b border-b-gray-400"></li>
                       <div className="mt-6 mb-6 text-[20px] flex justify-between px-10">
-                        <Link href="">
+                        <Link href="/organiserprofile">
                           <ion-icon name="cash"></ion-icon>
                         </Link>
                         <h1 className="text-[15px] font-bold pr-20">Billing</h1>
-                        <Link href="">
+                        <Link href="/organiserprofile">
                           <ion-icon name="chevron-forward-outline"></ion-icon>
                         </Link>
                       </div>
+
                       <li className="border-b border-b-gray-400"></li>
+
                       <div className="mt-6 mb-6 text-[20px] flex justify-between px-10">
-                        <Link href="">
+                        <Link href="/login">
                           <ion-icon name="Log-out"></ion-icon>
                         </Link>
                         <h1 className="text-[15px] font-bold pr-20">Logout</h1>
-                        <Link href="">
+                        <Link href="/login">
                           <ion-icon name="chevron-forward-outline"></ion-icon>
                         </Link>
                       </div>
@@ -94,13 +98,17 @@ export default function OrganiserProfile() {
             <div className="flex flex-row justify-between">
               <div className="font-Nunito font-bold">My Events</div>
               <div>
+              <Link href="/events">
                 <div className="inline-flex flex-row space-x-2 text-lg">
+                  
                   <h1 className="font-Nunito text-sm">Create new event</h1>
                   <ion-icon
                     className="fill-blue-600"
                     name="add-circle"
                   ></ion-icon>
+                 
                 </div>
+                </Link>
               </div>
             </div>
             <div className="bg-gray-100 rounded-lg p-10">
