@@ -40,7 +40,7 @@ export default function Loginpage() {
   }
 
   return (
-    <div className="bg-[url('../public/TopBackground.png')] bg-cover w-screen h-screen bg-no-repeat">
+    <div className="bg-[url('../public/bg2.jpg')] bg-cover w-screen h-screen bg-no-repeat">
       <div className="relative w-full h-screen max-w-[800px] mt-[-80px] mx-auto ">
         <div className="relative w-full h-screen ">
           <div className="flex justify-center items-center h-full mx-5">

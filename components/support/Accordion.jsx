@@ -11,8 +11,8 @@ const Accordion = () => {
     setSelected(i);
   };
   return (
-    <div className="accwrapper bg-gray-100 h-full">
-      <div className="accordion">
+    <div className="accwrapper ">
+      <div className="accordion ">
         {data.map((items, i) => (
           <div key={i} className="accitem font-bold">
             <div className="acctitle" onClick={() => toogle(i)}>

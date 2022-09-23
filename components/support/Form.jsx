@@ -43,7 +43,7 @@ const Form = () => {
   }
 
   return (
-    <div className="antialiased bg-gray-100">
+    <div className="antialiased">
       <div className="flex w-full  justify-center items-center">
         <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 sm:p-12 bg-gray-900  w-full max-w-4xl p-8 rounded-xl shadow-lg overflow-hidden text-white">
           <div className="flex flex-col justify-between space-y-8 ">

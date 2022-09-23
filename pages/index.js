@@ -28,11 +28,9 @@ export default function Swipe() {
             <Header />
             <Hero />
           </SwiperSlide>
-          <SwiperSlide>
-            <Header />
-            <Chat />
-          </SwiperSlide>
+          
         </Swiper>
+        <Chat />
       </div>
     </div>
   );

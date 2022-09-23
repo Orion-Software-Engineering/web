@@ -6,7 +6,7 @@ const Chat = () => {
   return (
     <div>
       <div className="top-[90px] bg-gradient-to-l from-indigo-200 via-red-200 to-yellow-100 bg-cover w-full h-full bg-no-repeat ">
-        <div className="max-w-[800px] mt-[-80px] w-full h-screen mx-auto text-center flex flex-col justify-center">
+        <div className="max-w-[800px] w-full py-20 mx-auto text-center flex flex-col justify-center">
           <div className="flex max-w-[800px] w-full mx-auto">
             <div>
               <Image src={womanChat} alt="womanChatting" />

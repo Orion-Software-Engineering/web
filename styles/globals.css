@@ -9,7 +9,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  
+
   overflow-x: hidden;
 }
 
@@ -83,4 +83,3 @@ body {
   animation: button 0.3 linear;
   display: none;
 }
-
