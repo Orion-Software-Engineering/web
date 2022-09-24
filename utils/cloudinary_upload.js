@@ -1,4 +1,4 @@
-import {CLOUD_NAME} from "../config/cloudinary_upload";
+import { CLOUD_NAME } from "../config/cloudinary_upload";
 
 
 export const uploadImageToCloudinary = async (file) => {
@@ -16,6 +16,8 @@ export const uploadImageToCloudinary = async (file) => {
     }).then(data => {
         // console.log(data)
         image_url = data.url
+    }).catch(err => {
+        console.log(err);
     })
 
     return image_url

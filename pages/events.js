@@ -8,6 +8,7 @@ import Completion from "../components/events/form/Completion";
 import Welcome from "../components/events/Welcome";
 import Doodle from "../components/events/Doodle";
 import Image from "next/image";
+import { uploadImageToCloudinary } from "../utils/cloudinary_upload";
 // import TimePicker from 'react-time-picker';
 
 
@@ -16,6 +17,7 @@ import Image from "next/image";
 export default function Event(uploadlength) {
     const [expand, setExpand] = useState(false)
     const [step, setStep] = useState(0)
+    const [isUploading, setIsUploading] = useState(false)
 
     const [name, setName] = useState('')
     const [categories, setCategories] = useState([])
@@ -27,14 +29,15 @@ export default function Event(uploadlength) {
     const [ageRestrictions, setAgeRestrictions] = useState(false)
     const [mcs, setMcs] = useState('')
     const [guests, setGuests] = useState('')
+    const [filePath, setFilePath] = useState('')
 
     useEffect(() => {
         if (step % 2) setExpand(true)
         else setExpand(false)
     }, [step])
 
-    const submitEventForm = (event) => {
-        event.preventDefault();
+    const submitEventForm = async () => {
+        console.log('attempting submission');
     }
 
 
@@ -46,23 +49,23 @@ export default function Event(uploadlength) {
             case 1:
                 return <EventForm1 setExpand={setExpand} step={step} updateStep={setStep}
                     setName={setName} setCategories={setCategories} setDescription={setDescription}
-                    name={name} description={description}   categories={categories} />
+                    name={name} description={description} categories={categories} />
 
             case 2:
                 return <EventForm2 setExpand={setExpand} step={step} updateStep={setStep}
                     setOrganizers={setOrganizers} setDate={setDate} setTime={setTime} setPrice={setPrice}
-                    organizers={organizers} date={date}   time={time} price={price} />
+                    organizers={organizers} date={date} time={time} price={price} />
 
             case 3:
                 return <EventForm3 setExpand={setExpand} step={step} updateStep={setStep}
                     setAgeRestrictions={setAgeRestrictions} setMcs={setMcs} setGuests={setGuests}
-                    ageRestrictions={ageRestrictions}   mcs={mcs} guests={guests} />
+                    ageRestrictions={ageRestrictions} mcs={mcs} guests={guests} />
 
             case 4:
                 return <EventForm4 setExpand={setExpand} step={step} updateStep={setStep}
                     name={name} categories={categories} description={description} submitForm={submitEventForm}
                     organizers={organizers} date={date} time={time} price={price}
-                    ageRestrictions={ageRestrictions}   mcs={mcs} guests={guests} />
+                    ageRestrictions={ageRestrictions} mcs={mcs} guests={guests} />
 
             case 5:
                 return <Completion step={step} updateStep={setStep} />
@@ -102,24 +105,29 @@ export default function Event(uploadlength) {
                         <div>
                             <p className=" text-center text-xl mt-[-20px]">Upload Event Flyer</p>
                         </div>
-                        <div className='bg-[#CDC5C5] border-blue-700 w-[230px]  h-[300px] flex justify-center items-center'>
-                            
-                                {/* <input type="file"> */}
-                            <div className='w-[70px] cursor-pointer '>
-                                <Image src="/../public/camera.png" alt="camera" width='70px' height='55px' className="overflow-none">
-                                    
-                                </Image>
+                        <label htmlFor="image" >
+                            <div className='bg-[#CDC5C5] border-blue-700 w-[230px]  h-[300px] flex justify-center items-center cursor-pointer'>
+                                <div>
+                                    {filePath && (<Image src={`${filePath}`}
+                                        className=''
+                                        alt="selected-image"
+                                        width={40}
+                                        height={40}
+                                    />)}
+                                </div>
+                                <div className='w-[70px]'>
+                                    <Image src="/../public/camera.png" alt="camera" width='70px' height='55px' className="overflow-none" />
+                                </div>
+                                <input type='file' id="image" name='image' className="opacity-0 absolute -z-50"
+                                    onChange={(event) => {
+                                        // console.log(event.target.value);
+                                        // setFilePath(event.target.value)
+                                        // setFilePath(uploadImageToCloudinary())
+                                    }} />
                             </div>
-                            {/* </input> */}
-                            
-
-                        </div>
+                        </label>
                     </div>) : (<div />)}
                 </div>
-
-                {/* <TimePicker/> */}
-
-
             </div>
         </div>
     );

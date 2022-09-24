@@ -59,14 +59,17 @@ const EventForm4 = ({ step, updateStep, formRef, submitForm, name, categories, d
             </p>
           </div>
           <div className='float-right mt-16 cursor-pointer bg-black text-gray-200 text-xs w-36
-             rounded-md h-8 flex justify-center items-center shadow-xl hover transition duration-300 hover:text-white select-none'
+             rounded-md h-8 flex justify-center items-center shadow-xl hover:bg-orange-500 transition-all duration-300 hover:text-white select-none'
             onClick={async () => {
               // post form data 
               await submitForm()
             }}>
-            <p className='px-2 font-Nunito'>
-              {'SUBMIT'}
-            </p>
+            <div className='px-2 font-Nunito'
+              onClick={() => {
+                submitForm()
+              }}>
+              SUBMIT
+            </div>
           </div>
         </div>
       </div>
