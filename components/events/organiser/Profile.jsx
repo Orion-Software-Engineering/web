@@ -12,7 +12,7 @@ import Rectangle19 from "../../../public/rectangle19.png";
 
 export default function OrganiserProfile() {
   return (
-    <div className="flex flex-row justify-center mt-10">
+    <div className="flex flex-row justify-center mt-[100px]">
       <div className="items-center justify-center">
         <div className="flex flex-col items-center justify-center">
           <div className="bg-blue-600 h-80 w-80 rounded-t-[30px]">

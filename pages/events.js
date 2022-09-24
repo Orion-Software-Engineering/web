@@ -81,15 +81,15 @@ export default function Event(uploadlength) {
         <div className=" h-screen ">
             <div className="h-screen bg-opacity-90  ">
                 <EventHeader />
-                <div className="fixed -left-[11%] top-[11%]">
+                <div className="fixed -left-[11%] top-[11%] hidden lg:flex">
                     <Doodle expanded={expand} />
                 </div>
-                <div className="fixed right-[11%] top-[38%]">
+                <div className="fixed right-[11%] top-[38%] hidden lg:flex">
                     <Doodle expanded={expand} />
                 </div>
 
                 {/* This is where we check the steps */}
-                <div className="flex justify-center items-center  border-blue-700 mt-[150px]    ">
+                <div className="flex flex-col md:flex-row justify-center items-center  border-blue-700 mt-[150px]    ">
                     <div className={step ? "bg-[url('../public/WhatsappB.png')] h-[400px] rounded-l-3xl  border-red-600 flex flex-col"
                         : "flex justify-center items-center w-[700px]"}>
                         <div>
