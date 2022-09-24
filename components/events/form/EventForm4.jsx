@@ -4,7 +4,7 @@ import ToggleSwitch from '../ToggleSwitch'
 
 
 const EventForm4 = ({ step, updateStep, formRef, submitForm, name, categories, description,
-  organizers, date, time, price, ageRestrictions, mcs, guests,  }) => {
+  organizers, date, time, price, ageRestrictions, mcs, guests }) => {
 
   // const formRef = useRef()
   const handleSubmit = (event) => {
@@ -22,18 +22,30 @@ const EventForm4 = ({ step, updateStep, formRef, submitForm, name, categories, d
             <label htmlFor="first" className='mt-[-20px]'>Event Name</label>
             <input type="text" id="first" name="event_name" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg"
               value={name} disabled />
+
             <label htmlFor="first">Event category</label>
-            <input type="text" id="first" name="event_category" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg " value={categories.isChecked} disabled />
+            <input type="text" id="first" name="event_category" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg "
+              value={categories.isChecked} disabled />
+
             <label htmlFor="third" className="mt-[20px]">Event Description:</label>
-            <textarea type="text" id="third" name="event_description" className="bg-black h-[80px] w-[300px] text-white pl-[10px] pb-[50px] rounded-lg" value={description} disabled />
+            <textarea type="text" id="third" name="event_description"
+              className="bg-black h-[80px] w-[300px] text-white pl-[10px] pb-[50px] rounded-lg" value={description} disabled />
+
             <label htmlFor="first">Organizers</label>
-            <input type="text" id="first" name="organizers" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" value={organizers} disabled />
+            <input type="text" id="first" name="organizers"
+              className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" value={organizers} disabled />
+
             <label htmlFor="first">Date and Time</label>
-            <input type="text" id="first" name="date_time" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" value={`${date} at ${time}`} disabled />
+            <input type="text" id="first" name="date_time"
+              className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" value={`${date} at ${time}`} disabled />
+
             <label htmlFor="first">Age Restrictions(18+)</label>
             <ToggleSwitch ageRestrictions={ageRestrictions} disabled={true} />
+
             <label htmlFor="second" className="mt-[0px]">MCs</label>
-            <input type="text" id="first" name="mcs" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" value={mcs} disabled />
+            <input type="text" id="first" name="mcs"
+              className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" value={mcs} disabled />
+
             <label htmlFor="third" className="mt-[20px]">Guests</label>
             <textarea type="text" id="first" name="guests" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" value={guests} disabled />
             {/* <label for="third" className="mt-[0px] text-xs text-[#575757] cursor-pointer">Add another guest</label> */}

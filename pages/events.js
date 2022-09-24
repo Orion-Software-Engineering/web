@@ -60,7 +60,7 @@ export default function Event(uploadlength) {
 
             case 4:
                 return <EventForm4 setExpand={setExpand} step={step} updateStep={setStep}
-                    name={name} categories={categories} description={description}
+                    name={name} categories={categories} description={description} submitForm={submitEventForm}
                     organizers={organizers} date={date} time={time} price={price}
                     ageRestrictions={ageRestrictions}   mcs={mcs} guests={guests} />
 
