@@ -17,21 +17,23 @@ const CategorySelect = ({ handleSelect, setExpand, updateCategories }) => {
     { name: "Education", isChecked: false },
     { name: "Health & Fitness", isChecked: false },
     { name: "Sports", isChecked: false },
-  ]
-  const [categories, setCategories] = useState(options)
+  ];
+  const [categories, setCategories] = useState(options);
 
   const updateCategory = (index) => {
-    const current = categories
-    if (current.filter(cat => cat.isChecked).length <= 2 || current[index].isChecked) {
-      current[index].isChecked = !categories[index].isChecked
-      setCategories([...current])
+    const current = categories;
+    if (
+      current.filter((cat) => cat.isChecked).length <= 2 ||
+      current[index].isChecked
+    ) {
+      current[index].isChecked = !categories[index].isChecked;
+      setCategories([...current]);
     }
-  }
+  };
 
   useEffect(() => {
-    updateCategories(categories)
-  }, [categories])
-
+    updateCategories(categories);
+  });
 
   return (
     <div className="absolute bg-black w-[700px] rounded-lg h-[300px] text-gray-300 grid grid-cols-3 gap-y-4 font-Nunito ">
@@ -39,19 +41,23 @@ const CategorySelect = ({ handleSelect, setExpand, updateCategories }) => {
         <p>You may select more than one category</p>
       </div>
       {categories.map((category, i) => (
-        <div key={i} className="pl-4 flex gap-x-4"
-          onClick={() => updateCategory(i)}>
-          <input type="checkbox" checked={category.isChecked} name="category"
-          />
+        <div
+          key={i}
+          className="pl-4 flex gap-x-4"
+          onClick={() => updateCategory(i)}
+        >
+          <input type="checkbox" checked={category.isChecked} name="category" />
           <label>{category.name}</label>
         </div>
       ))}
       <div className=" justify-self-end grid col-start-1 col-end-4 pr-12 pb-12 text-lg font-bold">
-        <div className="cursor-pointer hover:text-white duration-100 p-2"
+        <div
+          className="cursor-pointer hover:text-white duration-100 p-2"
           onClick={() => {
-            handleSelect(false)
-            setExpand(false)
-          }}>
+            handleSelect(false);
+            setExpand(false);
+          }}
+        >
           OK
         </div>
       </div>

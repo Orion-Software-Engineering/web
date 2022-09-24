@@ -18,7 +18,7 @@ export default function Signuppage() {
     if (localStorage.getItem("user-info")) {
       history.push("/organiserprofile");
     }
-  }, []);
+  });
 
   //function to validate signup and pass data to organiser profile page
 
