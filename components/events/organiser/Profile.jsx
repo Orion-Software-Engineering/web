@@ -40,6 +40,7 @@ export default function OrganiserProfile() {
     });
 
   return (
+
     <div className="justify-center h-screen mt-[80-px]">
       <div className=" flex flex-row pt-[96px] justify-center ">
         <div className="md:flex-row  flex-col flex pt-10 pb-10">
