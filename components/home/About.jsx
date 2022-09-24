@@ -8,7 +8,7 @@ import {
 
 const About = () => {
   return (
-    <div className="bg-[url('../public/Party.jpg')] w-full h-screen bg-no-repeat bg-cover font-Nunito mt-[-96px]">
+    <div className="bg-[url('../public/bg2.jpg')] w-full h-screen bg-no-repeat bg-cover font-Nunito mt-[-80px]">
       <div className="">
         <div className="w-full h-[700px] bg-gray-900/90 absolute"></div>
         <div className="max-w-[1240px] mx-auto text-white relative">
@@ -16,7 +16,9 @@ const About = () => {
             <h2 className=" text-3xl pt-8 text-slate-300 uppercase text-center">
               About
             </h2>
-            <h3 className="text-5xl font-bold py-6 text-center">Orion Meet</h3>
+            <h3 className="text-4xl font-medium  py-6 text-center">
+              Orion Meet
+            </h3>
             <p className="py-4 text-3xl text-slate-300">
               Orion meet is an app based platform for match making and event
               organizing. Unlike other match making apps, it matches people
@@ -27,7 +29,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 relative gap-x-8 gap-y-16 px-4 pt-12 sm:pt-20 text-black">
             <div className="bg-white rounded-xl shadow-2xl">
               <div className="p-8">
-                <ChatIcon className="w-16 p-4 bg-red-300 text-white rounded-lg  mt-[-4rem] " />
+                <ChatIcon className="w-16 p-4 bg-red-400 text-white rounded-lg  mt-[-4rem] " />
                 <h3 className="font-bold text-2xl my-6">Matches & Events</h3>
                 <p className="text-gray-600 text-xl ">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
@@ -44,7 +46,7 @@ const About = () => {
             </div>
             <div className="bg-white rounded-xl shadow-2xl">
               <div className="p-8">
-                <UserGroupIcon className="w-16 p-4 bg-red-300 text-white rounded-lg  mt-[-4rem] " />
+                <UserGroupIcon className="w-16 p-4 bg-red-400 text-white rounded-lg  mt-[-4rem] " />
                 <h3 className="font-bold text-2xl my-6">Our Team</h3>
                 <p className="text-gray-600 text-xl ">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
@@ -61,7 +63,7 @@ const About = () => {
             </div>
             <div className="bg-white rounded-xl shadow-2xl">
               <div className="p-8">
-                <PhoneIcon className="w-16 p-4 bg-red-300 text-white rounded-lg  mt-[-4rem] " />
+                <PhoneIcon className="w-16 p-4 bg-red-400 text-white rounded-lg  mt-[-4rem] " />
                 <h3 className="font-bold text-2xl my-6">Support</h3>
                 <p className="text-gray-600 text-xl ">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi

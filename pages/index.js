@@ -4,7 +4,6 @@ import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "swiper/css/autoplay";
 import Chat from "../components/home/Chat";
-import Question from "../components/home/Question";
 import Hero from "../components/home/Hero";
 import Header from "../components/home/Header";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,7 +15,7 @@ export default function Swipe() {
     <div className="styles.container">
       <div className=""></div>
       <div>
-        <Swiper
+        <Swiper                                 //implement home screen slider
           modules={[EffectFade, Autoplay]}
           navigation
           autoplay={{ delay: 6000 }}
@@ -29,15 +28,8 @@ export default function Swipe() {
             <Header />
             <Hero />
           </SwiperSlide>
-          <SwiperSlide>
-            <Header />
-            <Chat />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Header />
-            <Question />
-          </SwiperSlide>
         </Swiper>
+        <Chat />
       </div>
     </div>
   );

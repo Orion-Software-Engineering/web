@@ -15,6 +15,7 @@ export default function Loginpage() {
     }
   }, []);
 
+  //function to validate login and pass data to organiser profile page
   async function login() {
     console.warn(username, password);
     let item = { username, password };
@@ -40,8 +41,8 @@ export default function Loginpage() {
   }
 
   return (
-    <div className="bg-[url('../public/TopBackground.png')] bg-cover w-screen h-screen bg-no-repeat">
-      <div className="relative w-full h-screen max-w-[800px] mt-[-96px] mx-auto ">
+    <div className="bg-[url('../public/bg2.jpg')] bg-cover w-screen h-screen bg-no-repeat">
+      <div className="relative w-full h-screen max-w-[800px] mt-[-80px] mx-auto ">
         <div className="relative w-full h-screen ">
           <div className="flex justify-center items-center h-full mx-5">
             <form className=" rounded-xl max-w-[400px] w-full mx-auto bg-white p-8">

@@ -6,11 +6,14 @@ import Accordion from "../components/support/Accordion";
 export default function Support() {
   return (
 
-    <div className="bg-gray-100 h-screen">
-      <Header />
-      <div className="bg-gray-100 space-y-5 pt-10">
-        <Form />
-        <Accordion />
+    <div className=" h-screen bg-[url('../public/bg2.jpg')] bg-no-repeat bg-cover">
+      <div className=" bg-[url('../public/bg2.jpg')] bg-no-repeat bg-cover">
+
+        <Header />
+        <div className="w-screen space-y-5 mt-10">
+          <Form />
+          <Accordion />
+        </div>
       </div>
     </div>
 
