@@ -49,8 +49,8 @@ export default function Signuppage() {
 
   return (
     <div className="bg-[url('../public/bg2.jpg')] h-screen w-screen bg-no-repeat bg-cover">
-      <div className=" max-w-[800px] mt-[-64px] w-full h-screen mx-auto text-center flex flex-col justify-center">
-        <div className="relative w-full ">
+      <div className=" max-w-[800px] md:mt-[-64px] mt-0 first-letter:w-full h-screen mx-auto text-center flex flex-col justify-center">
+        <div className="relative w-full md:pt-20 ">
           <div className=" md:py-0 sm:mb-0 mx-3 md:flex md:mt-0  bg-white rounded-xl shadow-lg ">
             <div className=" hidden sm:flex flex-col items-center justify-center p-12">
               <Image src={Logo} alt="logo" />
