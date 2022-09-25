@@ -30,7 +30,7 @@ export default function Event() {
     const [ageRestrictions, setAgeRestrictions] = useState(false)
     const [mcs, setMcs] = useState('')
     const [guests, setGuests] = useState('')
-    
+
     const [filePath, setFilePath] = useState('')
 
     const [image, setImage] = useState(null)
@@ -42,20 +42,22 @@ export default function Event() {
 
     const submitEventForm = async () => {
         console.log('attempting submission');
+        if (filePath == null || filePath.length == 0) return
         const body = JSON.stringify({
             "name": name,
-            "date":date,
-            "time":time,
-            "description":description,
-            "price":price,
-            "age_restriction":ageRestrictions,
-            "organizer":"",
-            "cover_image":filePath,
-            "interests":categories.entries(),
-            "mscs":mcs,
+            "date": date,
+            "time": time,
+            "description": description,
+            "price": price,
+            "age_restriction": ageRestrictions,
+            "organizer": "",
+            "cover_image": filePath,
+            "interests": categories.entries(),
+            "mscs": mcs,
             "guests": guests,
             "venue": venue
         })
+        console.log(body);
     }
 
     useEffect(() => {
