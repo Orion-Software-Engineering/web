@@ -106,8 +106,13 @@ export default function Event(uploadlength) {
                             <p className=" text-center text-xl mt-[-20px]">Upload Event Flyer</p>
                         </div>
                         <label htmlFor="image" >
-                            <div className='bg-[#CDC5C5] border-blue-700 w-[230px]  h-[300px] flex justify-center items-center cursor-pointer'>
+                            <div className='bg-[#CDC5C5] border-blue-700 w-[230px] relative h-[300px] flex justify-center items-center cursor-pointer'>
                                 <div>
+                                    {isUploading && (
+                                        <div className="absolute top-2 animate-pulse inset-x-1/4 w-96 ">
+                                            Uploading Image
+                                        </div>
+                                    )}
                                     {filePath && (<Image src={`${filePath}`}
                                         className=''
                                         alt="selected-image"
@@ -123,6 +128,7 @@ export default function Event(uploadlength) {
                                         // console.log(event.target.value);
                                         // setFilePath(event.target.value)
                                         // setFilePath(uploadImageToCloudinary())
+                                        setIsUploading(true)
                                     }} />
                             </div>
                         </label>
