@@ -59,8 +59,8 @@ const EventForm1 = ({ setExpand, step, updateStep, name, categories, setCategori
                             </div>
                             <div className='text-white flex flex-wrap gap-2 p-2 font-Nunito'>
                                 {categories.map((category, i) => {
-                                    
-                                    if (category.isChecked )
+
+                                    if (category.isChecked)
                                         return <div
                                             className={'rounded-full h-[30px] px-2 text-xs flex justify-center items-center pb-[2px] font-medium '
                                                 + categoryColors[i]}>
