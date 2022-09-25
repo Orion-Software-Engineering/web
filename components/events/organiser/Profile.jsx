@@ -12,7 +12,35 @@ import Rectangle19 from "../../../public/rectangle19.png";
 import Fileupload from "../../events/organiser/Fileupload";
 
 export default function OrganiserProfile() {
+  fetch(" https://orion-meet-testing.herokuapp.com/api/events")
+    .then((data) => {
+      // console.log(data);
+      return data.json();
+    })
+    .then((completedata) => {
+      // console.log(completedata);
+      let data1 = "";
+      let data2 = "";
+      completedata.map((values) => {
+        data1 += `                  
+            <div>
+              <Image src=${values.cover_image} alt="event" />
+            </div>`;
+
+        data2 = `                  
+      <div>
+        <h1> ${values.organizer}</h1>
+      </div>`;
+      });
+      document.getElementById("event_img").innerHTML = data1;
+      document.getElementById("org_name").innerHTML = data2;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
   return (
+
     <div className="justify-center h-screen mt-[80-px]">
       <div className=" flex flex-row pt-[96px] justify-center ">
         <div className="md:flex-row  flex-col flex pt-10 pb-10">
@@ -31,10 +59,11 @@ export default function OrganiserProfile() {
                       </div>
                     </div>
                   </div>
-                  <div className="">
-                    <h1 className="font-Nunito text-3xl text-white">
-                      [Organizer's Name]
-                    </h1>
+                  <div>
+                    <h1
+                      id="org_name"
+                      className="font-Nunito text-3xl text-white"
+                    ></h1>
                     <p className="text-white font-Nunito font-semibold">
                       Organizer
                     </p>
@@ -98,48 +127,21 @@ export default function OrganiserProfile() {
             <div className="flex flex-row justify-between">
               <div className="font-Nunito font-bold">My Events</div>
               <div>
-              <Link href="/events">
-                <div className="inline-flex flex-row space-x-2 text-lg">
-                  
-                  <h1 className="font-Nunito text-sm">Create new event</h1>
-                  <ion-icon
-                    className="fill-blue-600"
-                    name="add-circle"
-                  ></ion-icon>
-                 
-                </div>
+                <Link href="/events">
+                  <div className="inline-flex flex-row space-x-2 text-lg">
+                    <h1 className="font-Nunito text-sm">Create new event</h1>
+                    <ion-icon
+                      className="fill-blue-600"
+                      name="add-circle"
+                    ></ion-icon>
+                  </div>
                 </Link>
               </div>
             </div>
-            <div className="bg-gray-100 rounded-lg p-10">
-              <div className="space-y-20">
+            <div className="bg-gray-100 rounded-lg ">
+              <div className="space-y-20  h-full">
                 <div className="flex flex-row space-x-20 ">
-                  <div>
-                    <Image src={Rectangle14} alt="Rectangle14" className="" />
-                  </div>
-                  <div>
-                    <Image src={Rectangle15} alt="Rectangle14" className="" />
-                  </div>
-                  <div>
-                    <Image src={Rectangle17} alt="Rectangle14" className="" />
-                  </div>
-                  <div>
-                    <Image src={Rectangle45} alt="Rectangle14" className="" />
-                  </div>
-                </div>
-                <div className="flex flex-row space-x-20">
-                  <div>
-                    <Image src={Rectangle44} alt="Rectangle14" className="" />
-                  </div>
-                  <div>
-                    <Image src={Rectangle18} alt="Rectangle14" className="" />
-                  </div>
-                  <div>
-                    <Image src={Rectangle20} alt="Rectangle14" className="" />
-                  </div>
-                  <div>
-                    <Image src={Rectangle19} alt="Rectangle14" className="" />
-                  </div>
+                  <div className="flex space-x-10" id="event_img"></div>
                 </div>
               </div>
             </div>
