@@ -48,10 +48,10 @@ export default function Signuppage() {
   }
 
   return (
-    <div className="bg-[url('../public/bg2.jpg')] w-screen bg-no-repeat bg-cover">
-      <div className="  w-full max-w-[800px] mx-auto pt-10 pb-10">
-        <div className="mt-[-20px]">
-          <div className=" md:mt-0  md:mb-0 mb-[10%] mx-3 md:flex bg-white relative rounded-xl shadow-lg overflow-hidden">
+    <div className="bg-[url('../public/bg2.jpg')] h-screen w-screen bg-no-repeat bg-cover">
+      <div className=" max-w-[800px] mt-[-64px] w-full h-screen mx-auto text-center flex flex-col justify-center">
+        <div className="relative w-full ">
+          <div className=" md:py-0 sm:mb-0 mx-3 md:flex md:mt-0  bg-white rounded-xl shadow-lg ">
             <div className=" hidden sm:flex flex-col items-center justify-center p-12">
               <Image src={Logo} alt="logo" />
               <h1 className="font-Nunito text-3xl mb-5 pt-10">Welcome</h1>
@@ -144,20 +144,25 @@ export default function Signuppage() {
                     </a>
                   </span>
                 </div>
-                <div className="mt-5">
-                  <button
-                    type="button"
-                    onClick={signup}
-                    className=" rounded-xl w-full font-Nunito bg-red-500 py-3 text-center"
-                  >
-                    <a className="text-white"> SignUp Now</a>
-                  </button>
-                  <p className="text-center mt-2 flex justify-center ">
-                    Already have an account?
-                    <a href={"/login"} className="px-2 underline text-red-500">
-                      Login
-                    </a>
-                  </p>
+                <div className="md:pt-5 pt-0">
+                  <div className="">
+                    <button
+                      type="button"
+                      onClick={signup}
+                      className="rounded-xl w-full font-Nunito bg-red-500 py-3 text-center"
+                    >
+                      <a className="text-white"> SignUp Now</a>
+                    </button>
+                    <p className="text-center  flex justify-center ">
+                      Already have an account?
+                      <a
+                        href={"/login"}
+                        className="px-2 underline text-red-500"
+                      >
+                        Login
+                      </a>
+                    </p>
+                  </div>
                 </div>
               </form>
             </div>
