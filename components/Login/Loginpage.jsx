@@ -37,7 +37,12 @@ export default function Loginpage() {
     );
     result = await result.json();
     localStorage.setItem("user-info", JSON.stringify(result));
-    history.push("/organiserprofile");
+
+    if (!result.id) {
+      window.location.replace("/verifymail");
+    } else {
+      window.location.replace("/organiserprofile");
+    }
   }
 
   return (
