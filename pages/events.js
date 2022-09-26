@@ -10,9 +10,28 @@ import Doodle from "../components/events/Doodle";
 import Image from "next/image";
 import { uploadImageToCloudinary } from "../utils/cloudinary_upload";
 import { CLOUD_NAME } from "../config/cloudinary_upload";
+import { stringify } from "postcss";
 
 
 //dlajflkasj
+const categoryToInterest = new Map([
+    ['Art', 'art'],
+    ['Business', 'business'],
+    ['Cars & Vehicles', 'cars'],
+    ['Comedy', 'comedy'],
+    ['Education', 'education'],
+    ['Entertainment', 'entertainment'],
+    ['Food', 'food'],
+    ['Fashion', 'fashion'],
+    ['Gaming', 'gaming'],
+    ['Health & Fitness', 'health'],
+    ['Hair & Beauty', 'beauty'],
+    ['News & Politics', 'news'],
+    ['Photography', 'photography'],
+    ['Science & Technology', 'science'],
+    ['Sports', 'sports'],
+])
+
 
 export default function Event() {
     const [expand, setExpand] = useState(false)
@@ -30,43 +49,72 @@ export default function Event() {
     const [ageRestrictions, setAgeRestrictions] = useState(false)
     const [mcs, setMcs] = useState('')
     const [guests, setGuests] = useState('')
-    
-    const [filePath, setFilePath] = useState('')
+    const [venue, setVenue] = useState('')
 
+    const [filePath, setFilePath] = useState('')
     const [image, setImage] = useState(null)
+    const interests = []
 
     useEffect(() => {
         if (step % 2) setExpand(true)
         else setExpand(false)
     }, [step])
 
+    useEffect(() => {
+        console.log(categories);
+        categories.forEach(category => {
+            if (category.isChecked)
+                interests.push(categoryToInterest.get(category.name))
+        })
+        console.log(interests);
+    }, [categories])
+
+
     const submitEventForm = async () => {
         console.log('attempting submission');
+        // TODO: do not post data if any is null or required data is empty
+        if (filePath == null || filePath.length == 0) return
         const body = JSON.stringify({
             "name": name,
-            "date":date,
-            "time":time,
-            "description":description,
-            "price":price,
-            "age_restriction":ageRestrictions,
-            "organizer":"",
-            "cover_image":filePath,
-            "interests":categories.entries(),
-            "mscs":mcs,
+            "date": date,
+            "time": time,
+            "description": description,
+            "ticket_price": price,
+            "age_restriction": ageRestrictions,
+            "organizer": "",
+            "cover_image": filePath,
+            "interests": [...interests],
+            "mcs": mcs,
             "guests": guests,
             "venue": venue
         })
+        console.log(body);
+
+        const response = await fetch('https://orion-meet-testing.herokuapp.com/api/event',
+            {
+                method: 'POST',
+                body: body,
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => {
+                console.log(res);
+                return res.json()
+            }).then(data => {
+                console.log(data);
+            }).catch(err => console.log(err))
     }
 
     useEffect(() => {
         if (image) {
             const data = new FormData()
-            console.log(image)
+            // console.log(image)
             data.append('file', image)
             data.append('upload_preset', 'orion_web')
             data.append('cloud_name', CLOUD_NAME)
-            console.log(imageRef.current.image.value)
-            console.log(data)
+            // console.log(imageRef.current.image.value)
+            // console.log(data)
 
             // await uploadImageToCloudinary(data)
             const url = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/upload`
@@ -112,13 +160,13 @@ export default function Event() {
             case 3:
                 return <EventForm3 setExpand={setExpand} step={step} updateStep={setStep}
                     setAgeRestrictions={setAgeRestrictions} setMcs={setMcs} setGuests={setGuests}
-                    ageRestrictions={ageRestrictions} mcs={mcs} guests={guests} />
+                    ageRestrictions={ageRestrictions} mcs={mcs} guests={guests} venue={venue} setVenue={setVenue} />
 
             case 4:
                 return <EventForm4 setExpand={setExpand} step={step} updateStep={setStep}
                     name={name} categories={categories} description={description} submitForm={submitEventForm}
                     organizers={organizers} date={date} time={time} price={price}
-                    ageRestrictions={ageRestrictions} mcs={mcs} guests={guests} />
+                    ageRestrictions={ageRestrictions} mcs={mcs} guests={guests} venue={venue} />
 
             case 5:
                 return <Completion step={step} updateStep={setStep} />
@@ -153,7 +201,7 @@ export default function Event() {
                         </div>
                     </div>
 
-                    {step ? (<div className={"w-[400px] h-[400px] flex flex-col gap-y-2 justify-center items-center rounded-r-3xl "
+                    {step ? (<div className={"w-[400px] h-[400px] flex flex-col gap-y-2 justify-center items-center rounded-r-3xl transition duration-500 ease-in-out "
                         + imgColors[step - 1]}>
                         <div>
                             <p className=" text-center text-xl mt-[-20px]">Upload Event Flyer</p>

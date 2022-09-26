@@ -6,8 +6,8 @@ import Accordion from "../components/support/Accordion";
 export default function Support() {
   return (
 
-    <div className=" h-screen bg-[url('../public/bg2.jpg')] bg-no-repeat bg-cover">
-      <div className=" bg-[url('../public/bg2.jpg')] bg-no-repeat bg-cover">
+    <div className=" h-screen bg-[url('../public/bg2.jpg')] ">
+      <div className=" bg-[url('../public/bg2.jpg')]">
 
         <Header />
         <div className="w-screen space-y-5 mt-10">

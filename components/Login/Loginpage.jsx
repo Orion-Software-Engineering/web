@@ -13,7 +13,7 @@ export default function Loginpage() {
     if (localStorage.getItem("user-info")) {
       history.push("/organiserprofile");
     }
-  });
+  }, []);
 
   //function to validate login and pass data to organiser profile page
   async function login() {
