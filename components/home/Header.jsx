@@ -63,7 +63,7 @@ const Navbar = () => {
         className={
           !nav
             ? "md:hidden fixed left-0 top-0 h-full w-[60%] border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500 z-10"
-            : "fixed left-[-100%] top-0 h-full w-[60%] border-r border-r-gray-900 bg-[#00030075] ease-in-out duration-500 z-10"
+            : "fixed left-[-100%] top-0 h-full w-[60%] border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500 z-10"
         }
       >
         <div className="flex m-4 ">
