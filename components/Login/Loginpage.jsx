@@ -84,7 +84,7 @@ export default function Loginpage() {
               <button
                 type="button"
                 onClick={login}
-                className=" rounded-xl w-full py-3 mt-8 bg-red-600 hover:bg-red-400 relative text-white"
+                className=" rounded-xl w-full py-3 mt-8 bg-red-600 hover:bg-red-400 hover:scale-110   duration-300 relative text-white"
               >
                 LOGIN
               </button>

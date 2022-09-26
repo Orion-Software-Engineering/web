@@ -149,7 +149,7 @@ export default function Signuppage() {
                     <button
                       type="button"
                       onClick={signup}
-                      className="rounded-xl w-full font-Nunito bg-red-500 py-3 text-center"
+                      className="rounded-xl w-full font-Nunito bg-red-500 py-3 text-center hover:bg-red-300 hover:scale-110  hover:text-white duration-300"
                     >
                       <a className="text-white"> SignUp Now</a>
                     </button>
@@ -157,7 +157,7 @@ export default function Signuppage() {
                       Already have an account?
                       <a
                         href={"/login"}
-                        className="px-2 underline text-red-500"
+                        className="px-2 underline text-red-500 "
                       >
                         Login
                       </a>
