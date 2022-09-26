@@ -13,7 +13,7 @@ export default function Loginpage() {
     if (localStorage.getItem("user-info")) {
       history.push("/organiserprofile");
     }
-  }, []);
+  });
 
   //function to validate login and pass data to organiser profile page
   async function login() {
@@ -42,7 +42,7 @@ export default function Loginpage() {
 
   return (
     <div className="bg-[url('../public/bg2.jpg')] bg-cover w-screen h-screen bg-no-repeat">
-      <div className="relative w-full h-screen max-w-[800px] mt-[-80px] mx-auto ">
+      <div className="relative w-full h-screen max-w-[800px] mt-[-64px] mx-auto ">
         <div className="relative w-full h-screen ">
           <div className="flex justify-center items-center h-full mx-5">
             <form className=" rounded-xl max-w-[400px] w-full mx-auto bg-white p-8">

@@ -5,16 +5,16 @@ import Header from "../components/home/Header";
 
 
 export default function Signup() {
-    return(
-        <div>
+  return (
+    <div>
       <Head>
         <title>Orion Login</title>
         <link rel="" href="" />
       </Head>
-      <Header/>
+      <Header />
       <Signuppage />
-      </div>
+    </div>
 
-    );
+  );
 
 }
