@@ -53,7 +53,7 @@ export default function Signuppage() {
         <div className="relative w-full md:pt-20 ">
           <div className=" md:py-0 sm:mb-0 mx-3 md:flex md:mt-0  bg-white rounded-xl shadow-lg ">
             <div className=" hidden sm:flex flex-col items-center justify-center p-12">
-              <Image src={Logo} alt="logo" />
+              <Image src={Logo} alt="logo"  />
               <h1 className="font-Nunito text-3xl mb-5 pt-10">Welcome</h1>
               <div>
                 <p className="font-Nunito mb-5 pb-10">
