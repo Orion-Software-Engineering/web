@@ -13,7 +13,7 @@ export default function Loginpage() {
     if (localStorage.getItem("user-info")) {
       history.push("/organiserprofile");
     }
-  }, []);
+  });
 
   //function to validate login and pass data to organiser profile page
   async function login() {
@@ -37,7 +37,12 @@ export default function Loginpage() {
     );
     result = await result.json();
     localStorage.setItem("user-info", JSON.stringify(result));
-    history.push("/organiserprofile");
+
+    if (!result.id) {
+      window.location.replace("/verifymail");
+    } else {
+      window.location.replace("/organiserprofile");
+    }
   }
 
   return (

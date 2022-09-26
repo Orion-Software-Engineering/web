@@ -9,7 +9,6 @@ import signup from "../pages/signup";
 import support from "../pages/support";
 
 
-
 function MyApp({ Component, pageProps }) {
   return (
     <Router>
