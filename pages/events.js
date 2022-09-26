@@ -11,6 +11,8 @@ import Image from "next/image";
 import { uploadImageToCloudinary } from "../utils/cloudinary_upload";
 import { CLOUD_NAME } from "../config/cloudinary_upload";
 import { stringify } from "postcss";
+import NoSSR from "react-no-ssr";
+
 
 
 //dlajflkasj
@@ -184,7 +186,9 @@ export default function Event() {
     return (
         <div className=" h-screen ">
             <div className="h-screen bg-opacity-90  ">
-                <EventHeader />
+                <NoSSR>
+                    <EventHeader />
+                </NoSSR>
                 <div className="fixed -left-[11%] top-[11%] hidden lg:flex">
                     <Doodle expanded={expand} />
                 </div>
