@@ -44,7 +44,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link href={"/login"}>
-            <button className=" absolte uppercase bg-transparent border-[1px] border- rounded px-10 mx-auto py-3 mb-4 hover:scale-110 hover:bg-black hover:text-white duration-300 ">
+            <button className=" absolte uppercase bg-transparent border-[1px] border- rounded px-5 mx-auto py-2 mb-4 mr-2 hover:scale-110 hover:bg-white hover:text-black duration-300 ">
               Log in
             </button>
           </Link>
