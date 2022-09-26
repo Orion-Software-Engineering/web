@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = () => {
+  //Nav bar function to implement slider on smaller displays
   const [nav, setNav] = useState(true);
 
   const handleNav = () => {
@@ -12,11 +13,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between items-center h-16 max-2-[1024] mx-auto px-4 text-white bg-[#f6f6f6ef] fixed top-0 z-50  w-full">
-      <div className="flex z-50">
-        <Image src={Logo} alt="Logo_Image" width={"50px"} height={"50px"} />
-        <h1 className="pt-1 pl-1 w-full text-3xl font-bold text-black font-Nunito">
-          Meet
+    <div className="flex relative justify-between items-center h-16 max-2-[1024] mx-auto px-4 text-white bg-[#F6F6F6] w-screen z-10">
+      <div className="flex">
+        <Image src={Logo} alt="Logo_Image" width={"70px"} height={"70px"} />
+        <h1 className="pt-1 pl-1 w-full text-4xl font-bold text-black font-Nunito">
+          <Link href={"/"}>Meet</Link>
         </h1>
       </div>
 
@@ -43,7 +44,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link href={"/login"}>
-            <button className=" absolte uppercase bg-transparent border-[1px] border- rounded px-10 mx-auto py-3 mb-4 hover:scale-110 hover:bg-black hover:text-white duration-300 ">
+            <button className=" absolte uppercase bg-transparent border-[1px] border- rounded px-5 mx-auto py-2 mb-4 hover:scale-110 mr-2 hover:bg-black hover:text-white duration-300 ">
               Log in
             </button>
           </Link>
@@ -61,8 +62,8 @@ const Navbar = () => {
       <div
         className={
           !nav
-            ? "md:hidden fixed left-0 top-0 h-full w-[60%] border-r border-r-gray-900 bg-[#F6F6F6] ease-in-out duration-500 z-20"
-            : "fixed left-[-100%] top-0 h-full w-[60%] border-r border-r-gray-900 bg-[#F6F6F6] ease-in-out duration-500 z-20"
+            ? "md:hidden fixed left-0 top-0 h-full w-[60%] border-r border-r-gray-900 bg-[#F6F6F6] ease-in-out duration-500 z-10"
+            : "fixed left-[-100%] top-0 h-full w-[60%] border-r border-r-gray-900 bg-[#F6F6F6] ease-in-out duration-500 z-10"
         }
       >
         <div className="flex m-4 ">
@@ -83,7 +84,7 @@ const Navbar = () => {
           <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
           <div className=" my-6 ">
             <Link href={"/login"}>
-              <button className="absolte uppercase bg-transparent border-[1px] border- rounded px-10 mx-auto py-3 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 ">
+              <button className="absolte uppercase bg-transparent border-[1px] border- rounded px-10 mx-auto py-3 mb-4 hover:scale-110 hover:bg-black hover:text-white duration-300 ">
                 Log in
               </button>
             </Link>
