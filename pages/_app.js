@@ -7,7 +7,8 @@ import login from "../pages/login";
 import organiserprofile from "../pages/organiserprofile";
 import signup from "../pages/signup";
 import support from "../pages/support";
-
+import Team from "../pages/team";
+import Continue from "../pages/continue";
 
 
 function MyApp({ Component, pageProps }) {
@@ -21,6 +22,8 @@ function MyApp({ Component, pageProps }) {
         <Route path="/organiserprofile" component={organiserprofile} />
         <Route path="/signup" component={signup} />
         <Route path="/support" component={support} />
+        <Route path="/team" component={Team} />
+        <Route path="/continue" component={Continue} />
       </Switch>
       <Component {...pageProps} />
     </Router>
