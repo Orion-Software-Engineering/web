@@ -29,11 +29,11 @@ const CategorySelect = ({ handleSelect, setExpand, updateCategories }) => {
       current[index].isChecked = !categories[index].isChecked;
       setCategories([...current]);
     }
+    updateCategories(categories);
   };
 
   useEffect(() => {
-    updateCategories(categories);
-  });
+  }), [categories];
 
   return (
     <div className="absolute bg-black w-[700px] rounded-lg h-[300px] text-gray-300 grid grid-cols-3 gap-y-4 font-Nunito ">
