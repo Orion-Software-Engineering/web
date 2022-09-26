@@ -5,7 +5,7 @@ import Image from "next/dist/client/image";
 const Chat = () => {
   return (
     <div>
-      <div className=" bg-gradient-to-l from-indigo-200 via-red-200 to-yellow-100 bg-cover w-full h-full bg-no-repeat ">
+      <div className=" bg-gradient-to-l from-[#00CCF9] via-[#0EE6D9] to-[#24D7A1] bg-cover w-full h-full bg-no-repeat ">
         <div className="max-w-[800px] w-full py-20 mx-auto text-center flex flex-col justify-center">
           <div className="flex max-w-[800px] w-full mx-auto">
             <div>
