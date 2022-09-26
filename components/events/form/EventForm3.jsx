@@ -8,7 +8,7 @@ import ToggleSwitch from '../ToggleSwitch'
 
 
 
-const EventForm3 = ({ step, updateStep, ageRestrictions, setAgeRestrictions, mcs, setMcs, guests, setGuests }) => {
+const EventForm3 = ({ step, updateStep, ageRestrictions, setAgeRestrictions, mcs, setMcs, guests, setGuests, venue, setVenue }) => {
 
   const formRef = useRef()
   const [checked, setChecked] = useState(true);
@@ -33,11 +33,16 @@ const EventForm3 = ({ step, updateStep, ageRestrictions, setAgeRestrictions, mcs
               className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg"
               onChange={(e) => setMcs(e.target.value)} />
 
-            <label htmlFor="third" className="mt-[20px]">Guests</label>
+            <label htmlFor="third" className="mt-[10px]">Guests</label>
             <textarea type="text" id="first" name="guests" value={guests}
               className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg"
               onChange={(e) => setGuests(e.target.value)} />
             {/* <label for="third" className="mt-[0px] text-xs text-[#575757] cursor-pointer">Add another guest</label> */}
+
+            <label htmlFor='fourth' className='mt-[10px]'>Venue</label>
+            <input type="text" id="fourth" name="venue" value={venue} 
+              className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg"
+              onChange={(e) => setVenue(e.target.value)} />
           </form>
 
           <div className="flex flex-row w-[300px] justify-between mt-[40px]">
