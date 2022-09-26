@@ -45,6 +45,7 @@ export default function Signuppage() {
     result = await result.json();
     localStorage.setItem("user-info", JSON.stringify(result));
     history.push("/organiserprofile");
+    window.location.replace("/verifymail");
   }
 
   return (

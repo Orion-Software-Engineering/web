@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   function logout() {
-    localStorage.clear();
+    localStorage.clear("user-info");
     window.location.replace("/login");
   }
 
