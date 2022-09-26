@@ -8,7 +8,7 @@ import Hero from "../components/home/Hero";
 import Header from "../components/home/Header";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Autoplay } from "swiper";
-
+import NoSSR from "react-no-ssr";
 
 export default function Swipe() {
   return (
@@ -26,7 +26,9 @@ export default function Swipe() {
           loop
         >
           <SwiperSlide>
-            <Header />
+            <NoSSR>
+              <Header />
+            </NoSSR>
             <Hero />
           </SwiperSlide>
         </Swiper>

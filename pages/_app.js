@@ -10,7 +10,6 @@ import support from "../pages/support";
 import Team from "../pages/team";
 import Continue from "../pages/continue";
 
-
 function MyApp({ Component, pageProps }) {
   return (
     <Router>

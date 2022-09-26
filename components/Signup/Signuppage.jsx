@@ -18,7 +18,7 @@ export default function Signuppage() {
     if (localStorage.getItem("user-info")) {
       history.push("/organiserprofile");
     }
-  }, []);
+  },);
 
   //function to validate signup and pass data to organiser profile page
 
@@ -45,6 +45,7 @@ export default function Signuppage() {
     result = await result.json();
     localStorage.setItem("user-info", JSON.stringify(result));
     history.push("/organiserprofile");
+    window.location.replace("/verifymail");
   }
 
   return (
