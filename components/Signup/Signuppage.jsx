@@ -12,13 +12,13 @@ export default function Signuppage() {
   const [gender, setGender] = useState("");
   const role = "organizer";
 
-  let history = useHistory();
+  const history = useHistory();
 
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
       history.push("/organiserprofile");
     }
-  });
+  }, );
 
   //function to validate signup and pass data to organiser profile page
 
