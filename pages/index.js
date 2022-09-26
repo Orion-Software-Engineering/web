@@ -12,6 +12,7 @@ import { EffectFade, Autoplay } from "swiper";
 
 export default function Swipe() {
   return (
+
     <div className="styles.container">
       <div className=""></div>
       <div>
