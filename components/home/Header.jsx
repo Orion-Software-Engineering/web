@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Logo from "../../public/orionLogo.svg";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Image from "next/image";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Navbar = () => {
   //Nav bar function to implement slider on smaller displays
@@ -18,33 +18,33 @@ const Navbar = () => {
         <div className="flex">
           <Image src={Logo} alt="Logo_Image" width={"70px"} height={"70px"} />
           <h1 className="pt-1 pl-1 w-full text-4xl font-bold text-white font-Nunito">
-            <Link to="/">Meet</Link>
+            <Link href={"/"}>Meet</Link>
           </h1>
         </div>
 
         <ul className="hidden md:flex font-Nunito font-bold pt-4  text-white">
           <li className="pt-3">
-            <Link to="/" className=" p-4 ">
+            <Link className=" p-4 " href={"/"}>
               Home
             </Link>
           </li>
           <li className="pt-3 px-6 ">
-            <Link to="/about" className="p-4 ">
+            <Link className="p-4 " href={"/about"}>
               About
             </Link>
           </li>
           <li className="pt-3 ">
-            <Link className="p-4 " to="/support">
+            <Link className="p-4 " href={"/support"}>
               Support
             </Link>
           </li>
           <li className="pt-3 px-6">
-            <Link className="p-4" to="/events">
+            <Link className="p-4" href={"/events"}>
               Events
             </Link>
           </li>
           <li>
-            <Link to="/login">
+            <Link href={"/login"}>
               <button className=" absolte uppercase bg-transparent border-[1px] border- rounded px-5 mx-auto py-2 mb-4 mr-2 hover:scale-110 hover:bg-white hover:text-black duration-300 ">
                 Log in
               </button>
@@ -75,16 +75,16 @@ const Navbar = () => {
           </div>
 
           <ul className="uppercase p-4 font-Merriweather">
-            <Link to="/">Home</Link>
+            <Link href={"/"}>Home</Link>
             <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
-            <Link to="/about">About</Link>
+            <Link href={"/about"}>About</Link>
             <li className=" mt-4 mb-4 border-b border-b-gray-600"></li>
-            <Link to="/support">Support</Link>
+            <Link href={"/support"}>Support</Link>
             <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
-            <Link to="/events">Events</Link>
+            <Link href={"/events"}>Events</Link>
             <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
             <div className=" my-6 ">
-              <Link to="/login">
+              <Link href={"/login"}>
                 <button className="absolte uppercase bg-transparent border-[1px] border- rounded px-10 mx-auto py-3 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 ">
                   Log in
                 </button>
