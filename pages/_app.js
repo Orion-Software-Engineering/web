@@ -9,6 +9,7 @@ import signup from "../pages/signup";
 import support from "../pages/support";
 import Team from "../pages/team";
 import Continue from "../pages/verifymail";
+import NoSSR from "react-no-ssr";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -24,7 +25,9 @@ function MyApp({ Component, pageProps }) {
         <Route path="/team" component={Team} />
         <Route path="/continue" component={Continue} />
       </Switch>
+      <NoSSR>
       <Component {...pageProps} />
+      </NoSSR>
     </Router>
   );
 }
