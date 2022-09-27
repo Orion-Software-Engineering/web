@@ -71,11 +71,11 @@ export default function Loginpage() {
       } else if (response.status == 200) {
         setResp1("Success!");
         setResp("");
-        window.location.replace("/organiserprofile");
+        window.location.replace("/");
       } else if (response.status == 403) {
         setResp1("Verify your mail!");
         setResp("");
-        // window.location.replace("/verifymail");
+        window.location.replace("/verifymail");
       }
     });
   }
@@ -116,7 +116,6 @@ export default function Loginpage() {
                     className=" border-none relative bg-grey-100 w-full p-2"
                     type="text"
                   />
-
                 </div>
               </div>
               <div className="flex flex-col">
@@ -140,7 +139,7 @@ export default function Loginpage() {
                   </div>
                 </div>
               </div>
-             
+
               <button
                 type="button"
                 onClick={login}
