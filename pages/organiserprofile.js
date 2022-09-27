@@ -10,8 +10,8 @@ export default function organiserprofile() {
       <div >
          <NoSSR>
             <Header />
+            <Profile />
          </NoSSR>
-         <Profile />
       </div>
    )
 }

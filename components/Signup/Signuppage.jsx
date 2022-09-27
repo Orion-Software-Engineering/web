@@ -78,19 +78,19 @@ export default function Signuppage() {
     ).then((response) => {
       console.log("response", response);
       if (response.status == 400) {
-        setResp("User already exists");
-        setResp1("");
-      } else if (response.status == 500) {
-        setResp1("");
-        setResp("Failure");
+        setResp1("Success!");
+        setResp("");
+        setTimeout(() => {
+          localStorage.clear("user-info");
+          window.location.replace("/login");
+        }, 2000);
       } else if (response.status == 403) {
         setResp1("");
         setResp("Success!, Verify email!");
         window.location.replace("/verifymail");
-      } else if (response.status == 201) {
-        setResp1("");
-        setResp("Success!");
-        window.location.replace("/organiserprofile");
+      } else {
+        setResp1("Failed to create your account");
+        setResp("");
       }
     });
   }
@@ -153,13 +153,13 @@ export default function Signuppage() {
 
   const handleGendermale = (e) => {
     if (gendermale == true) {
-      setGender(1);
+      gender = true;
     }
   };
 
   const handleGenderfemale = () => {
     if (genderfemale == true) {
-      setGender(0);
+      gender = false;
     }
   };
 
