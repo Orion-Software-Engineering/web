@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 export default function Signuppage() {
+  const [resp, setResp] = useState("");
+  const [resp1, setResp1] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,7 +20,7 @@ export default function Signuppage() {
     if (localStorage.getItem("user-info")) {
       history.push("/organiserprofile");
     }
-  },);
+  });
 
   //function to validate signup and pass data to organiser profile page
 
@@ -45,8 +47,54 @@ export default function Signuppage() {
     result = await result.json();
     localStorage.setItem("user-info", JSON.stringify(result));
     history.push("/organiserprofile");
-    window.location.replace("/verifymail");
+
+    let result1 = await fetch(
+      "https://orion-meet-testing.herokuapp.com/api/auth/signup",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Content-Length": "<calculated when request is sent>",
+          Host: "<calculated when request is sent>",
+          "User-Agent": "PostmanRuntime/7.29.2",
+          Accept: "*/*",
+          "Accept-Encoding": "gzip, deflate, br",
+          Connection: "keep-alive",
+        },
+        body: JSON.stringify(item),
+      }
+    ).then((response) => {
+      console.log("response", response);
+      if (response.status == 400) {
+        setResp("User already exists");
+        setResp1("");
+      } else if (response.status == 500) {
+        setResp1("");
+        setResp("Failure");
+      } else if (response.status == 403) {
+        setResp1("");
+        setResp("Success!, Verify email!");
+        window.location.replace("/verifymail");
+      }
+    });
   }
+
+  const handleinput = (e) => {
+    const password = e.target.value;
+    if (
+      password.match(/[A-Z]/) != null &&
+      password.match(/[0-9]/) != null &&
+      password.match(/[!@#$%^&*]/) != null &&
+      password.value.length > 7
+    ) {
+      setResp1("");
+      setResp("");
+      signup;
+    } else {
+      setResp1("");
+      setResp("Please check password!");
+    }
+  };
 
   return (
     <div className="bg-[url('../public/bg2.jpg')] h-screen w-screen bg-no-repeat bg-cover">
@@ -54,7 +102,7 @@ export default function Signuppage() {
         <div className="relative w-full md:pt-20 ">
           <div className=" md:py-0 sm:mb-0 mx-3 md:flex md:mt-0  bg-white rounded-xl shadow-lg ">
             <div className=" hidden sm:flex flex-col items-center justify-center p-12">
-              <Image src={Logo} alt="logo"  />
+              <Image src={Logo} alt="logo" />
               <h1 className="font-Nunito text-3xl mb-5 pt-10">Welcome</h1>
               <div>
                 <p className="font-Nunito mb-5 pb-10">
@@ -63,6 +111,12 @@ export default function Signuppage() {
               </div>
             </div>
             <div className="w-full py-16 px-10">
+              <h1 className="text-red-700 font-semibold font-Nunito text-center">
+                {resp}
+              </h1>
+              <h1 className="text-green-700 text-center font-nunito font-semibold">
+                {resp1}
+              </h1>{" "}
               <h2 className="font-Nunito text-3xl mb-4 ">SignUp </h2>
               <p className="mb-4 ">
                 Create your account to start sharing events
@@ -87,17 +141,10 @@ export default function Signuppage() {
 
                 <div className="mt-5">
                   <input
+                    value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     type="password"
                     placeholder=" Password"
-                    className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
-                  />
-                </div>
-
-                <div className="mt-5">
-                  <input
-                    type="password"
-                    placeholder="Confirm Password"
                     className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
                   />
                 </div>
@@ -149,7 +196,7 @@ export default function Signuppage() {
                   <div className="">
                     <button
                       type="button"
-                      onClick={signup}
+                      onClick={handleinput}
                       className="rounded-xl w-full font-Nunito bg-red-500 py-3 text-center hover:bg-red-300 hover:scale-110  hover:text-white duration-300"
                     >
                       <a className="text-white"> SignUp Now</a>
