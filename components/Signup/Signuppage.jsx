@@ -79,7 +79,7 @@ export default function Signuppage() {
     });
   }
 
-  const handleinput = (e) => {
+  const handlepassword = (e) => {
     if (
       password.match(/[a-z]/) != null &&
       password.match(/[A-Z]/) != null &&
@@ -89,10 +89,32 @@ export default function Signuppage() {
     ) {
       setResp1("Secure Password, Great!");
       setResp("");
-      signup();
+      signup;
     } else {
       setResp1("");
       setResp("Insecure Password");
+    }
+  };
+
+  const handleusername = (e) => {
+    if (
+      username.match(/[a-z]/) != null ||
+      username.match(/[A-Z]/) != null ||
+      (username.match(/[0-9]/) != null && username.match(/[!@#$%^&*]/) == null)
+    ) {
+      handlemail();
+    } else {
+      setResp1("");
+      setResp("Invid username");
+    }
+  };
+
+  const handlemail = (e) => {
+    if (/\S+@\S+\.\S+/.test(email)) {
+      handlepassword();
+    } else {
+      setResp1("");
+      setResp("Invalid Email");
     }
   };
 
@@ -195,7 +217,7 @@ export default function Signuppage() {
                   <div className="">
                     <button
                       type="button"
-                      onClick={handleinput}
+                      onClick={handleusername}
                       className="rounded-xl w-full font-Nunito bg-red-500 py-3 text-center hover:bg-red-300 hover:scale-110  hover:text-white duration-300"
                     >
                       <a className="text-white"> SignUp Now</a>
