@@ -87,6 +87,10 @@ export default function Signuppage() {
         setResp1("");
         setResp("Success!, Verify email!");
         window.location.replace("/verifymail");
+      } else if (response.status == 201) {
+        setResp1("");
+        setResp("Success!");
+        window.location.replace("/organiserprofile");
       }
     });
   }
@@ -130,31 +134,32 @@ export default function Signuppage() {
 
   const handleDOB = (e) => {
     if (dob) {
-      handlGendermale();
+      handleGender();
     } else {
       setResp1("");
       setResp("You must provide your date of birth");
     }
   };
 
-  const handlGendermale = (e) => {
-    if (gendermale == true) {
-      gender == true;
-      handleTNC();
+  const handleGender = (e) => {
+    handleGendermale();
+    handleGenderfemale();
+    if ((gendermale || genderfemale) != true) {
+      setResp("You must provide your gender");
     } else {
-      handleGenderfemale();
-      setResp1("");
-      setResp("");
+      handleTNC();
     }
   };
 
-  const handleGenderfemale = (e) => {
+  const handleGendermale = (e) => {
+    if (gendermale == true) {
+      setGender(true);
+    }
+  };
+
+  const handleGenderfemale = () => {
     if (genderfemale == true) {
-      gender == false;
-      handleTNC();
-    } else {
-      setResp1("");
-      setResp("You must select your gender");
+      setGender(false);
     }
   };
 
@@ -247,7 +252,7 @@ export default function Signuppage() {
                   />
                   <span className="font-Nunito p-1">Male</span>
                   <input
-                    onChange={(e) => setGenderfemale(false)}
+                    onChange={(e) => setGenderfemale(true)}
                     type="checkbox"
                     className="border border-gray-400 ml-3"
                   />
