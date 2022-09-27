@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../../public/orionLogo.svg";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { FaRegUserCircle } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -54,11 +55,19 @@ const Navbar = () => {
                   Events
                 </Link>
               </li>
+              <Link href={"/organiserprofile"}>
+                <FaRegUserCircle
+                  href="/organiser profile"
+                  className="hover:scale-150 duration-300 mr-10 mt-3"
+                  size={25}
+                />
+              </Link>
+
               <li>
                 <Link href={"/login"}>
                   <button
                     onClick={logout}
-                    className="mr-5 absolte uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-black hover:text-white duration-300 "
+                    className="mr-10 absolte uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-black hover:text-white duration-300 "
                   >
                     Logout
                   </button>
@@ -68,7 +77,7 @@ const Navbar = () => {
 
             <div onClick={handleNav} className="block md:hidden ">
               {!nav ? (
-                <AiOutlineClose seize={20} className="bg-black" />
+                <AiOutlineClose size={20} className="bg-black" />
               ) : (
                 <AiOutlineMenu size={20} className="bg-black" />
               )}

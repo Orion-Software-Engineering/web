@@ -246,7 +246,7 @@ export default function Event() {
                 </>
                     :
                     <>
-                        {window.location.replace("/login")};
+                        {window.location.replace("/")};
                     </>
             }
 

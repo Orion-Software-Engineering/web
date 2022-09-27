@@ -168,7 +168,7 @@ export default function OrganiserProfile() {
           </div>
         </>
       ) : (
-        <> {window.location.replace("/login")};</>
+        <> {window.location.replace("/")};</>
       )}
     </div>
   );
