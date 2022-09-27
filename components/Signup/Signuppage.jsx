@@ -153,13 +153,13 @@ export default function Signuppage() {
 
   const handleGendermale = (e) => {
     if (gendermale == true) {
-      setGender(true);
+      setGender(1);
     }
   };
 
   const handleGenderfemale = () => {
     if (genderfemale == true) {
-      setGender(false);
+      setGender(0);
     }
   };
 
@@ -237,10 +237,8 @@ export default function Signuppage() {
                 <div className="mt-5 flex-row  flex border-2 p-1 rounded-xl">
                   <input
                     onChange={(e) => setDob(e.target.value)}
-                    type="text"
+                    type="date"
                     placeholder="DOB"
-                    onFocus={(e) => (e.target.type = "date")}
-                    onBlur={(e) => (e.target.type = "text")}
                     className="border-none relative bg-grey-100 p-2 w-full"
                   />
                 </div>
