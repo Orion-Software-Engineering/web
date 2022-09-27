@@ -1,7 +1,9 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
-import Fileupload from "../../events/organiser/Fileupload";
+
+
 
 export default function OrganiserProfile() {
   fetch(" https://orion-meet-testing.herokuapp.com/api/events")
@@ -49,10 +51,10 @@ export default function OrganiserProfile() {
                     <div className="w-40 h-40 bg-white rounded-full">
                       <div>
                         <div className="items-center justify-center pt-20 ml-7">
-                          <Fileupload className="" />
-                          <ion-icon name="camera"></ion-icon>
+                          
+                          
                         </div>
-                        <h1 className="text-[10px]">[Organizer's Logo]</h1>
+                        
                       </div>
                     </div>
                   </div>

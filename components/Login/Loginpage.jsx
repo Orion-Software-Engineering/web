@@ -1,10 +1,17 @@
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
-import { AiFillFacebook } from "react-icons/ai";
+import { AiFillFacebook, AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 export default function Loginpage() {
+  const [open, setOpen] = useState(false);
+
+  // handle toggle
+  const toggle = () => {
+    setOpen(!open);
+  };
+
   const [resp, setResp] = useState("");
   const [resp1, setResp1] = useState("");
   const [username, setUsername] = useState("");
@@ -102,24 +109,38 @@ export default function Loginpage() {
               </div>
               <div className="flex flex-col mb-4  ">
                 <label>Username</label>
-                <input
-                  onChange={(e) => setUsername(e.target.value)}
-                  placeholder="username"
-                  className=" rounded-xl border relative bg-grey-100 p-2"
-                  type="text"
-                />
+                <div className="flex border-2 p-1 rounded-xl">
+                  <input
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder="username"
+                    className=" border-none relative bg-grey-100 w-full p-2"
+                    type="text"
+                  />
+
+                </div>
               </div>
-              <div className="flex flex-col ">
+              <div className="flex flex-col">
                 <label>Password</label>
-                <input
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="password"
-                  className=" rounded-xl border relative bg-grey-100 p-2"
-                  type="password"
-                  name="password"
-                  autoComplete="on"
-                />
+                <div className="flex border-2 p-1 rounded-xl">
+                  <input
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="password"
+                    className=" border-none relative bg-grey-100 p-2 w-full"
+                    type={open === false ? "password" : "text"}
+                    name="password"
+                    autoComplete="on"
+                  />
+
+                  <div className="text-xl items-center flex pl-4">
+                    {open === false ? (
+                      <AiFillEye onClick={toggle} />
+                    ) : (
+                      <AiFillEyeInvisible onClick={toggle} />
+                    )}
+                  </div>
+                </div>
               </div>
+             
               <button
                 type="button"
                 onClick={login}
