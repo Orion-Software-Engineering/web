@@ -18,6 +18,7 @@ const Navbar = () => {
   }
 
   return (
+
     <div>
       {localStorage.getItem("user-info") ? (
         <>
@@ -65,6 +66,7 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
+
 
             <div onClick={handleNav} className="block md:hidden ">
               {!nav ? (
@@ -204,6 +206,7 @@ const Navbar = () => {
           </div>
         </>
       )}
+
     </div>
   );
 };
