@@ -38,7 +38,7 @@ const Team = () => {
 
                         </div>
                         <div className="text-center">
-                            <h5 className="text-xl text-gray-800 font-semibold">Sven Dzebele</h5>
+                            <h5 className="text-xl text-gray-800 font-semibold">Sven Dzeble</h5>
                             <span className="text-sm text-gray-500">Backend</span>
                         </div>
                         <a href="https://github.com/dzeble" className="text-center w-max mx-auto block text-blue-500">View bio</a>
@@ -131,7 +131,11 @@ const Team = () => {
                <a href="https://github.com/hanskod" className="text-center w-max mx-auto block text-blue-500">View bio</a>
                </div>
 
-               <div className="border-t-4 space-y-8 group text-center font-Nunito  ">
+             
+        </div>
+        <div className="pt-14">
+
+        <div className="border-t-4 space-y-8 group text-center font-Nunito   ">
                         <div className='w-32 h-32 -mt-16 mx-auto rounded-[2rem]  rotate-45 overflow-hidden'>
                           <Image src={team10} alt="" loading="lazy" width="805" height="805" className="w-full h-full object-cover -rotate-45 scale-125 mx-auto transition duration-300 group-hover:scale-[1.4]"/>
 
@@ -142,7 +146,7 @@ const Team = () => {
                </div>
                <a href="https://github.com/account" className="text-center w-max mx-auto block text-blue-500">View bio</a>
                </div>
-        </div>
+               </div>
         </div>
         </div>
     
