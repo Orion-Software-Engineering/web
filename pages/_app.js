@@ -8,7 +8,7 @@ import organiserprofile from "../pages/organiserprofile";
 import signup from "../pages/signup";
 import support from "../pages/support";
 import Team from "../pages/team";
-import Continue from "../pages/continue";
+import Continue from "../pages/verifymail";
 
 function MyApp({ Component, pageProps }) {
   return (
