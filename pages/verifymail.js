@@ -9,10 +9,10 @@ export default function Continue() {
         <div>
             <NoSSR>
                 <Header />
+                <Cont />
             </NoSSR>
-            <Cont />
 
         </div>
 
-    );
+    )
 }
