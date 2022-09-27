@@ -11,6 +11,8 @@ import Image from "next/image";
 import { uploadImageToCloudinary } from "../utils/cloudinary_upload";
 import { CLOUD_NAME } from "../config/cloudinary_upload";
 import { stringify } from "postcss";
+import NoSSR from "react-no-ssr";
+
 
 
 //dlajflkasj
@@ -181,59 +183,71 @@ export default function Event() {
     ]
 
     return (
-        <div className=" h-screen ">
-            <div className="h-screen bg-opacity-90  ">
-                <EventHeader />
-                <div className="fixed -left-[11%] top-[11%] hidden lg:flex">
-                    <Doodle expanded={expand} />
-                </div>
-                <div className="fixed right-[11%] top-[38%] hidden lg:flex">
-                    <Doodle expanded={expand} />
-                </div>
+        <div>
+            {
+                localStorage.getItem("user-info") ? <> <div className=" h-screen ">
+                    <div className="h-screen bg-opacity-90  ">
+                        <NoSSR>
+                            <EventHeader />
+                        </NoSSR>
+                        <div className="fixed -left-[11%] top-[11%] hidden lg:flex">
+                            <Doodle expanded={expand} />
+                        </div>
+                        <div className="fixed right-[11%] top-[38%] hidden lg:flex">
+                            <Doodle expanded={expand} />
+                        </div>
 
-                {/* This is where we check the steps */}
-                <div className="flex flex-col md:flex-row justify-center items-center  border-blue-700 mt-[150px] ">
-                    <div className={step ? "bg-[url('../public/WhatsappB.png')] h-[400px] rounded-l-3xl  border-red-600 flex flex-col z-10"
-                        : "flex justify-center items-center  w-[700px]"}>
-                        <div>
-                            {stepSwitch(step)}
+                        {/* This is where we check the steps */}
+                        <div className="flex flex-col md:flex-row justify-center items-center  border-blue-700 mt-[150px]    ">
+                            <div className={step ? "bg-[url('../public/WhatsappB.png')] h-[400px] rounded-l-3xl  border-red-600 flex flex-col z-10"
+                                : "flex justify-center items-center w-[700px]"}>
+                                <div>
+                                    {stepSwitch(step)}
+                                </div>
+                            </div>
+
+                            {step ? (<div className={"w-[400px] h-[400px] flex flex-col gap-y-2 justify-center items-center rounded-r-3xl transition duration-500 ease-in-out "
+                                + imgColors[step - 1]}>
+                                <div>
+                                    <p className=" text-center text-xl mt-[-20px]">Upload Event Flyer</p>
+                                </div>
+                                <form ref={imageRef} onSubmit={() => { }}>
+                                    <label htmlFor="image" >
+                                        <div className='bg-[#CDC5C5] border-blue-700 w-[230px] relative h-[300px] flex justify-center items-center cursor-pointer'>
+                                            <div>
+                                                {isUploading && (
+                                                    <div className="absolute top-2 animate-pulse inset-x-1/4 w-96 ">
+                                                        Uploading Image
+                                                    </div>
+                                                )}
+                                                {filePath && (<Image src={`${filePath}`}
+                                                    className='blur-[3px]'
+                                                    alt="selected-image"
+                                                    layout="fill"
+                                                />)}
+                                            </div>
+                                            <div className='w-[70px] absolute'>
+                                                <Image src="/../public/camera.png" alt="camera" width='70px' height='55px' className="" />
+                                            </div>
+                                            <input type='file' id="image" name='image' className="opacity-0 absolute" accept="image/*"
+                                                onChange={(event) => {
+                                                    setImage(event.target.files[0])
+                                                    setIsUploading(true)
+                                                }} />
+                                        </div>
+                                    </label>
+                                </form>
+                            </div>) : (<div />)}
+
                         </div>
                     </div>
-
-                    {step ? (<div className={"w-[400px] h-[400px] flex flex-col gap-y-2 justify-center items-center rounded-r-3xl transition duration-500 ease-in-out "
-                        + imgColors[step - 1]}>
-                        <div>
-                            <p className=" text-center text-xl mt-[-20px]">Upload Event Flyer</p>
-                        </div>
-                        <form ref={imageRef} onSubmit={() => { }}>
-                            <label htmlFor="image" >
-                                <div className='bg-[#CDC5C5] border-blue-700 w-[230px] relative h-[300px] flex justify-center items-center cursor-pointer'>
-                                    <div>
-                                        {isUploading && (
-                                            <div className="absolute top-2 animate-pulse inset-x-1/4 w-96 ">
-                                                Uploading Image
-                                            </div>
-                                        )}
-                                        {filePath && (<Image src={`${filePath}`}
-                                            className='blur-[3px]'
-                                            alt="selected-image"
-                                            layout="fill"
-                                        />)}
-                                    </div>
-                                    <div className='w-[70px] absolute'>
-                                        <Image src="/../public/camera.png" alt="camera" width='70px' height='55px' className="" />
-                                    </div>
-                                    <input type='file' id="image" name='image' className="opacity-0 absolute" accept="image/*"
-                                        onChange={(event) => {
-                                            setImage(event.target.files[0])
-                                            setIsUploading(true)
-                                        }} />
-                                </div>
-                            </label>
-                        </form>
-                    </div>) : (<div />)}
                 </div>
-            </div>
+                </>
+                    :
+                    <>  {window.location.replace("/login")};
+                    </>
+            }
+
         </div>
     );
 }

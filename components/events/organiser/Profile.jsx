@@ -13,6 +13,7 @@ export default function OrganiserProfile() {
       // console.log(completedata);
       let data1 = "";
       let data2 = "";
+
       completedata.map((values) => {
         data1 += `                  
             <div>
@@ -21,7 +22,7 @@ export default function OrganiserProfile() {
 
         data2 = `                  
       <div>
-        <h1> ${values.organizer}</h1>
+        <h1> ${values.result}</h1>
       </div>`;
       });
       document.getElementById("event_img").innerHTML = data1;
@@ -30,6 +31,11 @@ export default function OrganiserProfile() {
     .catch((err) => {
       console.log(err);
     });
+
+  function logout() {
+    localStorage.clear("user-info");
+    window.location.replace("/login");
+  }
 
   return (
     <div className="justify-center h-screen mt-[80-px]">
@@ -99,9 +105,9 @@ export default function OrganiserProfile() {
                       <li className="border-b border-b-gray-400"></li>
 
                       <div className="mt-6 mb-6 text-[20px] flex justify-between px-10">
-                        <Link href="/login">
+                        <button onClick={logout}>
                           <ion-icon name="Log-out"></ion-icon>
-                        </Link>
+                        </button>
                         <h1 className="text-[15px] font-bold pr-20">Logout</h1>
                         <Link href="/login">
                           <ion-icon name="chevron-forward-outline"></ion-icon>

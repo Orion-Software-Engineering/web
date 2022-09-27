@@ -8,8 +8,8 @@ import {
 
 const About = () => {
   return (
-    <div className="bg-[url('../public/bg2.jpg')] w-full  bg-no-repeat bg-cover font-Nunito mt-[-64px]">
-      <div className="">
+    <div className="bg-[url('../public/bg2.jpg')] w-full h-screen bg-no-repeat bg-cover font-Nunito mt-[-64px]">
+      <div className="bg-[url('../public/bg2.jpg')] w-full bg-no-repeat bg-cover font-Nunito mt-[-64px]">
         <div className="w-full h-[700px] bg-gray-900/90 absolute"></div>
         <div className="max-w-[1240px] mx-auto text-white relative">
           <div className=" pt-20 px-4 py-12 ">
@@ -40,9 +40,9 @@ const About = () => {
               </div>
               <div className="bg-slate-100 pl-8 py-4  hover:bg-slate-400">
                 <a href={"/signup"}>
-                <p className="flex items center text-red-300  ">
-                  Join us <ArrowSmRightIcon className="w-5 ml-2" />
-                </p>
+                  <p className="flex items center text-red-300  ">
+                    Join us <ArrowSmRightIcon className="w-5 ml-2" />
+                  </p>
                 </a>
               </div>
             </div>
@@ -58,9 +58,11 @@ const About = () => {
                 </p>
               </div>
               <div className="bg-slate-100 pl-8 py-4  hover:bg-slate-400 ">
+              <a href={"/team"} >
                 <p className="flex items center text-red-300  ">
                   Know us <ArrowSmRightIcon className="w-5 ml-2" />
                 </p>
+                </a>
               </div>
             </div>
             <div className="bg-white rounded-xl shadow-2xl">
@@ -75,10 +77,10 @@ const About = () => {
                 </p>
               </div>
               <div className="bg-slate-100 pl-8 py-4  hover:bg-slate-400">
-                <a href={"/support"} >
-                <p className="flex items center text-red-300  ">
-                  Contact us <ArrowSmRightIcon className="w-5 ml-2" />  
-                </p>
+                <a href={"/support"}>
+                  <p className="flex items center text-red-300  ">
+                    Contact us <ArrowSmRightIcon className="w-5 ml-2 " />
+                  </p>
                 </a>
               </div>
             </div>
