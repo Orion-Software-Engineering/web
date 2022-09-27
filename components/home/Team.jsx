@@ -21,7 +21,7 @@ const Team = () => {
                 </div>
                 <div className="pt-14">
 
-<div className="border-t-4 space-y-8 group text-center font-Nunito   ">
+<div className="border space-y-8 group text-center font-Nunito   ">
                 <div className='w-32 h-32 -mt-16 mx-auto rounded-[2rem]  rotate-45 overflow-hidden'>
                   <Image src={team01} alt="" loading="lazy" width="805" height="805" className="w-full h-full object-cover -rotate-45 scale-125 mx-auto transition duration-300 group-hover:scale-[1.4]"/>
 
@@ -35,13 +35,14 @@ const Team = () => {
        </div>
 
 
-
+       <div className="pt-14">
                 <div className=" py-20 grid gap-28 md:grid-cols-3">
                     <div className="border-t-4 space-y-8 group text-cente font-Nunito">
                         <div className='w-32 h-32 -mt-16 mx-auto rounded-[2rem]  rotate-45 overflow-hidden'>
                           <Image src={team04} alt="" loading="lazy" width="805" height="805" className="w-full h-full object-cover -rotate-45 scale-125 mx-auto transition duration-300 group-hover:scale-[1.4]"/>
 
                         </div>
+                        
                         <div className="text-center">
                             <h5 className="text-xl text-gray-800 font-semibold">Nana Kwasi</h5>
                             <span className="text-sm text-gray-500">UI/UX Head</span>
@@ -73,12 +74,13 @@ const Team = () => {
                      <a href="https://github.com/McSam-py" className="text-center w-max mx-auto block text-blue-500">View bio</a>
                         </div>
                     </div>
+                    </div>
                     <div className=" py-20 grid gap-28 md:grid-cols-3">
                     <div className="border-t-4 space-y-8 group text-center font-Nunito">
                         <div className='w-32 h-32 -mt-16 mx-auto rounded-[2rem]  rotate-45 overflow-hidden'>
                           <Image src={team07} alt="" loading="lazy" width="805" height="805" className="w-full h-full object-cover -rotate-45 scale-125 mx-auto transition duration-300 group-hover:scale-[1.4]"/>
-
                         </div>
+                        
                         <div className="text-center">
                             <h5 className="text-xl text-gray-800 font-semibold">Dillys Annan</h5>
                             <span className="text-sm text-gray-500">flutter</span>
