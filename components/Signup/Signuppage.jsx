@@ -83,7 +83,7 @@ export default function Signuppage() {
         setTimeout(() => {
           localStorage.clear("user-info");
           window.location.replace("/login");
-        }, 2000);
+        }, 1000);
       } else if (response.status == 403) {
         setResp1("");
         setResp("Success!, Verify email!");
