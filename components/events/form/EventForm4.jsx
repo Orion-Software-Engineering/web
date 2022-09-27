@@ -26,6 +26,7 @@ const EventForm4 = ({ step, updateStep, formRef, submitForm, name, categories, d
       <div className="justify-self-center self-center flex border-gray-600  h-screen bg-[url('../public/WhatsappB.png')]">
         <div className="flex flex-col h justify-center items-center  border-blue-600 w-[400px] rounded-l-3xl ">
           <form ref={formRef} handleSubmit={handleSubmit} className="flex flex-col mb-[150px]" >
+
             <label htmlFor="first" className='mt-[-20px]'>Event Name</label>
             <input type="text" id="first" name="event_name" className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg"
               value={name} disabled />
@@ -58,6 +59,10 @@ const EventForm4 = ({ step, updateStep, formRef, submitForm, name, categories, d
 
             <label htmlFor="first">Age Restrictions(18+)</label>
             <ToggleSwitch ageRestrictions={ageRestrictions} disabled={true} />
+
+            <label htmlFor="first">Price</label>
+            <input type="text" id="first" name="ticket_price"
+              className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" value={price} disabled />
 
             <label htmlFor="second" className="mt-[0px]">MCs</label>
             <input type="text" id="first" name="mcs"

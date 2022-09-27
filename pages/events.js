@@ -191,9 +191,9 @@ export default function Event() {
                 </div>
 
                 {/* This is where we check the steps */}
-                <div className="flex flex-col md:flex-row justify-center items-center  border-blue-700 mt-[150px]    ">
+                <div className="flex flex-col md:flex-row justify-center items-center  border-blue-700 mt-[150px] ">
                     <div className={step ? "bg-[url('../public/WhatsappB.png')] h-[400px] rounded-l-3xl  border-red-600 flex flex-col z-10"
-                        : "flex justify-center items-center w-[700px]"}>
+                        : "flex justify-center items-center  w-[700px]"}>
                         <div>
                             {stepSwitch(step)}
                         </div>

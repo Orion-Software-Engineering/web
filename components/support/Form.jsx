@@ -130,7 +130,7 @@ const Form = () => {
                 </div>
                 <button
                   type="submit"
-                  className="inline-block self-end bg-black text-white font-bold rounded lg px-6 py-2 uppercase text-sm "
+                  className="inline-block self-end bg-black text-white font-bold rounded lg px-6 py-2 uppercase text-sm hover:scale-110 hover:bg-slate-400 hover:text-black duration-300"
                 >
                   Send Message
                 </button>
