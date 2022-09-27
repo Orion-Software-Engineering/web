@@ -3,8 +3,16 @@ import Image from "next/image";
 import Logo from "../../public/orionlogo1.svg";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
 export default function Signuppage() {
+  const [open, setOpen] = useState(false);
+
+  // handle toggle
+  const toggle = () => {
+    setOpen(!open);
+                     };
+
   const [resp, setResp] = useState("");
   const [resp1, setResp1] = useState("");
   const [username, setUsername] = useState("");
@@ -122,39 +130,48 @@ export default function Signuppage() {
                 Create your account to start sharing events
               </p>
               <form action="#">
-                <div className="mt-5">
+                <div className="mt-5 flex-row  flex border-2 p-1 rounded-xl">
                   <input
                     onChange={(e) => setUsername(e.target.value)}
                     type="text"
                     placeholder="Username"
-                    className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
+                    className="  border-none relative bg-grey-100 p-2 w-full"
                   />
                 </div>
-                <div className="mt-5">
+                <div className="mt-5 flex-row  flex border-2 p-1 rounded-xl">
                   <input
                     onChange={(e) => setEmail(e.target.value)}
                     type="mail"
                     placeholder="Email"
-                    className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
+                    className=" border-none relative bg-grey-100 p-2 w-full"
                   />
                 </div>
 
-                <div className="mt-5">
+                <div className="mt-5 flex-row  flex border-2 p-1 rounded-xl">
                   <input
                     onChange={(e) => setPassword(e.target.value)}
-                    type="password"
+                    type={open === false ? "password" : "text"}
                     placeholder=" Password"
-                    className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
+                    className=" border-none relative bg-grey-100 p-2 w-full"
                   />
+
+                  <div
+                  className="text-xl items-center flex pl-4">
+                    {open === false ? (
+                      <AiFillEye onClick={toggle} />
+                    ) : (
+                      <AiFillEyeInvisible onClick={toggle} />
+                    )}
+                  </div>
                 </div>
 
-                <div className="mt-5">
+                <div className="mt-5 flex-row  flex border-2 p-1 rounded-xl">
                   <input
                     onChange={(e) => setDob(e.target.value)}
                     name="DOB"
                     type="date"
                     placeholder="DOB"
-                    className="rounded-xl border border-gray-400 py-1 px-2 w-full"
+                    className="border-none relative bg-grey-100 p-2 w-full"
                   />
                 </div>
                 <div className="mg-5 flex ">
