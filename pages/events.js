@@ -182,10 +182,13 @@ export default function Event() {
         'bg-[#FF7A00]', 'bg-[#1950DE]', 'bg-[#1EA313]', 'bg-[#FF0000]', 'bg-[#FFE600]'
     ]
 
+    const data = JSON.parse(localStorage.getItem("user-info"));
+    console.log(data.roles[0]);
+    
     return (
         <div>
             {
-                localStorage.getItem("user-info") ? <> <div className=" h-screen ">
+                (data.roles[0] == "ROLE_ORGANIZER") ? <> <div className=" h-screen ">
                     <div className="h-screen bg-opacity-90  ">
                         <NoSSR>
                             <EventHeader />
@@ -244,7 +247,8 @@ export default function Event() {
                 </div>
                 </>
                     :
-                    <>  {window.location.replace("/login")};
+                    <>
+                        {window.location.replace("/login")};
                     </>
             }
 

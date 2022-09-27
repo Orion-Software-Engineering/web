@@ -34,7 +34,6 @@ const Navbar = () => {
                 <Link href={"/"}>Meet</Link>
               </h1>
             </div>
-
             <ul className="hidden md:flex font-Nunito font-bold pt-4  text-white">
               <li className="pt-3">
                 <Link className=" p-4 " href={"/"}>

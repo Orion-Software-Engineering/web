@@ -13,8 +13,9 @@ export default function Login() {
       </Head>
       <NoSSR>
         <Header />
+        <Loginpage />
       </NoSSR>
-      <Loginpage />
+
     </div>
   );
 }

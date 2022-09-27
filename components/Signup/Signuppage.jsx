@@ -12,7 +12,7 @@ export default function Signuppage() {
   const [password, setPassword] = useState("");
   const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
-  const role = "organizer";
+  const roles = ["organizer"];
 
   const history = useHistory();
 
@@ -25,8 +25,8 @@ export default function Signuppage() {
   //function to validate signup and pass data to organiser profile page
 
   async function signup() {
-    console.warn(username, email, password, dob, gender, role);
-    let item = { username, email, password, dob, gender, role };
+    console.warn(username, email, password, dob, gender, roles);
+    let item = { username, email, password, dob, gender, roles };
     let result = await fetch(
       "https://orion-meet-testing.herokuapp.com/api/auth/signup",
       {
@@ -89,7 +89,7 @@ export default function Signuppage() {
     ) {
       setResp1("Secure Password, Great!");
       setResp("");
-      signup;
+      signup();
     } else {
       setResp1("");
       setResp("Insecure Password");
