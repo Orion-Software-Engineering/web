@@ -40,7 +40,6 @@ export default function Event() {
     const [step, setStep] = useState(0)
     const [isUploading, setIsUploading] = useState(false)
     const imageRef = useRef()
-
     const [name, setName] = useState('')
     const [categories, setCategories] = useState([])
     const [description, setDescription] = useState('')
@@ -52,11 +51,11 @@ export default function Event() {
     const [mcs, setMcs] = useState('')
     const [guests, setGuests] = useState('')
     const [venue, setVenue] = useState('')
-
     const [filePath, setFilePath] = useState('')
     const [image, setImage] = useState(null)
     const interests = []
 
+    //to expand doodle on different forms
     useEffect(() => {
         if (step % 2) setExpand(true)
         else setExpand(false)
@@ -81,12 +80,14 @@ export default function Event() {
             "date": date,
             "time": time,
             "description": description,
+
             "ticket_price": price,
             "age_restriction": ageRestrictions,
             "organizer": "",
             "cover_image": filePath,
             "interests": [...interests],
             "mcs": mcs,
+
             "guests": guests,
             "venue": venue
         })
@@ -181,12 +182,13 @@ export default function Event() {
         'bg-[#FF7A00]', 'bg-[#1950DE]', 'bg-[#1EA313]', 'bg-[#FF0000]', 'bg-[#FFE600]'
     ]
 
-
-
+    const data = JSON.parse(localStorage.getItem("user-info"));
+    console.log(data.roles[0]);
+    
     return (
         <div>
             {
-                localStorage.getItem("user-info") ? <> <div className=" h-screen ">
+                (data.roles[0] == "ROLE_ORGANIZER") ? <> <div className=" h-screen ">
                     <div className="h-screen bg-opacity-90  ">
                         <NoSSR>
                             <EventHeader />
@@ -239,12 +241,14 @@ export default function Event() {
                                     </label>
                                 </form>
                             </div>) : (<div />)}
+
                         </div>
                     </div>
                 </div>
                 </>
                     :
-                    <>  {window.location.replace("/login")};
+                    <>
+                        {window.location.replace("/login")};
                     </>
             }
 

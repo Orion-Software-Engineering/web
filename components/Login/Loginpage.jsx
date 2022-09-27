@@ -71,15 +71,15 @@ export default function Loginpage() {
       } else if (response.status == 200) {
         setResp1("Success!");
         setResp("");
-        // window.location.replace("/organiserprofile");
-        window.location.replace("/verifymail");
+        window.location.replace("/organiserprofile");
       } else if (response.status == 403) {
         setResp1("Verify your mail!");
         setResp("");
-        window.location.replace("/verifymail");
+        // window.location.replace("/verifymail");
       }
     });
   }
+
   return (
     <div className="bg-[url('../public/bg2.jpg')] bg-cover w-screen h-screen bg-no-repeat">
       <div className="relative w-full h-screen max-w-[800px] mt-[-64px] mx-auto ">

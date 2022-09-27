@@ -25,7 +25,7 @@ const EventForm3 = ({ step, updateStep, ageRestrictions, setAgeRestrictions, mcs
       <div className="justify-self-center self-center flex  border-gray-600 h-[400px] ]">
         <div className="flex flex-col h-[400px] justify-center items-center  border-blue-600 w-[400px] rounded-l-3xl ">
           <form ref={formRef} handleSubmit={handleSubmit} className="flex flex-col mb-[30px]" >
-            <label htmlFor="first">Age Restrictions(18+)</label>
+            <label htmlFor="first">Age Restrictions</label>
             <ToggleSwitch ageRestrictions={ageRestrictions} setAgeRestrictions={setAgeRestrictions} readOnly={false}/>
 
             <label htmlFor="second" className="mt-[10px]">MCs</label>
