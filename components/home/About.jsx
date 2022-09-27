@@ -79,7 +79,7 @@ const About = () => {
               <div className="bg-slate-100 pl-8 py-4  hover:bg-slate-400">
                 <a href={"/support"}>
                   <p className="flex items center text-red-300  ">
-                    Contact us <ArrowSmRightIcon className="w-5 ml-2" />
+                    Contact us <ArrowSmRightIcon className="w-5 ml-2 " />
                   </p>
                 </a>
               </div>

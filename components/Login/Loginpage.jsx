@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 export default function Loginpage() {
+  const [resp, setResp] = useState("");
+  const [resp1, setResp1] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -34,23 +36,55 @@ export default function Loginpage() {
         },
         body: JSON.stringify(item),
       }
-    );
-    result = await result.json();
-    localStorage.setItem("user-info", JSON.stringify(result));
+    ).then(async (result) => {
+      result = await result.json();
+      localStorage.setItem("user-info", JSON.stringify(result));
+    });
 
-    if (!result.id) {
-      window.location.replace("/verifymail");
-    } else {
-      window.location.replace("/organiserprofile");
-    }
+    let result1 = await fetch(
+      "https://orion-meet-testing.herokuapp.com/api/auth/signin",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Content-Length": "<calculated when request is sent>",
+          Host: "<calculated when request is sent>",
+          "User-Agent": "PostmanRuntime/7.29.2",
+          Accept: "*/*",
+          "Accept-Encoding": "gzip, deflate, br",
+          Connection: "keep-alive",
+        },
+        body: JSON.stringify(item),
+      }
+    ).then((response) => {
+      console.log("response", response);
+      if (response.status == 404) {
+        setResp("Incorrect Username or Password!");
+        setResp1("");
+      } else if (response.status == 200) {
+        setResp1("Success!");
+        setResp("");
+        // window.location.replace("/organiserprofile");
+        window.location.replace("/verifymail");
+      } else if (response.status == 403) {
+        setResp1("Verify your mail!");
+        setResp("");
+        window.location.replace("/verifymail");
+      }
+    });
   }
-
   return (
     <div className="bg-[url('../public/bg2.jpg')] bg-cover w-screen h-screen bg-no-repeat">
       <div className="relative w-full h-screen max-w-[800px] mt-[-64px] mx-auto ">
         <div className="relative w-full h-screen ">
           <div className="flex justify-center items-center h-full mx-5">
             <form className=" rounded-xl max-w-[400px] w-full mx-auto bg-white p-8">
+              <h1 className="text-red-700 font-semibold font-Nunito text-center">
+                {resp}
+              </h1>
+              <h1 className="text-green-700 text-center font-nunito font-semibold">
+                {resp1}
+              </h1>
               <h2 className="text-4xl font-bold text-center py-4 font-Nunito">
                 ORION
               </h2>
