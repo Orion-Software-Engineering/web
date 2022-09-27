@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import team01 from "../../public/team01.jpg";
-
+import team02 from "../../public/team02.jpg";
+import team03 from "../../public/team03.jpg";
 
 
 const Team = () => {
@@ -29,7 +30,7 @@ const Team = () => {
                         </div>
                         <div className="border-t-4 space-y-8 group text-center">
                         <div className='w-32 h-32 -mt-16 mx-auto rounded-[2rem]  rotate-45 overflow-hidden'>
-                          <Image src={team01} alt="" loading="lazy" width="805" height="805" className="w-full h-full object-cover -rotate-45 scale-125 mx-auto transition duration-300 group-hover:scale[1.4]"/>
+                          <Image src={team02} alt="" loading="lazy" width="805" height="805" className="w-full h-full object-cover -rotate-45 scale-125 mx-auto transition duration-300 group-hover:scale[1.4]"/>
 
                         </div>
                         <div className="text-center">
@@ -43,7 +44,7 @@ const Team = () => {
                         </div>
                         <div className="border-t-4 space-y-8 group text-center">
                         <div className='w-32 h-32 -mt-16 mx-auto rounded-[2rem]  rotate-45 overflow-hidden'>
-                          <Image src={team01} alt="" loading="lazy" width="805" height="805" className="w-full h-full object-cover -rotate-45 scale-125 mx-auto transition duration-300 group-hover:scale[1.4]"/>
+                          <Image src={team03} alt="" loading="lazy" width="805" height="805" className="w-full h-full object-cover -rotate-45 scale-125 mx-auto transition duration-300 group-hover:scale[1.4]"/>
 
                         </div>
                         <div className="text-center">

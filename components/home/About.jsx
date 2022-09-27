@@ -58,9 +58,11 @@ const About = () => {
                 </p>
               </div>
               <div className="bg-slate-100 pl-8 py-4  hover:bg-slate-400 ">
+              <a href={"/team"} >
                 <p className="flex items center text-red-300  ">
                   Know us <ArrowSmRightIcon className="w-5 ml-2" />
                 </p>
+                </a>
               </div>
             </div>
             <div className="bg-white rounded-xl shadow-2xl">
