@@ -57,7 +57,7 @@ const EventForm4 = ({ step, updateStep, formRef, submitForm, name, categories, d
             <input type="text" id="first" name="date_time"
               className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" value={`${date} at ${time}`} disabled />
 
-            <label htmlFor="first">Age Restrictions(18+)</label>
+            <label htmlFor="first">Age Restrictions</label>
             <ToggleSwitch ageRestrictions={ageRestrictions} disabled={true} />
 
             <label htmlFor="first">Price</label>
@@ -77,13 +77,13 @@ const EventForm4 = ({ step, updateStep, formRef, submitForm, name, categories, d
               className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" value={venue} disabled />
           </form>
 
-          <div className="flex flex-row w-[300px] mt-[-80px] justify-between ">
+          <div className="flex flex-row w-[300px] mt-[-110px] justify-between ">
             <p className="self-start cursor-pointer"
               onClick={() => updateStep(step - 1)}>
               {'<'}Back
             </p>
           </div>
-          <div className='float-right mt-16 cursor-pointer bg-black text-gray-200 text-xs w-36
+          <div className='float-right mt-4 cursor-pointer bg-black text-gray-200 text-xs w-36
              rounded-md h-8 flex justify-center items-center shadow-xl hover:bg-orange-500 transition-all duration-300 hover:text-white select-none'
             onClick={async () => {
               // post form data 
