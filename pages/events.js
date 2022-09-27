@@ -53,6 +53,7 @@ export default function Event() {
     const [image, setImage] = useState(null)
     const interests = []
 
+    //to expand doodle on different forms
     useEffect(() => {
         if (step % 2) setExpand(true)
         else setExpand(false)
