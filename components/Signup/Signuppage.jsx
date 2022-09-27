@@ -11,7 +11,7 @@ export default function Signuppage() {
   // handle toggle
   const toggle = () => {
     setOpen(!open);
-                     };
+  };
 
   const [resp, setResp] = useState("");
   const [resp1, setResp1] = useState("");
@@ -19,6 +19,9 @@ export default function Signuppage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [dob, setDob] = useState("");
+  const [checktnc, setCheckTNC] = useState("");
+  const [gendermale, setGendermale] = useState("");
+  const [genderfemale, setGenderfemale] = useState("");
   const [gender, setGender] = useState("");
   const roles = ["organizer"];
 
@@ -87,23 +90,6 @@ export default function Signuppage() {
     });
   }
 
-  const handlepassword = (e) => {
-    if (
-      password.match(/[a-z]/) != null &&
-      password.match(/[A-Z]/) != null &&
-      password.match(/[0-9]/) != null &&
-      password.match(/[!@#$%^&*]/) != null &&
-      password.length > 7
-    ) {
-      setResp1("Secure Password, Great!");
-      setResp("");
-      signup;
-    } else {
-      setResp1("");
-      setResp("Insecure Password");
-    }
-  };
-
   const handleusername = (e) => {
     if (
       username.match(/[a-z]/) != null ||
@@ -126,6 +112,62 @@ export default function Signuppage() {
     }
   };
 
+  const handlepassword = (e) => {
+    if (
+      password.match(/[a-z]/) != null &&
+      password.match(/[A-Z]/) != null &&
+      password.match(/[0-9]/) != null &&
+      password.match(/[!@#$%^&*]/) != null &&
+      password.length > 7
+    ) {
+      handleDOB();
+    } else {
+      setResp1("");
+      setResp("Insecure Password");
+    }
+  };
+
+  const handleDOB = (e) => {
+    if (dob) {
+      handlGendermale();
+    } else {
+      setResp1("");
+      setResp("You must provide your date of birth");
+    }
+  };
+
+  const handlGendermale = (e) => {
+    if (gendermale == true) {
+      gender == true;
+      handleTNC();
+    } else {
+      handleGenderfemale();
+      setResp1("");
+      setResp("");
+    }
+  };
+
+  const handleGenderfemale = (e) => {
+    if (genderfemale == true) {
+      gender == false;
+      handleTNC();
+    } else {
+      setResp1("");
+      setResp("You must select your gender");
+    }
+  };
+
+  const handleTNC = (e) => {
+    if (checktnc == true) {
+      setResp1("");
+      setResp("");
+      signup();
+    } else {
+      setResp1("");
+      setResp("You must agree with Terms of Use and Privacy Policy");
+    }
+  };
+
   return (
     <div className="bg-[url('../public/bg2.jpg')] h-screen w-screen bg-no-repeat bg-cover">
       <div className=" max-w-[800px] md:mt-[-64px] mt-0 first-letter:w-full h-screen mx-auto text-center flex flex-col justify-center">
@@ -136,7 +178,7 @@ export default function Signuppage() {
               <h1 className="font-Nunito text-3xl mb-5 pt-10">Welcome</h1>
               <div>
                 <p className="font-Nunito mb-5 pb-10">
-                  Register now and meet new people!{" "}
+                  Register now and meet new people!
                 </p>
               </div>
             </div>
@@ -146,7 +188,7 @@ export default function Signuppage() {
               </h1>
               <h1 className="text-green-700 text-center font-nunito font-semibold">
                 {resp1}
-              </h1>{" "}
+              </h1>
               <h2 className="font-Nunito text-3xl mb-4 ">SignUp </h2>
               <p className="mb-4 ">
                 Create your account to start sharing events
@@ -177,8 +219,7 @@ export default function Signuppage() {
                     className=" border-none relative bg-grey-100 p-2 w-full"
                   />
 
-                  <div
-                  className="text-xl items-center flex pl-4">
+                  <div className="text-xl items-center flex pl-4">
                     {open === false ? (
                       <AiFillEye onClick={toggle} />
                     ) : (
@@ -198,13 +239,13 @@ export default function Signuppage() {
                 </div>
                 <div className="mg-5 flex ">
                   <input
-                    onChange={(e) => setGender(true)}
+                    onChange={(e) => setGendermale(true)}
                     type="checkbox"
                     className="border border-gray-400"
                   />
                   <span className="font-Nunito p-1">Male</span>
                   <input
-                    onChange={(e) => setGender(false)}
+                    onChange={(e) => setGenderfemale(false)}
                     type="checkbox"
                     className="border border-gray-400 ml-3"
                   />
@@ -212,7 +253,11 @@ export default function Signuppage() {
                 </div>
 
                 <div className="mg-5 text-left">
-                  <input type="checkbox" className="border border-gray-400" />
+                  <input
+                    onChange={(e) => setCheckTNC(true)}
+                    type="checkbox"
+                    className="border border-gray-400"
+                  />
                   <span className="font-Nunito p-1">
                     I accept the
                     <a
