@@ -72,6 +72,8 @@ export default function Loginpage() {
         setResp1("Success!");
         setResp("");
         window.location.replace("/");
+
+        window.location.replace("/");
       } else if (response.status == 403) {
         setResp1("Verify your mail!");
         setResp("");
