@@ -11,8 +11,6 @@ export default function Continue() {
                 <Header />
                 <Cont />
             </NoSSR>
-
         </div>
-
     )
 }
