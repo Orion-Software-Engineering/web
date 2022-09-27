@@ -80,19 +80,19 @@ export default function Signuppage() {
   }
 
   const handleinput = (e) => {
-    const password = e.target.value;
     if (
+      password.match(/[a-z]/) != null &&
       password.match(/[A-Z]/) != null &&
       password.match(/[0-9]/) != null &&
       password.match(/[!@#$%^&*]/) != null &&
-      password.value.length > 7
+      password.length > 7
     ) {
-      setResp1("");
+      setResp1("Secure Password, Great!");
       setResp("");
       signup;
     } else {
       setResp1("");
-      setResp("Please check password!");
+      setResp("Insecure Password");
     }
   };
 
@@ -133,7 +133,7 @@ export default function Signuppage() {
                 <div className="mt-5">
                   <input
                     onChange={(e) => setEmail(e.target.value)}
-                    type="text"
+                    type="mail"
                     placeholder="Email"
                     className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
                   />
@@ -141,7 +141,6 @@ export default function Signuppage() {
 
                 <div className="mt-5">
                   <input
-                    value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     type="password"
                     placeholder=" Password"
