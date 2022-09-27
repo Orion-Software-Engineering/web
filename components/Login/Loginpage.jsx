@@ -65,7 +65,6 @@ export default function Loginpage() {
         setResp1("Success!");
         setResp("");
         // window.location.replace("/organiserprofile");
-        // window.location.replace("/verifymail");
       } else if (response.status == 403) {
         setResp1("Verify your mail!");
         setResp("");
