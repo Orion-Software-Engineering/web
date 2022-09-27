@@ -51,6 +51,6 @@ const data = [
   {
     question: "Why should I choose this platform over others?",
     answer:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "The team chose this project to improve upon already existing matchmaking solutions to widen the benefit. A major issue with existing solutions is that they usually consider only mutual friends and fail to connect people based on their interests.",
   },
 ];
