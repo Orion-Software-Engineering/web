@@ -10,7 +10,7 @@ const Continue = () => {
 
   return (
     <div className="w-full h-screen text-center bg-[#0a192f] mt-[-64px]">
-      <div className="sm:flex-row flex-col inline-flex justify-center h-screen items-center ">
+      <div className="sm:flex-row flex-col inline-flex justify-center h-screen items-center mx-10 ">
         <div>
           <GrMailOption size="10rem" color="cornflowerblue " />
         </div>
@@ -20,7 +20,7 @@ const Continue = () => {
           </h2>
         </div>
       </div>
-      {timeout()}
+      {/* {timeout()} */}
     </div>
   );
 };
