@@ -20,7 +20,7 @@ const Continue = () => {
           </h2>
         </div>
       </div>
-      {/* {timeout()} */}
+      {timeout()}
     </div>
   );
 };
