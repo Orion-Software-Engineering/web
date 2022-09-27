@@ -18,12 +18,11 @@ const Navbar = () => {
   }
 
   return (
-
     <div>
       {localStorage.getItem("user-info") ? (
         <>
           <div className="flex relative justify-between items-center h-16 max-2-[1024] mx-auto px-4 text-white bg-[#000000] w-screen z-10">
-            <div className="flex ml-5">
+            <div className="flex sm:ml-5 ml-0">
               <Image
                 src={Logo}
                 alt="Logo_Image"
@@ -66,7 +65,6 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
-
 
             <div onClick={handleNav} className="block md:hidden ">
               {!nav ? (
@@ -121,7 +119,7 @@ const Navbar = () => {
       ) : (
         <>
           <div className="flex relative justify-between items-center h-16 max-2-[1024] mx-auto px-4 text-white bg-[#000000]  w-screen z-10">
-            <div className="flex ml-5 ">
+            <div className="flex sm:ml-5 ml-0">
               <Image
                 src={Logo}
                 alt="Logo_Image"
@@ -192,8 +190,6 @@ const Navbar = () => {
                 <li className=" mt-4 mb-4 border-b border-b-gray-600"></li>
                 <Link href={"/support"}>Support</Link>
                 <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
-                <Link href={"/events"}>Events</Link>
-                <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
                 <div className=" my-6 ">
                   <Link href={"/login"}>
                     <button className="absolte uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 ">
@@ -206,7 +202,6 @@ const Navbar = () => {
           </div>
         </>
       )}
-
     </div>
   );
 };
