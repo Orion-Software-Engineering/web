@@ -21,10 +21,11 @@ const EventForm4 = ({ step, updateStep, formRef, submitForm, name, categories, d
   ]
 
   return (
-    <div className="text-black h-screen  border-gray-700 flex font-nunito ">
+    <div className="text-black h-screen  border-gray-700 flex flex-wrap font-nunito ">
 
       <div className="justify-self-center self-center flex border-gray-600  h-screen bg-[url('../public/WhatsappB.png')]">
         <div className="flex flex-col h justify-center items-center  border-blue-600 w-[400px] rounded-l-3xl ">
+          
           <form ref={formRef} handleSubmit={handleSubmit} className="flex flex-col mb-[150px]" >
 
             <label htmlFor="first" className='mt-[-20px]'>Event Name</label>

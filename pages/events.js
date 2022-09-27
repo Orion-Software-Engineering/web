@@ -80,14 +80,12 @@ export default function Event() {
             "date": date,
             "time": time,
             "description": description,
-
             "ticket_price": price,
             "age_restriction": ageRestrictions,
             "organizer": "",
             "cover_image": filePath,
             "interests": [...interests],
             "mcs": mcs,
-
             "guests": guests,
             "venue": venue
         })
@@ -184,7 +182,7 @@ export default function Event() {
 
     const data = JSON.parse(localStorage.getItem("user-info"));
     console.log(data.roles[0]);
-    
+
     return (
         <div>
             {
@@ -201,7 +199,7 @@ export default function Event() {
                         </div>
 
                         {/* This is where we check the steps */}
-                        <div className="flex flex-col md:flex-row justify-center items-center  border-blue-700 mt-[150px]    ">
+                        <div className="flex flex-col md:flex-row justify-center items-center flex-wrap border-blue-700 mt-[150px]  ">
                             <div className={step ? "bg-[url('../public/WhatsappB.png')] h-[400px] rounded-l-3xl  border-red-600 flex flex-col z-10"
                                 : "flex justify-center items-center w-[700px]"}>
                                 <div>

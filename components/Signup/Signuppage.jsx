@@ -4,6 +4,7 @@ import Logo from "../../public/orionlogo1.svg";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
+import { calcLength } from "framer-motion";
 
 export default function Signuppage() {
   const [open, setOpen] = useState(false);
@@ -231,9 +232,10 @@ export default function Signuppage() {
                 <div className="mt-5 flex-row  flex border-2 p-1 rounded-xl">
                   <input
                     onChange={(e) => setDob(e.target.value)}
-                    name="DOB"
-                    type="date"
+                    type="text"
                     placeholder="DOB"
+                    onFocus={(e) => (e.target.type = "date")}
+                    onBlur={(e) => (e.target.type = "text")}
                     className="border-none relative bg-grey-100 p-2 w-full"
                   />
                 </div>

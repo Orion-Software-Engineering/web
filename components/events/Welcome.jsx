@@ -6,7 +6,7 @@ const Welcome = ({ step, updateStep }) => {
     return (
         <div className=' w-[700px]'>
 
-            <div className='flex justify-center items-center border-gray-600 '>
+            <div className='flex justify-center items-center border-gray-600 mt-[-60px]'>
                 <div className='flex flex-col'>
                     <h1 className='font-Nunito text-4xl font-bold'>Hello "Name goes here"</h1>
                     <h4 className='font-Nunito text-xl'>You can advertise your events on orion meet in 5 simple steps!</h4>
