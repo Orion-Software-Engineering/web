@@ -104,27 +104,42 @@ const Navbar = () => {
                 </div>
 
                 <ul className="uppercase p-4 font-Merriweather">
-                  <Link href={"/organiserprofile"}>
-                    <FaRegUserCircle
-                      href="/organiser profile"
-                      className="hover:scale-150 duration-300 mr-10 mt-3"
-                      size={25}
-                    />
+                  <div className="flex-row flex">
+                    <Link href={"/organiserprofile"}>
+                      <FaRegUserCircle
+                        href="/organiser profile"
+                        className="hover:scale-150 duration-300 mt-3 mr-2"
+                        size={25}
+                      />
+                    </Link>
+                    <Link href={"/organiserprofile"}>
+                      <h1 className="mt-3 font-nunito font-semibold">
+                        Profile
+                      </h1>
+                    </Link>
+                  </div>
+                  <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
+                  <Link href={"/"}>
+                    <h1 className="font-nunito font-semibold">Home</h1>
                   </Link>
                   <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
-                  <Link href={"/"}>Home</Link>
-                  <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
-                  <Link href={"/about"}>About</Link>
+                  <Link href={"/about"}>
+                    <h1 className="font-nunito font-semibold">About</h1>
+                  </Link>
                   <li className=" mt-4 mb-4 border-b border-b-gray-600"></li>
-                  <Link href={"/support"}>Support</Link>
+                  <Link href={"/support"}>
+                    <h1 className="font-nunito font-semibold">Support</h1>
+                  </Link>
                   <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
-                  <Link href={"/events"}>Events</Link>
+                  <Link href={"/events"}>
+                    <h1 className="font-nunito font-semibold">Events</h1>
+                  </Link>
                   <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
                   <div className=" my-6 ">
                     <Link href={"/login"}>
                       <button
                         onClick={logout}
-                        className="absolte uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 "
+                        className="absolte font-nunito font-semibold uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 "
                       >
                         Logout
                       </button>
@@ -203,15 +218,21 @@ const Navbar = () => {
               </div>
 
               <ul className="uppercase p-4 font-Merriweather">
-                <Link href={"/"}>Home</Link>
+                <Link href={"/"}>
+                  <h1 className="font-nunito font-semibold">Home</h1>
+                </Link>
                 <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
-                <Link href={"/about"}>About</Link>
+                <Link href={"/about"}>
+                  <h1 className="font-nunito font-semibold">About</h1>
+                </Link>
                 <li className=" mt-4 mb-4 border-b border-b-gray-600"></li>
-                <Link href={"/support"}>Support</Link>
+                <Link href={"/support"}>
+                  <h1 className="font-nunito font-semibold">Support</h1>
+                </Link>
                 <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
                 <div className=" my-6 ">
                   <Link href={"/login"}>
-                    <button className="absolte uppercase bg-transparent border-[1px] rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 ">
+                    <button className="font-nunito font-semibold absolte uppercase bg-transparent border-[1px] rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 ">
                       Log in
                     </button>
                   </Link>
