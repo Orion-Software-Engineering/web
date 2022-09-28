@@ -6,6 +6,7 @@ import { FaRegUserCircle, FaRegMoneyBillAlt } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
 import { BiLogOut } from "react-icons/bi";
 import { IoIosArrowForward } from "react-icons/io";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 
 export default function OrganiserProfile() {
   let result1 = fetch(
@@ -32,7 +33,7 @@ export default function OrganiserProfile() {
       {data.roles[0] == "ROLE_ORGANIZER" ? (
         <>
           <Header />
-          
+
           <div className="justify-center h-screen mt-[80-px]">
             <div className=" flex flex-row sm:mt-[20%]  justify-center ">
               <div className="md:flex-row  flex-col flex  pb-10">
@@ -131,24 +132,21 @@ export default function OrganiserProfile() {
                           <h1 className="font-Nunito font-semibold text-sm">
                             Create new event
                           </h1>
-                          <ion-icon
-                            className="fill-blue-600"
-                            name="add-circle"
-                          ></ion-icon>
+                          <AiOutlinePlusCircle size={20} />
                         </div>
                       </Link>
                     </div>
                   </div>
-                  <div className="bg-gray-100 w-full h-full rounded-lg">
-                    <div className=" flex w-">
-                      <div className=" bg-blue-300 w-[50%] h-full m-5 flex-col">
+                  <div className="bg-gray-100 rounded-lg">
+                    <div className=" flex">
+                      <div className=" bg-none w-[50%] m-5">
                         <div className=" bg-red-300 h-40"></div>
                         <div className=" bg-red-300 mt-5 h-40"></div>
                         <div className=" bg-red-300 mt-5 h-40"></div>
                         <div className=" bg-red-300 mt-5 h-40"></div>
                         <div className=" bg-red-300 mt-5 h-40"></div>
                       </div>
-                      <div className=" bg-blue-300 w-[50%] h-full m-5">
+                      <div className=" bg-none w-[50%] m-5">
                         <div className=" bg-red-300 h-40"></div>
                         <div className=" bg-red-300 mt-5 h-40"></div>
                         <div className=" bg-red-300 mt-5 h-40"></div>
@@ -172,10 +170,7 @@ export default function OrganiserProfile() {
                             <h1 className="font-Nunito font-semibold text-sm">
                               Create new event
                             </h1>
-                            <ion-icon
-                              className="fill-blue-600"
-                              name="add-circle"
-                            ></ion-icon>
+                            <AiOutlinePlusCircle size={20} />
                           </div>
                         </Link>
                       </div>
