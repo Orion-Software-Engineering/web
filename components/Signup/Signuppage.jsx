@@ -3,8 +3,17 @@ import Image from "next/image";
 import Logo from "../../public/orionlogo1.svg";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
+import { calcLength } from "framer-motion";
 
 export default function Signuppage() {
+  const [open, setOpen] = useState(false);
+
+  // handle toggle
+  const toggle = () => {
+    setOpen(!open);
+  };
+
   const [resp, setResp] = useState("");
   const [resp1, setResp1] = useState("");
   const [username, setUsername] = useState("");
@@ -79,7 +88,7 @@ export default function Signuppage() {
     });
   }
 
-  const handleinput = (e) => {
+  const handlepassword = (e) => {
     if (
       password.match(/[a-z]/) != null &&
       password.match(/[A-Z]/) != null &&
@@ -89,10 +98,32 @@ export default function Signuppage() {
     ) {
       setResp1("Secure Password, Great!");
       setResp("");
-      signup();
+      signup;
     } else {
       setResp1("");
       setResp("Insecure Password");
+    }
+  };
+
+  const handleusername = (e) => {
+    if (
+      username.match(/[a-z]/) != null ||
+      username.match(/[A-Z]/) != null ||
+      (username.match(/[0-9]/) != null && username.match(/[!@#$%^&*]/) == null)
+    ) {
+      handlemail();
+    } else {
+      setResp1("");
+      setResp("Invid username");
+    }
+  };
+
+  const handlemail = (e) => {
+    if (/\S+@\S+\.\S+/.test(email)) {
+      handlepassword();
+    } else {
+      setResp1("");
+      setResp("Invalid Email");
     }
   };
 
@@ -122,39 +153,48 @@ export default function Signuppage() {
                 Create your account to start sharing events
               </p>
               <form action="#">
-                <div className="mt-5">
+                <div className="mt-5 flex-row  flex border-2 p-1 rounded-xl">
                   <input
                     onChange={(e) => setUsername(e.target.value)}
                     type="text"
                     placeholder="Username"
-                    className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
+                    className="  border-none relative bg-grey-100 p-2 w-full"
                   />
                 </div>
-                <div className="mt-5">
+                <div className="mt-5 flex-row  flex border-2 p-1 rounded-xl">
                   <input
                     onChange={(e) => setEmail(e.target.value)}
                     type="mail"
                     placeholder="Email"
-                    className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
+                    className=" border-none relative bg-grey-100 p-2 w-full"
                   />
                 </div>
 
-                <div className="mt-5">
+                <div className="mt-5 flex-row  flex border-2 p-1 rounded-xl">
                   <input
                     onChange={(e) => setPassword(e.target.value)}
-                    type="password"
+                    type={open === false ? "password" : "text"}
                     placeholder=" Password"
-                    className=" rounded-xl border border-gray-400 py-1 px-2 w-full"
+                    className=" border-none relative bg-grey-100 p-2 w-full"
                   />
+
+                  <div className="text-xl items-center flex pl-4">
+                    {open === false ? (
+                      <AiFillEye onClick={toggle} />
+                    ) : (
+                      <AiFillEyeInvisible onClick={toggle} />
+                    )}
+                  </div>
                 </div>
 
-                <div className="mt-5">
+                <div className="mt-5 flex-row  flex border-2 p-1 rounded-xl">
                   <input
                     onChange={(e) => setDob(e.target.value)}
-                    name="DOB"
-                    type="date"
+                    type="text"
                     placeholder="DOB"
-                    className="rounded-xl border border-gray-400 py-1 px-2 w-full"
+                    onFocus={(e) => (e.target.type = "date")}
+                    onBlur={(e) => (e.target.type = "text")}
+                    className="border-none relative bg-grey-100 p-2 w-full"
                   />
                 </div>
                 <div className="mg-5 flex ">
@@ -195,7 +235,7 @@ export default function Signuppage() {
                   <div className="">
                     <button
                       type="button"
-                      onClick={handleinput}
+                      onClick={handleusername}
                       className="rounded-xl w-full font-Nunito bg-red-500 py-3 text-center hover:bg-red-300 hover:scale-110  hover:text-white duration-300"
                     >
                       <a className="text-white"> SignUp Now</a>
