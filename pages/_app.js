@@ -10,6 +10,7 @@ import support from "../pages/support";
 import Team from "../pages/team";
 import Continue from "../pages/verifymail";
 import NoSSR from "react-no-ssr";
+import UserRedirect from "../components/UserRedirect";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -24,11 +25,15 @@ function MyApp({ Component, pageProps }) {
         <Route path="/support" component={support} />
         <Route path="/team" component={Team} />
         <Route path="/continue" component={Continue} />
+        <Route path="/userredirect" component={UserRedirect} />
+       
+        
       </Switch>
       <NoSSR>
       <Component {...pageProps} />
       </NoSSR>
     </Router>
+    
   );
 }
 
