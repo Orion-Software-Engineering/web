@@ -21,7 +21,7 @@ const Navbar = () => {
     <div>
       {localStorage.getItem("user-info") ? (
         <>
-          <div className="flex relative justify-between items-center h-16 max-2-[1024] mx-auto px-4 text-white bg-[#000000] w-screen z-10">
+          <div className="flex fixed top-0 justify-between items-center h-16 max-2-[1024] mx-auto px-4 text-white bg-[#000000] w-screen z-50">
             <div className="flex sm:ml-5 ml-0">
               <Image
                 src={Logo}
@@ -58,7 +58,7 @@ const Navbar = () => {
                 <Link href={"/login"}>
                   <button
                     onClick={logout}
-                    className="mr-5 absolte uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-black hover:text-white duration-300 "
+                    className="mr-5  uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-black hover:text-white duration-300 "
                   >
                     Logout
                   </button>
@@ -106,7 +106,7 @@ const Navbar = () => {
                   <Link href={"/login"}>
                     <button
                       onClick={logout}
-                      className="absolte uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 "
+                      className=" uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 "
                     >
                       Logout
                     </button>
@@ -118,7 +118,7 @@ const Navbar = () => {
         </>
       ) : (
         <>
-          <div className="flex relative justify-between items-center h-16 max-2-[1024] mx-auto px-4 text-white bg-[#000000]  w-screen z-10">
+          <div className="flex fixed top-0 z-50 justify-between items-center h-16 max-2-[1024] mx-auto px-4 text-white bg-[#000000]  w-screen">
             <div className="flex sm:ml-5 ml-0">
               <Image
                 src={Logo}
@@ -149,7 +149,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link href={"/login"}>
-                  <button className=" mr-5 absolte uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-black hover:text-white duration-300 ">
+                  <button className=" mr-5  uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-black hover:text-white duration-300 ">
                     Log in
                   </button>
                 </Link>
@@ -192,7 +192,7 @@ const Navbar = () => {
                 <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
                 <div className=" my-6 ">
                   <Link href={"/login"}>
-                    <button className="absolte uppercase bg-transparent border-[1px] rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 ">
+                    <button className="absolute uppercase bg-transparent border-[1px] rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 ">
                       Log in
                     </button>
                   </Link>

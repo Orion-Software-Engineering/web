@@ -21,7 +21,7 @@ const Navbar = () => {
     <div>
       {localStorage.getItem("user-info") ? (
         <>
-          <div className="flex relative justify-between items-center h-16 max-2-[1024] mx-auto px-4 text-black bg-[#F6F6F6] w-screen z-10">
+          <div className="flex fixed top-0 z-50 justify-between items-center h-16 max-2-[1024] mx-auto px-4 text-black bg-[#F6F6F6] w-screen">
             <div className="flex">
               <Image
                 src={Logo}

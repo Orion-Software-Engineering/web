@@ -25,10 +25,10 @@ export default function Swipe() {
           slidesPerView={1}
           loop
         >
+          <NoSSR>
+            <Header />
+          </NoSSR>
           <SwiperSlide>
-            <NoSSR>
-              <Header />
-            </NoSSR>
             <Hero />
           </SwiperSlide>
         </Swiper>

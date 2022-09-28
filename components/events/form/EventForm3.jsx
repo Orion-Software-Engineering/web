@@ -24,25 +24,25 @@ const EventForm3 = ({ step, updateStep, ageRestrictions, setAgeRestrictions, mcs
 
       <div className="justify-self-center self-center flex  border-gray-600 h-[400px] ]">
         <div className="flex flex-col h-[400px] justify-center items-center  border-blue-600 w-[400px] rounded-l-3xl ">
-          
+
           <form ref={formRef} handleSubmit={handleSubmit} className="flex flex-col mb-[30px]" >
             <label htmlFor="first">Age Restrictions</label>
-            <ToggleSwitch ageRestrictions={ageRestrictions} setAgeRestrictions={setAgeRestrictions} readOnly={false}/>
+            <ToggleSwitch ageRestrictions={ageRestrictions} setAgeRestrictions={setAgeRestrictions} readOnly={false} />
 
             <label htmlFor="second" className="mt-[10px]">MCs</label>
             <input type="text" id="first" name="mcs" value={mcs}
-              className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg"
+              className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-full"
               onChange={(e) => setMcs(e.target.value)} />
 
             <label htmlFor="third" className="mt-[10px]">Guests</label>
             <textarea type="text" id="first" name="guests" value={guests}
-              className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg"
+              className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-full"
               onChange={(e) => setGuests(e.target.value)} />
             {/* <label for="third" className="mt-[0px] text-xs text-[#575757] cursor-pointer">Add another guest</label> */}
 
             <label htmlFor='fourth' className='mt-[10px]'>Venue</label>
-            <input type="text" id="fourth" name="venue" value={venue} 
-              className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg"
+            <input type="text" id="fourth" name="venue" value={venue}
+              className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-full"
               onChange={(e) => setVenue(e.target.value)} />
           </form>
 

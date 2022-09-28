@@ -38,6 +38,7 @@ const categoryToInterest = new Map([
 export default function Event() {
     const [expand, setExpand] = useState(false)
     const [step, setStep] = useState(0)
+
     const [isUploading, setIsUploading] = useState(false)
     const imageRef = useRef()
     const [name, setName] = useState('')
@@ -69,6 +70,13 @@ export default function Event() {
         })
         console.log(interests);
     }, [categories])
+
+    const formBackButton = () => {
+        step ? setStep(0) : setStep(1)
+    }
+
+    const formToBack = ''
+    const backToForm = ''
 
 
     const submitEventForm = async () => {
@@ -181,7 +189,7 @@ export default function Event() {
     ]
 
     const data = JSON.parse(localStorage.getItem("user-info"));
-    console.log(data.roles[0]);
+    // console.log(data.roles[0]);
 
     return (
         <div>
@@ -199,7 +207,7 @@ export default function Event() {
                         </div>
 
                         {/* This is where we check the steps */}
-                        <div className="flex flex-col md:flex-row justify-center items-center flex-wrap border-blue-700 mt-[150px]  ">
+                        <div className="flex flex-col md:flex-row justify-center items-center flex-wrap border-blue-700 mt-[120px]  ">
                             <div className={step ? "bg-[url('../public/WhatsappB.png')] h-[400px] rounded-l-3xl  border-red-600 flex flex-col z-10"
                                 : "flex justify-center items-center w-[700px]"}>
                                 <div>
@@ -241,6 +249,14 @@ export default function Event() {
                             </div>) : (<div />)}
 
                         </div>
+                        {step < 2 && (<div className={`absolute bottom-16 cursor-pointer bg-gray-800 text-gray-200 text-xs w-36 rounded-md h-8 
+                        flex justify-center items-center shadow-xl hover:bg-orange-300 transition-all translate duration-500
+                        hover:text-gray-800 select-none  ` + (step ? ' left-72 slide-left ' : ' right-72 slide-right ')}
+                            onClick={() => formBackButton()}>
+                            <p className='px-2'>
+                                {step ? '<<< Back' : 'Go to forms >>>'}
+                            </p>
+                        </div>)}
                     </div>
                 </div>
                 </>
@@ -249,6 +265,7 @@ export default function Event() {
                         {window.location.replace("/login")};
                     </>
             }
+
 
         </div>
     );

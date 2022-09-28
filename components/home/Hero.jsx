@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="max-w-[800px] mt-[-64px] w-full h-screen mx-auto text-center flex flex-col justify-center">
           <div className="  text-center flex  justify-center ">
             <Typed
-              className="uppercase md:text-4xl sm:text-3xl text-white text-xl font-bold font-Montserrat"
+              className="uppercase md:text-4xl sm:text-3xl text-white text-xl font-bold font-Nunito"
               strings={["Same Interests, More Interesting!"]}
               typeSpeed={50}
               backSpeed={50}
