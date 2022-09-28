@@ -12,6 +12,7 @@ import { uploadImageToCloudinary } from "../utils/cloudinary_upload";
 import { CLOUD_NAME } from "../config/cloudinary_upload";
 import { stringify } from "postcss";
 import NoSSR from "react-no-ssr";
+import { info } from "autoprefixer";
 
 
 
@@ -82,7 +83,7 @@ export default function Event() {
             "description": description,
             "ticket_price": price,
             "age_restriction": ageRestrictions,
-            "organizer": "",
+            "organizer": data.id,
             "cover_image": filePath,
             "interests": [...interests],
             "mcs": mcs,
@@ -90,6 +91,8 @@ export default function Event() {
             "venue": venue
         })
         console.log(body);
+
+
 
         const response = await fetch('https://orion-meet-testing.herokuapp.com/api/event',
             {
