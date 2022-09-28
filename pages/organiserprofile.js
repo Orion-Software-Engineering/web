@@ -5,11 +5,16 @@ import NoSSR from "react-no-ssr";
 
 
 export default function organiserprofile() {
+   
    return (
       <div >
+
          <NoSSR>
             <Profile />
          </NoSSR>
+       
+
+
       </div>
    )
 }
