@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "../HeaderEvents";
@@ -8,8 +8,13 @@ import { BiLogOut } from "react-icons/bi";
 import { IoIosArrowForward } from "react-icons/io";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { info } from "autoprefixer";
+import Modal from "../organiser/Modal";
+import Modal1 from "../organiser/Modal1";
 
 export default function OrganiserProfile() {
+  const [openModal, setOpenModal] = useState(false);
+  const [openModal1, setOpenModal1] = useState(false);
+
   const data = JSON.parse(localStorage.getItem("user-info"));
   console.log(data.id);
   var link1 =
@@ -22,7 +27,7 @@ export default function OrganiserProfile() {
       console.log(completedata);
       let data2 = "";
       completedata.map((values) => {
-        data2 += `<Image src=${values.cover_image} alt="img">`;
+        data2 += `<Image  src=${values.cover_image} alt="img">`;
       });
       document.getElementById("event_web").innerHTML = data2;
       document.getElementById("event_mob").innerHTML = data2;
@@ -41,6 +46,7 @@ export default function OrganiserProfile() {
       {data.roles[0] == "ROLE_ORGANIZER" ? (
         <>
           <Header />
+          <Modal open={openModal} onClose={() => setOpenModal(false)} />
           {/* Web */}
           <div className="md:contents hidden">
             <div className="px-[10%] w-full">
@@ -137,7 +143,11 @@ export default function OrganiserProfile() {
                       <div className="bg-gray-100 w-[500px] h-[700px] rounded-lg">
                         <div className="flex-col">
                           <div className="bg-none-300 m-5 flex-row flex space-x-10 pt-5">
-                            <div id="event_web" className="w-40 h-40 "></div>
+                            <div
+                              id="event_web"
+                              onClick={() => setOpenModal(true)}
+                              className="w-40 h-40 "
+                            ></div>
                           </div>
                         </div>
                       </div>
@@ -149,7 +159,7 @@ export default function OrganiserProfile() {
           </div>
 
           {/* Mobile */}
-
+          <Modal1 open={openModal1} onClose={() => setOpenModal1(false)} />
           <div className="md:hidden">
             <div className="justify-center h-screen mt-[80-px]">
               <div className=" flex flex-row sm:mt-[20%]  justify-center ">
@@ -180,7 +190,11 @@ export default function OrganiserProfile() {
                     </div>
                     <div className="bg-gray-100 p-3 mt-5 h-[400px] rounded-lg">
                       <div className="">
-                        <div id="event_mob" className="space-y-10"></div>
+                        <div
+                          id="event_mob"
+                          onClick={() => setOpenModal(true)}
+                          className="space-y-10"
+                        ></div>
                       </div>
                     </div>
                   </div>
