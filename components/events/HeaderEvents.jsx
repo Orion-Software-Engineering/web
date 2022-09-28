@@ -97,6 +97,19 @@ const Navbar = () => {
             </div>
 
             <ul className="uppercase p-4 font-Merriweather text-black">
+              <div className="flex-row flex">
+                <Link href={"/organiserprofile"}>
+                  <FaRegUserCircle
+                    href="/organiser profile"
+                    className="hover:scale-150 duration-300 mt-3 mr-2"
+                    size={25}
+                  />
+                </Link>
+                <Link href={"/organiserprofile"}>
+                  <h1 className="mt-3 font-nunito font-semibold">Profile</h1>
+                </Link>
+              </div>
+              <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
               <Link href={"/"}>Home</Link>
               <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
               <Link href={"/about"}>About</Link>

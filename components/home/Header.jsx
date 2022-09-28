@@ -104,6 +104,14 @@ const Navbar = () => {
                 </div>
 
                 <ul className="uppercase p-4 font-Merriweather">
+                  <Link href={"/organiserprofile"}>
+                    <FaRegUserCircle
+                      href="/organiser profile"
+                      className="hover:scale-150 duration-300 mr-10 mt-3"
+                      size={25}
+                    />
+                  </Link>
+                  <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
                   <Link href={"/"}>Home</Link>
                   <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
                   <Link href={"/about"}>About</Link>
