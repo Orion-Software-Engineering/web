@@ -9,13 +9,25 @@ import { IoIosArrowForward } from "react-icons/io";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 
 export default function OrganiserProfile() {
-  let result1 = fetch(
-    " https://orion-meet-testing.herokuapp.com/api/events"
+  fetch(
+    " https://orion-meet-testing.herokuapp.com/api/event/42be3da3-2570-47f1-bb86-e08949975fb2"
     // fetch(" https://orion-meet-testing.herokuapp.com/api/event/${data1.id}")
-  ).then(async (result1) => {
-    result1 = await result1.json();
-    localStorage.setItem("event-info", JSON.stringify(result1));
-  });
+  )
+    .then((data1) => {
+      console.log(data1);
+      return data1.json();
+    })
+    .then((completedata) => {
+      console.log(completedata);
+      let data2 = "";
+      completedata.map((values) => {
+        data2 += `<Image className="eventimages" src=${values.cover_image} alt="img">`;
+      });
+      document.getElementById("event_img").innerHTML = data2;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
   function logout() {
     localStorage.clear("user-info");
@@ -25,8 +37,8 @@ export default function OrganiserProfile() {
   const data = JSON.parse(localStorage.getItem("user-info"));
   console.log(data.roles[0]);
 
-  const data1 = JSON.parse(localStorage.getItem("event-info"));
-  console.log(data1);
+  // const data1 = JSON.parse(localStorage.getItem("event-info"));
+  // console.log(data1);
 
   return (
     <div>
@@ -137,22 +149,9 @@ export default function OrganiserProfile() {
                       </Link>
                     </div>
                   </div>
-                  <div className="bg-gray-100 rounded-lg">
-                    <div className=" flex">
-                      <div className=" bg-none w-[50%] m-5">
-                        <div className=" bg-red-300 h-40"></div>
-                        <div className=" bg-red-300 mt-5 h-40"></div>
-                        <div className=" bg-red-300 mt-5 h-40"></div>
-                        <div className=" bg-red-300 mt-5 h-40"></div>
-                        <div className=" bg-red-300 mt-5 h-40"></div>
-                      </div>
-                      <div className=" bg-none w-[50%] m-5">
-                        <div className=" bg-red-300 h-40"></div>
-                        <div className=" bg-red-300 mt-5 h-40"></div>
-                        <div className=" bg-red-300 mt-5 h-40"></div>
-                        <div className=" bg-red-300 mt-5 h-40"></div>
-                        <div className=" bg-red-300 mt-5 h-40"></div>
-                      </div>
+                  <div className="bg-gray-100 p-3 mt-5 h-full rounded-lg">
+                    <div className="">
+                      <div id="event_img" className=" space-y-10"></div>
                     </div>
                   </div>
                 </div>
