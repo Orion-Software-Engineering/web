@@ -16,8 +16,9 @@ const Modal = ({ open,onClose }) => {
       <div onClick={(e) => {
         e.stopPropagation()
       }} className="modalContainer rounded-xl">
-        <Image className="w-fixed h-fixed"  src={burnaflyer1} alt="" />
-        <div className="modalRight">
+        <div></div>
+        <Image  width={"500%"} src={burnaflyer1} alt="" />
+        <div className="modalRight pb-20">
             <p  onClick={onClose} className="closeBtn">X</p>
             <div className=" flex content font-Nunito text-black-400 text-lg ">
              <h5 className="font-semibold text-4xl">AstroNight</h5>
