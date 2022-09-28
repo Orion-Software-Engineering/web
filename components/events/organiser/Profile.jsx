@@ -10,9 +10,11 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import { info } from "autoprefixer";
 
 export default function OrganiserProfile() {
-  fetch(
-    "https://orion-meet-testing.herokuapp.com/api/organizer/events/d6d416b1-bf67-4d4f-a25e-58f2761e0cc2"
-  )
+  const data = JSON.parse(localStorage.getItem("user-info"));
+  console.log(data.id);
+  var link1 =
+    "https://orion-meet-testing.herokuapp.com/api/organizer/events/" + data.id;
+  fetch(link1)
     .then((data1) => {
       return data1.json();
     })
@@ -22,7 +24,8 @@ export default function OrganiserProfile() {
       completedata.map((values) => {
         data2 += `<Image src=${values.cover_image} alt="img">`;
       });
-      document.getElementById("event_img").innerHTML = data2;
+      document.getElementById("event_web").innerHTML = data2;
+      document.getElementById("event_mob").innerHTML = data2;
     })
     .catch((err) => {
       console.log(err);
@@ -33,9 +36,6 @@ export default function OrganiserProfile() {
     window.location.replace("/login");
   }
 
-  const data = JSON.parse(localStorage.getItem("user-info"));
-  console.log(data.roles[0]);
-
   return (
     <div>
       {data.roles[0] == "ROLE_ORGANIZER" ? (
@@ -43,7 +43,7 @@ export default function OrganiserProfile() {
           <Header />
           {/* Web */}
           <div className="md:contents hidden">
-            <div className="px-[10%]">
+            <div className="px-[10%] w-full">
               <div className="h-screen items-center justify-center flex mt-[-64px] ">
                 <div className="flex space-x-[5%]  justify-center w-full items-center px-auto">
                   <div className="">
@@ -120,7 +120,7 @@ export default function OrganiserProfile() {
                     <div className="relative h-[500px] w-0.5 mx-5 items-center bg-gray-200"></div>
                     <div className="">
                       <div className="pb">
-                        <div className="flex justify-between mt-5">
+                        <div className="flex justify-between">
                           <div className="font-Nunito font-bold">My Events</div>
                           <div>
                             <Link href="/events">
@@ -134,11 +134,10 @@ export default function OrganiserProfile() {
                           </div>
                         </div>
                       </div>
-
-                      <div className="bg-gray-100 w-[400px] rounded-lg">
-                        <div className=" flex">
-                          <div className=" bg-none-300 w-[50%] h-full m-5 flex-col">
-                            <div id="event_img" className="space-y-10"></div>
+                      <div className="bg-gray-100 w-[500px] h-[700px] rounded-lg">
+                        <div className="flex-col">
+                          <div className="bg-none-300 m-5 flex-row flex space-x-10 pt-5">
+                            <div id="event_web" className="w-40 h-40 "></div>
                           </div>
                         </div>
                       </div>
@@ -179,9 +178,9 @@ export default function OrganiserProfile() {
                         </Link>
                       </div>
                     </div>
-                    <div className="bg-gray-100 p-3 mt-5 rounded-lg">
+                    <div className="bg-gray-100 p-3 mt-5 h-[400px] rounded-lg">
                       <div className="">
-                        <div id="event_img" className="space-y-10"></div>
+                        <div id="event_mob" className="space-y-10"></div>
                       </div>
                     </div>
                   </div>
