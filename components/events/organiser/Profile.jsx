@@ -1,35 +1,16 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Header from "../HeaderEvents";
 
 export default function OrganiserProfile() {
-  fetch(" https://orion-meet-testing.herokuapp.com/api/events")
-    .then((data) => {
-      // console.log(data);
-      return data.json();
-    })
-    .then((completedata) => {
-      // console.log(completedata);
-      let data1 = "";
-      let data2 = "";
-
-      completedata.map((values) => {
-        data1 += `                  
-            <div>
-              <Image src=${values.cover_image} alt="event" />
-            </div>`;
-
-        data2 = `                  
-      <div>
-        <h1> ${values.result}</h1>
-      </div>`;
-      });
-      document.getElementById("event_img").innerHTML = data1;
-      document.getElementById("org_name").innerHTML = data2;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  let result1 = fetch(
+    " https://orion-meet-testing.herokuapp.com/api/event/d852373d-806c-493b-95a6-0bc37a940ed4/"
+    // fetch(" https://orion-meet-testing.herokuapp.com/api/event/${data1.id}")
+  ).then(async (result1) => {
+    result1 = await result1.json();
+    localStorage.setItem("event-info", JSON.stringify(result1));
+  });
 
   function logout() {
     localStorage.clear("user-info");
@@ -39,29 +20,26 @@ export default function OrganiserProfile() {
   const data = JSON.parse(localStorage.getItem("user-info"));
   console.log(data.roles[0]);
 
+  const data1 = JSON.parse(localStorage.getItem("event-info"));
+  console.log(data1);
+
   return (
     <div>
       {data.roles[0] == "ROLE_ORGANIZER" ? (
         <>
+          <Header />
           <div className="justify-center h-screen mt-[80-px]">
             <div className=" flex flex-row pt-[96px] justify-center ">
               <div className="md:flex-row  flex-col flex pt-10 pb-10">
                 <div className="items-center justify-center px-20">
                   <div className="flex flex-col items-center justify-center">
-                    <div className="bg-blue-600 h-80 w-80 rounded-t-[30px]">
+                    <div className="bg-blue-600 h-40 w-80 rounded-t-[30px]">
                       <div className="text-center mt-10 space-y-5">
-                        <div className="items-center justify-center flex flex-col">
-                          <div className="w-40 h-40 bg-white rounded-full">
-                            <div>
-                              <div className="items-center justify-center pt-20 ml-7"></div>
-                            </div>
-                          </div>
-                        </div>
+                        <div className="items-center justify-center flex flex-col"></div>
                         <div>
-                          <h1
-                            id="org_name"
-                            className="font-Nunito text-3xl text-white"
-                          ></h1>
+                          <h1 className="font-Nunito text-3xl text-white">
+                            {data.username}
+                          </h1>
                           <p className="text-white font-Nunito font-semibold">
                             Organizer
                           </p>
@@ -126,7 +104,7 @@ export default function OrganiserProfile() {
                     </div>
                   </div>
                 </div>
-                <div className="relative w-0.5 m-2 bg-gray-200"></div>
+                <div className="relative h-[300%] w-0.5 m-2 bg-gray-200"></div>
                 <div className="px-20">
                   <div className="flex flex-row justify-between">
                     <div className="font-Nunito font-bold">My Events</div>
