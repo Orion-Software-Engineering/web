@@ -32,6 +32,7 @@ export default function OrganiserProfile() {
       {data.roles[0] == "ROLE_ORGANIZER" ? (
         <>
           <Header />
+          
           <div className="justify-center h-screen mt-[80-px]">
             <div className=" flex flex-row sm:mt-[20%]  justify-center ">
               <div className="md:flex-row  flex-col flex  pb-10">
