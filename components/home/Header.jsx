@@ -134,7 +134,9 @@ const Navbar = () => {
                   </Link>
                   <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
                   <Link href={"/events"}>
-                    <h1 className="font-nunito font-semibold">Events</h1>
+                    <li className="font-nunito font-semibold hover:scale-110 duration-300">
+                      Events
+                    </li>
                   </Link>
                   <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
                   <div className=" my-6 ">
@@ -185,7 +187,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link href={"/login"}>
-                  <button className=" mr-5 absolte uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-black hover:text-white duration-300 ">
+                  <button className=" mr-5 absolte uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 duration-300 hover:bg-black hover:text-white  ">
                     Log in
                   </button>
                 </Link>
