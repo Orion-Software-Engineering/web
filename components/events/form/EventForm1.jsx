@@ -62,7 +62,7 @@ const EventForm1 = ({ setExpand, step, updateStep, name, categories, setCategori
                         <label htmlFor="third" className="mt-[20px]">Event Description:</label>
                         <textarea type="text" id="third" name="event_description" value={description}
                             onChange={(e) => setDescription(e.target.value)}
-                            className="bg-black h-[10px] w-[300px] text-white pl-[10px] pt-[6px] rounded-lg " />
+                            className="bg-black h-[80px] w-[300px] text-white pl-[10px] pt-[6px] rounded-lg " />
                     </form>
 
                     <div className='flex flex-row w-[300px] border-green-700 justify-between mt-[0px]'>
