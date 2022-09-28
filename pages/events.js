@@ -185,7 +185,7 @@ export default function Event() {
 
     return (
         <div>
-            
+
             {
                 (data.roles[0] == "ROLE_ORGANIZER") ? <> <div className=" h-screen ">
                     <div className="h-screen bg-opacity-90  ">
@@ -247,7 +247,7 @@ export default function Event() {
                 </>
                     :
                     <>
-                        {window.location.replace("/")};
+                        {window.location.replace("/redirect")};
                     </>
             }
 

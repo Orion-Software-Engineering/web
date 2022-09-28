@@ -71,9 +71,9 @@ const Navbar = () => {
 
           <div onClick={handleNav} className="block md:hidden ">
             {!nav ? (
-              <AiOutlineClose size={20} className="bg-black" />
+              <AiOutlineClose size={20} className="bg-white" />
             ) : (
-              <AiOutlineMenu size={20} className="bg-black" />
+              <AiOutlineMenu size={20} className="bg-white" />
             )}
           </div>
 
@@ -112,23 +112,23 @@ const Navbar = () => {
               <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
               <Link href={"/"}>
                 <h1 className=" font-nunito font-semibold">Home</h1>
-                  </Link>
+              </Link>
               <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
               <Link href={"/about"}>
-               <h1 className=" font-nunito font-semibold"> About</h1>
-                </Link>
+                <h1 className=" font-nunito font-semibold"> About</h1>
+              </Link>
               <li className=" mt-4 mb-4 border-b border-b-gray-600"></li>
               <Link href={"/support"}>
                 <h1 className=" font-nunito font-semibold">Support</h1>
-                </Link>
+              </Link>
               <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
               <Link href={"/events"}>
                 <h1 className=" font-nunito font-semibold">Events</h1>
-                </Link>
+              </Link>
               <li className="mt-4 mb-4 border-b border-b-black"></li>
               <div className=" my-6 ">
                 <Link href={"/login"}>
-                  <button 
+                  <button
                     onClick={logout}
                     className=" font-semibold font-Nunito absolte uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300  "
                   >
