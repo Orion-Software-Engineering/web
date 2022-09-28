@@ -92,7 +92,7 @@ const Navbar = () => {
                 height={"70px"}
               />
               <h1 className="pl-1 w-full text-4xl font-bold text-black">
-                <Link href={"/"}>MEET</Link>
+                <Link href={"/"}><h1 className="font-Nunito pt-2 ">Meet</h1></Link>
               </h1>
             </div>
 

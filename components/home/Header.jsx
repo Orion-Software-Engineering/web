@@ -216,7 +216,7 @@ const Navbar = () => {
                 />
                 <h1 className="pl-1 w-full text-4xl font-bold text-white">
                   <Link href={"/"}>
-                    <h1 className="font-Nunito font-semibold pt-2">MEET</h1>
+                    <h1 className="font-Nunito font-semibold pt-2">Meet</h1>
                   </Link>
                 </h1>
               </div>
