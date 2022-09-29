@@ -34,7 +34,7 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 ### Production ✨
 
 Reviewed and tested stable app version
-https://orion-meet.herokuapp.com/
+ https://orionmeet.vercel.app/
 
 ### Testing 💫
 
@@ -42,98 +42,6 @@ Staging area for new features
 https://orion-meet-testing.herokuapp.com/
 
 <br><br>
-
-## API Documentation for API used
-
-Lookup #https://github.com/Orion-Software-Engineering/backend#readme for full API Documentation
-
-Main URL: https://orion-meet.herokuapp.com/
-
-### Sign In
-
-End Point: /api/auth/signin <br>
-Method: POST <br>
-Request Body:<br>
-
-```json 
-{
-    "username" : " ",
-    "password" : " "
-}
-```
-
-Response: 200 Ok <br>
-
-```json
-{
-    "roles": [
-        " "
-    ],
-    "id": "",
-    "username": "",
-    "email": " ",
-    "accessToken": ""
-}
-```
-
-### Sign Up
-
-End Point: /api/auth/signup <br>
-Method: POST <br>
-Request Body: <br>
-
-NB: with gender male == true and female == false
-
-```json
-{
-    "username": " ",
-    "email": " ",
-    "password": " ",
-    "dob": " ",
-    "gender": "true",
-    "roles": [
-        " ",
-        " ",
-        " "
-    ]
-}
-```
-
-### Events
-
-#### Upload Event
-
-End Point: /api/event <br>
-Method: POST <br>
-Request Body: <br>
-
-```json
-{
-    "name": "",
-    "date": "",
-    "time": "",
-    "venue": "",
-    "location":  "longitude latitude",
-    "organizers": "",
-    "mcs": "",
-    "guests": "",
-    "age_restriction": "",
-    "description": "",
-    "organizer": "",
-    "cover_image": "",
-    "ticket_price": decimal,
-    "interests": [
-        "",
-        "",
-        ""
-    ]
-}
-```
-
-#### Get Event Created By Organizer
-
-End Point: /api/organizer/events/id <br>
-Method: GET <br>
 
 
 ## Web App Indexing

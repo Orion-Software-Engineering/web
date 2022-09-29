@@ -24,17 +24,13 @@ export default function OrganiserProfile() {
       let data2 = "";
       completedata.map((values) => {
         data2 += `
-        <div class="it">
+        <Image class="it1"  src=${values.cover_image} alt="img">
         <div class="it0">
-        <Image src=${values.cover_image} alt="img">
-        </div>
-        <div class="it1">
-          <h5 class="it2">Event: ${values.name}</h5>
-          <h5 class="it3>Description: ${values.description}</h5>
-          <p class="it4>Time: ${values.time} | ${values.date}</p>
-          <p class="it5>Location: ${values.location}</p>
-          <p class="it6>Ticket Price: ${values.ticket_price}</p>
-        </div>
+          <h5 className="textimg font-semibold text-4xl">${values.name}</h5>
+          <h5 className="textimg font-semibold text-4xl">${values.description}</h5>
+          <p><BiTimeFive/>${values.time} | ${values.date}</p>
+          <p><GrLocation/>${values.location}</p>
+          <p><GiTicket/>${values.ticket_price}</p>
         </div>`;
       });
       document.getElementById("event_web").innerHTML = data2;
@@ -54,8 +50,9 @@ export default function OrganiserProfile() {
       {data.roles[0] == "ROLE_ORGANIZER" ? (
         <>
           <Header />
-
+          {/* Web */}
           <div className="md:contents hidden">
+            {window.location.replace("/")}
             <div className="px-[10%] w-full">
               <div className="h-screen items-center justify-center flex mt-[-64px] ">
                 <div className="flex space-x-[5%]  justify-center w-full items-center px-auto">
@@ -147,7 +144,7 @@ export default function OrganiserProfile() {
                           </div>
                         </div>
                       </div>
-                      <div className="bg-gray-100 w-[500px] h-[700px] rounded-lg">
+                      <div className="bg-gray-100 w-full h-[700px] rounded-lg">
                         <div className="flex-col">
                           <div className="bg-none-300 m-5 flex-row flex space-x-10 pt-5">
                             <div id="event_web" className=""></div>
