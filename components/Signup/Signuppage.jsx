@@ -38,7 +38,7 @@ export default function Signuppage() {
 
   async function signup() {
     console.warn(username, email, password, dob, gender, roles);
-    let item = { username, email, password, dob, gender, roles };
+    let item = { username: username, email: email, password: password, dob: dob, gender: gender, roles: ["organizer"] };
     let result = await fetch(
       "https://orion-meet.herokuapp.com/api/auth/signup",
       {
@@ -56,43 +56,48 @@ export default function Signuppage() {
         body: JSON.stringify(item),
       }
     );
-    result = await result.json();
-    localStorage.setItem("user-info", JSON.stringify(result));
-    history.push("/organiserprofile");
+    if (result.status == 201) {
+      result = await result.json();
+      localStorage.setItem("user-info", JSON.stringify(result));
+      history.push("/organiserprofile");
+    } else {
+      console.log(result);
+    }
 
-    let result1 = await fetch(
-      "https://orion-meet.herokuapp.com/api/auth/signup",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Content-Length": "<calculated when request is sent>",
-          Host: "<calculated when request is sent>",
-          "User-Agent": "PostmanRuntime/7.29.2",
-          Accept: "*/*",
-          "Accept-Encoding": "gzip, deflate, br",
-          Connection: "keep-alive",
-        },
-        body: JSON.stringify(item),
-      }
-    ).then((response) => {
-      console.log("response", response);
-      if (response.status == 400) {
-        setResp1("Success!");
-        setResp("");
-        setTimeout(() => {
-          localStorage.clear("user-info");
-          window.location.replace("/login");
-        }, 1000);
-      } else if (response.status == 403) {
-        setResp1("");
-        setResp("Success!, Verify email!");
-        window.location.replace("/verifymail");
-      } else {
-        setResp1("Failed to create your account");
-        setResp("");
-      }
-    });
+
+    // let result1 = await fetch(
+    //   "https://orion-meet.herokuapp.com/api/auth/signup",
+    //   {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       "Content-Length": "<calculated when request is sent>",
+    //       Host: "<calculated when request is sent>",
+    //       "User-Agent": "PostmanRuntime/7.29.2",
+    //       Accept: "*/*",
+    //       "Accept-Encoding": "gzip, deflate, br",
+    //       Connection: "keep-alive",
+    //     },
+    //     body: JSON.stringify(item),
+    //   }
+    // ).then((response) => {
+    //   console.log("response", response);
+    //   if (response.status == 400) {
+    //     setResp1("Success!");
+    //     setResp("");
+    //     setTimeout(() => {
+    //       localStorage.clear("user-info");
+    //       window.location.replace("/login");
+    //     }, 1000);
+    //   } else if (response.status == 403) {
+    //     setResp1("");
+    //     setResp("Success!, Verify email!");
+    //     window.location.replace("/verifymail");
+    //   } else {
+    //     setResp1("Failed to create your account");
+    //     setResp("");
+    //   }
+    // });
   }
 
   const handleusername = (e) => {
