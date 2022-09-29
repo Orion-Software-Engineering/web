@@ -1,31 +1,31 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Header from "../HeaderEvents";
+import { FaRegUserCircle, FaRegMoneyBillAlt } from "react-icons/fa";
+import { FiSettings } from "react-icons/fi";
+import { BiLogOut } from "react-icons/bi";
+import { IoIosArrowForward } from "react-icons/io";
+import { AiOutlinePlusCircle } from "react-icons/ai";
+import { info } from "autoprefixer";
 
 export default function OrganiserProfile() {
-  fetch(" https://orion-meet-testing.herokuapp.com/api/events")
-    .then((data) => {
-      // console.log(data);
-      return data.json();
+  const data = JSON.parse(localStorage.getItem("user-info"));
+  console.log(data.id);
+  var link1 =
+    "https://orion-meet-testing.herokuapp.com/api/organizer/events/" + data.id;
+  fetch(link1)
+    .then((data1) => {
+      return data1.json();
     })
     .then((completedata) => {
-      // console.log(completedata);
-      let data1 = "";
+      console.log(completedata);
       let data2 = "";
-
       completedata.map((values) => {
-        data1 += `                  
-            <div>
-              <Image src=${values.cover_image} alt="event" />
-            </div>`;
-
-        data2 = `                  
-      <div>
-        <h1> ${values.result}</h1>
-      </div>`;
+        data2 += `<Image src=${values.cover_image} alt="img">`;
       });
-      document.getElementById("event_img").innerHTML = data1;
-      document.getElementById("org_name").innerHTML = data2;
+      document.getElementById("event_web").innerHTML = data2;
+      document.getElementById("event_mob").innerHTML = data2;
     })
     .catch((err) => {
       console.log(err);
@@ -36,139 +36,161 @@ export default function OrganiserProfile() {
     window.location.replace("/login");
   }
 
-  const data = JSON.parse(localStorage.getItem("user-info"));
-  console.log(data.roles[0]);
-
   return (
     <div>
       {data.roles[0] == "ROLE_ORGANIZER" ? (
         <>
-          <div className="justify-center h-screen mt-[80-px]">
-            <div className=" flex flex-row pt-[96px] justify-center ">
-              <div className="md:flex-row  flex-col flex pt-10 pb-10">
-                <div className="items-center justify-center px-20">
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="bg-blue-600 h-80 w-80 rounded-t-[30px]">
-                      <div className="text-center mt-10 space-y-5">
-                        <div className="items-center justify-center flex flex-col">
-                          <div className="w-40 h-40 bg-white rounded-full">
-                            <div>
-                              <div className="items-center justify-center pt-20 ml-7"></div>
-                            </div>
-                          </div>
-                        </div>
+          <Header />
+          {/* Web */}
+          <div className="md:contents hidden">
+            <div className="px-[10%] w-full">
+              <div className="h-screen items-center justify-center flex mt-[-64px] ">
+                <div className="flex space-x-[5%]  justify-center w-full items-center px-auto">
+                  <div className="">
+                    <div className="bg-blue-600 w-80 rounded-t-[30px]">
+                      <div className="text-center py-10">
                         <div>
-                          <h1
-                            id="org_name"
-                            className="font-Nunito text-3xl text-white"
-                          ></h1>
-                          <p className="text-white font-Nunito font-semibold">
+                          <h1 className="font-Nunito text-3xl text-white">
+                            {data.username}
+                          </h1>
+                          <p className="text-white font-Nunito font-semibold ">
                             Organizer
                           </p>
                         </div>
                       </div>
-                      <div className="bg-blue-100 h-80 w-80 rounded-b-[30px] mt-[80px] text-center font-Nunito">
+                    </div>
+                    <div className="bg-blue-100 h-80 w-80 rounded-b-[30px] mt-10 text-center font-Nunito">
+                      <div className="flex-col">
+                        <ul>
+                          <li className="border-b"></li>
+                          <div className="mt-6 mb-6 text-[20px] flex justify-between px-10">
+                            <Link href="/organiserprofile">
+                              <FaRegUserCircle size={25} />
+                            </Link>
+                            <h1 className="text-[15px] font-bold pr-20">
+                              Profile
+                            </h1>
+                            <Link href="/organiserprofile">
+                              <IoIosArrowForward size={25} />
+                            </Link>
+                          </div>
+                          <li className="border-b border-b-gray-400"></li>
+                          <div className="mt-6 mb-6 text-[20px] flex justify-between px-10">
+                            <Link href="/organiserprofile">
+                              <FiSettings size={25} />
+                            </Link>
+                            <h1 className="text-[15px] font-bold pr-20">
+                              Settings
+                            </h1>
+                            <Link href="/organiserprofile">
+                              <IoIosArrowForward size={25} />
+                            </Link>
+                          </div>
+                          <li className="border-b border-b-gray-400"></li>
+                          <div className="mt-6 mb-6 text-[20px] flex justify-between px-10">
+                            <Link href="/organiserprofile">
+                              <FaRegMoneyBillAlt size={25} />
+                            </Link>
+                            <h1 className="text-[15px] font-bold pr-20">
+                              Billing
+                            </h1>
+                            <Link href="/organiserprofile">
+                              <IoIosArrowForward size={25} />
+                            </Link>
+                          </div>
+
+                          <li className="border-b border-b-gray-400"></li>
+
+                          <div className="mt-6 mb-6 text-[20px] flex justify-between px-10">
+                            <button onClick={logout}>
+                              <BiLogOut size={25} />
+                            </button>
+                            <h1 className="text-[15px] font-bold pr-20">
+                              Logout
+                            </h1>
+                            <Link href="/login">
+                              <IoIosArrowForward size={25} />
+                            </Link>
+                          </div>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="px-5 flex items-center justify-center">
+                    <div className="relative h-[500px] w-0.5 mx-5 items-center bg-gray-200"></div>
+                    <div className="">
+                      <div className="pb">
+                        <div className="flex justify-between">
+                          <div className="font-Nunito font-bold">My Events</div>
+                          <div>
+                            <Link href="/events">
+                              <div className="inline-flex flex-row space-x-2 text-lg">
+                                <h1 className="font-Nunito font-semibold text-sm">
+                                  Create new event
+                                </h1>
+                                <AiOutlinePlusCircle size={20} />
+                              </div>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-gray-100 w-[500px] h-[700px] rounded-lg">
                         <div className="flex-col">
-                          <ul>
-                            <li className="border-b"></li>
-                            <div className="mt-6 mb-6 text-[20px] flex justify-between px-10">
-                              <Link href="/organiserprofile">
-                                <ion-icon name="person-circle-outline"></ion-icon>
-                              </Link>
-                              <h1 className="text-[15px] font-bold pr-20">
-                                Profile
-                              </h1>
-                              <Link href="/organiserprofile">
-                                <ion-icon name="chevron-forward-outline"></ion-icon>
-                              </Link>
-                            </div>
-                            <li className="border-b border-b-gray-400"></li>
-                            <div className="mt-6 mb-6 text-[20px] flex justify-between px-10">
-                              <Link href="/organiserprofile">
-                                <ion-icon name="settings"></ion-icon>
-                              </Link>
-                              <h1 className="text-[15px] font-bold pr-20">
-                                Settings
-                              </h1>
-                              <Link href="/organiserprofile">
-                                <ion-icon name="chevron-forward-outline"></ion-icon>
-                              </Link>
-                            </div>
-                            <li className="border-b border-b-gray-400"></li>
-                            <div className="mt-6 mb-6 text-[20px] flex justify-between px-10">
-                              <Link href="/organiserprofile">
-                                <ion-icon name="cash"></ion-icon>
-                              </Link>
-                              <h1 className="text-[15px] font-bold pr-20">
-                                Billing
-                              </h1>
-                              <Link href="/organiserprofile">
-                                <ion-icon name="chevron-forward-outline"></ion-icon>
-                              </Link>
-                            </div>
-
-                            <li className="border-b border-b-gray-400"></li>
-
-                            <div className="mt-6 mb-6 text-[20px] flex justify-between px-10">
-                              <button onClick={logout}>
-                                <ion-icon name="Log-out"></ion-icon>
-                              </button>
-                              <h1 className="text-[15px] font-bold pr-20">
-                                Logout
-                              </h1>
-                              <Link href="/login">
-                                <ion-icon name="chevron-forward-outline"></ion-icon>
-                              </Link>
-                            </div>
-                          </ul>
+                          <div className="bg-none-300 m-5 flex-row flex space-x-10 pt-5">
+                            <div id="event_web" className="w-40 h-40 "></div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="relative w-0.5 m-2 bg-gray-200"></div>
-                <div className="px-20">
-                  <div className="flex flex-row justify-between">
-                    <div className="font-Nunito font-bold">My Events</div>
-                    <div>
-                      <Link href="/events">
-                        <div className="inline-flex flex-row space-x-2 text-lg">
-                          <h1 className="font-Nunito text-sm">
-                            Create new event
-                          </h1>
-                          <ion-icon
-                            className="fill-blue-600"
-                            name="add-circle"
-                          ></ion-icon>
-                        </div>
-                      </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile */}
+
+          <div className="md:hidden">
+            <div className="justify-center h-screen mt-[80-px]">
+              <div className=" flex flex-row sm:mt-[20%]  justify-center ">
+                <div className="md:flex-row  flex-col flex  pb-10">
+                  <div className="w-screen px-5">
+                    <div className="bg-blue-600 w-full h-20 my-2 rounded-lg">
+                      <div className="text-center p-2">
+                        <h1 className="font-Nunito text-3xl text-white">
+                          {data.username}
+                        </h1>
+                        <p className="text-white font-Nunito font-semibold ">
+                          Organizer
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="bg-gray-100 rounded-lg ">
-                    <div className="space-y-20  h-full">
-                      <div className="flex flex-row space-x-20 ">
-                        <div className="flex space-x-10" id="event_img"></div>
+                    <div className="flex justify-between mt-5">
+                      <div className="font-Nunito font-bold">My Events</div>
+                      <div>
+                        <Link href="/events">
+                          <div className="inline-flex flex-row space-x-2 text-lg">
+                            <h1 className="font-Nunito font-semibold text-sm">
+                              Create new event
+                            </h1>
+                            <AiOutlinePlusCircle size={20} />
+                          </div>
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="bg-gray-100 p-3 mt-5 h-[400px] rounded-lg">
+                      <div className="">
+                        <div id="event_mob" className="space-y-10"></div>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <script
-                  type="module"
-                  src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-                  async
-                />
-                <script
-                  noModule
-                  src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-                  async
-                />
               </div>
             </div>
           </div>
         </>
       ) : (
-        <> {window.location.replace("/login")};</>
+        <>{window.location.replace("/redirect")};</>
       )}
     </div>
   );

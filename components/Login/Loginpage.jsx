@@ -68,7 +68,7 @@ export default function Loginpage() {
       if (response.status == 404) {
         setResp("Incorrect Username or Password!");
         setResp1("");
-      } else if (response.status == 200) { 
+      } else if (response.status == 200) {
         setResp1("Success!");
         setResp("");
         window.location.replace("/");
