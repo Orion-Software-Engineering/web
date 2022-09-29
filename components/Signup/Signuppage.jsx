@@ -119,10 +119,10 @@ export default function Signuppage() {
 
   const handlepassword = (e) => {
     if (
-      password.match(/[a-z]/) != null &&
-      password.match(/[A-Z]/) != null &&
-      password.match(/[0-9]/) != null &&
-      password.match(/[!@#$%^&*]/) != null &&
+      // password.match(/[a-z]/) != null &&
+      // password.match(/[A-Z]/) != null &&
+      // password.match(/[0-9]/) != null &&
+      // password.match(/[!@#$%^&*]/) != null &&
       password.length > 7
     ) {
       handleDOB();
