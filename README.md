@@ -1,5 +1,10 @@
 # Orion Meet Web
 
+## Contributors
+ - Kevin Osei 
+ - Hansen Koduah
+ - Kelvin Lamptey
+
 ⚡   Next js & Tailwind Css
 
 <br>
