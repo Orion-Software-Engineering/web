@@ -137,69 +137,49 @@ Method: GET <br>
 
 ## _app.js
 
- #about.js
- 
+#about.js
   -Header.jsx
-  
   -About.jsx
   
  ##events.js
   -EventHeader.jsx
-  
   -EventForm1.jsx
-  
   -EventForm2.jsx
-  
   -EventForm3.jsx
-  
   -EventForm4.jsx
-  
   -Completion.jsx
-  
   -Welcome.jsx
-  
   -Doodle.jsx
-  
- -index.js
- 
+  -index.js
   -Hero.jsx
-  
   -Header.jsx
   
   
  ## login.js
   -Loginpage.jsx
-  
   -Header.jsx
   
  ## organiserprofile.js
- 
-   -Profile.jsx
+  -Profile.jsx
     
  ## redirect.js
- 
-   -Header.jsx
+  -Header.jsx
     
  ## signup.js
    -Signuppage.jsx
-   
    -Header.jsx
    
  ## support.js
    -Header.jsx
-   
    -Form.jsx
-   
    -Accordion.jsx
    
  ## team.js
    -Header.jsx
-   
    -Team.jsx 
   
  ## verifymail.js
    -Header.jsx
-   
    -Continue.jsx
    
    
