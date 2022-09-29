@@ -270,7 +270,7 @@ export default function Event() {
                                             <div>
                                                 {isUploading && (
                                                     <div className="absolute top-4 animate-pulse left-[15%] right-[25%] w-96 a flex gap-2 items-center">
-                                                        <div class="w-6 h-6 border-b-2 border-gray-900 rounded-full animate-spin"></div>
+                                                        <div className="w-6 h-6 border-b-2 border-gray-900 rounded-full animate-spin"></div>
                                                         Uploading Image...
                                                     </div>
                                                 )}

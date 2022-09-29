@@ -120,7 +120,7 @@ const EventForm4 = ({ step, updateStep, formRef, submitForm, name, categories, d
               }}>
               {isUploading ? (
                 <div className=" animate-pulse flex gap-2 items-center">
-                  <div class="w-6 h-6 border-b-2 border-gray-200 rounded-full animate-spin"></div>
+                  <div className="w-6 h-6 border-b-2 border-gray-200 rounded-full animate-spin"></div>
                   Submitting...
                 </div>
               ) : (

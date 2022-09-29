@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from "../components/events/organiser/Modal";
 
 
-export default function modals() {
+export default function Modals() {
     const [openModal, setOpenModal] = useState(false)
     return (
         <div>
