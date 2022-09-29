@@ -161,7 +161,7 @@ export default function OrganiserProfile() {
 
           {/* Mobile */}
           <div className="md:hidden">
-            <div className="justify-center h-screen mt-[80-px]">
+            <div className="justify-center h-screen mt-[80px]">
               <div className=" flex flex-row sm:mt-[20%]  justify-center ">
                 <div className="md:flex-row  flex-col flex  pb-10">
                   <div className="w-screen px-5">
