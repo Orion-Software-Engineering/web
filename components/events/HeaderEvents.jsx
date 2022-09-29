@@ -106,24 +106,24 @@ const Navbar = () => {
                   />
                 </Link>
                 <Link href={"/organiserprofile"}>
-                  <h1 className="mt-3 font-nunito font-semibold">Profile</h1>
+                  <h1 className="mt-3 font-Nunito font-semibold">Profile</h1>
                 </Link>
               </div>
               <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
               <Link href={"/"}>
-                <h1 className=" font-nunito font-semibold">Home</h1>
+                <h1 className=" font-Nunito font-semibold">Home</h1>
               </Link>
               <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
               <Link href={"/about"}>
-                <h1 className=" font-nunito font-semibold"> About</h1>
+                <h1 className=" font-Nunito font-semibold"> About</h1>
               </Link>
               <li className=" mt-4 mb-4 border-b border-b-gray-600"></li>
               <Link href={"/support"}>
-                <h1 className=" font-nunito font-semibold">Support</h1>
+                <h1 className=" font-Nunito font-semibold">Support</h1>
               </Link>
               <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
               <Link href={"/events"}>
-                <h1 className=" font-nunito font-semibold">Events</h1>
+                <h1 className=" font-Nunito font-semibold">Events</h1>
               </Link>
               <li className="mt-4 mb-4 border-b border-b-black"></li>
               <div className=" my-6 ">

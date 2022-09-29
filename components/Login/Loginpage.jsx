@@ -67,15 +67,20 @@ export default function Loginpage() {
     ).then((response) => {
       // console.log("response", response);
       console.log(response);
+      console.log(response.status);
       switch (response.status) {
         case 404:
           setResp("Incorrect Username or Password!");
           setResp1("");
+          console.log(response.status);
+
           break;
         case 200:
           setResp1("Success!");
           setResp("");
+          console.log(response.status);
           window.location.replace("/");
+
           break;
         case 403:
           setResp1("Verify your mail!");

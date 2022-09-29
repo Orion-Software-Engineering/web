@@ -31,27 +31,27 @@ const Navbar = () => {
                   width={"70px"}
                   height={"70px"}
                 />
-                <h1 className="pt-1 pl-1 w-full text-4xl font-bold text-white font-Nunito">
+                <h1 className="pt-1 pl-1 w-full text-4xl font-Nunito font-semibold  text-white">
                   <Link href={"/"}>Meet</Link>
                 </h1>
               </div>
-              <ul className="hidden md:flex font-Nunito font-bold pt-4  text-white">
+              <ul className="hidden md:flex font-Nunito font-semibold pt-4  text-white">
                 <li className="pt-3">
                   <Link className=" p-4 " href={"/"}>
                     Home
                   </Link>
                 </li>
-                <li className="pt-3 px-6 ">
+                <li className="pt-3 px-6 font-Nunito font-semibold  ">
                   <Link className="p-4 " href={"/about"}>
                     About
                   </Link>
                 </li>
-                <li className="pt-3 ">
+                <li className="pt-3 font-Nunito font-semibold ">
                   <Link className="p-4 " href={"/support"}>
                     Support
                   </Link>
                 </li>
-                <li className="pt-3 px-6">
+                <li className="pt-3 px-6 font-Nunito font-semibold ">
                   <Link className="p-4" href={"/events"}>
                     Events
                   </Link>
@@ -68,7 +68,7 @@ const Navbar = () => {
                   <Link href={"/login"}>
                     <button
                       onClick={logout}
-                      className="mr-10 absolte uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-black hover:text-white duration-300 "
+                      className="mr-10 absolte uppercase font-Nunito font-semibold  bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-black hover:text-white duration-300 "
                     >
                       Logout
                     </button>
@@ -115,26 +115,26 @@ const Navbar = () => {
                       />
                     </Link>
                     <Link href={"/organiserprofile"}>
-                      <h1 className="mt-3 font-nunito font-semibold">
+                      <h1 className="mt-3 font-Nunito font-semibold">
                         Profile
                       </h1>
                     </Link>
                   </div>
                   <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
                   <Link href={"/"}>
-                    <h1 className="font-nunito font-semibold">Home</h1>
+                    <h1 className="font-Nunito font-semibold ">Home</h1>
                   </Link>
                   <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
                   <Link href={"/about"}>
-                    <h1 className="font-nunito font-semibold">About</h1>
+                    <h1 className="font-Nunito font-semibold ">About</h1>
                   </Link>
                   <li className=" mt-4 mb-4 border-b border-b-gray-600"></li>
                   <Link href={"/support"}>
-                    <h1 className="font-nunito font-semibold">Support</h1>
+                    <h1 className="font-Nunito font-semibold ">Support</h1>
                   </Link>
                   <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
                   <Link href={"/events"}>
-                    <li className="font-nunito font-semibold hover:scale-110 duration-300">
+                    <li className="font-Nunito font-semibold  hover:scale-110 duration-300">
                       Events
                     </li>
                   </Link>
@@ -143,7 +143,7 @@ const Navbar = () => {
                     <Link href={"/login"}>
                       <button
                         onClick={logout}
-                        className="absolte font-nunito font-semibold uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 "
+                        className="absolte font-Nunito font-semibold  uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 "
                       >
                         Logout
                       </button>
@@ -164,30 +164,30 @@ const Navbar = () => {
                 width={"70px"}
                 height={"70px"}
               />
-              <h1 className="pt-1 pl-1 w-full text-4xl font-bold text-white font-Nunito">
+              <h1 className="pt-1 pl-1 w-full text-4xl font-semibold text-white font-Nunito">
                 <Link href={"/"}>Meet</Link>
               </h1>
             </div>
 
-            <ul className="hidden md:flex font-Nunito font-bold pt-4  text-white">
-              <li className="pt-3">
+            <ul className="hidden md:flex font-Nunito font-semibold  pt-4  text-white">
+              <li className="pt-3 font-Nunito font-semibold ">
                 <Link className=" p-4 " href={"/"}>
                   Home
                 </Link>
               </li>
-              <li className="pt-3 px-6 ">
+              <li className="pt-3 px-6 font-Nunito font-semibold  ">
                 <Link className="p-4 " href={"/about"}>
                   About
                 </Link>
               </li>
-              <li className="pt-3 mr-5">
+              <li className="pt-3 mr-5 font-Nunito font-semibold ">
                 <Link className="p-4 " href={"/support"}>
                   Support
                 </Link>
               </li>
               <li>
                 <Link href={"/login"}>
-                  <button className=" mr-5 absolte uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 duration-300 hover:bg-black hover:text-white  ">
+                  <button className=" font-Nunito font-semibold mr-5 absolte uppercase bg-transparent border-[1px] border- rounded px-6 mx-auto py-2 mb-4 hover:scale-110 duration-300 hover:bg-black hover:text-white  ">
                     Log in
                   </button>
                 </Link>
@@ -225,20 +225,20 @@ const Navbar = () => {
 
               <ul className="uppercase p-4 font-Merriweather">
                 <Link href={"/"}>
-                  <h1 className="font-nunito font-semibold">Home</h1>
+                  <h1 className="font-Nunito font-semibold ">Home</h1>
                 </Link>
                 <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
                 <Link href={"/about"}>
-                  <h1 className="font-nunito font-semibold">About</h1>
+                  <h1 className="font-Nunito font-semibold ">About</h1>
                 </Link>
                 <li className=" mt-4 mb-4 border-b border-b-gray-600"></li>
                 <Link href={"/support"}>
-                  <h1 className="font-nunito font-semibold">Support</h1>
+                  <h1 className="font-Nunito font-semibold ">Support</h1>
                 </Link>
                 <li className="mt-4 mb-4 border-b border-b-gray-600"></li>
                 <div className=" my-6 ">
                   <Link href={"/login"}>
-                    <button className="font-nunito font-semibold absolte uppercase bg-transparent border-[1px] rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 ">
+                    <button className="font-Nunito font-semibold absolte uppercase bg-transparent border-[1px] rounded px-6 mx-auto py-2 mb-4 hover:scale-110 hover:bg-white hover:text-black duration-300 ">
                       Log in
                     </button>
                   </Link>
