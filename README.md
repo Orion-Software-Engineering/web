@@ -137,7 +137,7 @@ Method: GET <br>
 
 ### _app.js
 
-### about.js
+### about.js                  -   https://orionmeet.vercel.app/about
   - Header.jsx
   - About.jsx
   
@@ -155,26 +155,26 @@ Method: GET <br>
   - Header.jsx
   
   
- ### login.js
+ ### login.js                  -  https://orionmeet.vercel.app/login
   - Loginpage.jsx
   - Header.jsx
   
- ### organiserprofile.js
+ ### organiserprofile.js      -  https://orionmeet.vercel.app/organiserprofile
   - Profile.jsx
     
  ### redirect.js
   - Header.jsx
     
- ### signup.js
+ ### signup.js                -  https://orionmeet.vercel.app/signup
    - Signuppage.jsx
    - Header.jsx
    
- ### support.js
+ ### support.js               -  https://orionmeet.vercel.app/support
    - Header.jsx
    - Form.jsx
    - Accordion.jsx
    
- ### team.js
+ ### team.js                  -  https://orionmeet.vercel.app/team
    - Header.jsx
    - Team.jsx 
   
@@ -187,7 +187,7 @@ Method: GET <br>
    
    <br>
    
-    -User is presented the Home Page upon arrival
+      -User is presented the Home Page upon arrival
      
      
       -User can access About, Support and Contact pages
@@ -203,7 +203,7 @@ Method: GET <br>
     -User Signs Up as an organiser 
   
     -User is directed to verify E-mail page & redirected to Login Page 
-      -User must verify E-Mail in order to log in
+    -User must verify E-Mail in order to log in
    
    
     -User signs in as an organiser 
