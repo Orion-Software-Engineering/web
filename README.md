@@ -137,49 +137,69 @@ Method: GET <br>
 
 ## _app.js
 
- ##about.js
+ #about.js
+ 
   -Header.jsx
+  
   -About.jsx
   
  ##events.js
   -EventHeader.jsx
+  
   -EventForm1.jsx
+  
   -EventForm2.jsx
+  
   -EventForm3.jsx
+  
   -EventForm4.jsx
+  
   -Completion.jsx
+  
   -Welcome.jsx
+  
   -Doodle.jsx
   
  -index.js
+ 
   -Hero.jsx
+  
   -Header.jsx
   
- ##login.js
+  
+ ## login.js
   -Loginpage.jsx
+  
   -Header.jsx
   
- ##organiserprofile.js
+ ## organiserprofile.js
+ 
    -Profile.jsx
     
- ##redirect.js
+ ## redirect.js
+ 
    -Header.jsx
     
- ##signup.js
+ ## signup.js
    -Signuppage.jsx
+   
    -Header.jsx
    
- ##support.js
+ ## support.js
    -Header.jsx
+   
    -Form.jsx
+   
    -Accordion.jsx
    
- ##team.js
+ ## team.js
    -Header.jsx
+   
    -Team.jsx 
   
- ##verifymail.js
+ ## verifymail.js
    -Header.jsx
+   
    -Continue.jsx
    
    
@@ -190,7 +210,7 @@ Method: GET <br>
     -User is presented the Home Page upon arrival
      
      
-     -User can access About, Support and Contact pages
+      -User can access About, Support and Contact pages
      
       -User Visits the support page to utilise the contact form or accesses the FAQs 
       -User visits the about page to discover Orion Meet Organisation 
@@ -206,15 +226,15 @@ Method: GET <br>
       -User must verify E-Mail in order to log in
    
    
-   -User signs in as an organiser 
+    -User signs in as an organiser 
     -User is directed to Home Page 
     -User can now access events and Organiser profile pages
    
    
-   -User visits event page to create events 
+    -User visits event page to create events 
    
    
-   -User visits organiser profile to view events created 
+    -User visits organiser profile to view events created 
 
 
-   -User can Logout 
+    -User can Logout 
