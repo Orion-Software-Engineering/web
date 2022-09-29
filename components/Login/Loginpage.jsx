@@ -1,4 +1,5 @@
-import React from "react"; useState
+import React from "react";
+useState;
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook, AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { useState, useEffect } from "react";
@@ -63,21 +64,40 @@ export default function Loginpage() {
         },
         body: JSON.stringify(item),
       }
-    ).then((response) => {
-      console.log("response", response);
-      if (response.status == 404) {
-        setResp("Incorrect Username or Password!");
-        setResp1("");
-      } else if (response.status == 200) {
-        setResp1("Success!");
-        setResp("");
-        window.location.replace("/");
-      } else if (response.status == 403) {
-        setResp1("Verify your mail!");
-        setResp("");
-        window.location.replace("/verifymail");
-      }
-    });
+    )
+      .then((response) => {
+        // console.log("response", response);
+        console.log(response);
+        if (response.status == 404) {
+          setResp("Incorrect Username or Password!");
+          setResp1("");
+        }
+        if (response.status == 200) {
+          setResp1("Success!");
+          setResp("");
+          window.location.replace("/");
+        } else if (response.status == 403) {
+          setResp1("Verify your mail!");
+          setResp("");
+          window.location.replace("/verifymail");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        if (err.response.status == 404) {
+          setResp("Incorrect Username or Password!");
+          setResp1("");
+        }
+        if (err.status == 200) {
+          setResp1("Success!");
+          setResp("");
+          window.location.replace("/");
+        } else if (err.status == 403) {
+          setResp1("Verify your mail!");
+          setResp("");
+          window.location.replace("/verifymail");
+        }
+      });
   }
 
   return (
