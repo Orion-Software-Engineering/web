@@ -64,40 +64,34 @@ export default function Loginpage() {
         },
         body: JSON.stringify(item),
       }
-    )
-      .then((response) => {
-        // console.log("response", response);
-        console.log(response);
-        if (response.status == 404) {
+    ).then((response) => {
+      // console.log("response", response);
+      console.log(response);
+      console.log(response.status);
+      switch (response.status) {
+        case 404:
           setResp("Incorrect Username or Password!");
           setResp1("");
-        }
-        if (response.status == 200) {
+          console.log(response.status);
+
+          break;
+        case 200:
           setResp1("Success!");
           setResp("");
+          console.log(response.status);
           window.location.replace("/");
-        } else if (response.status == 403) {
+
+          break;
+        case 403:
           setResp1("Verify your mail!");
           setResp("");
           window.location.replace("/verifymail");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-        if (err.response.status == 404) {
-          setResp("Incorrect Username or Password!");
+          break;
+        default:
+          setResp("Invalid Login");
           setResp1("");
-        }
-        if (err.status == 200) {
-          setResp1("Success!");
-          setResp("");
-          window.location.replace("/");
-        } else if (err.status == 403) {
-          setResp1("Verify your mail!");
-          setResp("");
-          window.location.replace("/verifymail");
-        }
-      });
+      }
+    });
   }
 
   return (
