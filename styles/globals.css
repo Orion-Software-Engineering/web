@@ -13,16 +13,6 @@ body {
   overflow-x: hidden;
 }
 
-.slide-left {
-  right: 72rem;
-  transition: 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.slide-right {
-  left: 72rem;
-  transition: 0.6s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
-
 .swiper-button-next,
 .swiper-button-prev {
   background-repeat: no-repeat;
@@ -92,4 +82,80 @@ body {
   position: absolute;
   animation: button 0.3 linear;
   display: none;
+}
+
+.modalBtn {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  padding: 12px 24x;
+}
+
+.overlay1 {
+  background-color: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.modalContainer {
+  max-width: 600px;
+  width: 100%;
+  height: 30%;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  background-color: white;
+  box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.75);
+}
+
+Image {
+  width: 200px;
+  object-fit: cover;
+}
+
+.modalRight {
+  width: 100%;
+}
+
+.closeBtn {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
+  padding: 1rem 2rem;
+}
+
+@media screen and (max-width: 500px) {
+  .modalContainer {
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    height: 100vh;
+  }
+
+  Image {
+    width: 100%;
+  }
+
+  .closeBtn {
+    color: white;
+  }
+}
+.textimg {
+  display: flex;
+  color: black;
+  font-size: l;
 }

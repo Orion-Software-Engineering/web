@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "../HeaderEvents";
@@ -8,10 +8,11 @@ import { BiLogOut } from "react-icons/bi";
 import { IoIosArrowForward } from "react-icons/io";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { info } from "autoprefixer";
+import Modal from "../organiser/Modal";
+import Modal1 from "../organiser/Modal1";
 
 export default function OrganiserProfile() {
   const data = JSON.parse(localStorage.getItem("user-info"));
-  console.log(data.id);
   var link1 =
     "https://orion-meet-testing.herokuapp.com/api/organizer/events/" + data.id;
   fetch(link1)
@@ -22,7 +23,15 @@ export default function OrganiserProfile() {
       console.log(completedata);
       let data2 = "";
       completedata.map((values) => {
-        data2 += `<Image src=${values.cover_image} alt="img">`;
+        data2 += `
+        <Image  src=${values.cover_image} alt="img">
+        <div className="textimg">
+          <h5 className="textimg font-semibold text-4xl">${values.name}</h5>
+          <h5 className="textimg font-semibold text-4xl">${values.description}</h5>
+          <p><BiTimeFive/>${values.time} | ${values.date}</p>
+          <p><GrLocation/>${values.location}</p>
+          <p><GiTicket/>${values.ticket_price}</p>
+        </div>`;
       });
       document.getElementById("event_web").innerHTML = data2;
       document.getElementById("event_mob").innerHTML = data2;
@@ -137,7 +146,7 @@ export default function OrganiserProfile() {
                       <div className="bg-gray-100 w-[500px] h-[700px] rounded-lg">
                         <div className="flex-col">
                           <div className="bg-none-300 m-5 flex-row flex space-x-10 pt-5">
-                            <div id="event_web" className="w-40 h-40 "></div>
+                            <div id="event_web" className=""></div>
                           </div>
                         </div>
                       </div>
@@ -149,7 +158,6 @@ export default function OrganiserProfile() {
           </div>
 
           {/* Mobile */}
-
           <div className="md:hidden">
             <div className="justify-center h-screen mt-[80-px]">
               <div className=" flex flex-row sm:mt-[20%]  justify-center ">
@@ -178,9 +186,9 @@ export default function OrganiserProfile() {
                         </Link>
                       </div>
                     </div>
-                    <div className="bg-gray-100 p-3 mt-5 h-[400px] rounded-lg">
-                      <div className="">
-                        <div id="event_mob" className="space-y-10"></div>
+                    <div className="bg-gray-100 p-3 h-full rounded-lg">
+                      <div className="space-y-5">
+                        <div id="event_mob" className="py-5 space-y-5"></div>
                       </div>
                     </div>
                   </div>
