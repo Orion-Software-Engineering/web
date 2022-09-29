@@ -38,7 +38,7 @@ const categoryToInterest = new Map([
 
 export default function Event() {
     const [expand, setExpand] = useState(false)
-    const [step, setStep] = useState(4)
+    const [step, setStep] = useState(0)
 
     const [isUploading, setIsUploading] = useState(false)
     const imageRef = useRef()
@@ -60,7 +60,7 @@ export default function Event() {
     const [image, setImage] = useState(null)
     const [interests, setInterests] = useState([])
     const [showImageRequired, setShowImageRequired] = useState(false)
-    
+
 
     const [orgId, setOrgId] = useState('')
 
@@ -100,7 +100,10 @@ export default function Event() {
     const submitEventForm = async () => {
         console.log('attempting submission');
         // TODO: do not post data if any is null or required data is empty
-        if (filePath == null || filePath.length == 0) return
+        if (filePath == null || filePath.length == 0) {
+            alert("Select an image to continue")
+            return
+        }
         const body = JSON.stringify({
             "name": name,
             "date": date,
@@ -120,7 +123,7 @@ export default function Event() {
 
 
 
-        const response = await fetch('https://orion-meet-testing.herokuapp.com/api/event',
+        const response = await fetch('https://orion-meet.herokuapp.com/api/event',
             {
                 method: 'POST',
                 body: body,
@@ -210,7 +213,7 @@ export default function Event() {
         'bg-[#FF7A00]', 'bg-[#1950DE]', 'bg-[#1EA313]', 'bg-[#FF0000]', 'bg-[#FFE600]'
     ]
 
-    const data = JSON.parse(localStorage.getItem("user-info")); 
+    const data = JSON.parse(localStorage.getItem("user-info"));
     // console.log(data.roles[0]);
 
     const handleSubmit = () => {
@@ -221,8 +224,8 @@ export default function Event() {
         }
 
         setShowImageRequired(false)
-    };    
-    
+    };
+
 
     return (
         <div>
@@ -258,7 +261,7 @@ export default function Event() {
                                 <form ref={imageRef} onSubmit={() => { }}>
                                     <label htmlFor="image" >
                                         <div className='bg-[#CDC5C5] border-blue-700 w-[230px] relative h-[300px] flex justify-center items-center cursor-pointer'>
-                                            
+
                                             <p className={'text-red-700 text-sm font-Nunito w-24 ml-4 '
                                                 + (showImageRequired ? "opacity-100 animate-pulse" : "opacity-0")}>
                                                 Image is required

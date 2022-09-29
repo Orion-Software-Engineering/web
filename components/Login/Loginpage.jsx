@@ -29,7 +29,7 @@ export default function Loginpage() {
     console.warn(username, password);
     let item = { username, password };
     let result = await fetch(
-      "https://orion-meet-testing.herokuapp.com/api/auth/signin",
+      "https://orion-meet.herokuapp.com/api/auth/signin",
       {
         method: "POST",
         headers: {
@@ -49,7 +49,7 @@ export default function Loginpage() {
     });
 
     let result1 = await fetch(
-      "https://orion-meet-testing.herokuapp.com/api/auth/signin",
+      "https://orion-meet.herokuapp.com/api/auth/signin",
       {
         method: "POST",
         headers: {

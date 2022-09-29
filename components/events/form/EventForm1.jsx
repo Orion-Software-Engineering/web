@@ -27,7 +27,7 @@ const EventForm1 = ({ setExpand, step, updateStep, name, categories, setCategori
         <div>
             <div className=" justify-self-center self-center flex flex-wrap border-gray-600 ">
                 <div className="flex flex-col h-[400px] justify-center items-center  border-blue-600 w-[400px] rounded-l-3xl ">
-                    <form ref={formRef} handleSubmit={handleSubmit} className="flex flex-col mb-[30px]">     
+                    <form ref={formRef} handleSubmit={handleSubmit} className="flex flex-col mb-[30px]">
                         <label htmlFor="first">Event Name:</label>
                         <input type="text" id="first" name="event_name" value={name}
                             onChange={(e) => setName(e.target.value)}
@@ -65,11 +65,7 @@ const EventForm1 = ({ setExpand, step, updateStep, name, categories, setCategori
                             className="bg-black h-[80px] w-[300px] text-white pl-[10px] pt-[6px] rounded-lg " />
                     </form>
 
-                    <div className='flex flex-row w-[300px] border-green-700 justify-between mt-[0px]'>
-                        <p className="self-start cursor-pointer"
-                            onClick={() => updateStep(step - 1)}>
-                            {'<'}Back
-                        </p>
+                    <div className='flex flex-row-reverse w-[300px] border-green-700 justify-between mt-[0px]'>
                         <p className="self-end cursor-pointer"
                             onClick={() => {
                                 updateStep(step + 1)

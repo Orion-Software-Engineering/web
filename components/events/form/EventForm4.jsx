@@ -22,6 +22,8 @@ const EventForm4 = ({ step, updateStep, formRef, submitForm, name, categories, d
     'bg-yellow-200', 'bg-blue-300', 'bg-yellow-500'
   ]
 
+
+
   return (
     <div className="text-black h-[1100px] border-gray-700 flex flex-wrap 
     font-nunito mb-32  rounded-l-3xl ">
