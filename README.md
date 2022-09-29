@@ -1,4 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Orion Meet Web
+
+⚡   Next js & Tailwind Css
+
+<br>
+
+official website for Orion Meet # orionmeet.vercel.app
 
 ## Getting Started
 
@@ -12,23 +18,203 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+### Production ✨
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Reviewed and tested stable app version
+https://orion-meet.herokuapp.com/
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Testing 💫
 
-## Deploy on Vercel
+Staging area for new features
+https://orion-meet-testing.herokuapp.com/
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<br><br>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## API Documentation for API used
+
+Lookup #https://github.com/Orion-Software-Engineering/backend#readme for full API Documentation
+
+Main URL: https://orion-meet.herokuapp.com/
+
+### Sign In
+
+End Point: /api/auth/signin <br>
+Method: POST <br>
+Request Body:<br>
+
+```json 
+{
+    "username" : " ",
+    "password" : " "
+}
+```
+
+Response: 200 Ok <br>
+
+```json
+{
+    "roles": [
+        " "
+    ],
+    "id": "",
+    "username": "",
+    "email": " ",
+    "accessToken": ""
+}
+```
+
+### Sign Up
+
+End Point: /api/auth/signup <br>
+Method: POST <br>
+Request Body: <br>
+
+NB: with gender male == true and female == false
+
+```json
+{
+    "username": " ",
+    "email": " ",
+    "password": " ",
+    "dob": " ",
+    "gender": "true",
+    "roles": [
+        " ",
+        " ",
+        " "
+    ]
+}
+```
+
+### Events
+
+#### Upload Event
+
+End Point: /api/event <br>
+Method: POST <br>
+Request Body: <br>
+
+```json
+{
+    "name": "",
+    "date": "",
+    "time": "",
+    "venue": "",
+    "location":  "longitude latitude",
+    "organizers": "",
+    "mcs": "",
+    "guests": "",
+    "age_restriction": "",
+    "description": "",
+    "organizer": "",
+    "cover_image": "",
+    "ticket_price": decimal,
+    "interests": [
+        "",
+        "",
+        ""
+    ]
+}
+```
+
+#### Get Event Created By Organizer
+
+End Point: /api/organizer/events/id <br>
+Method: GET <br>
+
+
+## Web App Indexing
+
+"NoSSR was used for components which did not require SSR"
+
+## _app.js
+
+ ##about.js
+  -Header.jsx
+  -About.jsx
+  
+ ##events.js
+  -EventHeader.jsx
+  -EventForm1.jsx
+  -EventForm2.jsx
+  -EventForm3.jsx
+  -EventForm4.jsx
+  -Completion.jsx
+  -Welcome.jsx
+  -Doodle.jsx
+  
+ -index.js
+  -Hero.jsx
+  -Header.jsx
+  
+ ##login.js
+  -Loginpage.jsx
+  -Header.jsx
+  
+ ##organiserprofile.js
+   -Profile.jsx
+    
+ ##redirect.js
+   -Header.jsx
+    
+ ##signup.js
+   -Signuppage.jsx
+   -Header.jsx
+   
+ ##support.js
+   -Header.jsx
+   -Form.jsx
+   -Accordion.jsx
+   
+ ##team.js
+   -Header.jsx
+   -Team.jsx 
+  
+ ##verifymail.js
+   -Header.jsx
+   -Continue.jsx
+   
+   
+ ## Web App Walk Through
+   
+   <br>
+   
+    -User is presented the Home Page upon arrival
+     
+     
+     -User can access About, Support and Contact pages
+     
+      -User Visits the support page to utilise the contact form or accesses the FAQs 
+      -User visits the about page to discover Orion Meet Organisation 
+      -User visits the team page to discover Orion Meet body 
+      
+      -User cannot access Events and Organiser Profile Pages until signed up as an organiser
+      -User is directed to redirect page if tries to access Events and Organiser Profile Pages
+      
+   
+    -User Signs Up as an organiser 
+  
+    -User is directed to verify E-mail page & redirected to Login Page 
+      -User must verify E-Mail in order to log in
+   
+   
+   -User signs in as an organiser 
+    -User is directed to Home Page 
+    -User can now access events and Organiser profile pages
+   
+   
+   -User visits event page to create events 
+   
+   
+   -User visits organiser profile to view events created 
+
+
+   -User can Logout 
