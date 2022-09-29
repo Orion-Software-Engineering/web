@@ -32,10 +32,15 @@ const About = () => {
                 <ChatIcon className="w-16 p-4 bg-red-400 text-white rounded-lg  mt-[-4rem] " />
                 <h3 className="font-bold text-2xl my-6">Matches & Events</h3>
                 <p className="text-gray-600 text-xl ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                  velit urna, cursus eu ornare eget, egestas ut tellus. Mauris
-                  suscipit lacinia velit ac pulvinar. Curabitur quis magna vel
-                  ligula rutrum viverra in vitae quam.
+                
+                 Unlike other match making apps, it matches people based on their shared interests.
+                 It also gives community leaders and event organizers the platform to share and host events.
+                 Explore a variety of events of your interest.
+                 SignUp now and experience the best match making app.
+
+                  
+                  
+    
                 </p>
               </div>
               <div className="bg-slate-100 pl-8 py-4  hover:bg-slate-400">
@@ -47,14 +52,16 @@ const About = () => {
               </div>
             </div>
             <div className="bg-white rounded-xl shadow-2xl">
-              <div className="p-8">
+              <div className="p-8"> 
                 <UserGroupIcon className="w-16 p-4 bg-red-400 text-white rounded-lg  mt-[-4rem] " />
                 <h3 className="font-bold text-2xl my-6">Our Team</h3>
                 <p className="text-gray-600 text-xl ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                  velit urna, cursus eu ornare eget, egestas ut tellus. Mauris
-                  suscipit lacinia velit ac pulvinar. Curabitur quis magna vel
-                  ligula rutrum viverra in vitae quam.
+                  We are a sincere company with a straightforward vision.
+                  We believe that there is an amazing amount to be learned by working in a real world web production environment alongside other like  minded individuals.
+                  We keep culture and creativity at the heart of everything we do.
+                  
+                  
+              
                 </p>
               </div>
               <div className="bg-slate-100 pl-8 py-4  hover:bg-slate-400 ">
@@ -70,10 +77,9 @@ const About = () => {
                 <PhoneIcon className="w-16 p-4 bg-red-400 text-white rounded-lg  mt-[-4rem] " />
                 <h3 className="font-bold text-2xl my-6">Support</h3>
                 <p className="text-gray-600 text-xl ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                  velit urna, cursus eu ornare eget, egestas ut tellus. Mauris
-                  suscipit lacinia velit ac pulvinar. Curabitur quis magna vel
-                  ligula rutrum viverra in vitae quam.
+                 Our support team is spread across the globe to give you answers fast.
+                 We are closer than you think.We also offer a wide variety of onlinde support through our website such as E-mail support
+                 and the ability to submit case online. And if you ever require emergency services were available 24/7.
                 </p>
               </div>
               <div className="bg-slate-100 pl-8 py-4  hover:bg-slate-400">
