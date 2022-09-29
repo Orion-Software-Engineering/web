@@ -38,7 +38,8 @@ const categoryToInterest = new Map([
 
 export default function Event() {
     const [expand, setExpand] = useState(false)
-    const [step, setStep] = useState(0)
+    const [step, setStep] = useState(5)
+
     const [isUploading, setIsUploading] = useState(false)
     const imageRef = useRef()
     const [name, setName] = useState('')
@@ -56,6 +57,8 @@ export default function Event() {
     const [image, setImage] = useState(null)
     const interests = []
 
+    const [orgId, setOrgId] = useState('')
+
     //to expand doodle on different forms
     useEffect(() => {
         if (step % 2) setExpand(true)
@@ -71,6 +74,17 @@ export default function Event() {
         console.log(interests);
     }, [categories])
 
+    const formBackButton = () => {
+        step ? setStep(0) : setStep(1)
+    }
+
+    useEffect(() => {
+        if (typeof localStorage != "undefined") {
+            const orgId = JSON.parse(localStorage.getItem('user-info')).id
+            setOrgId(orgId)
+        }
+    }, [])
+
 
     const submitEventForm = async () => {
         console.log('attempting submission');
@@ -81,9 +95,9 @@ export default function Event() {
             "date": date,
             "time": time,
             "description": description,
-            "ticket_price": price,
+            "ticket_price": price ? price : 0,
             "age_restriction": ageRestrictions,
-            "organizer": data.id,
+            "organizer": orgId,
             "cover_image": filePath,
             "interests": [...interests],
             "mcs": mcs,
@@ -104,6 +118,7 @@ export default function Event() {
                 }
             }).then(res => {
                 console.log(res);
+                if (res.status == 201) setStep(step + 1)
                 return res.json()
             }).then(data => {
                 console.log(data);
@@ -184,7 +199,7 @@ export default function Event() {
     ]
 
     const data = JSON.parse(localStorage.getItem("user-info"));
-    console.log(data.roles[0]);
+    // console.log(data.roles[0]);
 
     return (
         <div>
@@ -203,7 +218,7 @@ export default function Event() {
                         </div>
 
                         {/* This is where we check the steps */}
-                        <div className="flex flex-col md:flex-row justify-center items-center flex-wrap border-blue-700 mt-[150px]  ">
+                        <div className="flex flex-col md:flex-row justify-center items-center flex-wrap border-blue-700 mt-[120px]  ">
                             <div className={step ? "bg-[url('../public/WhatsappB.png')] h-[400px] rounded-l-3xl  border-red-600 flex flex-col z-10"
                                 : "flex justify-center items-center w-[700px]"}>
                                 <div>
@@ -214,7 +229,7 @@ export default function Event() {
                             {step ? (<div className={"w-[400px] h-[400px] flex flex-col gap-y-2 justify-center items-center rounded-r-3xl transition duration-500 ease-in-out "
                                 + imgColors[step - 1]}>
                                 <div>
-                                    <p className=" text-center text-xl mt-[-20px]">Upload Event Flyer</p>
+                                    <p className=" text-center text-xl mt-[-20px] text-white font-semibold">Upload Event Flyer</p>
                                 </div>
                                 <form ref={imageRef} onSubmit={() => { }}>
                                     <label htmlFor="image" >
@@ -245,6 +260,14 @@ export default function Event() {
                             </div>) : (<div />)}
 
                         </div>
+                        {step < 2 && (<div className={`absolute bottom-16 cursor-pointer bg-gray-800 text-gray-200 text-xs w-36 rounded-md h-8 
+                        flex justify-center items-center shadow-xl hover:bg-orange-300 transition-all translate duration-500
+                        hover:text-gray-800 select-none  ` + (step ? ' left-72 slide-left ' : ' right-72 slide-right ')}
+                            onClick={() => formBackButton()}>
+                            <p className='px-2'>
+                                {step ? '<<< Back' : 'Go to forms >>>'}
+                            </p>
+                        </div>)}
                     </div>
                 </div>
                 </>
@@ -253,6 +276,7 @@ export default function Event() {
                         {window.location.replace("/redirect")};
                     </>
             }
+
 
         </div>
     );

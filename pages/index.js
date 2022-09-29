@@ -16,6 +16,7 @@ export default function Swipe() {
     <div className="styles.container">
       <div className=""></div>
       <div>
+        <Header />
         <Swiper                                 //implement home screen slider
           modules={[EffectFade, Autoplay]}
           navigation
@@ -25,10 +26,9 @@ export default function Swipe() {
           slidesPerView={1}
           loop
         >
+          <NoSSR>
+          </NoSSR>
           <SwiperSlide>
-            <NoSSR>
-              <Header />
-            </NoSSR>
             <Hero />
           </SwiperSlide>
         </Swiper>

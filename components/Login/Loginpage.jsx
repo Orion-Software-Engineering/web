@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"; useState
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook, AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { useState, useEffect } from "react";
@@ -71,8 +71,6 @@ export default function Loginpage() {
       } else if (response.status == 200) {
         setResp1("Success!");
         setResp("");
-        window.location.replace("/");
-
         window.location.replace("/");
       } else if (response.status == 403) {
         setResp1("Verify your mail!");

@@ -25,9 +25,7 @@ function MyApp({ Component, pageProps }) {
         <Route path="/support" component={support} />
         <Route path="/team" component={Team} />
         <Route path="/continue" component={Continue} />
-        <Route path="/userredirect" component={UserRedirect} />
-       
-        
+        <Route path="/userredirect" component={UserRedirect} /> 
       </Switch>
       <NoSSR>
       <Component {...pageProps} />
