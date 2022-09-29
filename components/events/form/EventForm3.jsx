@@ -26,9 +26,9 @@ const EventForm3 = ({ step, updateStep, ageRestrictions, setAgeRestrictions, mcs
     setIsVenueValid(true)
 
     updateStep(step + 1)
-  };  
+  };
 
-  const[isVenueValid,setIsVenueValid] = useState(true)
+  const [isVenueValid, setIsVenueValid] = useState(true)
 
   return (
     <div className="text-black justify-between  border-gray-700 flex font-nunito ">
@@ -54,12 +54,12 @@ const EventForm3 = ({ step, updateStep, ageRestrictions, setAgeRestrictions, mcs
             <div className="flex flex-col w-[300px]">
               <label htmlFor='fourth' className='mt-[10px]'>Venue</label>
               <input type="text" id="Venue" name="venue" value={venue}
-              className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-full"
-              onChange={(e) => setVenue(e.target.value)} />
+                className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-full"
+                onChange={(e) => setVenue(e.target.value)} />
               <p className={'text-red-700 text-sm font-Nunito w-24 ml-4 '
-              + (!isVenueValid ? "opacity-100 animate-pulse" : "opacity-0")}>
-              required
-              </p>           
+                + (!isVenueValid ? "opacity-100 animate-pulse" : "opacity-0")}>
+                required
+              </p>
             </div>
 
 
@@ -71,23 +71,13 @@ const EventForm3 = ({ step, updateStep, ageRestrictions, setAgeRestrictions, mcs
               {'<'}Back
             </p>
             <p className="self-end cursor-pointer"
-              onClick={() => { updateStep(step + 1) }}>
+              onClick={() => { handleSubmit() }}>
               Next{'>'}
             </p>
           </div>
           <p>{step}/4</p>
         </div>
 
-        {/* <div className=" border-blue-600 w-[400px] bg-[#1EA313] flex flex-col gap-y-2 justify-center items-center rounded-r-3xl">
-          <div>
-            <p className=" border-blue-600 text-center text-xl ">Upload Event Flyer</p>
-          </div>
-          <div className='bg-[#CDC5C5] border-blue-700 w-[250px]  h-[300px] flex justify-center items-center'>
-            <div className='w-[75px]'>
-              <Image src="/../public/camera.png" alt="camera" width='75px' height='75px' />
-            </div>
-          </div>
-        </div> */}
       </div>
 
 

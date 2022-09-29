@@ -112,7 +112,7 @@ const EventForm2 = ({ step, updateStep, organizers, setOrganizers, date, setDate
                 <p className="text-xs flex justify-center items-center text-[#565252] pt-1">(If free leave blank)</p>
               </label>
               <div className="flex w-32 gap-1 justify-center bg-black rounded-full">
-                <input type="number" id="price" name="price" pattern="[0-9]" step="10.00" min="0" value={price} onKeyPress={(event) => validate(event)}
+                <input type="number" id="price" name="price" pattern="[0-9]" step="10.00" min="0" value={price} onKeyPress={(event) => validate(event)} default={0}
                   className="flex bg-black text-white rounded-full px-3 w-24 pr-1 justify-center items-center h-[30px] outline-none"
                   onChange={(e) => setPrice(e.target.value)}>
                 </input>

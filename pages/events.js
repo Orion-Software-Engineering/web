@@ -37,7 +37,7 @@ const categoryToInterest = new Map([
 
 export default function Event() {
     const [expand, setExpand] = useState(false)
-    const [step, setStep] = useState(0)
+    const [step, setStep] = useState(5)
 
     const [isUploading, setIsUploading] = useState(false)
     const imageRef = useRef()
@@ -55,6 +55,8 @@ export default function Event() {
     const [filePath, setFilePath] = useState('')
     const [image, setImage] = useState(null)
     const interests = []
+
+    const [orgId, setOrgId] = useState('')
 
     //to expand doodle on different forms
     useEffect(() => {
@@ -75,8 +77,12 @@ export default function Event() {
         step ? setStep(0) : setStep(1)
     }
 
-    const formToBack = ''
-    const backToForm = ''
+    useEffect(() => {
+        if (typeof localStorage != "undefined") {
+            const orgId = JSON.parse(localStorage.getItem('user-info')).id
+            setOrgId(orgId)
+        }
+    }, [])
 
 
     const submitEventForm = async () => {
@@ -88,9 +94,9 @@ export default function Event() {
             "date": date,
             "time": time,
             "description": description,
-            "ticket_price": price,
+            "ticket_price": price ? price : 0,
             "age_restriction": ageRestrictions,
-            "organizer": "",
+            "organizer": orgId,
             "cover_image": filePath,
             "interests": [...interests],
             "mcs": mcs,
@@ -109,6 +115,7 @@ export default function Event() {
                 }
             }).then(res => {
                 console.log(res);
+                if (res.status == 201) setStep(step + 1)
                 return res.json()
             }).then(data => {
                 console.log(data);
@@ -218,7 +225,7 @@ export default function Event() {
                             {step ? (<div className={"w-[400px] h-[400px] flex flex-col gap-y-2 justify-center items-center rounded-r-3xl transition duration-500 ease-in-out "
                                 + imgColors[step - 1]}>
                                 <div>
-                                    <p className=" text-center text-xl mt-[-20px]">Upload Event Flyer</p>
+                                    <p className=" text-center text-xl mt-[-20px] text-white font-semibold">Upload Event Flyer</p>
                                 </div>
                                 <form ref={imageRef} onSubmit={() => { }}>
                                     <label htmlFor="image" >
