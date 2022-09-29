@@ -1,9 +1,9 @@
 # Orion Meet Web
 
 ## Contributors
- - Kevin Osei 
- - Hansen Koduah
- - Kelvin Lamptey
+ - Kevin Osei      https://github.com/knosei
+ - Hansen Koduah   https://github.com/hanskod
+ - Kelvin Lamptey  https://github.com/CeoBlunt
 
 ⚡   Next js & Tailwind Css
 
