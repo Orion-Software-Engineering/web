@@ -154,8 +154,21 @@ Image {
     color: white;
   }
 }
-.textimg {
-  display: flex;
-  color: black;
-  font-size: l;
+.it {
+}
+.it0 {
+}
+.it1 {
+  font-weight: bold;
+  font-size: large;
+}
+.it2 {
+}
+.it3 {
+}
+.it4 {
+}
+.it5 {
+}
+.it6 {
 }

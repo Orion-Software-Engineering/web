@@ -24,13 +24,17 @@ export default function OrganiserProfile() {
       let data2 = "";
       completedata.map((values) => {
         data2 += `
-        <Image  src=${values.cover_image} alt="img">
-        <div className="textimg">
-          <h5 className="textimg font-semibold text-4xl">${values.name}</h5>
-          <h5 className="textimg font-semibold text-4xl">${values.description}</h5>
-          <p><BiTimeFive/>${values.time} | ${values.date}</p>
-          <p><GrLocation/>${values.location}</p>
-          <p><GiTicket/>${values.ticket_price}</p>
+        <div class="it">
+        <div class="it0">
+        <Image src=${values.cover_image} alt="img">
+        </div>
+        <div class="it1">
+          <h5 class="it2">Event: ${values.name}</h5>
+          <h5 class="it3>Description: ${values.description}</h5>
+          <p class="it4>Time: ${values.time} | ${values.date}</p>
+          <p class="it5>Location: ${values.location}</p>
+          <p class="it6>Ticket Price: ${values.ticket_price}</p>
+        </div>
         </div>`;
       });
       document.getElementById("event_web").innerHTML = data2;
@@ -50,7 +54,7 @@ export default function OrganiserProfile() {
       {data.roles[0] == "ROLE_ORGANIZER" ? (
         <>
           <Header />
-          {/* Web */}
+
           <div className="md:contents hidden">
             <div className="px-[10%] w-full">
               <div className="h-screen items-center justify-center flex mt-[-64px] ">
