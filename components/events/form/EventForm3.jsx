@@ -10,14 +10,25 @@ import ToggleSwitch from '../ToggleSwitch'
 
 const EventForm3 = ({ step, updateStep, ageRestrictions, setAgeRestrictions, mcs, setMcs, guests, setGuests, venue, setVenue }) => {
 
-  const formRef = useRef()
+  const formRef = useRef();
   const [checked, setChecked] = useState(true);
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    // TODO: perform the push to backend here
-    console.log("submitted", formRef.current);
-  }
+  // const handleSubmit = (event) => {
+  //   event.preventDefault()
+  //   // TODO: perform the push to backend here
+  //   console.log("submitted", formRef.current);
+  // }
 
+  const handleSubmit = () => {
+    if (!venue) {
+      setIsVenueValid(false)
+      return
+    }
+    setIsVenueValid(true)
+
+    updateStep(step + 1)
+  };  
+
+  const[isVenueValid,setIsVenueValid] = useState(true)
 
   return (
     <div className="text-black justify-between  border-gray-700 flex font-nunito ">
@@ -40,10 +51,18 @@ const EventForm3 = ({ step, updateStep, ageRestrictions, setAgeRestrictions, mcs
               onChange={(e) => setGuests(e.target.value)} />
             {/* <label for="third" className="mt-[0px] text-xs text-[#575757] cursor-pointer">Add another guest</label> */}
 
-            <label htmlFor='fourth' className='mt-[10px]'>Venue</label>
-            <input type="text" id="fourth" name="venue" value={venue}
+            <div className="flex flex-col w-[300px]">
+              <label htmlFor='fourth' className='mt-[10px]'>Venue</label>
+              <input type="text" id="Venue" name="venue" value={venue}
               className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-full"
               onChange={(e) => setVenue(e.target.value)} />
+              <p className={'text-red-700 text-sm font-Nunito w-24 ml-4 '
+              + (!isVenueValid ? "opacity-100 animate-pulse" : "opacity-0")}>
+              required
+              </p>           
+            </div>
+
+
           </form>
 
           <div className="flex flex-row w-[300px] justify-between mt-[40px]">
