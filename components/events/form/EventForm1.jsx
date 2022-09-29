@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { FiChevronDown } from "react-icons/fi";
 import Image from "next/image";
 import ImageUpload from "../ImageUpload";
@@ -6,47 +6,14 @@ import CategorySelect from "../CategorySelect";
 
 const EventForm1 = ({ setExpand, step, updateStep, name, categories, setCategories, setName, description, setDescription }) => {
     const [categorySelectOpen, setCategorySelectOpen] = useState(false);
-    const [isNameValid, setIsNameValid] = useState(false)
-    const [isDescriptionValid, setIsDescriptionValid] = useState(false)
-    const [isCategoryValid, setIsCategoryValid] = useState(false)
-    const [showNameRequired, setShowNameRequired] = useState(false)
-    const [showDescriptionRequired, setShowDescriptionRequired] = useState(false)
-    const [showCategoryRequired, setShowCategoryRequired] = useState(false)
-
 
     const formRef = useRef();
 
-    const handleSubmit = () => {
-        if (!isNameValid) {
-            // show required
-            setShowNameRequired(true)
-            return
-        }
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // store data in state
 
-        setShowNameRequired(false)
-
-        if (!isCategoryValid) {
-            // show required
-            setShowCategoryRequired(true)
-            return
-        }
-
-        setShowCategoryRequired(false)
-
-        if (!isDescriptionValid) {
-            // show required
-            setShowDescriptionRequired(true)
-            return
-        }
-
-        setShowDescriptionRequired(false)
-
-        if (isNameValid && isDescriptionValid) {
-            updateStep(step + 1)
-            console.log(formRef.current.event_name.value);
-        } else {
-            // invalid inputs, tell the user something
-        }
+        console.log("submitted", formRef.current);
     };
 
     const categoryColors = [
@@ -56,97 +23,60 @@ const EventForm1 = ({ setExpand, step, updateStep, name, categories, setCategori
         'bg-yellow-200', 'bg-blue-300', 'bg-yellow-500'
     ]
 
-    useEffect(() => {
-        if (description) setIsDescriptionValid(true)
-    }, [description])
-
-    useEffect(() => {
-        if (name) setIsNameValid(true)
-    }, [name])
-
-    useEffect(() => {
-        categories.forEach(cat => {
-            if (cat.isChecked) {
-                setIsCategoryValid(true)
-            }
-        })
-
-    }, [categories])
-
     return (
         <div>
             <div className=" justify-self-center self-center flex flex-wrap border-gray-600 ">
                 <div className="flex flex-col h-[400px] justify-center items-center  border-blue-600 w-[400px] rounded-l-3xl ">
-                    <form ref={formRef} className="flex flex-col mb-[30px] justify-center items-center gap-y-2">
-                        <div className='w-[300px]'>
-                            <label htmlFor="first">Event Name:</label>
-                            <input type="text" id="first" name="event_name" value={name} required
-                                onChange={(e) => setName(e.target.value)}
-                                className="bg-black h-[30px] w-full text-white pl-[10px] rounded-full" />
+                    <form ref={formRef} handleSubmit={handleSubmit} className="flex flex-col mb-[30px]">     
+                        <label htmlFor="first">Event Name:</label>
+                        <input type="text" id="first" name="event_name" value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            className="bg-black h-[30px] w-[300px] text-white pl-[10px] rounded-lg" />
 
-                            <p className={'text-red-700 text-sm font-Nunito w-24 ml-4 '
-                                + (showNameRequired ? "opacity-100 animate-pulse" : "opacity-0")}>
-                                required
-                            </p>
-                        </div>
-
-
-                        <div>
-                            <label htmlFor="second" className="mt-[20px]">Event Category:</label>
-                            <div className="w-[300px] bg-black min-h-[30px] rounded-full text-gray-300 flex flex-row-reverse items-center font-Nunito"
+                        <label htmlFor="second" className="mt-[20px]">Event Category:</label>
+                        <div className="w-[300px] bg-black min-h-[30px] rounded-lg text-gray-300 flex flex-row-reverse items-center font-Nunito"
+                            onClick={() => {
+                                setCategorySelectOpen(!categorySelectOpen)
+                                setExpand(true)
+                            }}>
+                            <div
+                                className="p-2 cursor-pointer hover:text-orange-300 font-Nunito"
                                 onClick={() => {
                                     setCategorySelectOpen(!categorySelectOpen)
                                     setExpand(true)
                                 }}>
-                                <div
-                                    className="p-2 cursor-pointer hover:text-orange-300 font-Nunito"
-                                    onClick={() => {
-                                        setCategorySelectOpen(!categorySelectOpen)
-                                        setExpand(true)
-                                    }}>
-                                    <FiChevronDown size={22} />
-                                </div>
-                                <div className='text-white flex flex-wrap gap-2 p-2 font-Nunito'>
-                                    {categories.map((category, i) => {
-                                        if (category.isChecked)
-                                            return <div
-                                                className={'rounded-full h-[30px] px-2 text-xs flex justify-center items-center pb-[2px] font-medium '
-                                                    + categoryColors[i]}>
-                                                {category.name}
-                                            </div>
-                                    })}
-                                </div>
+                                <FiChevronDown size={22} />
                             </div>
-                            <p className={'text-red-700 text-sm font-Nunito w-24 ml-4 '
-                                + (showCategoryRequired ? "opacity-100 animate-pulse" : "opacity-0")}>
-                                required
-                            </p>
+                            <div className='text-white flex flex-wrap gap-2 p-2 font-Nunito'>
+                                {categories.map((category, i) => {
+                                    if (category.isChecked)
+                                        return <div
+                                            className={'rounded-full h-[30px] px-2 text-xs flex justify-center items-center pb-[2px] font-medium '
+                                                + categoryColors[i]}>
+                                            {category.name}
+                                        </div>
+                                })}
+                            </div>
                         </div>
 
-                        <div className='w-[300px]'>
-                            <label htmlFor="third" className="mt-[20px]">Event Description:</label>
-                            <textarea type="text" id="third" name="event_description" value={description} required
-                                onChange={(e) => setDescription(e.target.value)}
-                                className="bg-black h-[80px] w-[300px] text-white px-5 pt-3 rounded-xl " />
-
-                            <p className={'text-red-700 text-sm font-Nunito w-24 ml-4 '
-                                + (showDescriptionRequired ? "opacity-100 animate-pulse" : "opacity-0")}>
-                                required
-                            </p>
-                        </div>
-
+                        <label htmlFor="third" className="mt-[20px]">Event Description:</label>
+                        <textarea type="text" id="third" name="event_description" value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                            className="bg-black h-[80px] w-[300px] text-white pl-[10px] pt-[6px] rounded-lg " />
                     </form>
 
-                    <div className='flex flex-row-reverse w-[300px] border-green-700 justify-between mt-[0px] select-none'>
-                        {/* <p className="self-start cursor-pointer"
+                    <div className='flex flex-row w-[300px] border-green-700 justify-between mt-[0px]'>
+                        <p className="self-start cursor-pointer"
                             onClick={() => updateStep(step - 1)}>
                             {'<'}Back
-                        </p> */}
-                        <div className="self-end cursor-pointer"
-                            onClick={() => { handleSubmit() }
-                            }>
+                        </p>
+                        <p className="self-end cursor-pointer"
+                            onClick={() => {
+                                updateStep(step + 1)
+                                console.log(formRef.current.event_name.value);
+                            }}>
                             Next{'>'}
-                        </div>
+                        </p>
                     </div>
                     <p className='mt-[0px] text-center'>{step}/4</p>
                 </div>

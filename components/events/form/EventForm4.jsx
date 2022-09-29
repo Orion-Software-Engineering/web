@@ -13,6 +13,8 @@ const EventForm4 = ({ step, updateStep, formRef, submitForm, name, categories, d
     console.log("submitted", formRef.current);
   }
 
+  const [isUploading, setIsUploading] = useState(false)
+
   const categoryColors = [
     'bg-blue-900', 'bg-red-600', 'bg-purple-900', 'bg-gray-800',
     'bg-pink-500', 'bg-green-800', 'bg-gray-500', 'bg-orange-500',
@@ -21,7 +23,7 @@ const EventForm4 = ({ step, updateStep, formRef, submitForm, name, categories, d
   ]
 
   return (
-    <div className="text-black h-[1100px] bg-[url('../public/WhatsappB.png')] border-gray-700 flex flex-wrap 
+    <div className="text-black h-[1100px] border-gray-700 flex flex-wrap 
     font-nunito mb-32  rounded-l-3xl ">
       <div className="justify-self-center self-center flex border-gray-600  ">
         <div className="flex flex-col h justify-center items-center  border-blue-600 w-[400px]">
@@ -102,6 +104,7 @@ const EventForm4 = ({ step, updateStep, formRef, submitForm, name, categories, d
               {'<'}Back
             </p>
           </div>
+
           <div className='float-right mt-4 mb-12 cursor-pointer bg-black text-gray-200 text-xs w-36
              rounded-md h-8 flex justify-center items-center shadow-xl hover:bg-orange-500 transition-all duration-300 hover:text-white select-none'
             onClick={async () => {
@@ -110,11 +113,23 @@ const EventForm4 = ({ step, updateStep, formRef, submitForm, name, categories, d
             }}>
             <div className='px-2 font-Nunito'
               onClick={() => {
+                setIsUploading(true)
                 submitForm()
               }}>
-              SUBMIT
+              {isUploading ? (
+                <div className=" animate-pulse flex gap-2 items-center">
+                  <div class="w-6 h-6 border-b-2 border-gray-200 rounded-full animate-spin"></div>
+                  Submitting...
+                </div>
+              ) : (
+                <p>
+                  SUBMIT
+                </p>
+              )}
             </div>
+
           </div>
+
         </div>
       </div>
     </div>
