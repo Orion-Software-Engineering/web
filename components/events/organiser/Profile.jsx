@@ -10,6 +10,7 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import { info } from "autoprefixer";
 import Modal from "../organiser/Modal";
 import Modal1 from "../organiser/Modal1";
+import Org from "../../Org";
 
 export default function OrganiserProfile() {
   const data = JSON.parse(localStorage.getItem("user-info"));
@@ -33,7 +34,7 @@ export default function OrganiserProfile() {
           <p><GiTicket/>${values.ticket_price}</p>
         </div>`;
       });
-      document.getElementById("event_web").innerHTML = data2;
+      // document.getElementById("event_web").innerHTML = data2;
       document.getElementById("event_mob").innerHTML = data2;
     })
     .catch((err) => {
@@ -52,8 +53,8 @@ export default function OrganiserProfile() {
           <Header />
           {/* Web */}
           <div className="md:contents hidden">
-            {window.location.replace("/")}
-            <div className="px-[10%] w-full">
+            <Org />
+            {/* <div className="px-[10%] w-full">
               <div className="h-screen items-center justify-center flex mt-[-64px] ">
                 <div className="flex space-x-[5%]  justify-center w-full items-center px-auto">
                   <div className="">
@@ -155,7 +156,7 @@ export default function OrganiserProfile() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Mobile */}
