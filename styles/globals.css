@@ -13,6 +13,16 @@ body {
   overflow-x: hidden;
 }
 
+.slide-left {
+  right: 72rem;
+  transition: 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.slide-right {
+  left: 72rem;
+  transition: 0.6s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
 .swiper-button-next,
 .swiper-button-prev {
   background-repeat: no-repeat;

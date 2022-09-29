@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <div>
       <div className="">
-        <div className="flex relative justify-between items-center h-16 max-2-[1024] mx-auto px-4 text-black bg-[#F6F6F6] w-screen z-10">
+        <div className="flex fixed top-0 justify-between items-center h-16 max-2-[1024] mx-auto px-4 text-black bg-[#F6F6F6] w-screen z-50">
           <div className="flex sm:ml-5 ml-0">
             <Image src={Logo} alt="Logo_Image" width={"70px"} height={"70px"} />
             <h1 className="pt-1 pl-1 w-full text-4xl font-bold text-black font-Nunito">

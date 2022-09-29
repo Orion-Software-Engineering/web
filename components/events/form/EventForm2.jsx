@@ -1,10 +1,37 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { BiCalendar, BiTime } from "react-icons/bi";
 import DatePicker from "../DatePicker";
 
 const EventForm2 = ({ step, updateStep, organizers, setOrganizers, date, setDate, time, setTime, price, setPrice }) => {
   const formRef = useRef();
+
+  var today = new Date();
+  var dd = Number(today.getDate())
+  var mm = Number(today.getMonth())
+  var yyyy = today.getFullYear();
+
+  // today = yyyy + '/' + mm + '/' + dd
+
+  // useEffect(() => {
+  //   document.getElementById("datefield").setAttribute("max", today);
+  // }, [])
+
+  const checkValidDate = (date) => {
+    console.log(date);
+    const dt = new Date(date)
+    if (Number(dt.getFullYear()) <= yyyy
+      && Number(dt.getMonth()) <= mm
+      && Number(dt.getDate()) <= dd) {
+      setDate('')
+      return
+    }
+
+    setDate(date)
+    return
+  }
+
+
 
   const handleSubmit = () => {
     if (!organizers) {
@@ -75,10 +102,10 @@ const EventForm2 = ({ step, updateStep, organizers, setOrganizers, date, setDate
             <label htmlFor="second" className="">
               Date
             </label>
-            <input type="date" id="datep" name="date_select" value={date}
+            <input type="date" id="datefield" name="date_select" value={date}
               className="bg-black text-white rounded-full px-3 w-[300px] justify-center items-center h-[30px] "
               onChange={(e) => {
-                setDate(e.target.value)
+                checkValidDate(e.target.value)
               }} />
             <p className={'text-red-700 text-sm font-Nunito w-24 ml-4 '
               + (!isDateValid ? "opacity-100 animate-pulse" : "opacity-0")}>

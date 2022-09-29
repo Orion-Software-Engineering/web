@@ -38,7 +38,7 @@ const categoryToInterest = new Map([
 
 export default function Event() {
     const [expand, setExpand] = useState(false)
-    const [step, setStep] = useState(5)
+    const [step, setStep] = useState(0)
 
     const [isUploading, setIsUploading] = useState(false)
     const imageRef = useRef()
@@ -54,8 +54,13 @@ export default function Event() {
     const [guests, setGuests] = useState('')
     const [venue, setVenue] = useState('')
     const [filePath, setFilePath] = useState('')
+    const [location, setLocation] = useState('')
+    const [latitude, setLatitude] = useState(0)
+    const [longitude, setLongitude] = useState(0)
     const [image, setImage] = useState(null)
-    const interests = []
+    const [interests, setInterests] = useState([])
+    const [showImageRequired, setShowImageRequired] = useState(false)
+
 
     const [orgId, setOrgId] = useState('')
 
@@ -66,12 +71,14 @@ export default function Event() {
     }, [step])
 
     useEffect(() => {
+        const selectedInterests = []
         console.log(categories);
         categories.forEach(category => {
             if (category.isChecked)
-                interests.push(categoryToInterest.get(category.name))
+                selectedInterests.push(categoryToInterest.get(category.name))
         })
-        console.log(interests);
+        console.log(selectedInterests);
+        setInterests(selectedInterests)
     }, [categories])
 
     const formBackButton = () => {
@@ -85,11 +92,18 @@ export default function Event() {
         }
     }, [])
 
+    useEffect(() => {
+        setLocation(String(latitude) + ' ' + String(longitude))
+    }, [latitude, longitude])
+
 
     const submitEventForm = async () => {
         console.log('attempting submission');
         // TODO: do not post data if any is null or required data is empty
-        if (filePath == null || filePath.length == 0) return
+        if (filePath == null || filePath.length == 0) {
+            alert("Select an image to continue")
+            return
+        }
         const body = JSON.stringify({
             "name": name,
             "date": date,
@@ -99,16 +113,17 @@ export default function Event() {
             "age_restriction": ageRestrictions,
             "organizer": orgId,
             "cover_image": filePath,
-            "interests": [...interests],
+            "interests": interests,
             "mcs": mcs,
             "guests": guests,
-            "venue": venue
+            "venue": venue,
+            "location": location
         })
         console.log(body);
 
 
 
-        const response = await fetch('https://orion-meet-testing.herokuapp.com/api/event',
+        const response = await fetch('https://orion-meet.herokuapp.com/api/event',
             {
                 method: 'POST',
                 body: body,
@@ -201,6 +216,17 @@ export default function Event() {
     const data = JSON.parse(localStorage.getItem("user-info"));
     // console.log(data.roles[0]);
 
+    const handleSubmit = () => {
+        if (!isImageValid) {
+            // show required
+            setShowImageRequired(true)
+            return
+        }
+
+        setShowImageRequired(false)
+    };
+
+
     return (
         <div>
 
@@ -219,25 +245,33 @@ export default function Event() {
 
                         {/* This is where we check the steps */}
                         <div className="flex flex-col md:flex-row justify-center items-center flex-wrap border-blue-700 mt-[120px]  ">
-                            <div className={step ? "bg-[url('../public/WhatsappB.png')] h-[400px] rounded-l-3xl  border-red-600 flex flex-col z-10"
+                            <div className={step ? ("bg-[url('../public/WhatsappB.png')] rounded-l-3xl  border-red-600 flex flex-col z-10 "
+                                + (step == 4 ? "h-[1100px]" : "h-[400px]"))
                                 : "flex justify-center items-center w-[700px]"}>
                                 <div>
                                     {stepSwitch(step)}
                                 </div>
                             </div>
 
-                            {step ? (<div className={"w-[400px] h-[400px] flex flex-col gap-y-2 justify-center items-center rounded-r-3xl transition duration-500 ease-in-out "
-                                + imgColors[step - 1]}>
+                            {step && (<div className={"w-[400px] flex flex-col gap-y-2  items-center rounded-r-3xl transition duration-500 ease-in-out "
+                                + imgColors[step - 1] + (step == 4 ? " h-[1100px] pt-12 " : " h-[400px] justify-center")}>
                                 <div>
                                     <p className=" text-center text-xl mt-[-20px] text-white font-semibold">Upload Event Flyer</p>
                                 </div>
                                 <form ref={imageRef} onSubmit={() => { }}>
                                     <label htmlFor="image" >
                                         <div className='bg-[#CDC5C5] border-blue-700 w-[230px] relative h-[300px] flex justify-center items-center cursor-pointer'>
+
+                                            <p className={'text-red-700 text-sm font-Nunito w-24 ml-4 '
+                                                + (showImageRequired ? "opacity-100 animate-pulse" : "opacity-0")}>
+                                                Image is required
+                                            </p>
+
                                             <div>
                                                 {isUploading && (
-                                                    <div className="absolute top-2 animate-pulse inset-x-1/4 w-96 ">
-                                                        Uploading Image
+                                                    <div className="absolute top-4 animate-pulse left-[15%] right-[25%] w-96 a flex gap-2 items-center">
+                                                        <div className="w-6 h-6 border-b-2 border-gray-900 rounded-full animate-spin"></div>
+                                                        Uploading Image...
                                                     </div>
                                                 )}
                                                 {filePath && (<Image src={`${filePath}`}
@@ -257,7 +291,7 @@ export default function Event() {
                                         </div>
                                     </label>
                                 </form>
-                            </div>) : (<div />)}
+                            </div>)}
 
                         </div>
                         {step < 2 && (<div className={`absolute bottom-16 cursor-pointer bg-gray-800 text-gray-200 text-xs w-36 rounded-md h-8 
