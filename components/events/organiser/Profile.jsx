@@ -52,6 +52,7 @@ export default function OrganiserProfile() {
           <Header />
           {/* Web */}
           <div className="md:contents hidden">
+            {window.location.replace("/")}
             <div className="px-[10%] w-full">
               <div className="h-screen items-center justify-center flex mt-[-64px] ">
                 <div className="flex space-x-[5%]  justify-center w-full items-center px-auto">
