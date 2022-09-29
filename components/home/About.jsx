@@ -8,7 +8,7 @@ import {
 
 const About = () => {
   return (
-    <div className="bg-[url('../public/bg2.jpg')] w-full h-screen bg-no-repeat bg-cover font-Nunito mt-[-64px]">
+    <div className="bg-[url('../public/bg2.jpg')] w-full h-screen bg-no-repeat bg-cover font-Nunito">
       <div className="bg-[url('../public/bg2.jpg')] w-full bg-no-repeat bg-cover font-Nunito mt-[-64px]">
         <div className="w-full h-[700px] bg-gray-900/90 absolute"></div>
         <div className="max-w-[1240px] mx-auto text-white relative">
