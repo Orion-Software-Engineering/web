@@ -5,7 +5,6 @@ const UserRedirect = () => {
   return (
     <div>
       <Header />
-
       <div className="w-full h-screen text-center bg-[#0a192f] ">
         <div className="sm:flex-row flex-col inline-flex justify-center h-screen items-center mx-10 ">
           <div></div>
