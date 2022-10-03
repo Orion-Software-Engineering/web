@@ -15,7 +15,7 @@ import Org from "../../Org";
 export default function OrganiserProfile() {
   const data = JSON.parse(localStorage.getItem("user-info"));
   var link1 =
-    "https://orion-meet.herokuapp.com/api/organizer/events/" + data.id;
+    "https://orion-meet-testing.herokuapp.com/api/organizer/events/" + data.id;
   fetch(link1)
     .then((data1) => {
       return data1.json();

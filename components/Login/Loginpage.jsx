@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook, AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import { data } from "autoprefixer";
 
 export default function Loginpage() {
   const [open, setOpen] = useState(false);
@@ -30,7 +31,7 @@ export default function Loginpage() {
     console.warn(username, password);
     let item = { username, password };
     let result = await fetch(
-      "https://orion-meet.herokuapp.com/api/auth/signin",
+      "https://orion-meet-testing.herokuapp.com/api/auth/signin",
       {
         method: "POST",
         headers: {
@@ -132,7 +133,7 @@ export default function Loginpage() {
                   />
                 </div>
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col ">
                 <label>Password</label>
                 <div className="flex border-2 p-1 rounded-xl">
                   <input

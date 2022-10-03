@@ -38,9 +38,16 @@ export default function Signuppage() {
 
   async function signup() {
     console.warn(username, email, password, dob, gender, roles);
-    let item = { username: username, email: email, password: password, dob: dob, gender: gender, roles: ["organizer"] };
+    let item = {
+      username: username,
+      email: email,
+      password: password,
+      dob: dob,
+      gender: gender,
+      roles: ["organizer"],
+    };
     let result = await fetch(
-      "https://orion-meet.herokuapp.com/api/auth/signup",
+      "https://orion-meet-testing.herokuapp.com/api/auth/signup",
       {
         method: "POST",
         headers: {
@@ -63,7 +70,6 @@ export default function Signuppage() {
     } else {
       console.log(result);
     }
-
 
     // let result1 = await fetch(
     //   "https://orion-meet.herokuapp.com/api/auth/signup",

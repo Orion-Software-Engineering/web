@@ -13,6 +13,7 @@ import { CLOUD_NAME } from "../config/cloudinary_upload";
 import { stringify } from "postcss";
 import NoSSR from "react-no-ssr";
 import { info } from "autoprefixer";
+import EventRe from "../components/events/EventRe";
 
 
 
@@ -123,7 +124,7 @@ export default function Event() {
 
 
 
-        const response = await fetch('https://orion-meet.herokuapp.com/api/event',
+        const response = await fetch('https://orion-meet-testing.herokuapp.com/api/event',
             {
                 method: 'POST',
                 body: body,
@@ -231,79 +232,88 @@ export default function Event() {
         <div>
 
             {
-                (data.roles[0] == "ROLE_ORGANIZER") ? <> <div className=" h-screen ">
-                    <div className="h-screen bg-opacity-90  ">
-                        <NoSSR>
-                            <EventHeader />
-                        </NoSSR>
-                        <div className="fixed -left-[11%] top-[11%] hidden lg:flex">
-                            <Doodle expanded={expand} />
-                        </div>
-                        <div className="fixed right-[11%] top-[38%] hidden lg:flex">
-                            <Doodle expanded={expand} />
-                        </div>
+                (data.roles[0] == "ROLE_ORGANIZER") ? <>
 
-                        {/* This is where we check the steps */}
-                        <div className="flex flex-col md:flex-row justify-center items-center flex-wrap border-blue-700 mt-[120px]  ">
-                            <div className={step ? ("bg-[url('../public/WhatsappB.png')] rounded-l-3xl  border-red-600 flex flex-col z-10 "
-                                + (step == 4 ? "h-[1100px]" : "h-[400px]"))
-                                : "flex justify-center items-center w-[700px]"}>
-                                <div>
-                                    {stepSwitch(step)}
+                    <div className="md:contents hidden">
+                        <div className=" h-screen ">
+
+                            <div className="h-screen bg-opacity-90  ">
+                                <NoSSR>
+                                    <EventHeader />
+                                </NoSSR>
+                                <div className="fixed -left-[11%] top-[11%] hidden lg:flex">
+                                    <Doodle expanded={expand} />
                                 </div>
-                            </div>
-
-                            {step && (<div className={"w-[400px] flex flex-col gap-y-2  items-center rounded-r-3xl transition duration-500 ease-in-out "
-                                + imgColors[step - 1] + (step == 4 ? " h-[1100px] pt-12 " : " h-[400px] justify-center")}>
-                                <div>
-                                    <p className=" text-center text-xl mt-[-20px] text-white font-semibold">Upload Event Flyer</p>
+                                <div className="fixed right-[11%] top-[38%] hidden lg:flex">
+                                    <Doodle expanded={expand} />
                                 </div>
-                                <form ref={imageRef} onSubmit={() => { }}>
-                                    <label htmlFor="image" >
-                                        <div className='bg-[#CDC5C5] border-blue-700 w-[230px] relative h-[300px] flex justify-center items-center cursor-pointer'>
 
-                                            <p className={'text-red-700 text-sm font-Nunito w-24 ml-4 '
-                                                + (showImageRequired ? "opacity-100 animate-pulse" : "opacity-0")}>
-                                                Image is required
-                                            </p>
-
-                                            <div>
-                                                {isUploading && (
-                                                    <div className="absolute top-4 animate-pulse left-[15%] right-[25%] w-96 a flex gap-2 items-center">
-                                                        <div className="w-6 h-6 border-b-2 border-gray-900 rounded-full animate-spin"></div>
-                                                        Uploading Image...
-                                                    </div>
-                                                )}
-                                                {filePath && (<Image src={`${filePath}`}
-                                                    className='blur-[3px]'
-                                                    alt="selected-image"
-                                                    layout="fill"
-                                                />)}
-                                            </div>
-                                            <div className='w-[70px] absolute'>
-                                                <Image src="/../public/camera.png" alt="camera" width='70px' height='55px' className="" />
-                                            </div>
-                                            <input type='file' id="image" name='image' className="opacity-0 absolute" accept="image/*"
-                                                onChange={(event) => {
-                                                    setImage(event.target.files[0])
-                                                    setIsUploading(true)
-                                                }} />
+                                {/* This is where we check the steps */}
+                                <div className="flex flex-col md:flex-row justify-center items-center flex-wrap border-blue-700 mt-[120px]  ">
+                                    <div className={step ? ("bg-[url('../public/WhatsappB.png')] rounded-l-3xl  border-red-600 flex flex-col z-10 "
+                                        + (step == 4 ? "h-[1100px]" : "h-[400px]"))
+                                        : "flex justify-center items-center w-[700px]"}>
+                                        <div>
+                                            {stepSwitch(step)}
                                         </div>
-                                    </label>
-                                </form>
-                            </div>)}
+                                    </div>
 
-                        </div>
-                        {step < 2 && (<div className={`absolute bottom-16 cursor-pointer bg-gray-800 text-gray-200 text-xs w-36 rounded-md h-8 
+                                    {step && (<div className={"w-[400px] flex flex-col gap-y-2  items-center rounded-r-3xl transition duration-500 ease-in-out "
+                                        + imgColors[step - 1] + (step == 4 ? " h-[1100px] pt-12 " : " h-[400px] justify-center")}>
+                                        <div>
+                                            <p className=" text-center text-xl mt-[-20px] text-white font-semibold">Upload Event Flyer</p>
+                                        </div>
+                                        <form ref={imageRef} onSubmit={() => { }}>
+                                            <label htmlFor="image" >
+                                                <div className='bg-[#CDC5C5] border-blue-700 w-[230px] relative h-[300px] flex justify-center items-center cursor-pointer'>
+
+                                                    <p className={'text-red-700 text-sm font-Nunito w-24 ml-4 '
+                                                        + (showImageRequired ? "opacity-100 animate-pulse" : "opacity-0")}>
+                                                        Image is required
+                                                    </p>
+
+                                                    <div>
+                                                        {isUploading && (
+                                                            <div className="absolute top-4 animate-pulse left-[15%] right-[25%] w-96 a flex gap-2 items-center">
+                                                                <div className="w-6 h-6 border-b-2 border-gray-900 rounded-full animate-spin"></div>
+                                                                Uploading Image...
+                                                            </div>
+                                                        )}
+                                                        {filePath && (<Image src={`${filePath}`}
+                                                            className='blur-[3px]'
+                                                            alt="selected-image"
+                                                            layout="fill"
+                                                        />)}
+                                                    </div>
+                                                    <div className='w-[70px] absolute'>
+                                                        <Image src="/../public/camera.png" alt="camera" width='70px' height='55px' className="" />
+                                                    </div>
+                                                    <input type='file' id="image" name='image' className="opacity-0 absolute" accept="image/*"
+                                                        onChange={(event) => {
+                                                            setImage(event.target.files[0])
+                                                            setIsUploading(true)
+                                                        }} />
+                                                </div>
+                                            </label>
+                                        </form>
+                                    </div>)}
+
+                                </div>
+                                {step < 2 && (<div className={`absolute bottom-16 cursor-pointer bg-gray-800 text-gray-200 text-xs w-36 rounded-md h-8 
                         flex justify-center items-center shadow-xl hover:bg-orange-300 transition-all translate duration-500
                         hover:text-gray-800 select-none  ` + (step ? ' left-72 slide-left ' : ' right-72 slide-right ')}
-                            onClick={() => formBackButton()}>
-                            <p className='px-2'>
-                                {step ? '<<< Back' : 'Go to forms >>>'}
-                            </p>
-                        </div>)}
+                                    onClick={() => formBackButton()}>
+                                    <p className='px-2'>
+                                        {step ? '<<< Back' : 'Go to forms >>>'}
+                                    </p>
+                                </div>)}
+                            </div>
+                        </div>
+
                     </div>
-                </div>
+                    <div className="md:hidden">
+                        <EventRe />
+                    </div>
                 </>
                     :
                     <>
