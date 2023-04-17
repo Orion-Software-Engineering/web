@@ -4,6 +4,7 @@
  - Kevin Osei      https://github.com/knosei
  - Hansen Koduah   https://github.com/hanskod
  - Kelvin Lamptey  https://github.com/CeoBlunt
+ - Max Otuteye     https://github.com/maxotuteye
 
 ⚡   Next js & Tailwind Css
 
